@@ -97,9 +97,6 @@ public class OwlModel extends AgeableListModel<OwlEntity> implements HeadedModel
             if (entity.isInSittingPose()) {
                 leg_right.xRot = -1.5F;
                 leg_left.xRot = 1.5F;
-
-                this.wing_left.yRot = 0.5F;
-                this.wing_right.yRot = 0;
             }
         } else {
             float wingSwingAmountFlying = 1.0F;

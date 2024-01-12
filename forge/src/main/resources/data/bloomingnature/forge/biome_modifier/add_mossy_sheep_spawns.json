@@ -2,9 +2,7 @@
   "type": "forge:add_spawns",
   "biomes": [
     "minecraft:swamp",
-    "minecraft:mangrove_swamp",
-    "bloomingnature:swamp",
-    "bloomingnature:mangrove_swamp"
+    "minecraft:mangrove_swamp"
   ],  "spawners": {
     "type": "bloomingnature:mossy_sheep",
     "weight": 6,

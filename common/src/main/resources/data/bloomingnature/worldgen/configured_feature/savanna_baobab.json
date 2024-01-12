@@ -1,264 +1,104 @@
 {
-  "type": "minecraft:simple_random_selector",
+  "type": "minecraft:tree",
   "config": {
-    "features": [
-      {
-        "feature": {
-          "type": "minecraft:random_selector",
-          "config": {
-            "features": [
-              {
-                "chance": 0.25,
-                "feature": {
-                  "feature": {
-                    "type": "minecraft:tree",
-                    "config": {
-                      "ignore_vines": true,
-                      "force_dirt": false,
-                      "minimum_size": {
-                        "type": "minecraft:two_layers_feature_size",
-                        "limit": 1,
-                        "lower_size": 0,
-                        "upper_size": 2
-                      },
-                      "dirt_provider": {
-                        "type": "minecraft:simple_state_provider",
-                        "state": {
-                          "Name": "minecraft:dirt"
-                        }
-                      },
-                      "trunk_provider": {
-                        "type": "minecraft:simple_state_provider",
-                        "state": {
-                          "Name": "bloomingnature:baobab_wood",
-                          "Properties": {
-                            "axis": "y"
-                          }
-                        }
-                      },
-                      "foliage_provider": {
-                        "type": "minecraft:simple_state_provider",
-                        "state": {
-                          "Name": "bloomingnature:baobab_leaves",
-                          "Properties": {
-                            "distance": "7",
-                            "persistent": "false",
-                            "waterlogged": "false"
-                          }
-                        }
-                      },
-                      "trunk_placer": {
-                        "type": "minecraft:cherry_trunk_placer",
-                        "base_height": 20,
-                        "height_rand_a": 1,
-                        "height_rand_b": 0,
-                        "branch_count": {
-                          "type": "minecraft:weighted_list",
-                          "distribution": [
-                            {
-                              "weight": 1,
-                              "data": 2
-                            },
-                            {
-                              "weight": 1,
-                              "data": 3
-                            }
-                          ]
-                        },
-                        "branch_horizontal_length": {
-                          "type": "minecraft:uniform",
-                          "value": {
-                            "min_inclusive": 5,
-                            "max_inclusive": 7
-                          }
-                        },
-                        "branch_start_offset_from_top": {
-                          "min_inclusive": -4,
-                          "max_inclusive": -3
-                        },
-                        "branch_end_offset_from_top": {
-                          "type": "minecraft:uniform",
-                          "value": {
-                            "min_inclusive": -1,
-                            "max_inclusive": 0
-                          }
-                        }
-                      },
-                      "foliage_placer": {
-                        "type": "minecraft:acacia_foliage_placer",
-                        "radius": 3,
-                        "offset": 0
-                      },
-                      "decorators": []
-                    }
-                  },
-                  "placement": []
-                }
-              },
-              {
-                "chance": 0.25,
-                "feature": {
-                  "feature": {
-                    "type": "minecraft:tree",
-                    "config": {
-                      "ignore_vines": true,
-                      "force_dirt": false,
-                      "minimum_size": {
-                        "type": "minecraft:two_layers_feature_size",
-                        "limit": 1,
-                        "lower_size": 0,
-                        "upper_size": 2
-                      },
-                      "dirt_provider": {
-                        "type": "minecraft:simple_state_provider",
-                        "state": {
-                          "Name": "minecraft:dirt"
-                        }
-                      },
-                      "trunk_provider": {
-                        "type": "minecraft:simple_state_provider",
-                        "state": {
-                          "Name": "bloomingnature:baobab_wood",
-                          "Properties": {
-                            "axis": "y"
-                          }
-                        }
-                      },
-                      "foliage_provider": {
-                        "type": "minecraft:simple_state_provider",
-                        "state": {
-                          "Name": "bloomingnature:baobab_leaves",
-                          "Properties": {
-                            "distance": "7",
-                            "persistent": "false",
-                            "waterlogged": "false"
-                          }
-                        }
-                      },
-                      "trunk_placer": {
-                        "type": "minecraft:cherry_trunk_placer",
-                        "base_height": 17,
-                        "height_rand_a": 1,
-                        "height_rand_b": 1,
-                        "branch_count": {
-                          "type": "minecraft:weighted_list",
-                          "distribution": [
-                            {
-                              "weight": 1,
-                              "data": 1
-                            },
-                            {
-                              "weight": 1,
-                              "data": 2
-                            }
-                          ]
-                        },
-                        "branch_horizontal_length": {
-                          "type": "minecraft:uniform",
-                          "value": {
-                            "min_inclusive": 6,
-                            "max_inclusive": 7
-                          }
-                        },
-                        "branch_start_offset_from_top": {
-                          "min_inclusive": -4,
-                          "max_inclusive": -3
-                        },
-                        "branch_end_offset_from_top": {
-                          "type": "minecraft:uniform",
-                          "value": {
-                            "min_inclusive": -1,
-                            "max_inclusive": 0
-                          }
-                        }
-                      },
-                      "foliage_placer": {
-                        "type": "minecraft:acacia_foliage_placer",
-                        "radius": 4,
-                        "offset": 0
-                      },
-                      "decorators": []
-                    }
-                  },
-                  "placement": []
-                }
-              }
-            ],
-            "default": {
-              "feature": {
-                "type": "minecraft:tree",
-                "config": {
-                  "ignore_vines": true,
-                  "force_dirt": false,
-                  "minimum_size": {
-                    "type": "minecraft:two_layers_feature_size"
-                  },
-                  "dirt_provider": {
-                    "type": "minecraft:simple_state_provider",
-                    "state": {
-                      "Name": "minecraft:dirt"
-                    }
-                  },
-                  "trunk_provider": {
-                    "type": "minecraft:simple_state_provider",
-                    "state": {
-                      "Name": "bloomingnature:baobab_wood",
-                      "Properties": {
-                        "axis": "y"
-                      }
-                    }
-                  },
-                  "foliage_provider": {
-                    "type": "minecraft:simple_state_provider",
-                    "state": {
-                      "Name": "bloomingnature:baobab_wood",
-                      "Properties": {
-                        "axis": "y"
-                      }
-                    }
-                  },
-                  "trunk_placer": {
-                    "type": "minecraft:straight_trunk_placer",
-                    "base_height": 15,
-                    "height_rand_a": 0,
-                    "height_rand_b": 0
-                  },
-                  "foliage_placer": {
-                    "type": "minecraft:fancy_foliage_placer",
-                    "radius": 3,
-                    "offset": 0,
-                    "height": 16
-                  },
-                  "decorators": [
-                    {
-                      "type": "minecraft:trunk_vine"
-                    }
-                  ]
-                }
-              },
-              "placement": [
-                {
-                  "type": "minecraft:block_predicate_filter",
-                  "predicate": {
-                    "type": "minecraft:matching_blocks",
-                    "blocks": "bloomingnature:baobab_wood"
-                  }
-                }
-              ]
+    "name": "baobab_tree",
+    "decorators": [],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "bloomingnature:baobab_wood"
+      }
+    },
+    "foliage_placer": {
+      "type": "minecraft:jungle_foliage_placer",
+      "radius": 4,
+      "offset": 2,
+      "height": 2
+    },
+    "foliage_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 4,
+          "data": {
+            "Name": "minecraft:baobab_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
             }
           }
         },
-        "placement": [
-          {
-            "type": "minecraft:heightmap",
-            "heightmap": "WORLD_SURFACE_WG"
-          },
-          {
-            "type": "minecraft:count",
-            "count": 12
+        {
+          "weight": 11,
+          "data": {
+            "Name": "bloomingnature:baobab_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false"
+            }
           }
-        ]
+        }
+      ]
+    },
+    "force_dirt": false,
+    "ignore_vines": true,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 0,
+      "lower_size": 0,
+      "min_clipped_height": 4,
+      "upper_size": 0
+    },
+    "trunk_placer": {
+      "type": "minecraft:dark_oak_trunk_placer",
+      "base_height": 8,
+      "height_rand_a": 4,
+      "height_rand_b": 4
+    },
+    "root_placer": {
+      "type": "minecraft:mangrove_root_placer",
+      "mangrove_root_placement": {
+        "can_grow_through": "#minecraft:mangrove_roots_can_grow_through",
+        "max_root_length": 5,
+        "max_root_width": 3,
+        "muddy_roots_in": "minecraft:mud",
+        "muddy_roots_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "bloomingnature:baobab_wood",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        "random_skew_chance": 0.3
+      },
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "bloomingnature:baobab_wood",
+          "Properties": {
+            "waterlogged": "false"
+          }
+        }
+      },
+      "trunk_offset_y": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 3,
+          "min_inclusive": 2
+        }
       }
-    ]
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "bloomingnature:baobab_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
   }
 }

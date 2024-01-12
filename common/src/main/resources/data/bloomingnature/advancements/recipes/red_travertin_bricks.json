@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "bloomingnature:red_travertin_bricks"
+      "bloomingnature:laterit_bricks"
     ]
   },
   "criteria": {
-    "has_red_travertin": {
+    "has_laterit": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "bloomingnature:red_travertin"
+              "bloomingnature:laterit"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "bloomingnature:red_travertin_bricks"
+        "recipe": "bloomingnature:laterit_bricks"
       }
     }
   },
   "requirements": [
     [
-      "has_red_travertin",
+      "has_laterit",
       "has_the_recipe"
     ]
   ]

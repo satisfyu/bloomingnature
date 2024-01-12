@@ -32,6 +32,10 @@
     "bloomingnature:chestnut_log",
     "bloomingnature:chestnut_wood",
     "bloomingnature:stripped_chestnut_log",
-    "bloomingnature:stripped_chestnut_wood"
+    "bloomingnature:stripped_chestnut_wood",
+    "bloomingnature:ebony_log",
+    "bloomingnature:ebony_wood",
+    "bloomingnature:stripped_ebony_log",
+    "bloomingnature:stripped_ebony_wood"
   ]
 }

@@ -112,6 +112,29 @@
     "bloomingnature:chestnut_door",
     "bloomingnature:chestnut_fence",
     "bloomingnature:chestnut_fence_gate",
-    "bloomingnature:chestnut_window"
+    "bloomingnature:chestnut_window",
+    "bloomingnature:ebony_log",
+    "bloomingnature:ebony_wood",
+    "bloomingnature:stripped_ebony_wood",
+    "bloomingnature:stripped_ebony_log",
+    "bloomingnature:ebony_planks",
+    "bloomingnature:ebony_stairs",
+    "bloomingnature:ebony_slab",
+    "bloomingnature:ebony_pressure_plate",
+    "bloomingnature:ebony_button",
+    "bloomingnature:ebony_trapdoor",
+    "bloomingnature:ebony_door",
+    "bloomingnature:ebony_fence",
+    "bloomingnature:ebony_fence_gate",
+    "bloomingnature:ebony_window",
+    "bloomingnature:brown_mushroom_bricks",
+    "bloomingnature:brown_mushroom_brick_slab",
+    "bloomingnature:brown_mushroom_brick_stairs",
+    "bloomingnature:brown_mushroom_brick_wall",
+    "bloomingnature:mushroom_bricks",
+    "bloomingnature:mushroom_brick_slab",
+    "bloomingnature:mushroom_brick_stairs",
+    "bloomingnature:mushroom_brick_wall"
+
   ]
 }

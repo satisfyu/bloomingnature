@@ -3,19 +3,19 @@
     "features": [
       {
         "feature": "bloomingnature:terrain/termite_mound",
-        "chance": 0.05
+        "chance": 0.00043848433
       },
       {
         "feature": "bloomingnature:savanna_bush_checked",
-        "chance": 0.2
-      },
-      {
-        "feature": "bloomingnature:savanna_tree_checked",
         "chance": 0.3
       },
       {
+        "feature": "bloomingnature:savanna_tree_checked",
+        "chance": 0.13844755
+      },
+      {
         "feature": "bloomingnature:savanna_baobab_checked",
-        "chance": 0.04444445
+        "chance": 0.09444445
       }
     ],
     "default": "minecraft:acacia_checked"

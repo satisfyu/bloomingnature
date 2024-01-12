@@ -4,7 +4,9 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.WolfRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.animal.Wolf;
 import satisfyu.bloomingnature.client.model.RedWolfModel;
 import satisfyu.bloomingnature.entity.RedWolfEntity;
 import satisfyu.bloomingnature.util.BloomingNatureIdentifier;
@@ -18,7 +20,9 @@ public class RedWolfRenderer extends MobRenderer<RedWolfEntity, RedWolfModel<Red
         super(context, new RedWolfModel(context.bakeLayer(RedWolfModel.LAYER_LOCATION)), 0.7f);
     }
 
-
+    protected float getBob(RedWolfEntity RedWolfEntity, float f) {
+        return RedWolfEntity.getTailAngle();
+    }
 
     @Override
     public ResourceLocation getTextureLocation(RedWolfEntity entity) {

@@ -84,6 +84,11 @@ public class RaccoonEntity extends Fox {
         }
     }
 
+    public float getTailAngle() {
+        return (0.55F - (this.getMaxHealth() - this.getHealth()) * 0.02F) * 3.1415927F;
+    }
+
+
 
     @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {
@@ -141,7 +146,6 @@ public class RaccoonEntity extends Fox {
         } else {
             this.entityData.set(DATA_FLAGS_ID, (byte)((Byte)this.entityData.get(DATA_FLAGS_ID) & ~i));
         }
-
     }
 
     private boolean getFlag(int i) {

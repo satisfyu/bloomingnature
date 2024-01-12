@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import satisfyu.bloomingnature.client.model.RaccoonModel;
 import satisfyu.bloomingnature.entity.RaccoonEntity;
+import satisfyu.bloomingnature.entity.RedWolfEntity;
 import satisfyu.bloomingnature.util.BloomingNatureIdentifier;
 
 
@@ -28,8 +29,12 @@ public class RaccoonRenderer extends MobRenderer<RaccoonEntity, RaccoonModel<Rac
             float i = -Mth.lerp(h, raccoon.xRotO, raccoon.getXRot());
             poseStack.mulPose(Axis.XP.rotationDegrees(i));
         }
-
     }
+
+    protected float getBob(RaccoonEntity RaccoonEntity, float f) {
+        return RaccoonEntity.getTailAngle();
+    }
+
 
     public ResourceLocation getTextureLocation(RaccoonEntity entity) {
             return entity.isSleeping() ? RACOON_SLEEP_TEXTURE : RACCOON_TEXTURE;

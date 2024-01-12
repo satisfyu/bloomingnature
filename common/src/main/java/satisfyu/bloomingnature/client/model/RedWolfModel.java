@@ -7,6 +7,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.WolfModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -28,7 +29,6 @@ public class RedWolfModel<T extends Wolf> extends HierarchicalModel<T> {
     private final ModelPart rightFrontLeg;
     private final ModelPart tail;
     private final ModelPart realTail;
-
 
     public RedWolfModel(ModelPart root) {
         this.head = root.getChild("head");
@@ -63,7 +63,7 @@ public class RedWolfModel<T extends Wolf> extends HierarchicalModel<T> {
 
         PartDefinition rightFrontLeg = partdefinition.addOrReplaceChild("rightFrontLeg", CubeListBuilder.create().texOffs(28, 7).addBox(-1.0F, 0.0F, -0.99F, 2.0F, 8.0F, 2.01F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 16.0F, -4.0F));
 
-        PartDefinition partdefinition3 = partdefinition.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(0, 33).addBox(-2.0F, 0.0F, -4.25F, 4.0F, 9.0F, 5.0F, new CubeDeformation(0.0F)).texOffs(29, 19).addBox(-2.5F, -1.0F, -3.75F, 5.0F, 12.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 12.0F, 8.0F, 0.9599F, 0.0F, 0.0F));
+        PartDefinition partdefinition3 = partdefinition.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(0, 33).addBox(-2.0F, 0.0F, -4.25F, 4.0F, 9.0F, 5.0F, new CubeDeformation(0.1F)).texOffs(29, 19).addBox(-2.5F, -1.0F, -3.75F, 5.0F, 12.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 12.0F, 8.0F, 0.9599F, 0.0F, 0.0F));
 
         partdefinition3.addOrReplaceChild("real_tail", CubeListBuilder.create().texOffs(9, 18).addBox(0.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F), PartPose.ZERO);
 
@@ -98,8 +98,9 @@ public class RedWolfModel<T extends Wolf> extends HierarchicalModel<T> {
     public void prepareMobModel(T wolf, float f, float g, float h) {
         if (wolf.isAngry()) {
             this.tail.yRot = 0.0F;
+        } else {
+            this.tail.yRot = Mth.cos(f * 0.6662F) * 1.4F * g;
         }
-
 
         if (wolf.isInSittingPose()) {
             this.upperBody.setPos(-1.0F, 16.0F, -3.0F);
@@ -135,10 +136,12 @@ public class RedWolfModel<T extends Wolf> extends HierarchicalModel<T> {
         this.head.zRot = wolf.getHeadRollAngle(h) + wolf.getBodyRollAngle(h, 0.0F);
         this.upperBody.zRot = wolf.getBodyRollAngle(h, -0.08F);
         this.body.zRot = wolf.getBodyRollAngle(h, -0.16F);
+        this.realTail.zRot = wolf.getBodyRollAngle(h, -0.2F);
     }
 
     public void setupAnim(T wolf, float f, float g, float h, float i, float j) {
         this.head.xRot = j * 0.017453292F;
         this.head.yRot = i * 0.017453292F;
+        this.tail.xRot = h;
     }
 }

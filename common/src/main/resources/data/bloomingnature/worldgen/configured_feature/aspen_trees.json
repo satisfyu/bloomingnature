@@ -7,8 +7,12 @@
         "feature": "bloomingnature:aspen_tree_straight_checked"
       },
       {
-        "chance": 0.3,
-        "feature": "bloomingnature:aspen_tree_branched_checked"
+        "chance": 0.094924294,
+        "feature": "bloomingnature:birch_tree_straight_checked"
+      },
+      {
+        "chance": 0.010924294,
+        "feature": "bloomingnature:aspen_tree_pine_checked"
       }
     ],
     "default": "bloomingnature:aspen_tree_branched_checked"

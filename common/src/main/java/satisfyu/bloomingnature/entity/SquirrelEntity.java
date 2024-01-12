@@ -35,7 +35,7 @@ import org.jetbrains.annotations.Nullable;
 import satisfyu.bloomingnature.registry.EntityRegistry;
 import satisfyu.bloomingnature.registry.SoundRegistry;
 import satisfyu.bloomingnature.registry.TagsRegistry;
-import satisfyu.bloomingnature.util.BetterWallClimberNavigation;
+import satisfyu.bloomingnature.entity.ai.BetterWallClimberNavigation;
 
 
 import java.util.EnumSet;

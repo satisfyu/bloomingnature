@@ -83,7 +83,6 @@ public class OwlEntity extends ShoulderRidingEntity
     @Override
     protected void registerGoals() {
         super.registerGoals();
-
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.0D, true));

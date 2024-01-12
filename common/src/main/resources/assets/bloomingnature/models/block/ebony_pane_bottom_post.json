@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "pane": "bloomingnature:block/ebony_window_bottom",
+    "edge": "bloomingnature:block/ebony_window_pane_top"
+  }
+}

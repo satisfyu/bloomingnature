@@ -6,15 +6,15 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import satisfyu.bloomingnature.BloomingNature;
-import satisfyu.bloomingnature.world.placers.CrookedTrunkPlacer;
-import satisfyu.bloomingnature.world.placers.PalmFoliagePlacer;
-import satisfyu.bloomingnature.world.placers.TaigaFoliagePlacer;
+import satisfyu.bloomingnature.world.placers.*;
 
 
 public class PlacerTypesRegistry {
     public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_TYPES = DeferredRegister.create(BloomingNature.MOD_ID, Registries.FOLIAGE_PLACER_TYPE);
     public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACER_TYPES = DeferredRegister.create(BloomingNature.MOD_ID, Registries.TRUNK_PLACER_TYPE);
 
+    public static final RegistrySupplier<FoliagePlacerType<LarchFoliagePlacer>> LARCH_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("larch_foliage_placer" ,() -> new FoliagePlacerType<>(LarchFoliagePlacer.CODEC));
+    public static final RegistrySupplier<FoliagePlacerType<RodBirchFoliagePlacer>> ROD_BIRCH_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("birch_foliage_placer" ,() -> new FoliagePlacerType<>(RodBirchFoliagePlacer.CODEC));
     public static final RegistrySupplier<FoliagePlacerType<TaigaFoliagePlacer>> TAIGA_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("taiga_foliage_placer" ,() -> new FoliagePlacerType<>(TaigaFoliagePlacer.CODEC));
     public static final RegistrySupplier<FoliagePlacerType<PalmFoliagePlacer>> PALM_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("palm_foliage_placer" ,() -> new FoliagePlacerType<>(PalmFoliagePlacer.CODEC));
     public static final RegistrySupplier<TrunkPlacerType<CrookedTrunkPlacer>> CROOKED_TRUNK_PLACER = TRUNK_PLACER_TYPES.register("crooked_trunk_placer" ,() -> new TrunkPlacerType<>(CrookedTrunkPlacer.CODEC));

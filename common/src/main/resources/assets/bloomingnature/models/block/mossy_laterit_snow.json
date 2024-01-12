@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "bloomingnature:block/laterit",
+    "particle": "bloomingnature:block/laterit",
+    "side": "bloomingnature:block/laterit_snow",
+    "top": "minecraft:block/grass_block_top"
+  }
+}

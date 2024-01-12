@@ -143,6 +143,18 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> GRANITE_BOULDERS = registerKey("terrain/granite_boulders");
     public static final ResourceKey<PlacedFeature> GRANITE_SLABS = registerKey("terrain/granite_slabs");
     public static final ResourceKey<PlacedFeature> PACKED_MUD = registerKey("terrain/packed_mud");
+    public static final ResourceKey<PlacedFeature> JUNGLE_TREES = registerMCKey("trees_jungle");
+    public static final ResourceKey<PlacedFeature> JUNGLE_FLOWERS = registerMCKey("flower_warm");
+    public static final ResourceKey<PlacedFeature> JUNGLE_BAMBOO = registerMCKey("bamboo_light");
+    public static final ResourceKey<PlacedFeature> JUNGLE_BN_TREES = registerKey("jungle_trees");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_TREES = registerMCKey("trees_sparse_jungle");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_FLOWERS = registerMCKey("flower_warm");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_TREES = registerKey("sparse_jungle_trees");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_PUDDLE = registerKey("terrain/puddle");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_MUD = registerKey("terrain/mud_beach");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_GRASS = registerKey("sparse_jungle_grass_patch");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_LATERIT_BOULDER = registerKey("terrain/laterit_boulder");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_ORE_LATERIT = registerKey("terrain/ore_laterit");
 
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {

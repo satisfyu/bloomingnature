@@ -1,0 +1,12 @@
+{
+  "type": "forge:remove_features",
+  "biomes": [
+    "#minecraft:is_overworld"
+  ],
+  "features": [
+    "minecraft:lake_lava_underground",
+    "minecraft:lake_lava_surface"
+
+  ],
+  "step": "vegetal_decoration"
+}

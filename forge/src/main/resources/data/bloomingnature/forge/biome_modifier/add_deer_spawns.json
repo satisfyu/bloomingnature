@@ -1,13 +1,8 @@
 {
   "type": "forge:add_spawns",
   "biomes": [
-    "minecraft:dark_forest",
-    "minecraft:forest",
     "#minecraft:is_forest",
-    "#minecraft:is_taiga",
-    "bloomingnature:forest",
-    "bloomingnature:larch_forest",
-    "bloomingnature:aspen_forest"
+    "#minecraft:is_taiga"
   ],  "spawners": {
     "type": "bloomingnature:deer",
     "weight": 6,

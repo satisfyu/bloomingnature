@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bloomingnature:block/laterit_brick_slab"
+    },
+    "type=double": {
+      "model": "bloomingnature:block/laterit_bricks"
+    },
+    "type=top": {
+      "model": "bloomingnature:block/laterit_brick_slab_top"
+    }
+  }
+}

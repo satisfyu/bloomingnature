@@ -3,9 +3,7 @@
   "biomes": [
     "minecraft:plains",
     "minecraft:taiga",
-    "#minecraft:is_forest",
-    "bloomingnature:plains",
-    "bloomingnature:taiga"
+    "#minecraft:is_forest"
   ],
   "spawners": {
     "type": "bloomingnature:raccoon",

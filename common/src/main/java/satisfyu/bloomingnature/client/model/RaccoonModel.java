@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.model.FoxModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -95,8 +96,11 @@ public class RaccoonModel<T extends RaccoonEntity> extends HierarchicalModel<T> 
         if (!raccoon.isSleeping() && !raccoon.isFaceplanted() && !raccoon.isCrouching()) {
             this.head.xRot = j * 0.017453292F;
             this.head.yRot = i * 0.017453292F;
-        }
+            this.tail.xRot = h;
+            this.tail.yRot = Mth.cos(f * 0.6662F) * 1.4F * g;
+            this.tail.setPos(0.0F, 18.0F, 7.0F);
 
+        }
         if (raccoon.isSleeping()) {
             this.head.xRot = 0.0F;
             this.head.yRot = -2.0943952F;

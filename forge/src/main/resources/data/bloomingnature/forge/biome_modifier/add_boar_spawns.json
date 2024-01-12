@@ -1,18 +1,10 @@
 {
   "type": "forge:add_spawns",
   "biomes": [
-    "minecraft:savanna",
-    "minecraft:savanna_plateau",
-    "bloomingnature:savanna",
-    "bloomingnature:savanna_plateau",
-    "minecraft:dark_forest",
-    "#minecraft:is_forest",
-    "#minecraft:is_taiga",
-    "bloomingnature:dark_forest",
-    "bloomingnature:larch_forest",
-    "bloomingnature:aspen_forest"
+    "#minecraft:is_savanna",
+    "#minecraft:is_forest"
   ],  "spawners": {
-  "type": "bloomingnature:bison",
+  "type": "bloomingnature:boar",
   "weight": 8,
   "minCount": 3,
   "maxCount": 4

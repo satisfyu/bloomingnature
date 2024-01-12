@@ -11,7 +11,7 @@ authors = "satisfy"
 description = '''
 New Flowers, new crafting Stations, Tea
 '''
-#logoFile = ""
+logoFile = "pack.png"
 
 [[dependencies.bloomingnature]]
 modId = "forge"
@@ -31,12 +31,5 @@ side = "BOTH"
 modId = "architectury"
 mandatory = true
 versionRange = "[9.1.12,)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies.bloomingnature]]
-modId = "terrablender"
-mandatory = true
-versionRange = "[3.0.0.163,)"
 ordering = "AFTER"
 side = "BOTH"

@@ -15,33 +15,10 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import satisfyu.bloomingnature.BloomingNature;
-import satisfyu.bloomingnature.client.model.BisonModel;
-import satisfyu.bloomingnature.client.render.entity.BisonRenderer;
-import satisfyu.bloomingnature.client.model.BoarModel;
-import satisfyu.bloomingnature.client.render.entity.BoarRenderer;
-import satisfyu.bloomingnature.client.model.DeerModel;
-import satisfyu.bloomingnature.client.render.entity.DeerRenderer;
-import satisfyu.bloomingnature.client.render.entity.MossySheepRenderer;
-import satisfyu.bloomingnature.client.model.MuddyPigModel;
-import satisfyu.bloomingnature.client.render.entity.MuddyPigRenderer;
-import satisfyu.bloomingnature.client.model.OwlModel;
-import satisfyu.bloomingnature.client.render.entity.OwlRenderer;
-import satisfyu.bloomingnature.client.model.PelicanModel;
-import satisfyu.bloomingnature.client.render.entity.PelicanRenderer;
-import satisfyu.bloomingnature.client.model.RaccoonModel;
-import satisfyu.bloomingnature.client.render.entity.RaccoonRenderer;
-import satisfyu.bloomingnature.client.model.RedWolfModel;
-import satisfyu.bloomingnature.client.model.SquirrelModel;
-import satisfyu.bloomingnature.client.render.entity.SquirrelRenderer;
-import satisfyu.bloomingnature.client.model.TermiteModel;
-import satisfyu.bloomingnature.client.render.entity.TermiteRenderer;
-import satisfyu.bloomingnature.client.model.TurkeyModel;
-import satisfyu.bloomingnature.client.render.entity.TurkeyRenderer;
-import satisfyu.bloomingnature.client.model.WanderingGardenerModel;
+import satisfyu.bloomingnature.client.model.*;
 import satisfyu.bloomingnature.client.render.block.FlowerBoxBlockEntityRenderer;
 import satisfyu.bloomingnature.client.render.block.FlowerPotBigBlockEntityRenderer;
-import satisfyu.bloomingnature.client.render.entity.RedWolfRenderer;
-import satisfyu.bloomingnature.client.render.entity.WanderingGardenerRenderer;
+import satisfyu.bloomingnature.client.render.entity.*;
 import satisfyu.bloomingnature.registry.BlockEntityRegistry;
 import satisfyu.bloomingnature.registry.EntityRegistry;
 import satisfyu.bloomingnature.registry.ObjectRegistry;
@@ -74,15 +51,16 @@ public class BloomingNatureClient {
                 ObjectRegistry.FIR_WINDOW.get(), ObjectRegistry.BAOBAB_DOOR.get(), ObjectRegistry.ASPEN_DOOR.get(), ObjectRegistry.SWAMP_CYPRESS_DOOR.get(),
                 ObjectRegistry.ASPEN_TRAPDOOR.get(), ObjectRegistry.SWAMP_CYPRESS_TRAPDOOR.get(), ObjectRegistry.BAOBAB_SAPLING.get(),  ObjectRegistry.ASPEN_SAPLING.get(),
                 ObjectRegistry.SWAMP_CYPRESS_SAPLING.get(), ObjectRegistry.FIR_SAPLING.get(), ObjectRegistry.CHESTNUT_DOOR.get(), ObjectRegistry.CHESTNUT_SAPLING.get(),
-                ObjectRegistry.CHESTNUT_WINDOW.get(), ObjectRegistry.CHESTNUT_TRAPDOOR.get()
+                ObjectRegistry.CHESTNUT_WINDOW.get(), ObjectRegistry.CHESTNUT_TRAPDOOR.get(), ObjectRegistry.EBONY_WINDOW.get(), ObjectRegistry.EBONY_DOOR.get(),
+                ObjectRegistry.EBONY_SAPLING.get(), ObjectRegistry.POTTED_EBONY_SAPLING.get(), ObjectRegistry.EBONY_TRAPDOOR.get(), ObjectRegistry.MOSSY_LATERIT.get()
 
                 );
 
-        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), ObjectRegistry.SWAMP_OAK_LEAVES.get());
+        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), ObjectRegistry.SWAMP_OAK_LEAVES.get(), ObjectRegistry.MOSSY_LATERIT.get());
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> { if (world == null || pos == null) {return -1;}return BiomeColors.getAverageFoliageColor(world, pos);},
-                ObjectRegistry.SWAMP_OAK_LEAVES.get(), ObjectRegistry.SWAMP_OAK_LEAVES.get()
-
-        );
+                ObjectRegistry.SWAMP_OAK_LEAVES.get(), ObjectRegistry.SWAMP_OAK_LEAVES.get());
+        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {if (world == null || pos == null) {return -1;}return BiomeColors.getAverageGrassColor(world, pos);},
+                ObjectRegistry.MOSSY_LATERIT.get());
     }
 
     public static final ModelLayerLocation MOSSY_SHEEP_FUR = new ModelLayerLocation(new ResourceLocation(BloomingNature.MOD_ID, "mossy_sheep_"), "fur");

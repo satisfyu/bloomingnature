@@ -55,7 +55,7 @@
     ]
   },
   "squirrel_ambient": {
-    "subtitle": "subtitles.bloomingnature.raccoon_ambient",
+    "subtitle": "subtitles.bloomingnature.squirrel_ambient",
     "sounds": [
       "bloomingnature:squirrel_ambient1",
       "bloomingnature:squirrel_ambient2",
@@ -186,6 +186,33 @@
       "bloomingnature:boar_ambient3",
       "bloomingnature:boar_ambient4",
       "bloomingnature:boar_ambient5"
+    ]
+  },
+  "red_wolf_hurt": {
+    "subtitle": "subtitles.bloomingnature.red_wolf_hurt",
+    "sounds": [
+      "bloomingnature:red_wolf_hurt1",
+      "bloomingnature:red_wolf_hurt2",
+      "bloomingnature:red_wolf_hurt3"
+    ]
+  },
+  "red_wolf_death": {
+    "subtitle": "subtitles.bloomingnature.red_wolf_death",
+    "sounds": [
+      "bloomingnature:red_wolf_death"
+    ]
+  },
+  "red_wolf_ambient": {
+    "subtitle": "subtitles.bloomingnature.red_wolf_ambient",
+    "sounds": [
+      "bloomingnature:red_wolf_ambient1",
+      "bloomingnature:red_wolf_ambient2"
+    ]
+  },
+  "red_wolf_aggro": {
+    "subtitle": "subtitles.bloomingnature.red_wolf_aggro",
+    "sounds": [
+      "bloomingnature:red_wolf_aggro"
     ]
   }
 }

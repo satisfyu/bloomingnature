@@ -3,7 +3,7 @@
     "features": [
       {
         "feature": "bloomingnature:terrain/termite_mound",
-        "chance": 0.00043848433
+        "chance": 0.093848433
       },
       {
         "feature": "bloomingnature:savanna_bush_checked",

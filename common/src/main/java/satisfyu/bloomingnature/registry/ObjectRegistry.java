@@ -40,7 +40,6 @@ public class ObjectRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BloomingNature.MOD_ID, Registries.BLOCK);
     public static final Registrar<Block> BLOCK_REGISTRAR = BLOCKS.getRegistrar();
 
-
     public static final RegistrySupplier<Block> LARCH_LOG = registerWithItem("larch_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistrySupplier<Block> LARCH_WOOD = registerWithItem("larch_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistrySupplier<Block> STRIPPED_LARCH_WOOD = registerWithItem("stripped_larch_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2.0f)));
@@ -136,7 +135,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> FIR_FENCE = registerWithItem("fir_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> FIR_FENCE_GATE = registerWithItem("fir_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).mapColor(FIR_PLANKS.get().defaultMapColor()), WoodType.OAK));
     public static final RegistrySupplier<Block> FIR_WINDOW = registerWithItem("fir_window", () -> new FirWindowBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GLASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false)));
-    public static final RegistrySupplier<Block> FIR_LEAVES = registerWithItem("fir_leaves", () -> new FirLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false)));
+    public static final RegistrySupplier<Block> FIR_LEAVES = registerWithItem("fir_leaves", () -> new SnowyFirLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false)));
     public static final RegistrySupplier<Block> FIR_SAPLING = registerWithItem("fir_sapling", () -> new SaplingBlock(new AbstractTreeGrower() {@Override protected @NotNull ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(@NotNull RandomSource random, boolean bees) {return GeneralUtil.configuredFeatureKey("snowy_taiga_fir");}}, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistrySupplier<Block> SWAMP_CYPRESS_LOG = registerWithItem("swamp_cypress_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistrySupplier<Block> SWAMP_CYPRESS_WOOD = registerWithItem("swamp_cypress_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).strength(2.0f)));
@@ -195,9 +194,9 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> TRAVERTIN_BRICK_STAIRS = registerWithItem("travertin_brick_stairs", () -> new StairBlock(TRAVERTIN_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(RED_BRICKS.get())));
     public static final RegistrySupplier<Block> TRAVERTIN_BRICK_SLAB = registerWithItem("travertin_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TRAVERTIN_BRICKS.get())));
     public static final RegistrySupplier<Block> TRAVERTIN_BRICK_WALL = registerWithItem("travertin_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(TRAVERTIN_BRICKS.get())));
-    public static final RegistrySupplier<Block> MOSSY_LATERIT = registerWithItem("mossy_laterit", () -> new LateritGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).randomTicks().strength(0.6F).sound(SoundType.GRASS)));
-    public static final RegistrySupplier<Block> LATERIT = registerWithItem("laterit", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
-    public static final RegistrySupplier<Block> LATERIT_BRICKS = registerWithItem("laterit_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.CALCITE)));
+    public static final RegistrySupplier<Block> MOSSY_LATERIT = registerWithItem("mossy_laterit", () -> new LateritGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).randomTicks().strength(0.9F).sound(SoundType.GRASS)));
+    public static final RegistrySupplier<Block> LATERIT = registerWithItem("laterit", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> LATERIT_BRICKS = registerWithItem("laterit_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> LATERIT_BRICK_STAIRS = registerWithItem("laterit_brick_stairs", () -> new StairBlock(LATERIT_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(RED_BRICKS.get())));
     public static final RegistrySupplier<Block> LATERIT_BRICK_SLAB = registerWithItem("laterit_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LATERIT_BRICKS.get())));
     public static final RegistrySupplier<Block> LATERIT_BRICK_WALL = registerWithItem("laterit_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(LATERIT_BRICKS.get())));
@@ -279,7 +278,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Item> BISON_SPAWN_EGG = registerItem("bison_spawn_egg", () -> new ArchitecturySpawnEggItem(EntityRegistry.BISON, -1, -1, getSettings()));
     public static final RegistrySupplier<Item> TURKEY_SPAWN_EGG = registerItem("turkey_spawn_egg", () -> new ArchitecturySpawnEggItem(EntityRegistry.TURKEY, -1, -1, getSettings()));
 
-
+    public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithoutItem("floating_leaves", () -> new FloatingLeavesBlock(BlockBehaviour.Properties.copy(Blocks.LILY_PAD)));
     public static final RegistrySupplier<Block> COCONUT_HANGING = registerWithoutItem("coconut_hanging", () -> new HangingCoconutBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO)));
     public static final RegistrySupplier<Block> POTTED_LARCH_SAPLING = registerWithoutItem("potted_larch_sapling", () -> new FlowerPotBlock(LARCH_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> POTTED_FIR_SAPLING = registerWithoutItem("potted_fir_sapling", () -> new FlowerPotBlock(FIR_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
@@ -296,13 +295,46 @@ public class ObjectRegistry {
     }
 
     public static void registerCompostable() {
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.JOE_PYE.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MOUNTAIN_LAUREL.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.HYSSOP.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CARDINAL.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.WHITE_ORCHID.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MOUNTAIN_SNOWBELL.get(), 0.3f);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BIRD_OF_PARADISE.get(), 0.3f);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CATTAIL.get(), 0.4F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.REED.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.HYSSOP.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MOUNTAIN_SNOWBELL.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CARDINAL.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MOUNTAIN_LAUREL.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BIRD_OF_PARADISE.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.WHITE_ORCHID.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.DAPHNE.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BOTTLEBRUSHES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BLUEBELL.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEGONIE.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GOATSBEARD.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GENISTEAE.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FOXGLOVE_WHITE.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FOXGLOVE_PINK.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FREESIA_YELLOW.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FREESIA_PINK.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LUPINE_BLUE.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LUPINE_PURPLE.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEACH_BUSH.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEACH_GRASS.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEACH_BUSH_TALL.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.ASPEN_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FIR_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BAOBAB_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_CYPRESS_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_OAK_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.EBONY_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LARCH_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHESTNUT_SAPLING.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.ASPEN_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FIR_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BAOBAB_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_OAK_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.EBONY_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LARCH_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHESTNUT_LEAVES.get(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.ORANGE_LEAVES.get(), 0.3F);
     }
 
 
@@ -324,18 +356,6 @@ public class ObjectRegistry {
         consumer.accept(settings);
         return settings;
     }
-
-
-    private static FoodProperties cocktailFoodComponent(MobEffect effect) {
-        FoodProperties.Builder component = new FoodProperties.Builder().nutrition(2).saturationMod(1);
-        if (effect != null) component.effect(new MobEffectInstance(effect, 45 * 20), 1.0f);
-        return component.build();
-    }
-
-    private static BlockBehaviour.Properties getCocktailSettings() {
-        return BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion().instabreak();
-    }
-
 
     static Item.Properties getSettings() {
         return getSettings(settings -> {

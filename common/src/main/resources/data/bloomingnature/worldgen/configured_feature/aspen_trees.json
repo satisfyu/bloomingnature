@@ -3,15 +3,19 @@
   "config": {
     "features": [
       {
-        "chance": 0.3,
+        "chance": 0.1,
         "feature": "bloomingnature:aspen_tree_straight_checked"
       },
       {
-        "chance": 0.094924294,
+        "chance": 0.15,
         "feature": "bloomingnature:birch_tree_straight_checked"
       },
       {
-        "chance": 0.010924294,
+        "chance": 0.070924294,
+        "feature": "bloomingnature:forest_oak_straight_checked"
+      },
+      {
+        "chance": 0.090924294,
         "feature": "bloomingnature:aspen_tree_pine_checked"
       }
     ],

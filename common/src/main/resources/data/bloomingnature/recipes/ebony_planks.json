@@ -3,7 +3,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "bloomingnature:ebony_log"
+      "tag": "bloomingnature:ebony_logs"
     }
   ],
   "result": {

@@ -84,7 +84,10 @@
             {
               "weight": 1,
               "data": {
-                "Name": "minecraft:powder_snow"
+                "Name": "minecraft:grass_block",
+                "Properties": {
+                  "snowy": "true"
+                }
               }
             },
             {

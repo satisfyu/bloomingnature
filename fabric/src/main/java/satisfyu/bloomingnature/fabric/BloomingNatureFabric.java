@@ -56,8 +56,11 @@ public class BloomingNatureFabric implements ModInitializer {
         removeSpawn(BiomeTags.IS_FOREST, List.of(EntityType.PIG, EntityType.CHICKEN));
         removeSpawn(BiomeTags.IS_JUNGLE, List.of(EntityType.PIG, EntityType.CHICKEN, EntityType.COW));
         addMobSpawn(BiomeTags.IS_JUNGLE, MobCategory.CREATURE, EntityType.FROG, 8, 3, 4);
+        addMobSpawn(BiomeTags.IS_SAVANNA, MobCategory.CREATURE, EntityRegistry.TERMITE.get(), 10, 3, 4);
 
         SpawnPlacements.register(EntityRegistry.SQUIRREL.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
+        SpawnPlacements.register(EntityRegistry.TERMITE.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
         SpawnPlacements.register(EntityRegistry.OWL.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING, AmbientCreature::checkMobSpawnRules);
@@ -317,8 +320,8 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_BN_MUD));
         world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_LATERIT_BOULDER));
         world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
-        world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getEffects().setGrassColor(6711833));
-        world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getEffects().setFoliageColor(-9333940));
+        world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getEffects().setGrassColor(8970560));
+        world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getEffects().setFoliageColor(6337104));
         world.add(ModificationPhase.REMOVALS, sparse_jungle, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_FLOWERS));
         world.add(ModificationPhase.REMOVALS, sparse_jungle, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_TREES));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOATING_LEAVES_KEY));
@@ -330,8 +333,8 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_BN_MUD));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_LATERIT_BOULDER));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
-        world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setGrassColor(6711833));
-        world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setFoliageColor(-9333940));
+        world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setGrassColor(8970560));
+        world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setFoliageColor(6337104));
 
 
     }

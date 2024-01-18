@@ -88,6 +88,36 @@
       "offset": 0,
       "height": 0
     },
-    "decorators": []
+    "decorators": [
+      {
+        "type": "minecraft:alter_ground",
+        "provider": {
+          "type": "minecraft:weighted_state_provider",
+          "entries": [
+            {
+              "weight": 5,
+              "data": {
+                "Name": "minecraft:grass_block",
+                "Properties": {
+                  "snowy": "false"
+                }
+              }
+            },
+            {
+              "weight": 1,
+              "data": {
+                "Name": "bloomingnature:termite_mound"
+              }
+            },
+            {
+              "weight": 3,
+              "data": {
+                "Name": "minecraft:coarse_dirt"
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
 }

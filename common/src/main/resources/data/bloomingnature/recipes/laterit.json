@@ -5,16 +5,15 @@
       "item": "minecraft:cobblestone"
     },
     "B": {
-      "item": "minecraft:clay_ball"
+      "item": "minecraft:raw_iron"
     }
   },
   "pattern": [
-    "B# ",
-    "#B ",
-    "   "
+    "#B#",
+    "#B#"
   ],
   "result": {
-    "count": 4,
+    "count": 8,
     "item": "bloomingnature:laterit"
   },
   "show_notification": true

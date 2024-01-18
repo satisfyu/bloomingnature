@@ -4,11 +4,13 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import satisfyu.bloomingnature.client.model.RaccoonModel;
+import satisfyu.bloomingnature.entity.DeerEntity;
 import satisfyu.bloomingnature.entity.RaccoonEntity;
 import satisfyu.bloomingnature.entity.RedWolfEntity;
 import satisfyu.bloomingnature.util.BloomingNatureIdentifier;
@@ -39,4 +41,15 @@ public class RaccoonRenderer extends MobRenderer<RaccoonEntity, RaccoonModel<Rac
     public ResourceLocation getTextureLocation(RaccoonEntity entity) {
             return entity.isSleeping() ? RACOON_SLEEP_TEXTURE : RACCOON_TEXTURE;
               }
+
+    @Override
+    public void render(RaccoonEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pMatrixStack,
+                       MultiBufferSource pBuffer, int pPackedLight) {
+        if(pEntity.isBaby()) {
+            pMatrixStack.scale(0.4f, 0.4f, 0.4f);
+        }
+
+        super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
+    }
 }
+

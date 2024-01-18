@@ -3,7 +3,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "bloomingnature:swamp_cypress_log"
+      "tag": "bloomingnature:swamp_cypress_logs"
     }
   ],
   "result": {

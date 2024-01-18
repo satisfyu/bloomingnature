@@ -3,7 +3,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "bloomingnature:fir_log"
+      "tag": "bloomingnature:fir_logs"
     }
   ],
   "result": {

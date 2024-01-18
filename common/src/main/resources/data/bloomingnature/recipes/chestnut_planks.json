@@ -3,7 +3,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "item": "bloomingnature:chestnut_log"
+      "tag": "bloomingnature:chestnut_logs"
     }
   ],
   "result": {

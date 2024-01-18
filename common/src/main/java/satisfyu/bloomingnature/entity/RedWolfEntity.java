@@ -1,14 +1,18 @@
 package satisfyu.bloomingnature.entity;
 
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+import satisfyu.bloomingnature.registry.EntityRegistry;
 import satisfyu.bloomingnature.registry.SoundRegistry;
 
 public class RedWolfEntity extends Wolf {
@@ -30,6 +34,13 @@ public class RedWolfEntity extends Wolf {
             return SoundRegistry.RED_WOLF_AMBIENT.get();
         }
     }
+
+
+    @Nullable
+    public RedWolfEntity getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
+        return EntityRegistry.RED_WOLF.get().create(serverLevel);
+    }
+
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {

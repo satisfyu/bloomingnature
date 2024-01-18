@@ -52,15 +52,14 @@ public class BloomingNatureClient {
                 ObjectRegistry.ASPEN_TRAPDOOR.get(), ObjectRegistry.SWAMP_CYPRESS_TRAPDOOR.get(), ObjectRegistry.BAOBAB_SAPLING.get(),  ObjectRegistry.ASPEN_SAPLING.get(),
                 ObjectRegistry.SWAMP_CYPRESS_SAPLING.get(), ObjectRegistry.FIR_SAPLING.get(), ObjectRegistry.CHESTNUT_DOOR.get(), ObjectRegistry.CHESTNUT_SAPLING.get(),
                 ObjectRegistry.CHESTNUT_WINDOW.get(), ObjectRegistry.CHESTNUT_TRAPDOOR.get(), ObjectRegistry.EBONY_WINDOW.get(), ObjectRegistry.EBONY_DOOR.get(),
-                ObjectRegistry.EBONY_SAPLING.get(), ObjectRegistry.POTTED_EBONY_SAPLING.get(), ObjectRegistry.EBONY_TRAPDOOR.get(), ObjectRegistry.MOSSY_LATERIT.get()
+                ObjectRegistry.EBONY_SAPLING.get(), ObjectRegistry.POTTED_EBONY_SAPLING.get(), ObjectRegistry.EBONY_TRAPDOOR.get(), ObjectRegistry.MOSSY_LATERIT.get(),
+                ObjectRegistry.FIR_LEAVES.get(), ObjectRegistry.FLOATING_LEAVES.get()
 
                 );
 
-        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), ObjectRegistry.SWAMP_OAK_LEAVES.get(), ObjectRegistry.MOSSY_LATERIT.get());
-        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> { if (world == null || pos == null) {return -1;}return BiomeColors.getAverageFoliageColor(world, pos);},
-                ObjectRegistry.SWAMP_OAK_LEAVES.get(), ObjectRegistry.SWAMP_OAK_LEAVES.get());
-        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {if (world == null || pos == null) {return -1;}return BiomeColors.getAverageGrassColor(world, pos);},
-                ObjectRegistry.MOSSY_LATERIT.get());
+        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.MOSSY_LATERIT.get(), ObjectRegistry.EBONY_LEAVES.get());
+        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> { if (world == null || pos == null) {return -1;}return BiomeColors.getAverageFoliageColor(world, pos);}, ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.EBONY_LEAVES.get());
+        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {if (world == null || pos == null) {return -1;}return BiomeColors.getAverageGrassColor(world, pos);}, ObjectRegistry.MOSSY_LATERIT.get());
     }
 
     public static final ModelLayerLocation MOSSY_SHEEP_FUR = new ModelLayerLocation(new ResourceLocation(BloomingNature.MOD_ID, "mossy_sheep_"), "fur");

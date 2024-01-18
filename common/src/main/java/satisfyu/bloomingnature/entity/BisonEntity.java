@@ -14,18 +14,20 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 import satisfyu.bloomingnature.registry.EntityRegistry;
 import satisfyu.bloomingnature.registry.SoundRegistry;
 
 import java.util.UUID;
 
-public class BisonEntity extends Cow implements NeutralMob {
+public class BisonEntity extends Animal implements NeutralMob {
     private boolean isAngry;
     private long lastHurtTime;
 
@@ -33,7 +35,7 @@ public class BisonEntity extends Cow implements NeutralMob {
     private static final UniformInt ANGER_RANGE = TimeUtil.rangeOfSeconds(15, 34);
     private UUID lastHurtBy;
 
-    public BisonEntity(EntityType<? extends Cow> entityType, Level world) {
+    public BisonEntity(EntityType<? extends Animal> entityType, Level world) {
         super(entityType, world);
     }
 
@@ -53,9 +55,10 @@ public class BisonEntity extends Cow implements NeutralMob {
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
     }
 
+    @Nullable
     @Override
-    public Cow getBreedOffspring(ServerLevel serverWorld, AgeableMob passiveEntity) {
-        return EntityRegistry.BISON.get().create(serverWorld);
+    public AgeableMob getBreedOffspring(ServerLevel pLevel, AgeableMob pOtherParent) {
+        return EntityRegistry.BISON.get().create(pLevel);
     }
 
     @Override

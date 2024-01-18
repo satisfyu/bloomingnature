@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bloomingnature:block/cattails_top"
+    "layer0": "bloomingnature:block/cattail_top"
   }
 }

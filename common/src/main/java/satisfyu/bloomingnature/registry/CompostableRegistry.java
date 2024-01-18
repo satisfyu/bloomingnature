@@ -40,7 +40,15 @@ public class CompostableRegistry {
         registerCompostableItem(ObjectRegistry.EBONY_SAPLING, 0.3F);
         registerCompostableItem(ObjectRegistry.LARCH_SAPLING, 0.3F);
         registerCompostableItem(ObjectRegistry.CHESTNUT_SAPLING, 0.3F);
-
+        registerCompostableItem(ObjectRegistry.ASPEN_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.FIR_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.BAOBAB_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.SWAMP_CYPRESS_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.SWAMP_OAK_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.EBONY_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.LARCH_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.CHESTNUT_LEAVES, 0.3F);
+        registerCompostableItem(ObjectRegistry.ORANGE_LEAVES, 0.3F);
     }
 
 

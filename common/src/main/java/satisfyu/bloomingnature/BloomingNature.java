@@ -1,10 +1,12 @@
 package satisfyu.bloomingnature;
 
+import de.cristelknight.doapi.DoApiExpectPlatform;
 import dev.architectury.hooks.item.tool.AxeItemHooks;
 import net.minecraft.world.level.block.Blocks;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import satisfyu.bloomingnature.registry.*;
+import satisfyu.bloomingnature.util.BloomingNatureIdentifier;
 
 public class BloomingNature {
     public static final String MOD_ID = "bloomingnature";
@@ -18,10 +20,15 @@ public class BloomingNature {
         TabRegistry.init();
         PlacerTypesRegistry.init();
         SoundRegistry.init();
+
+        DoApiExpectPlatform.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("bushy_leaves"), false);
     }
+
+
 
     public static void commonInit() {
         ObjectRegistry.registerCompostable();
+        FlammableBlockRegistry.init();
         AxeItemHooks.addStrippable(ObjectRegistry.ASPEN_LOG.get(), ObjectRegistry.STRIPPED_ASPEN_LOG.get());
         AxeItemHooks.addStrippable(ObjectRegistry.ASPEN_WOOD.get(), ObjectRegistry.STRIPPED_ASPEN_WOOD.get());
         AxeItemHooks.addStrippable(ObjectRegistry.BAOBAB_LOG.get(), ObjectRegistry.STRIPPED_BAOBAB_LOG.get());
@@ -36,6 +43,8 @@ public class BloomingNature {
         AxeItemHooks.addStrippable(ObjectRegistry.FIR_WOOD.get(), ObjectRegistry.STRIPPED_FIR_WOOD.get());
         AxeItemHooks.addStrippable(ObjectRegistry.LARCH_LOG.get(), ObjectRegistry.STRIPPED_LARCH_LOG.get());
         AxeItemHooks.addStrippable(ObjectRegistry.LARCH_WOOD.get(), ObjectRegistry.STRIPPED_LARCH_WOOD.get());
+        AxeItemHooks.addStrippable(ObjectRegistry.EBONY_LOG.get(), ObjectRegistry.STRIPPED_EBONY_LOG.get());
+        AxeItemHooks.addStrippable(ObjectRegistry.EBONY_WOOD.get(), ObjectRegistry.STRIPPED_EBONY_WOOD.get());
     }
 }
 

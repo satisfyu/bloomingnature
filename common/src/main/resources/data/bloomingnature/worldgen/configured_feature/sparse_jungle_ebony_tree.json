@@ -1,7 +1,7 @@
 {
   "type": "minecraft:tree",
   "config": {
-    "name": "baobab_tree",
+    "name": "ebony_tree",
     "decorators": [
       {
         "type": "minecraft:cocoa",
@@ -33,7 +33,7 @@
         {
           "weight": 4,
           "data": {
-            "Name": "bloomingnature:baobab_leaves",
+            "Name": "bloomingnature:ebony_leaves",
             "Properties": {
               "distance": "7",
               "persistent": "false",
@@ -44,7 +44,7 @@
         {
           "weight": 11,
           "data": {
-            "Name": "bloomingnature:baobab_leaves",
+            "Name": "bloomingnature:ebony_leaves",
             "Properties": {
               "distance": "7",
               "persistent": "false"

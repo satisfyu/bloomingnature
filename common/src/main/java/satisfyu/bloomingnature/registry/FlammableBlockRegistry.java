@@ -35,7 +35,9 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.CHESTNUT_LOG.get(), ObjectRegistry.CHESTNUT_WOOD.get(), ObjectRegistry.STRIPPED_CHESTNUT_LOG.get(), ObjectRegistry.STRIPPED_CHESTNUT_WOOD.get(),
                 ObjectRegistry.PALM_LOG.get(), ObjectRegistry.PALM_WOOD.get(), ObjectRegistry.STRIPPED_PALM_LOG.get(), ObjectRegistry.STRIPPED_PALM_WOOD.get(),
                 ObjectRegistry.ASPEN_LOG.get(), ObjectRegistry.ASPEN_WOOD.get(), ObjectRegistry.STRIPPED_ASPEN_LOG.get(), ObjectRegistry.STRIPPED_ASPEN_WOOD.get(),
-                ObjectRegistry.EBONY_LOG.get(), ObjectRegistry.EBONY_WOOD.get(), ObjectRegistry.STRIPPED_EBONY_LOG.get(), ObjectRegistry.STRIPPED_EBONY_WOOD.get()
+                ObjectRegistry.EBONY_LOG.get(), ObjectRegistry.EBONY_WOOD.get(), ObjectRegistry.STRIPPED_EBONY_LOG.get(), ObjectRegistry.STRIPPED_EBONY_WOOD.get(),
+                ObjectRegistry.BAOBAB_LOG.get(), ObjectRegistry.BAOBAB_WOOD.get(), ObjectRegistry.STRIPPED_BAOBAB_LOG.get(), ObjectRegistry.STRIPPED_BAOBAB_WOOD.get()
+
         );
 
         add(30, 60,
@@ -47,7 +49,9 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.CHESTNUT_LEAVES.get(),
                 ObjectRegistry.PALM_LEAVES.get(),
                 ObjectRegistry.ASPEN_LEAVES.get(),
-                ObjectRegistry.EBONY_LEAVES.get()
+                ObjectRegistry.EBONY_LEAVES.get(),
+                ObjectRegistry.ORANGE_LEAVES.get()
+
         );
     }
 

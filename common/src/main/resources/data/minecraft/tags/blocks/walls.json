@@ -1,8 +1,9 @@
 {
-  "replace": false,
   "values": [
     "bloomingnature:red_brick_wall",
-    "bloomingnature:travertin_brick_wall",
-    "bloomingnature:laterit_brick_wall"
+    "bloomingnature:brown_mushroom_brick_wall",
+    "bloomingnature:mushroom_brick_wall",
+    "bloomingnature:laterit_brick_wall",
+    "bloomingnature:travertin_brick_wall"
   ]
 }

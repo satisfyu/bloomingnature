@@ -10,11 +10,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
@@ -288,6 +285,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> POTTED_ASPEN_SAPLING = registerWithoutItem("potted_aspen_sapling", () -> new FlowerPotBlock(ASPEN_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> POTTED_BAOBAB_SAPLING = registerWithoutItem("potted_baobab_sapling", () -> new FlowerPotBlock(BAOBAB_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> POTTED_EBONY_SAPLING = registerWithoutItem("potted_ebony_sapling", () -> new FlowerPotBlock(EBONY_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistrySupplier<Block> POTTED_CHESTNUT_SAPLING = registerWithoutItem("potted_chestnut_sapling", () -> new FlowerPotBlock(CHESTNUT_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 
     public static void init() {
         ITEMS.register();
@@ -363,8 +361,25 @@ public class ObjectRegistry {
     }
     
     public static void commonInit() {
-        FuelRegistry.register(300, PALM_FENCE.get(), PALM_FENCE_GATE.get(), PALM_PLANKS.get(), PALM_LOG.get(), PALM_WOOD.get(), STRIPPED_PALM_LOG.get(), STRIPPED_PALM_WOOD.get());
-
+        FuelRegistry.register(300, PALM_FENCE.get(), PALM_FENCE_GATE.get(), PALM_PLANKS.get(), PALM_LOG.get(), PALM_WOOD.get(),
+                STRIPPED_PALM_LOG.get(), STRIPPED_PALM_WOOD.get(), BAOBAB_PLANKS.get(), BAOBAB_SLAB.get(), BAOBAB_STAIRS.get(), BAOBAB_FENCE.get(),
+                SWAMP_OAK_PLANKS.get(), SWAMP_OAK_SLAB.get(), SWAMP_OAK_STAIRS.get(), SWAMP_OAK_FENCE.get(), SWAMP_OAK_FENCE_GATE.get(),
+                SWAMP_CYPRESS_PLANKS.get(), SWAMP_CYPRESS_SLAB.get(), SWAMP_CYPRESS_STAIRS.get(), SWAMP_CYPRESS_FENCE.get(), SWAMP_CYPRESS_FENCE_GATE.get(),
+                LARCH_PLANKS.get(), LARCH_SLAB.get(), LARCH_STAIRS.get(), LARCH_FENCE.get(), LARCH_FENCE_GATE.get(), BAOBAB_FENCE_GATE.get(),
+                FIR_PLANKS.get(), FIR_SLAB.get(), FIR_STAIRS.get(), FIR_FENCE.get(), FIR_FENCE_GATE.get(),
+                CHESTNUT_PLANKS.get(), CHESTNUT_SLAB.get(), CHESTNUT_STAIRS.get(), CHESTNUT_FENCE.get(), CHESTNUT_FENCE_GATE.get(),
+                PALM_PLANKS.get(), PALM_SLAB.get(), PALM_STAIRS.get(), PALM_FENCE.get(), PALM_FENCE_GATE.get(),
+                ASPEN_PLANKS.get(), ASPEN_SLAB.get(), ASPEN_STAIRS.get(), ASPEN_FENCE.get(), ASPEN_FENCE_GATE.get(),
+                EBONY_PLANKS.get(), EBONY_SLAB.get(), EBONY_STAIRS.get(), EBONY_FENCE.get(), EBONY_FENCE_GATE.get(),
+                SWAMP_OAK_LOG.get(), SWAMP_OAK_WOOD.get(), STRIPPED_SWAMP_OAK_LOG.get(), STRIPPED_SWAMP_OAK_WOOD.get(),
+                SWAMP_CYPRESS_LOG.get(), SWAMP_CYPRESS_WOOD.get(), STRIPPED_SWAMP_CYPRESS_LOG.get(), STRIPPED_SWAMP_CYPRESS_WOOD.get(),
+                LARCH_LOG.get(), LARCH_WOOD.get(), STRIPPED_LARCH_LOG.get(), STRIPPED_LARCH_WOOD.get(),
+                FIR_LOG.get(), FIR_WOOD.get(), STRIPPED_FIR_LOG.get(), STRIPPED_FIR_WOOD.get(),
+                CHESTNUT_LOG.get(), CHESTNUT_WOOD.get(), STRIPPED_CHESTNUT_LOG.get(), STRIPPED_CHESTNUT_WOOD.get(),
+                PALM_LOG.get(), PALM_WOOD.get(), STRIPPED_PALM_LOG.get(), STRIPPED_PALM_WOOD.get(),
+                ASPEN_LOG.get(), ASPEN_WOOD.get(), STRIPPED_ASPEN_LOG.get(), STRIPPED_ASPEN_WOOD.get(),
+                EBONY_LOG.get(), EBONY_WOOD.get(), STRIPPED_EBONY_LOG.get(), STRIPPED_EBONY_WOOD.get(),
+                BAOBAB_LOG.get(), BAOBAB_WOOD.get(), STRIPPED_BAOBAB_LOG.get(), STRIPPED_BAOBAB_WOOD.get());
     }
 
     private static ButtonBlock woodenButton(BlockSetType blockSetType, FeatureFlag... featureFlags) {

@@ -110,6 +110,6 @@ public class BoarModel<T extends Pig> extends HierarchicalModel<T> {
 
     @Override
     public ModelPart root() {
-        return root();
+        return null;
     }
 }

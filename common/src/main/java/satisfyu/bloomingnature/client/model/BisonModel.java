@@ -82,7 +82,6 @@ public class BisonModel<T extends Entity> extends HierarchicalModel<T> {
         this.legbackleft.xRot = this.legfrontright.xRot;
     }
 
-    @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         legbackleft.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         legbackright.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
@@ -93,6 +92,6 @@ public class BisonModel<T extends Entity> extends HierarchicalModel<T> {
 
     @Override
     public ModelPart root() {
-        return root();
+        return null;
     }
 }

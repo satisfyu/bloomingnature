@@ -52,15 +52,15 @@ public class BoatsAndSignsRegistry {
     public static final RegistrySupplier<Block> FIR_SIGN = ObjectRegistry.registerWithoutItem("fir_sign", () -> TerraformSignHelper.getSign(FIR_SIGN_TEXTURE));
     public static final RegistrySupplier<Block> FIR_WALL_SIGN = ObjectRegistry.registerWithoutItem("fir_wall_sign", () -> TerraformSignHelper.getWallSign(FIR_SIGN_TEXTURE));
     public static final RegistrySupplier<Item> FIR_SIGN_ITEM = ObjectRegistry.registerItem("fir_sign", () -> new SignItem(ObjectRegistry.getSettings().stacksTo(16), FIR_SIGN.get(), FIR_WALL_SIGN.get()));
-    public static final RegistrySupplier<Block> SWAMP_CYPRESS_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_sign", () -> TerraformSignHelper.getSign(SWAMP_CYPRESS_SIGN_TEXTURE));
-    public static final RegistrySupplier<Block> SWAMP_CYPRESS_WALL_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_wall_sign", () -> TerraformSignHelper.getWallSign(SWAMP_CYPRESS_SIGN_TEXTURE));
-    public static final RegistrySupplier<Item> SWAMP_CYPRESS_SIGN_ITEM = ObjectRegistry.registerItem("swamp_cypress_sign", () -> new SignItem(ObjectRegistry.getSettings().stacksTo(16), SWAMP_CYPRESS_SIGN.get(), SWAMP_CYPRESS_WALL_SIGN.get()));
-    public static final RegistrySupplier<Block> CHESTNUT_SIGN = ObjectRegistry.registerWithoutItem("chestnut_sign", () -> TerraformSignHelper.getSign(CHESTNUT_SIGN_TEXTURE));
+      public static final RegistrySupplier<Block> CHESTNUT_SIGN = ObjectRegistry.registerWithoutItem("chestnut_sign", () -> TerraformSignHelper.getSign(CHESTNUT_SIGN_TEXTURE));
     public static final RegistrySupplier<Block> CHESTNUT_WALL_SIGN = ObjectRegistry.registerWithoutItem("chestnut_wall_sign", () -> TerraformSignHelper.getWallSign(CHESTNUT_SIGN_TEXTURE));
     public static final RegistrySupplier<Item> CHESTNUT_SIGN_ITEM = ObjectRegistry.registerItem("chestnut_sign", () -> new SignItem(ObjectRegistry.getSettings().stacksTo(16), CHESTNUT_SIGN.get(), CHESTNUT_WALL_SIGN.get()));
     public static final RegistrySupplier<Block> EBONY_SIGN = ObjectRegistry.registerWithoutItem("ebony_sign", () -> TerraformSignHelper.getSign(EBONY_SIGN_TEXTURE));
     public static final RegistrySupplier<Block> EBONY_WALL_SIGN = ObjectRegistry.registerWithoutItem("ebony_wall_sign", () -> TerraformSignHelper.getWallSign(EBONY_SIGN_TEXTURE));
     public static final RegistrySupplier<Item> EBONY_SIGN_ITEM = ObjectRegistry.registerItem("ebony_sign", () -> new SignItem(ObjectRegistry.getSettings().stacksTo(16), EBONY_SIGN.get(), EBONY_WALL_SIGN.get()));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_sign", () -> TerraformSignHelper.getSign(SWAMP_CYPRESS_SIGN_TEXTURE));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_WALL_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_wall_sign", () -> TerraformSignHelper.getWallSign(SWAMP_CYPRESS_SIGN_TEXTURE));
+    public static final RegistrySupplier<Item> SWAMP_CYPRESS_SIGN_ITEM = ObjectRegistry.registerItem("swamp_cypress_sign", () -> new SignItem(ObjectRegistry.getSettings().stacksTo(16), SWAMP_CYPRESS_SIGN.get(), SWAMP_CYPRESS_WALL_SIGN.get()));
 
     public static final ResourceLocation ASPEN_HANGING_SIGN_TEXTURE = new BloomingNatureIdentifier("entity/signs/hanging/aspen");
     public static final ResourceLocation ASPEN_HANGING_SIGN_GUI_TEXTURE = new BloomingNatureIdentifier("textures/gui/hanging_signs/aspen");
@@ -74,13 +74,12 @@ public class BoatsAndSignsRegistry {
     public static final ResourceLocation PALM_HANGING_SIGN_GUI_TEXTURE = new BloomingNatureIdentifier("textures/gui/hanging_signs/palm");
     public static final ResourceLocation FIR_HANGING_SIGN_TEXTURE = new BloomingNatureIdentifier("entity/signs/hanging/fir");
     public static final ResourceLocation FIR_HANGING_SIGN_GUI_TEXTURE = new BloomingNatureIdentifier("textures/gui/hanging_signs/fir");
-    public static final ResourceLocation SWAMP_CYPRESS_HANGING_SIGN_TEXTURE = new BloomingNatureIdentifier("entity/signs/hanging/swamp_cypress");
-    public static final ResourceLocation SWAMP_CYPRESS_HANGING_SIGN_GUI_TEXTURE = new BloomingNatureIdentifier("textures/gui/hanging_signs/swamp_cypress");
     public static final ResourceLocation CHESTNUT_HANGING_SIGN_TEXTURE = new BloomingNatureIdentifier("entity/signs/hanging/chestnut");
     public static final ResourceLocation CHESTNUT_HANGING_SIGN_GUI_TEXTURE = new BloomingNatureIdentifier("textures/gui/hanging_signs/chestnut");
     public static final ResourceLocation EBONY_HANGING_SIGN_TEXTURE = new BloomingNatureIdentifier("entity/signs/hanging/ebony");
     public static final ResourceLocation EBONY_HANGING_SIGN_GUI_TEXTURE = new BloomingNatureIdentifier("textures/gui/hanging_signs/ebony");
-
+    public static final ResourceLocation SWAMP_CYPRESS_HANGING_SIGN_TEXTURE = new BloomingNatureIdentifier("entity/signs/hanging/swamp_cypress");
+    public static final ResourceLocation SWAMP_CYPRESS_HANGING_SIGN_GUI_TEXTURE = new BloomingNatureIdentifier("textures/gui/hanging_signs/swamp_cypress");
 
 
     public static final RegistrySupplier<Block> ASPEN_HANGING_SIGN = ObjectRegistry.registerWithoutItem("aspen_hanging_sign", () -> TerraformSignHelper.getHangingSign(ASPEN_HANGING_SIGN_TEXTURE, ASPEN_HANGING_SIGN_GUI_TEXTURE));
@@ -101,15 +100,15 @@ public class BoatsAndSignsRegistry {
     public static final RegistrySupplier<Block> FIR_HANGING_SIGN = ObjectRegistry.registerWithoutItem("fir_hanging_sign", () -> TerraformSignHelper.getHangingSign(FIR_HANGING_SIGN_TEXTURE, FIR_HANGING_SIGN_GUI_TEXTURE));
     public static final RegistrySupplier<Block> FIR_WALL_HANGING_SIGN = ObjectRegistry.registerWithoutItem("fir_wall_hanging_sign", () -> TerraformSignHelper.getWallHangingSign(FIR_HANGING_SIGN_TEXTURE, FIR_HANGING_SIGN_GUI_TEXTURE));
     public static final RegistrySupplier<Item> FIR_HANGING_SIGN_ITEM = ObjectRegistry.registerItem("fir_hanging_sign", () -> new HangingSignItem(FIR_HANGING_SIGN.get(), FIR_WALL_HANGING_SIGN.get(), ObjectRegistry.getSettings().stacksTo(16)));
-    public static final RegistrySupplier<Block> SWAMP_CYPRESS_HANGING_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_hanging_sign", () -> TerraformSignHelper.getHangingSign(SWAMP_CYPRESS_SIGN_TEXTURE, SWAMP_CYPRESS_HANGING_SIGN_TEXTURE));
-    public static final RegistrySupplier<Block> SWAMP_CYPRESS_WALL_HANGING_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_wall_hanging_sign", () -> TerraformSignHelper.getWallHangingSign(SWAMP_CYPRESS_HANGING_SIGN_TEXTURE, SWAMP_CYPRESS_HANGING_SIGN_GUI_TEXTURE));
-    public static final RegistrySupplier<Item> SWAMP_CYPRESS_HANGING_SIGN_ITEM = ObjectRegistry.registerItem("swamp_cypress_hanging_sign", () -> new HangingSignItem(SWAMP_CYPRESS_HANGING_SIGN.get(), SWAMP_CYPRESS_WALL_HANGING_SIGN.get(), ObjectRegistry.getSettings().stacksTo(16)));
     public static final RegistrySupplier<Block> CHESTNUT_HANGING_SIGN = ObjectRegistry.registerWithoutItem("chestnut_hanging_sign", () -> TerraformSignHelper.getHangingSign(CHESTNUT_HANGING_SIGN_TEXTURE, CHESTNUT_HANGING_SIGN_GUI_TEXTURE));
     public static final RegistrySupplier<Block> CHESTNUT_WALL_HANGING_SIGN = ObjectRegistry.registerWithoutItem("chestnut_wall_hanging_sign", () -> TerraformSignHelper.getWallHangingSign(CHESTNUT_HANGING_SIGN_TEXTURE, CHESTNUT_HANGING_SIGN_GUI_TEXTURE));
     public static final RegistrySupplier<Item> CHESTNUT_HANGING_SIGN_ITEM = ObjectRegistry.registerItem("chestnut_hanging_sign", () -> new HangingSignItem(CHESTNUT_HANGING_SIGN.get(), CHESTNUT_WALL_HANGING_SIGN.get(), ObjectRegistry.getSettings().stacksTo(16)));
     public static final RegistrySupplier<Block> EBONY_HANGING_SIGN = ObjectRegistry.registerWithoutItem("ebony_hanging_sign", () -> TerraformSignHelper.getHangingSign(EBONY_HANGING_SIGN_TEXTURE, EBONY_HANGING_SIGN_GUI_TEXTURE));
     public static final RegistrySupplier<Block> EBONY_WALL_HANGING_SIGN = ObjectRegistry.registerWithoutItem("ebony_wall_hanging_sign", () -> TerraformSignHelper.getWallHangingSign(EBONY_HANGING_SIGN_TEXTURE, EBONY_HANGING_SIGN_GUI_TEXTURE));
     public static final RegistrySupplier<Item> EBONY_HANGING_SIGN_ITEM = ObjectRegistry.registerItem("ebony_hanging_sign", () -> new HangingSignItem(EBONY_HANGING_SIGN.get(), EBONY_WALL_HANGING_SIGN.get(), ObjectRegistry.getSettings().stacksTo(16)));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_HANGING_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_hanging_sign", () -> TerraformSignHelper.getHangingSign(SWAMP_CYPRESS_HANGING_SIGN_TEXTURE, SWAMP_CYPRESS_HANGING_SIGN_GUI_TEXTURE));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_WALL_HANGING_SIGN = ObjectRegistry.registerWithoutItem("swamp_cypress_wall_hanging_sign", () -> TerraformSignHelper.getWallHangingSign(SWAMP_CYPRESS_HANGING_SIGN_TEXTURE, SWAMP_CYPRESS_HANGING_SIGN_GUI_TEXTURE));
+    public static final RegistrySupplier<Item> SWAMP_CYPRESS_HANGING_SIGN_ITEM = ObjectRegistry.registerItem("swamp_cypress_hanging_sign", () -> new HangingSignItem(SWAMP_CYPRESS_HANGING_SIGN.get(), SWAMP_CYPRESS_WALL_HANGING_SIGN.get(), ObjectRegistry.getSettings().stacksTo(16)));
 
 
 

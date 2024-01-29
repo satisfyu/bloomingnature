@@ -288,53 +288,10 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> POTTED_CHESTNUT_SAPLING = registerWithoutItem("potted_chestnut_sapling", () -> new FlowerPotBlock(CHESTNUT_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 
     public static void init() {
+        BloomingNature.LOGGER.debug("Registering Mod Block and Items for " + BloomingNature.MOD_ID);
         ITEMS.register();
         BLOCKS.register();
     }
-
-    public static void registerCompostable() {
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CATTAIL.get(), 0.4F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.REED.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.HYSSOP.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MOUNTAIN_SNOWBELL.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CARDINAL.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MOUNTAIN_LAUREL.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BIRD_OF_PARADISE.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.WHITE_ORCHID.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.DAPHNE.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BOTTLEBRUSHES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BLUEBELL.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEGONIE.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GOATSBEARD.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GENISTEAE.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FOXGLOVE_WHITE.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FOXGLOVE_PINK.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FREESIA_YELLOW.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FREESIA_PINK.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LUPINE_BLUE.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LUPINE_PURPLE.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEACH_BUSH.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEACH_GRASS.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BEACH_BUSH_TALL.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.ASPEN_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FIR_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BAOBAB_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_CYPRESS_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_OAK_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.EBONY_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LARCH_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHESTNUT_SAPLING.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.ASPEN_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FIR_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.BAOBAB_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SWAMP_OAK_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.EBONY_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.LARCH_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHESTNUT_LEAVES.get(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.ORANGE_LEAVES.get(), 0.3F);
-    }
-
 
     private static RegistrySupplier<Block> registerLog(String path) {
         return registerWithItem(path, () -> new RotatedPillarBlock(getLogBlockSettings()));

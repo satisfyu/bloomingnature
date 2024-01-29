@@ -10,11 +10,11 @@
             "item": "minecraft:glass_pane"
         },
         "G": {
-            "item": "bloomingnature:fir_planks"
+            "item": "bloomingnature:larch_planks"
         }
     },
     "result": {
-        "item": "bloomingnature:fir_window",
+        "item": "bloomingnature:larch_window",
         "count": 16
     }
 }

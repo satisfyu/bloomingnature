@@ -60,13 +60,13 @@
         }
       }
     },
-    "foliage_placer": {
-      "type": "minecraft:random_spread_foliage_placer",
-      "radius": 2,
-      "offset": 2,
-      "foliage_height": 2,
-      "leaf_placement_attempts": 33
-    },
+  "foliage_placer": {
+    "radius": 1,
+    "offset": 1,
+    "height": 3,
+    "offset_chance": 0.5,
+    "type": "bloomingnature:birch_foliage_placer"
+  },
     "decorators": [
       {
         "type": "minecraft:alter_ground",

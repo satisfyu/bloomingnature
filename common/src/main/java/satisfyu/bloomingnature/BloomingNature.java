@@ -20,14 +20,12 @@ public class BloomingNature {
         TabRegistry.init();
         PlacerTypesRegistry.init();
         SoundRegistry.init();
-
         DoApiExpectPlatform.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("bushy_leaves"), false);
     }
 
 
 
     public static void commonInit() {
-        ObjectRegistry.registerCompostable();
         FlammableBlockRegistry.init();
         AxeItemHooks.addStrippable(ObjectRegistry.ASPEN_LOG.get(), ObjectRegistry.STRIPPED_ASPEN_LOG.get());
         AxeItemHooks.addStrippable(ObjectRegistry.ASPEN_WOOD.get(), ObjectRegistry.STRIPPED_ASPEN_WOOD.get());
@@ -45,6 +43,8 @@ public class BloomingNature {
         AxeItemHooks.addStrippable(ObjectRegistry.LARCH_WOOD.get(), ObjectRegistry.STRIPPED_LARCH_WOOD.get());
         AxeItemHooks.addStrippable(ObjectRegistry.EBONY_LOG.get(), ObjectRegistry.STRIPPED_EBONY_LOG.get());
         AxeItemHooks.addStrippable(ObjectRegistry.EBONY_WOOD.get(), ObjectRegistry.STRIPPED_EBONY_WOOD.get());
+        AxeItemHooks.addStrippable(ObjectRegistry.CHESTNUT_LOG.get(), ObjectRegistry.STRIPPED_CHESTNUT_LOG.get());
+        AxeItemHooks.addStrippable(ObjectRegistry.CHESTNUT_WOOD.get(), ObjectRegistry.STRIPPED_CHESTNUT_WOOD.get());
     }
 }
 

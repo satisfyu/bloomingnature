@@ -51,8 +51,6 @@ public class CompostableRegistry {
         registerCompostableItem(ObjectRegistry.ORANGE_LEAVES, 0.3F);
     }
 
-
-
     public static <T extends ItemLike> void registerCompostableItem(RegistrySupplier<T> item, float chance) {
         if (item.get().asItem() != Items.AIR) {
             ComposterBlock.COMPOSTABLES.put(item.get(), chance);

@@ -53,7 +53,7 @@ public class BloomingNatureClient {
                 ObjectRegistry.SWAMP_CYPRESS_SAPLING.get(), ObjectRegistry.FIR_SAPLING.get(), ObjectRegistry.CHESTNUT_DOOR.get(), ObjectRegistry.CHESTNUT_SAPLING.get(),
                 ObjectRegistry.CHESTNUT_WINDOW.get(), ObjectRegistry.CHESTNUT_TRAPDOOR.get(), ObjectRegistry.EBONY_WINDOW.get(), ObjectRegistry.EBONY_DOOR.get(),
                 ObjectRegistry.EBONY_SAPLING.get(), ObjectRegistry.POTTED_EBONY_SAPLING.get(), ObjectRegistry.EBONY_TRAPDOOR.get(), ObjectRegistry.MOSSY_LATERIT.get(),
-                ObjectRegistry.FIR_LEAVES.get(), ObjectRegistry.FLOATING_LEAVES.get()
+                ObjectRegistry.FIR_LEAVES.get(), ObjectRegistry.FLOATING_LEAVES.get(), ObjectRegistry.POTTED_CHESTNUT_SAPLING.get()
 
                 );
 

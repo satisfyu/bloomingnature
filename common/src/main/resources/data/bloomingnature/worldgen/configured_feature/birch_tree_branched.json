@@ -56,10 +56,11 @@
       "height_rand_b": 5
     },
     "foliage_placer": {
-      "type": "minecraft:blob_foliage_placer",
-      "radius": 2,
+      "radius": 1,
       "offset": 1,
-      "height": 3
+      "height": 3,
+      "offset_chance": 0.5,
+      "type": "bloomingnature:birch_foliage_placer"
     },
     "decorators": [
       {

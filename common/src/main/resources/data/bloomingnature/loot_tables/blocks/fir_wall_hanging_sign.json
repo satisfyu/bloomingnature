@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bloomingnature:ebony_hanging_sign"
+          "name": "bloomingnature:fir_hanging_sign"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "bloomingnature:blocks/ebony_hanging_sign"
+  "random_sequence": "bloomingnature:blocks/fir_hanging_sign"
 }

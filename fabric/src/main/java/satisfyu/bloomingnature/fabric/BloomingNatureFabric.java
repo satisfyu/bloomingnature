@@ -18,6 +18,7 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import satisfyu.bloomingnature.BloomingNature;
+import satisfyu.bloomingnature.registry.CompostableRegistry;
 import satisfyu.bloomingnature.registry.EntityRegistry;
 import satisfyu.bloomingnature.registry.TagsRegistry;
 import satisfyu.bloomingnature.util.BloomingNatureIdentifier;
@@ -31,6 +32,7 @@ public class BloomingNatureFabric implements ModInitializer {
     public void onInitialize() {
         BloomingNature.init();
         BloomingNature.commonInit();
+        CompostableRegistry.init();
         addSpawns();
         addBiomeModification();
     }

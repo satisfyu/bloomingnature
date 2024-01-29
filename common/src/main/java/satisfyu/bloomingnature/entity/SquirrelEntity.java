@@ -57,6 +57,12 @@ public class SquirrelEntity extends Animal {
     }
 
     @Override
+    public int getMaxHeadYRot() {
+        return 30;
+    }
+
+
+    @Override
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));

@@ -14,6 +14,7 @@ public class BloomingNatureForge {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(BloomingNature.MOD_ID, modEventBus);
         BloomingNature.init();
+
         modEventBus.addListener(this::commonSetup);
     }
 

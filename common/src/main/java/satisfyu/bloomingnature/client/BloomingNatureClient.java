@@ -57,6 +57,8 @@ public class BloomingNatureClient {
 
                 );
 
+        registerBlockRenderer();
+
         ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.MOSSY_LATERIT.get(), ObjectRegistry.EBONY_LEAVES.get());
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> { if (world == null || pos == null) {return -1;}return BiomeColors.getAverageFoliageColor(world, pos);}, ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.EBONY_LEAVES.get());
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {if (world == null || pos == null) {return -1;}return BiomeColors.getAverageGrassColor(world, pos);}, ObjectRegistry.MOSSY_LATERIT.get());
@@ -69,7 +71,6 @@ public class BloomingNatureClient {
     public static void preInitClient() {
         registerEntityRenderers();
         registerEntityModelLayer();
-        registerBlockRenderer();
     }
 
     private static void registerBlockRenderer() {

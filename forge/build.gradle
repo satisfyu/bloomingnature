@@ -16,6 +16,12 @@ loom {
     }
 }
 
+
+def jarFileName = 'letsdo-bloomingnature-forge'
+
+archivesBaseName = jarFileName
+
+
 configurations {
     common
     shadowCommon

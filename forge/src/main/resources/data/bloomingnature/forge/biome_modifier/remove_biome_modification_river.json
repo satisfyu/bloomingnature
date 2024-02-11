@@ -1,8 +1,6 @@
 {
   "type": "forge:remove_features",
-  "biomes": [
-    "minecraft:river"
-  ],
+  "biomes": "minecraft:river",
   "features": [
     "minecraft:trees_water",
     "minecraft:flower_default"

@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import satisfyu.bloomingnature.BloomingNature;
+import satisfyu.bloomingnature.forge.registry.BloomingNatureBiomeModifiers;
 import satisfyu.bloomingnature.registry.CompostableRegistry;
 
 @Mod(BloomingNature.MOD_ID)
@@ -14,6 +15,7 @@ public class BloomingNatureForge {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         EventBuses.registerModEventBus(BloomingNature.MOD_ID, modEventBus);
         BloomingNature.init();
+        BloomingNatureBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
     }

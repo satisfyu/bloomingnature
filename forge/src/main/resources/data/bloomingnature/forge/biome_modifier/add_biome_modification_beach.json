@@ -1,11 +1,10 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "minecraft:beach"
-  ],
+  "biomes": "minecraft:beach",
   "features": [
     "bloomingnature:beach_palm",
     "bloomingnature:beach_flowers"
   ],
   "step": "vegetal_decoration"
 }
+

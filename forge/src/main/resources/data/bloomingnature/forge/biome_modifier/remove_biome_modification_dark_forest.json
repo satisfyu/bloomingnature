@@ -1,10 +1,6 @@
 {
   "type": "forge:remove_features",
-  "biomes": [
-    "minecraft:dark_forest"
-  ],
-  "features": [
-    "minecraft:dark_forest_vegetation"
-  ],
+  "biomes": "minecraft:dark_forest",
+  "features": "minecraft:dark_forest_vegetation",
   "step": "vegetal_decoration"
 }

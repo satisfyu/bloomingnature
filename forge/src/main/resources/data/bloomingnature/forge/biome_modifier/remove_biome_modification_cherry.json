@@ -1,8 +1,6 @@
 {
   "type": "forge:remove_features",
-  "biomes": [
-    "minecraft:cherry_grove"
-  ],
+  "biomes": "minecraft:cherry_grove",
   "features": [
     "minecraft:trees_cherry",
     "minecraft:flower_cherry"

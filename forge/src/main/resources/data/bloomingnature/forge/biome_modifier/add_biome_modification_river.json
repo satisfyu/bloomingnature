@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:river",
+  "features": [
+    "bloomingnature:river_trees"
+  ],
+  "step": "vegetal_decoration"
+}
+

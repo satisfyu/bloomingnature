@@ -1,8 +1,6 @@
 {
   "type": "forge:remove_features",
-  "biomes": [
-    "minecraft:forest"
-  ],
+  "biomes": "minecraft:forest",
   "features": [
     "minecraft:trees_birch_and_oak",
     "minecraft:forest_flowers"

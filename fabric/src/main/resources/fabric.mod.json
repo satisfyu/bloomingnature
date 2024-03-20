@@ -8,6 +8,7 @@
     "satisfy"
   ],
   "contact": {
+    "homepage": "https://legacy.curseforge.com/minecraft/mc-mods/lets-do-bloomingnature",
     "sources": "https://github.com/satisfyu/bloomingnature"
   },
   "license": "ARR",
@@ -25,6 +26,6 @@
     "fabric": "*",
     "minecraft": ">=1.20",
     "architectury": ">=9.0.8",
-    "doapi": ">=1.2.8"
+    "doapi": ">=1.2.9"
   }
 }

@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-license = "ARR"
+license = "Custom"
 
 [[mods]]
 modId = "bloomingnature"

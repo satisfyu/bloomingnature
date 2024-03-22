@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "bloomingnature",
   "version": "${version}",
-  "name": "Blooming Nature",
+  "name": "BloomingNature",
   "description": "Explore a redesigned overworld: new animals, reshaped biomes, livelier landscapes.",
   "authors": [
     "satisfy"
@@ -11,15 +11,15 @@
     "homepage": "https://legacy.curseforge.com/minecraft/mc-mods/lets-do-bloomingnature",
     "sources": "https://github.com/satisfyu/bloomingnature"
   },
-  "license": "ARR",
+  "license": "Custom",
   "icon": "pack.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "satisfyu.bloomingnature.fabric.BloomingNatureFabric"
+      "satisfy.bloomingnature.fabric.BloomingNatureFabric"
     ],
     "client": [
-      "satisfyu.bloomingnature.fabric.client.BloomingNatureClientFabric"
+      "satisfy.bloomingnature.fabric.client.BloomingNatureClientFabric"
     ]
   },
   "depends": {

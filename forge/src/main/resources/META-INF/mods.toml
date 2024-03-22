@@ -5,7 +5,7 @@ license = "Custom"
 [[mods]]
 modId = "bloomingnature"
 version = "${version}"
-displayName = "BloomingNature"
+displayName = "[Let's Do] BloomingNature"
 authors = "satisfy"
 description = '''
 Explore a redesigned overworld: new animals, reshaped biomes, livelier landscapes

@@ -1,19 +1,18 @@
 package satisfy.bloomingnature.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.BloomingNature;
 import satisfy.bloomingnature.client.model.TurkeyModel;
 import satisfy.bloomingnature.entity.TurkeyEntity;
 
 public class TurkeyRenderer extends MobRenderer<TurkeyEntity, TurkeyModel<TurkeyEntity>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(BloomingNature.MOD_ID, "textures/entity/turkey.png");
-    private static final ResourceLocation TEXTURE_EASTEREGG = new ResourceLocation(BloomingNature.MOD_ID, "textures/entity/turkey_easteregg.png");
 
     public TurkeyRenderer(EntityRendererProvider.Context context) {
         super(context, new TurkeyModel<>(context.bakeLayer(TurkeyModel.LAYER_LOCATION)), 0.7f);
@@ -26,14 +25,7 @@ public class TurkeyRenderer extends MobRenderer<TurkeyEntity, TurkeyModel<Turkey
     }
 
     @Override
-    public ResourceLocation getTextureLocation(TurkeyEntity entity) {
-        if (entity.hasCustomName()) {
-            String nameString = ChatFormatting.stripFormatting(entity.getCustomName().getString());
-            if (nameString != null && !nameString.isEmpty()) {
-                return TEXTURE_EASTEREGG;
-            }
-        }
-
+    public @NotNull ResourceLocation getTextureLocation(TurkeyEntity entity) {
         return TEXTURE;
     }
 
@@ -47,4 +39,3 @@ public class TurkeyRenderer extends MobRenderer<TurkeyEntity, TurkeyModel<Turkey
         super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
     }
 }
-

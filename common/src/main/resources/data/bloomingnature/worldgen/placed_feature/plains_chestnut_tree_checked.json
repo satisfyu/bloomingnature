@@ -6,12 +6,16 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "minecraft:oak_sapling",
+          "Name": "bloomingnature:chestnut_sapling",
           "Properties": {
             "stage": "0"
           }
         }
       }
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
     }
   ]
 }

@@ -22,8 +22,6 @@ public class BloomingNature {
         DoApiExpectPlatform.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("bushy_leaves"), false);
     }
 
-
-
     public static void commonInit() {
         FlammableBlockRegistry.init();
         AxeItemHooks.addStrippable(ObjectRegistry.ASPEN_LOG.get(), ObjectRegistry.STRIPPED_ASPEN_LOG.get());

@@ -24,13 +24,18 @@
         }
       }
     },
+    "foliage_placer": {
+      "type": "bloomingnature:palm_foliage_placer",
+      "leaf_length": 2,
+      "offset": 0,
+      "radius": 2
+    },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
         "Name": "bloomingnature:palm_leaves",
         "Properties": {
           "distance": "7",
-          "distance_9": "9",
           "persistent": "false",
           "waterlogged": "false"
         }
@@ -38,14 +43,9 @@
     },
     "trunk_placer": {
       "type": "bloomingnature:crooked_trunk_placer",
-      "base_height": 9,
+      "base_height": 5,
       "height_rand_a": 3,
       "height_rand_b": 0
-    },
-    "foliage_placer": {
-      "type": "bloomingnature:palm_foliage_placer",
-      "radius": 0,
-      "offset": 0
     },
     "decorators": []
   }

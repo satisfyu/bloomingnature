@@ -7,82 +7,65 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import org.jetbrains.annotations.NotNull;
-import satisfy.bloomingnature.registry.ObjectRegistry;
 import satisfy.bloomingnature.registry.PlacerTypesRegistry;
 
 public class PalmFoliagePlacer extends FoliagePlacer {
-    public static final Codec<PalmFoliagePlacer> CODEC = RecordCodecBuilder.create((placer) -> foliagePlacerParts(placer).apply(placer, PalmFoliagePlacer::new));
+    private final int leafLength;
+    public int foliageHeight(RandomSource p_225719_, int p_225720_, TreeConfiguration p_225721_) {return 5;}
+    public static final Codec<PalmFoliagePlacer> CODEC = RecordCodecBuilder.create(instance ->
+            foliagePlacerParts(instance).and(
+                    Codec.intRange(0, 16).fieldOf("leaf_length").forGetter(placer -> placer.leafLength)
+            ).apply(instance, PalmFoliagePlacer::new)
+    );
 
-    public PalmFoliagePlacer(IntProvider pRadius, IntProvider pOffset) {
-        super(pRadius, pOffset);
+    public PalmFoliagePlacer(IntProvider range, IntProvider rangeOffset, int leafLength) {
+        super(range, rangeOffset);
+        this.leafLength = leafLength;
     }
 
-    @Override
     protected @NotNull FoliagePlacerType<?> type() {
         return PlacerTypesRegistry.PALM_FOLIAGE_PLACER.get();
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter foliageSetter, RandomSource pRandom, TreeConfiguration pConfig, int i, FoliageAttachment pAttachment, int j, int k, int l) {
-        BlockPos startingPos = pAttachment.pos();
+    protected void createFoliage(LevelSimulatedReader p_225723_, FoliageSetter p_225724_, RandomSource p_225725_, TreeConfiguration p_225726_, int p_225727_, FoliagePlacer.FoliageAttachment p_225728_, int p_225729_, int p_225730_, int p_225731_) {
+        BlockPos blockpos = p_225728_.pos();
+        int attempts = p_225725_.nextInt(this.leafLength) + 3;
+        tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos);
+        BlockPos.MutableBlockPos blockpos$mutableblockpos = blockpos.mutable();
+        for (int i = 0; i > -1; --i) {
+            int j = 1 + i;
+            this.placeLeavesRow(p_225723_, p_225724_, p_225725_, p_225726_, blockpos, j, i, false);
+        }
+        for (int i = 0; i < 10; ++i) {
+            blockpos$mutableblockpos.setWithOffset(blockpos, p_225725_.nextInt(p_225730_) - p_225725_.nextInt(p_225730_), p_225725_.nextInt(p_225730_) - p_225730_ + 2, p_225725_.nextInt(p_225730_) - p_225725_.nextInt(p_225730_));
+            tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos$mutableblockpos);
+        }
 
-        tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, startingPos);
+        for (Direction direction : Direction.Plane.HORIZONTAL) {
+            BlockPos.MutableBlockPos blockpos$mutableblockpos2 = new BlockPos.MutableBlockPos(blockpos.getX(), blockpos.getY(), blockpos.getZ());
+            int leavesGravity = 0;
+            int maxLimit = attempts / 3;
+            for (int i = 0; i < attempts; ++i) {
+                blockpos$mutableblockpos2.move(direction);
+                if (leavesGravity >= maxLimit) {
+                    leavesGravity = 0;
+                    tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos$mutableblockpos2);
+                    blockpos$mutableblockpos2.move(Direction.DOWN);
+                } else {
+                    ++leavesGravity;
+                }
+                tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos$mutableblockpos2);
+            }
+        }
 
-        createQuadrant(Direction.NORTH, startingPos, pLevel, foliageSetter, pRandom, pConfig);
-        createQuadrant(Direction.EAST, startingPos, pLevel, foliageSetter, pRandom, pConfig);
-        createQuadrant(Direction.SOUTH, startingPos, pLevel, foliageSetter, pRandom, pConfig);
-        createQuadrant(Direction.WEST, startingPos, pLevel, foliageSetter, pRandom, pConfig);
     }
 
-    @Override
-    public int foliageHeight(RandomSource pRandom, int pHeight, TreeConfiguration pConfig) {
-        return 0;
-    }
-
-    @Override
-    protected boolean shouldSkipLocation(RandomSource pRandom, int pLocalX, int pLocalY, int pLocalZ, int pRange, boolean pLarge) {
+    protected boolean shouldSkipLocation(RandomSource p_225712_, int p_225713_, int p_225714_, int p_225715_, int p_225716_, boolean p_225717_) {
         return false;
-    }
-
-    private static void createQuadrant(Direction direction, BlockPos startingPos, LevelSimulatedReader pLevel, FoliageSetter foliageSetter, RandomSource pRandom, TreeConfiguration pConfig) {
-        BlockPos.MutableBlockPos pos = startingPos.mutable();
-
-        pos.move(direction);
-        tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, pos);
-
-        if (pRandom.nextInt(2) == 0) {
-            if (pLevel.isStateAtPosition(pos.below(), BlockBehaviour.BlockStateBase::isAir)) {
-                foliageSetter.set(pos.below(), ObjectRegistry.COCONUT_HANGING.get().defaultBlockState());
-            }
-        }
-        if (pRandom.nextInt(2) == 0) {
-            if (pLevel.isStateAtPosition(pos.below().relative(direction.getCounterClockWise()), BlockBehaviour.BlockStateBase::isAir)) {
-                foliageSetter.set(pos.below().relative(direction.getCounterClockWise()), ObjectRegistry.COCONUT_HANGING.get().defaultBlockState());
-            }
-        }
-
-        for (int i = 0; i < 2; i++) {
-            pos.move(direction);
-            tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, pos);
-            pos.move(Direction.DOWN);
-            tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, pos);
-        }
-
-        pos.set(startingPos);
-        pos.move(direction).move(direction.getCounterClockWise());
-        tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, pos);
-        pos.move(Direction.DOWN).move(direction.getCounterClockWise());
-        tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, pos);
-        pos.move(direction);
-        tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, pos.relative(direction.getClockWise()));
-        for (int i = 0; i < 3; i++) {
-            tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, pos);
-            pos.move(Direction.DOWN);
-        }
     }
 }

@@ -13,8 +13,10 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.animal.Wolf;
+import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 
+@SuppressWarnings("unused")
 @Environment(EnvType.CLIENT)
 public class RedWolfModel<T extends Wolf> extends HierarchicalModel<T> {
         public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new BloomingNatureIdentifier("red_wolf"), "main");
@@ -45,30 +47,30 @@ public class RedWolfModel<T extends Wolf> extends HierarchicalModel<T> {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(36, 0).addBox(-4.0F, -3.0F, -4.0F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 0).mirror().addBox(-4.0F, -7.0F, 0.0F, 3.0F, 4.0F, 1.0F, new CubeDeformation(0.0F)).mirror(false)
-                .texOffs(0, 0).addBox(1.0F, -7.0F, 0.0F, 3.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
-                .texOffs(20, 0).addBox(-2.0F, -0.0156F, -7.0F, 4.0F, 3.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, 13.5F, -7.0F));
+        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 22).addBox(-3.0F, -3.0F, -4.0F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
+                .texOffs(20, 0).addBox(-3.0F, -7.0F, 0.0F, 3.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 0).addBox(2.0F, -7.0F, 0.0F, 3.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(28, 27).addBox(-1.0F, 0.0F, -7.0F, 4.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, 13.5F, -7.0F));
 
-        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -7.0F, -5.0F, 6.0F, 14.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 14.0F, 2.0F, 1.5708F, 0.0F, 0.0F));
+        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -7.0F, -5.0F, 6.0F, 14.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 14.0F, 2.0F, 1.5708F, 0.0F, 0.0F));
 
         PartDefinition upperBody = partdefinition.addOrReplaceChild("upperBody", CubeListBuilder.create(), PartPose.offsetAndRotation(-1.0F, 14.0F, 2.0F, -1.5708F, 0.0F, 0.0F));
 
-        PartDefinition leftHindLeg = partdefinition.addOrReplaceChild("leftHindLeg", CubeListBuilder.create().texOffs(8, 22).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.5F, 16.0F, 7.0F));
+        PartDefinition leftHindLeg = partdefinition.addOrReplaceChild("leftHindLeg", CubeListBuilder.create().texOffs(0, 34).addBox(0.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.5F, 16.0F, 7.0F));
 
-        PartDefinition rightHindLeg = partdefinition.addOrReplaceChild("rightHindLeg", CubeListBuilder.create().texOffs(16, 22).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 16.0F, 7.0F));
+        PartDefinition rightHindLeg = partdefinition.addOrReplaceChild("rightHindLeg", CubeListBuilder.create().texOffs(26, 33).addBox(0.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 16.0F, 7.0F));
 
-        PartDefinition leftFrontLeg = partdefinition.addOrReplaceChild("leftFrontLeg", CubeListBuilder.create().texOffs(0, 22).addBox(-1.0F, 0.0F, -0.99F, 2.0F, 8.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.5F, 16.0F, -4.0F));
+        PartDefinition leftFrontLeg = partdefinition.addOrReplaceChild("leftFrontLeg", CubeListBuilder.create().texOffs(0, 34).addBox(0.0F, 0.0F, -0.99F, 2.0F, 8.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.5F, 16.0F, -4.0F));
 
-        PartDefinition rightFrontLeg = partdefinition.addOrReplaceChild("rightFrontLeg", CubeListBuilder.create().texOffs(28, 7).addBox(-1.0F, 0.0F, -0.99F, 2.0F, 8.0F, 2.01F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 16.0F, -4.0F));
+        PartDefinition rightFrontLeg = partdefinition.addOrReplaceChild("rightFrontLeg", CubeListBuilder.create().texOffs(26, 33).addBox(0.0F, 0.0F, -0.99F, 2.0F, 8.0F, 2.01F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, 16.0F, -4.0F));
 
-        PartDefinition partdefinition3 = partdefinition.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(0, 33).addBox(-2.0F, 0.0F, -4.25F, 4.0F, 9.0F, 5.0F, new CubeDeformation(0.1F)).texOffs(29, 19).addBox(-2.5F, -1.0F, -3.75F, 5.0F, 12.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 12.0F, 8.0F, 0.9599F, 0.0F, 0.0F));
+        PartDefinition tail = partdefinition.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(28, 0).addBox(-1.0F, 0.0F, -4.25F, 4.0F, 9.0F, 5.0F, new CubeDeformation(0.0F))
+                .texOffs(23, 17).addBox(-1.0F, 9.0F, -4.25F, 4.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 12.0F, 8.0F, 0.9599F, 0.0F, 0.0F));
 
-        partdefinition3.addOrReplaceChild("real_tail", CubeListBuilder.create().texOffs(9, 18).addBox(0.0F, 0.0F, -1.0F, 2.0F, 8.0F, 2.0F), PartPose.ZERO);
+        PartDefinition real_tail = tail.addOrReplaceChild("real_tail", CubeListBuilder.create(), PartPose.offset(1.0F, 12.0F, -8.0F));
 
         return LayerDefinition.create(meshdefinition, 64, 64);
     }
-
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
@@ -82,8 +84,8 @@ public class RedWolfModel<T extends Wolf> extends HierarchicalModel<T> {
     }
 
     @Override
-    public ModelPart root() {
-        return null;
+    public @NotNull ModelPart root() {
+        return body;
     }
 
     protected Iterable<ModelPart> headParts() {

@@ -21,9 +21,6 @@ public class BloomingNature {
         PlacerTypesRegistry.init();
         SoundRegistry.init();
         DoApiEP.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("bushy_leaves"), false);
-
-
-
     }
 
     public static void commonInit() {

@@ -13,10 +13,13 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.animal.Pig;
+import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 
+@SuppressWarnings("unused")
 @Environment(EnvType.CLIENT)
 public class BoarModel<T extends Pig> extends HierarchicalModel<T> {
+
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new BloomingNatureIdentifier("boar"), "main");
     private final ModelPart body;
     private final ModelPart head;
@@ -25,7 +28,6 @@ public class BoarModel<T extends Pig> extends HierarchicalModel<T> {
     private final ModelPart leftHindLeg;
     private final ModelPart rightFrontLeg;
     private final ModelPart leftFrontLeg;
-
 
     public BoarModel(ModelPart root) {
         this.body = root.getChild("body");
@@ -69,6 +71,13 @@ public class BoarModel<T extends Pig> extends HierarchicalModel<T> {
         return LayerDefinition.create(meshdefinition, 128, 128);
     }
 
+    private static ModelPart safeGetChild(ModelPart part, String childName) {
+        if (part == null) {
+            throw new IllegalArgumentException("Part " + childName + " could not be initialized because its parent is null.");
+        }
+        return part.getChild(childName);
+    }
+
     protected Iterable<ModelPart> headParts() {
         return ImmutableList.of(this.head);
     }
@@ -108,7 +117,7 @@ public class BoarModel<T extends Pig> extends HierarchicalModel<T> {
     }
 
     @Override
-    public ModelPart root() {
-        return null;
+    public @NotNull ModelPart root() {
+        return body;
     }
 }

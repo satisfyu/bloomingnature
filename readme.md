@@ -4,7 +4,7 @@
 <br>
 <p>Explore a redesigned overworld: new animals, reshaped biomes, livelier landscapes.</p><p>
 <br>
-Virtually all biomes have been completely revamped: Trees in Forests, Birch Forests, Flower Forests, and Taiga Biomes are larger, redesigned, and host new species of animals. New flowers and plants adorn the surroundings. In Savannas, towering Baobab trees now grow, inhabited by bisons and termites. Beaches feature palms, dry grass, and pelicans. In snowy regions, snow-covered spruces grow, creating a more rugged appearance.</p>
+Virtually all biomes have been completely revamped: Trees in Forests, Birch Forests, Flower Forests, and Taiga Biomes are larger, redesigned, and host new species of animals. New flowers and plants adorn the surroundings. In Savannas, towering Baobab trees now grow, inhabited by bisons and termites. Beaches feature fan_palms, dry grass, and pelicans. In snowy regions, snow-covered spruces grow, creating a more rugged appearance.</p>
 
 <h1 align="center">Available for</h1>
 <p align="center"><img src="https://imgur.com/gREqi3m.png" width="240" height="120"></p>

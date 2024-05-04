@@ -2,7 +2,7 @@
 	"credit": "Made by Satisfy",
 	"parent": "minecraft:block/cube_all",
 	"textures": {
-		"1": "bloomingnature:block/palm_leaves",
+		"1": "bloomingnature:block/fan_palm_leaves",
 		"particle": "bloomingnature:block/coconut",
 		"all": "bloomingnature:block/coconut"
 	},

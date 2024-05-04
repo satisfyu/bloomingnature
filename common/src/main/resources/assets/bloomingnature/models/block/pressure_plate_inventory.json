@@ -2,7 +2,7 @@
 	"credit": "Made by Satisfy",
 	"parent": "block/thin_block",
 	"textures": {
-		"1": "bloomingnature:block/palm_pressure_plate"
+		"1": "bloomingnature:block/fan_palm_pressure_plate"
 	},
 	"elements": [
 		{

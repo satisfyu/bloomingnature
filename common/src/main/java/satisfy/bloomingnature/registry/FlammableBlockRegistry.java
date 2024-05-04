@@ -1,6 +1,6 @@
 package satisfy.bloomingnature.registry;
 
-import de.cristelknight.doapi.DoApiExpectPlatform;
+import de.cristelknight.doapi.DoApiCommonEP;
 import net.minecraft.world.level.block.Block;
 
 public class FlammableBlockRegistry {
@@ -19,8 +19,8 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.FIR_FENCE.get(), ObjectRegistry.FIR_FENCE_GATE.get(),
                 ObjectRegistry.CHESTNUT_PLANKS.get(), ObjectRegistry.CHESTNUT_SLAB.get(), ObjectRegistry.CHESTNUT_STAIRS.get(),
                 ObjectRegistry.CHESTNUT_FENCE.get(), ObjectRegistry.CHESTNUT_FENCE_GATE.get(),
-                ObjectRegistry.PALM_PLANKS.get(), ObjectRegistry.PALM_SLAB.get(), ObjectRegistry.PALM_STAIRS.get(),
-                ObjectRegistry.PALM_FENCE.get(), ObjectRegistry.PALM_FENCE_GATE.get(),
+                ObjectRegistry.FAN_PALM_PLANKS.get(), ObjectRegistry.FAN_PALM_SLAB.get(), ObjectRegistry.FAN_PALM_STAIRS.get(),
+                ObjectRegistry.FAN_PALM_FENCE.get(), ObjectRegistry.FAN_PALM_FENCE_GATE.get(),
                 ObjectRegistry.ASPEN_PLANKS.get(), ObjectRegistry.ASPEN_SLAB.get(), ObjectRegistry.ASPEN_STAIRS.get(),
                 ObjectRegistry.ASPEN_FENCE.get(), ObjectRegistry.ASPEN_FENCE_GATE.get(),
                 ObjectRegistry.EBONY_PLANKS.get(), ObjectRegistry.EBONY_SLAB.get(), ObjectRegistry.EBONY_STAIRS.get(),
@@ -33,7 +33,7 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.LARCH_LOG.get(), ObjectRegistry.LARCH_WOOD.get(), ObjectRegistry.STRIPPED_LARCH_LOG.get(), ObjectRegistry.STRIPPED_LARCH_WOOD.get(),
                 ObjectRegistry.FIR_LOG.get(), ObjectRegistry.FIR_WOOD.get(), ObjectRegistry.STRIPPED_FIR_LOG.get(), ObjectRegistry.STRIPPED_FIR_WOOD.get(),
                 ObjectRegistry.CHESTNUT_LOG.get(), ObjectRegistry.CHESTNUT_WOOD.get(), ObjectRegistry.STRIPPED_CHESTNUT_LOG.get(), ObjectRegistry.STRIPPED_CHESTNUT_WOOD.get(),
-                ObjectRegistry.PALM_LOG.get(), ObjectRegistry.PALM_WOOD.get(), ObjectRegistry.STRIPPED_PALM_LOG.get(), ObjectRegistry.STRIPPED_PALM_WOOD.get(),
+                ObjectRegistry.FAN_PALM_LOG.get(), ObjectRegistry.FAN_PALM_WOOD.get(), ObjectRegistry.STRIPPED_FAN_PALM_LOG.get(), ObjectRegistry.STRIPPED_FAN_PALM_WOOD.get(),
                 ObjectRegistry.ASPEN_LOG.get(), ObjectRegistry.ASPEN_WOOD.get(), ObjectRegistry.STRIPPED_ASPEN_LOG.get(), ObjectRegistry.STRIPPED_ASPEN_WOOD.get(),
                 ObjectRegistry.EBONY_LOG.get(), ObjectRegistry.EBONY_WOOD.get(), ObjectRegistry.STRIPPED_EBONY_LOG.get(), ObjectRegistry.STRIPPED_EBONY_WOOD.get(),
                 ObjectRegistry.BAOBAB_LOG.get(), ObjectRegistry.BAOBAB_WOOD.get(), ObjectRegistry.STRIPPED_BAOBAB_LOG.get(), ObjectRegistry.STRIPPED_BAOBAB_WOOD.get()
@@ -47,7 +47,7 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.LARCH_LEAVES.get(),
                 ObjectRegistry.FIR_LEAVES.get(),
                 ObjectRegistry.CHESTNUT_LEAVES.get(),
-                ObjectRegistry.PALM_LEAVES.get(),
+                ObjectRegistry.FAN_PALM_LEAVES.get(),
                 ObjectRegistry.ASPEN_LEAVES.get(),
                 ObjectRegistry.EBONY_LEAVES.get(),
                 ObjectRegistry.ORANGE_LEAVES.get()
@@ -56,7 +56,7 @@ public class FlammableBlockRegistry {
     }
 
     private static void add(int burnOdd, int igniteOdd, Block... blocks) {
-        DoApiExpectPlatform.addFlammable(burnOdd, igniteOdd, blocks);
+        DoApiCommonEP.addFlammable(burnOdd, igniteOdd, blocks);
     }
 
 }

@@ -6,7 +6,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 
 public class ConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?,?>> PALM_TREE_KEY = registerKey("beach_palm");
+    public static final ResourceKey<ConfiguredFeature<?,?>> FAN_PALM_TREE_KEY = registerKey("beach_fan_palm");
 
 
 

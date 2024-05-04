@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.BloomingNature;
 import satisfy.bloomingnature.client.model.BisonModel;
 import satisfy.bloomingnature.entity.BisonEntity;
@@ -15,11 +16,11 @@ public class BisonRenderer extends MobRenderer<BisonEntity, BisonModel<BisonEnti
     private static final ResourceLocation TEXTURE = new ResourceLocation(BloomingNature.MOD_ID, "textures/entity/bison.png");
 
     public BisonRenderer(EntityRendererProvider.Context context) {
-        super(context, new BisonModel(context.bakeLayer(BisonModel.LAYER_LOCATION)), 0.9f);
+        super(context, new BisonModel<>(context.bakeLayer(BisonModel.LAYER_LOCATION)), 0.9f);
     }
 
     @Override
-    public ResourceLocation getTextureLocation(BisonEntity entity) {
+    public @NotNull ResourceLocation getTextureLocation(BisonEntity entity) {
         return TEXTURE;
     }
 

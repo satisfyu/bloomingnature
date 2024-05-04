@@ -26,7 +26,7 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> LAVA_LAKE_UNDERGROUND = registerMCKey("lake_lava_underground");
     public static final ResourceKey<PlacedFeature> LAVA_LAKE_SURFACE = registerMCKey("lake_lava_surface");
 
-    public static final ResourceKey<PlacedFeature> PALM_TREE_KEY = registerKey("beach_palm");
+    public static final ResourceKey<PlacedFeature> FAN_PALM_TREE_KEY = registerKey("beach_fan_palm");
     public static final ResourceKey<PlacedFeature> BEACH_FLOWERS_KEY = registerKey("beach_flowers");
 
     public static final ResourceKey<PlacedFeature> PLAINS_TREES = registerMCKey("trees_plains");

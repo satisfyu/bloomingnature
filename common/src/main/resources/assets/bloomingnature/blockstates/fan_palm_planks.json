@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/fan_palm_planks",
+        "weight": 1
+      }
+    ]
+  }
+}

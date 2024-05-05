@@ -133,6 +133,7 @@
   "block.bloomingnature.mushroom_brick_wall": "Mushroom Brick Wall",
   "block.bloomingnature.mushroom_bricks": "Mushroom Brick",
   "block.bloomingnature.orange_leaves": "Orange Leaves",
+  "block.bloomingnature.large_painting": "Large Painting",
   "block.bloomingnature.fan_palm_button": "Fan Palm Button",
   "block.bloomingnature.fan_palm_door": "Fan Palm Door",
   "block.bloomingnature.fan_palm_fence": "Fan Palm Fence",
@@ -325,5 +326,10 @@
   "subtitles.bloomingnature.turkey_ambient": "Turkey Ambient",
   "subtitles.bloomingnature.turkey_death": "Turkey Death",
   "subtitles.bloomingnature.turkey_hurt": "Turkey Hurt",
-  "tooltip.bloomingnature.canbeplaced": "Can be Placed"
+  "tooltip.bloomingnature.canbeplaced": "Can be Placed",
+  "item.bloomingnature.bloomingnature_standard": "Completionist Banner: §aBloomingNature",
+  "tooltip.bloomingnature.thankyou_1": "A reward for completing the Adventuring Time Advancement",
+  "tooltip.bloomingnature.thankyou_2": "When placed:",
+  "tooltip.bloomingnature.thankyou_3": "Thank you for playing BloomingNature!",
+  "tooltip.bloomingnature.thankyou_4": "Grants Strenght II in a radius of 8 blocks"
 }

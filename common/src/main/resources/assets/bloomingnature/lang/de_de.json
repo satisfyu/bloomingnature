@@ -1,4 +1,5 @@
 {
+  "block.bloomingnature.large_painting": "Grosses Gemälde",
   "block.bloomingnature.aspen_button": "Espenholzknopf",
   "block.bloomingnature.aspen_door": "Espenholztür",
   "block.bloomingnature.aspen_fence": "Espenholzzaun",
@@ -325,5 +326,10 @@
   "subtitles.bloomingnature.turkey_ambient": "Truthahn gackert",
   "subtitles.bloomingnature.turkey_death": "Truthahn stirbt",
   "subtitles.bloomingnature.turkey_hurt": "Truthahn nimmt Schaden",
-  "tooltip.bloomingnature.canbeplaced": "Kann platziert werden"
+  "tooltip.bloomingnature.canbeplaced": "Kann platziert werden",
+  "item.bloomingnature.bloomingnature_standard": "Vervollständigungsbanner: §aBloomingNature",
+  "tooltip.bloomingnature.thankyou_1": "Eine Belohnung für das abschliessen des Abenteuerzeit Fortschritt",
+  "tooltip.bloomingnature.thankyou_2": "Wenn platzier:",
+  "tooltip.bloomingnature.thankyou_3": "Danke, dass du BloomingNature spielst!",
+  "tooltip.bloomingnature.thankyou_4": "Gewährt Stength II einem Radius von 8 Blöcken"
 }

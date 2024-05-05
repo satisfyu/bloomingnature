@@ -1,12 +1,12 @@
 package satisfy.bloomingnature.entity;
 
+import de.cristelknight.doapi.common.util.VillagerUtil;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import satisfy.bloomingnature.registry.ObjectRegistry;
-import satisfy.bloomingnature.util.VillagerUtil;
 
 import java.util.HashMap;
 
@@ -40,9 +40,6 @@ public class WanderingGardenerEntity extends WanderingTrader {
                 new VillagerUtil.SellItemFactory(ObjectRegistry.BEACH_BUSH.get(), 2, 4, 3, 15),
                 new VillagerUtil.SellItemFactory(ObjectRegistry.BEACH_GRASS.get(), 2, 4, 3, 15),
                 new VillagerUtil.SellItemFactory(ObjectRegistry.BEACH_BUSH_TALL.get(), 2, 4, 3, 15)
-
-
-
         });
         return trades;
     }

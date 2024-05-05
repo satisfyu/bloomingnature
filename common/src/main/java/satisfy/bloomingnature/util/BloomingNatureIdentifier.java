@@ -3,8 +3,8 @@ package satisfy.bloomingnature.util;
 import net.minecraft.resources.ResourceLocation;
 import satisfy.bloomingnature.BloomingNature;
 
+@SuppressWarnings("unused")
 public class BloomingNatureIdentifier extends ResourceLocation {
-
     public BloomingNatureIdentifier(String path) {
         super(BloomingNature.MOD_ID, path);
     }

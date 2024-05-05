@@ -1,4 +1,4 @@
-package satisfy.bloomingnature.blocks;
+package satisfy.bloomingnature.block;
 
 import com.google.common.collect.Maps;
 import java.util.Iterator;

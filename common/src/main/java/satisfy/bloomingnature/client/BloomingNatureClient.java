@@ -2,7 +2,6 @@ package satisfy.bloomingnature.client;
 
 import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
-import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
 import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import net.fabricmc.api.EnvType;
@@ -16,10 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import satisfy.bloomingnature.BloomingNature;
 import satisfy.bloomingnature.client.model.*;
-import satisfy.bloomingnature.client.render.block.FlowerBoxBlockEntityRenderer;
-import satisfy.bloomingnature.client.render.block.FlowerPotBigBlockEntityRenderer;
 import satisfy.bloomingnature.client.render.entity.*;
-import satisfy.bloomingnature.registry.BlockEntityRegistry;
 import satisfy.bloomingnature.registry.EntityRegistry;
 import satisfy.bloomingnature.registry.ObjectRegistry;
 
@@ -49,19 +45,28 @@ public class BloomingNatureClient {
                 ObjectRegistry.POTTED_ASPEN_SAPLING.get(), ObjectRegistry.POTTED_BAOBAB_SAPLING.get(), ObjectRegistry.POTTED_GOLDEN_ROD.get(),
                 ObjectRegistry.POTTED_BEACH_BUSH.get(), ObjectRegistry.BAOBAB_WINDOW.get(), ObjectRegistry.ASPEN_WINDOW.get(), ObjectRegistry.SWAMP_CYPRESS_WINDOW.get(),
                 ObjectRegistry.FIR_WINDOW.get(), ObjectRegistry.BAOBAB_DOOR.get(), ObjectRegistry.ASPEN_DOOR.get(), ObjectRegistry.SWAMP_CYPRESS_DOOR.get(),
-                ObjectRegistry.ASPEN_TRAPDOOR.get(), ObjectRegistry.SWAMP_CYPRESS_TRAPDOOR.get(), ObjectRegistry.BAOBAB_SAPLING.get(),  ObjectRegistry.ASPEN_SAPLING.get(),
+                ObjectRegistry.ASPEN_TRAPDOOR.get(), ObjectRegistry.SWAMP_CYPRESS_TRAPDOOR.get(), ObjectRegistry.BAOBAB_SAPLING.get(), ObjectRegistry.ASPEN_SAPLING.get(),
                 ObjectRegistry.SWAMP_CYPRESS_SAPLING.get(), ObjectRegistry.FIR_SAPLING.get(), ObjectRegistry.CHESTNUT_DOOR.get(), ObjectRegistry.CHESTNUT_SAPLING.get(),
                 ObjectRegistry.CHESTNUT_WINDOW.get(), ObjectRegistry.CHESTNUT_TRAPDOOR.get(), ObjectRegistry.EBONY_WINDOW.get(), ObjectRegistry.EBONY_DOOR.get(),
                 ObjectRegistry.EBONY_SAPLING.get(), ObjectRegistry.POTTED_EBONY_SAPLING.get(), ObjectRegistry.EBONY_TRAPDOOR.get(), ObjectRegistry.MOSSY_LATERIT.get(),
                 ObjectRegistry.FIR_LEAVES.get(), ObjectRegistry.FLOATING_LEAVES.get(), ObjectRegistry.POTTED_CHESTNUT_SAPLING.get()
 
-                );
+        );
 
-        registerBlockRenderer();
 
         ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.MOSSY_LATERIT.get(), ObjectRegistry.EBONY_LEAVES.get());
-        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> { if (world == null || pos == null) {return -1;}return BiomeColors.getAverageFoliageColor(world, pos);}, ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.EBONY_LEAVES.get());
-        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {if (world == null || pos == null) {return -1;}return BiomeColors.getAverageGrassColor(world, pos);}, ObjectRegistry.MOSSY_LATERIT.get());
+        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
+            if (world == null || pos == null) {
+                return -1;
+            }
+            return BiomeColors.getAverageFoliageColor(world, pos);
+        }, ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.EBONY_LEAVES.get());
+        ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
+            if (world == null || pos == null) {
+                return -1;
+            }
+            return BiomeColors.getAverageGrassColor(world, pos);
+        }, ObjectRegistry.MOSSY_LATERIT.get());
     }
 
     public static final ModelLayerLocation MOSSY_SHEEP_FUR = new ModelLayerLocation(new ResourceLocation(BloomingNature.MOD_ID, "mossy_sheep_"), "fur");
@@ -73,14 +78,7 @@ public class BloomingNatureClient {
         registerEntityModelLayer();
     }
 
-    private static void registerBlockRenderer() {
-        BlockEntityRendererRegistry.register(BlockEntityRegistry.FLOWER_BOX_ENTITY.get(), FlowerBoxBlockEntityRenderer::new);
-        BlockEntityRendererRegistry.register(BlockEntityRegistry.FLOWER_POT_BIG_ENTITY.get(), FlowerPotBigBlockEntityRenderer::new);
-
-    }
-
-
-        public static void registerEntityRenderers() {
+    public static void registerEntityRenderers() {
         EntityRendererRegistry.register(EntityRegistry.WANDERING_GARDENER, WanderingGardenerRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.RED_WOLF, RedWolfRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.PELICAN, PelicanRenderer::new);
@@ -94,7 +92,7 @@ public class BloomingNatureClient {
         EntityRendererRegistry.register(EntityRegistry.BOAR, BoarRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.BISON, BisonRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.TURKEY, TurkeyRenderer::new);
-        }
+    }
 
     public static void registerEntityModelLayer() {
         EntityModelLayerRegistry.register(WanderingGardenerModel.LAYER_LOCATION, WanderingGardenerModel::getTexturedModelData);
@@ -112,6 +110,5 @@ public class BloomingNatureClient {
         EntityModelLayerRegistry.register(BisonModel.LAYER_LOCATION, BisonModel::getTexturedModelData);
         EntityModelLayerRegistry.register(TurkeyModel.LAYER_LOCATION, TurkeyModel::getTexturedModelData);
     }
-
 }
 

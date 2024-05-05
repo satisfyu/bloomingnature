@@ -8,6 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import satisfy.bloomingnature.BloomingNature;
 
+@SuppressWarnings("unused")
 public class TabRegistry {
     public static final DeferredRegister<CreativeModeTab> BLOOMINGNATURE_TABS = DeferredRegister.create(BloomingNature.MOD_ID, Registries.CREATIVE_MODE_TAB);
 
@@ -235,6 +236,7 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.BEACH_GRASS.get());
                 out.accept(ObjectRegistry.FLOWER_POT_BIG.get());
                 out.accept(ObjectRegistry.FLOWER_BOX.get());
+                out.accept(ObjectRegistry.BLOOMINGNATURE_STANDARD.get());
                 out.accept(BoatsAndSignsRegistry.LARCH_CHEST_BOAT.get());
                 out.accept(BoatsAndSignsRegistry.LARCH_BOAT.get());
                 out.accept(BoatsAndSignsRegistry.BAOBAB_CHEST_BOAT.get());

@@ -1,4 +1,4 @@
-package satisfy.bloomingnature.blocks;
+package satisfy.bloomingnature.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;

@@ -33,7 +33,7 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "bloomingnature:fan_palm_sapling",
+          "Name": "bloomingnature:fan_palm_sprout",
           "Properties": {
             "stage": "0"
           }

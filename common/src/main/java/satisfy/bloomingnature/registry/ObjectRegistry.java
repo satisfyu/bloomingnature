@@ -1,9 +1,8 @@
 package satisfy.bloomingnature.registry;
 
 import de.cristelknight.doapi.Util;
+import de.cristelknight.doapi.common.block.FlowerBoxBlock;
 import de.cristelknight.doapi.common.block.WindowBlock;
-import de.cristelknight.doapi.common.block.storage.FlowerBoxBlock;
-import de.cristelknight.doapi.common.block.storage.FlowerPotBigBlock;
 import dev.architectury.core.item.ArchitecturySpawnEggItem;
 import dev.architectury.registry.fuel.FuelRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
@@ -29,6 +28,7 @@ import net.minecraft.world.level.material.PushReaction;
 import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.BloomingNature;
 import satisfy.bloomingnature.block.*;
+import satisfy.bloomingnature.block.storage.BNFlowerPotBigBlock;
 import satisfy.bloomingnature.item.BloomingNatureStandardItem;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 
@@ -265,7 +265,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> CARDINAL = registerWithItem("cardinal", () -> new TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH)));
     public static final RegistrySupplier<Block> TALL_MOUNTAIN_LAUREL = registerWithItem("tall_mountain_laurel", () -> new TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH)));
     public static final RegistrySupplier<Block> WILD_SUNFLOWER = registerWithItem("wild_sunflower", () -> new TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH)));
-    public static final RegistrySupplier<Block> FLOWER_POT_BIG = registerWithItem("flower_pot_big", () -> new FlowerPotBigBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistrySupplier<Block> FLOWER_POT_BIG = registerWithItem("flower_pot_big", () -> new BNFlowerPotBigBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FLOWER_BOX = registerWithItem("flower_box", () -> new FlowerBoxBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Item>  BLOOMINGNATURE_STANDARD = registerItem("bloomingnature_standard", () -> new BloomingNatureStandardItem(new Item.Properties().stacksTo(16).rarity(Rarity.EPIC)));
     public static final RegistrySupplier<Item> WANDERING_GARDENER_SPAWN_EGG = registerItem("wandering_gardener_spawn_egg", () -> new ArchitecturySpawnEggItem(EntityRegistry.WANDERING_GARDENER, -1, -1, getSettings()));
@@ -357,7 +357,6 @@ public class ObjectRegistry {
 
         return new ButtonBlock(properties, BlockSetType.OAK, 30, true);
     }
-
     
     public static <T extends Block> RegistrySupplier<T> registerWithItem(String name, Supplier<T> block) {
         return Util.registerWithItem(BLOCKS, BLOCK_REGISTRAR, ITEMS, ITEM_REGISTRAR, new BloomingNatureIdentifier(name), block);

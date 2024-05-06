@@ -20,6 +20,9 @@
     ],
     "client": [
       "satisfy.bloomingnature.fabric.client.BloomingNatureClientFabric"
+    ],
+    "doapi": [
+      "satisfy.bloomingnature.util.BloomingNatureDoAPI"
     ]
   },
   "depends": {

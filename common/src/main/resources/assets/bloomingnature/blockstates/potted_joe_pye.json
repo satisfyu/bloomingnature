@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_joe_pye" }
+    "": {
+      "model": "bloomingnature:block/potted_joe_pye"
+    }
   }
 }

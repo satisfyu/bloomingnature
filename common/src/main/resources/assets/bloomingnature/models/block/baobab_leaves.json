@@ -1,6 +1,6 @@
 {
-	"parent": "minecraft:block/leaves",
-	"textures": {
-		"all": "bloomingnature:block/baobab_leaves"
-	}
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "bloomingnature:block/baobab_leaves"
+  }
 }

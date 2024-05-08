@@ -19,7 +19,6 @@ public class TermiteRenderer extends MobRenderer<TermiteEntity, TermiteModel<Ter
     }
 
 
-
     @Override
     public ResourceLocation getTextureLocation(TermiteEntity entity) {
         return TEXTURE;

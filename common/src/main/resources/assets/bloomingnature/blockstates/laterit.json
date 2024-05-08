@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": [ { "model": "bloomingnature:block/laterit", "weight":1 }
-    ]   }
+    "": [
+      {
+        "model": "bloomingnature:block/laterit",
+        "weight": 1
+      }
+    ]
+  }
 }

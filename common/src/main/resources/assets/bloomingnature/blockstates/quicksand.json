@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "bloomingnature:block/quicksand"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "bloomingnature:block/quicksand"
+    }
+  }
 }

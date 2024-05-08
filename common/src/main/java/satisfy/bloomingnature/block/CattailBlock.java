@@ -26,7 +26,7 @@ public class CattailBlock extends TallFlowerBlock implements LiquidBlockContaine
 
     @Override
     public boolean canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        if(blockState.getValue(HALF) == DoubleBlockHalf.LOWER)
+        if (blockState.getValue(HALF) == DoubleBlockHalf.LOWER)
             return super.canSurvive(blockState, levelReader, blockPos) && levelReader.getFluidState(blockPos).getType() == Fluids.WATER;
 
         return super.canSurvive(blockState, levelReader, blockPos);
@@ -53,8 +53,7 @@ public class CattailBlock extends TallFlowerBlock implements LiquidBlockContaine
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor level, BlockPos pos, BlockPos posFrom) {
         BlockState blockState = super.updateShape(state, direction, newState, level, pos, posFrom);
-        if(!blockState.isAir())
-        {
+        if (!blockState.isAir()) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
 
@@ -68,7 +67,7 @@ public class CattailBlock extends TallFlowerBlock implements LiquidBlockContaine
 
     @Override
     public FluidState getFluidState(BlockState blockState) {
-        if(blockState.getValue(HALF) == DoubleBlockHalf.LOWER) return Fluids.WATER.getSource(false);
+        if (blockState.getValue(HALF) == DoubleBlockHalf.LOWER) return Fluids.WATER.getSource(false);
 
         return super.getFluidState(blockState);
     }

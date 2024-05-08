@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_goatsbeard" }
+    "": {
+      "model": "bloomingnature:block/potted_goatsbeard"
+    }
   }
 }

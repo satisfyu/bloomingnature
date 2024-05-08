@@ -9,12 +9,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HangingCoconutBlock extends Block {
+    private static final VoxelShape SHAPE = Block.box(4.0, 7.0, 4.0, 12.0, 15.0, 12.0);
+
+
     public HangingCoconutBlock(Properties properties) {
         super(properties);
     }
-
-
-    private static final VoxelShape SHAPE = Block.box(4.0, 7.0, 4.0, 12.0, 15.0, 12.0);
 
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;

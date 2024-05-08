@@ -15,7 +15,7 @@
         "probability": 0.25
       }
     ],
-      "dirt_provider": {
+    "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
         "Name": "bloomingnature:ebony_wood"

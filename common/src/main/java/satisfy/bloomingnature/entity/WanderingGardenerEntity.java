@@ -13,6 +13,10 @@ import java.util.HashMap;
 public class WanderingGardenerEntity extends WanderingTrader {
     public static final HashMap<Integer, VillagerTrades.ItemListing[]> TRADES = createTrades();
 
+    public WanderingGardenerEntity(EntityType<? extends WanderingGardenerEntity> entityType, Level world) {
+        super(entityType, world);
+    }
+
     private static HashMap<Integer, VillagerTrades.ItemListing[]> createTrades() {
         HashMap<Integer, VillagerTrades.ItemListing[]> trades = new HashMap<>();
         trades.put(1, new VillagerTrades.ItemListing[]{
@@ -42,10 +46,6 @@ public class WanderingGardenerEntity extends WanderingTrader {
                 new VillagerUtil.SellItemFactory(ObjectRegistry.BEACH_BUSH_TALL.get(), 2, 4, 3, 15)
         });
         return trades;
-    }
-
-    public WanderingGardenerEntity(EntityType<? extends WanderingGardenerEntity> entityType, Level world) {
-        super(entityType, world);
     }
 
     @Override

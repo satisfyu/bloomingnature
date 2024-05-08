@@ -6,7 +6,7 @@ import satisfy.bloomingnature.BloomingNature;
 
 public class DataFixerRegistry {
 
-    public static void init(){
+    public static void init() {
         StringPairs p = DataFixers.getOrCreate(BloomingNature.MOD_ID);
         p.add("palm_log", "fan_palm_log");
         p.add("palm_wood", "fan_palm_wood");

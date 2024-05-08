@@ -4,7 +4,6 @@
   "features": [
     "minecraft:trees_plains",
     "minecraft:flower_plains"
-
   ],
   "step": "vegetal_decoration"
 }

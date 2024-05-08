@@ -25,6 +25,10 @@ public class BNFlowerPotBigBlock extends FlowerPotBigBlock {
         return shape;
     };
 
+    static {
+        SHAPE = voxelShapeSupplier.get();
+    }
+
     public BNFlowerPotBigBlock(Properties settings) {
         super(settings);
     }
@@ -32,9 +36,5 @@ public class BNFlowerPotBigBlock extends FlowerPotBigBlock {
     @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
-    }
-
-    static {
-        SHAPE = voxelShapeSupplier.get();
     }
 }

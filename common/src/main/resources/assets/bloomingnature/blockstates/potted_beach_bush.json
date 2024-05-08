@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_beach_bush" }
+    "": {
+      "model": "bloomingnature:block/potted_beach_bush"
+    }
   }
 }

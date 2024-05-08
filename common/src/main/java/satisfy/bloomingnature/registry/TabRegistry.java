@@ -256,19 +256,7 @@ public class TabRegistry {
                 out.accept(BoatsAndSignsRegistry.CHESTNUT_BOAT.get());
                 out.accept(BoatsAndSignsRegistry.CHESTNUT_CHEST_BOAT.get());
                 out.accept(ObjectRegistry.WANDERING_GARDENER_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.DEER_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.RED_WOLF_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.RACCOON_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.SQUIRREL_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.MOSSY_SHEEP_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.MUDDY_PIG_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.PELICAN_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.BOAR_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.OWL_SPAWN_EGG.get());
                 out.accept(ObjectRegistry.TERMITE_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.BISON_SPAWN_EGG.get());
-                out.accept(ObjectRegistry.TURKEY_SPAWN_EGG.get());
-
             })
             .build());
 

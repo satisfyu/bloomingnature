@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": [ { "model": "bloomingnature:block/travertin", "weight":1 }
-    ]   }
+    "": [
+      {
+        "model": "bloomingnature:block/travertin",
+        "weight": 1
+      }
+    ]
+  }
 }

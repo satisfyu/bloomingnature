@@ -14,17 +14,16 @@ import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.registry.PlacerTypesRegistry;
 
 public class TaigaFoliagePlacer extends FoliagePlacer {
+    public static final Codec<TaigaFoliagePlacer> CODEC = RecordCodecBuilder.create(instance ->
+            foliagePlacerParts(instance)
+                    .and(IntProvider.codec(0, 24).fieldOf("trunk_height").forGetter(placer -> placer.trunkHeight))
+                    .apply(instance, TaigaFoliagePlacer::new));
     private final IntProvider trunkHeight;
 
     public TaigaFoliagePlacer(IntProvider intProvider, IntProvider intProvider2, IntProvider trunkHeight) {
         super(intProvider, intProvider2);
         this.trunkHeight = trunkHeight;
     }
-
-    public static final Codec<TaigaFoliagePlacer> CODEC = RecordCodecBuilder.create(instance ->
-            foliagePlacerParts(instance)
-                    .and(IntProvider.codec(0, 24).fieldOf("trunk_height").forGetter(placer -> placer.trunkHeight))
-                    .apply(instance, TaigaFoliagePlacer::new));
 
     @Override
     protected @NotNull FoliagePlacerType<?> type() {
@@ -41,94 +40,88 @@ public class TaigaFoliagePlacer extends FoliagePlacer {
         boolean nextBoolean = random.nextBoolean();
         boolean nextBoolean2 = random.nextBoolean();
 
-        for(int l = offset; l >= -foliageHeight - 2; --l) {
-            if(l >= offset - 2) {
+        for (int l = offset; l >= -foliageHeight - 2; --l) {
+            if (l >= offset - 2) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if((nextBoolean && !nextBoolean2) && l == offset) {
+                if ((nextBoolean && !nextBoolean2) && l == offset) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable);
                 }
-                if((nextBoolean || nextBoolean2) && l == offset - 1) {
+                if ((nextBoolean || nextBoolean2) && l == offset - 1) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable);
                 }
-                if(l == offset - 2) {
+                if (l == offset - 2) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable);
                 }
-            }
-            else if(l == offset - 3) {
+            } else if (l == offset - 3) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.getRandom(random), 1).relative(Direction.getRandom(random), 1).above(1));
                 }
                 this.placeLeavesRow(levelSimulatedReader, foliageSetter, random, config, blockPos, 1, l, treeNode.doubleTrunk());
-            }
-            else if(l == offset - 4) {
+            } else if (l == offset - 4) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.WEST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.WEST, 1));
                 }
                 this.placeLeavesRow(levelSimulatedReader, foliageSetter, random, config, blockPos, 1, l, treeNode.doubleTrunk());
-            }
-            else if(l == offset - 5) {
+            } else if (l == offset - 5) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     Direction m = random.nextBoolean() ? Direction.NORTH : Direction.SOUTH;
                     Direction n = random.nextBoolean() ? Direction.EAST : Direction.WEST;
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(m, 1).relative(n, 1));
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(m.getOpposite(), 1).relative(n.getOpposite(), 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     Direction m = random.nextBoolean() ? Direction.NORTH : Direction.SOUTH;
                     Direction n = random.nextBoolean() ? Direction.EAST : Direction.WEST;
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(m, 1).relative(n, 1));
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(m.getOpposite(), 1).relative(n.getOpposite(), 1));
                 }
-            }
-            else if(l == offset - 6) {
+            } else if (l == offset - 6) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     Direction m = random.nextBoolean() ? Direction.NORTH : Direction.SOUTH;
                     Direction n = random.nextBoolean() ? Direction.EAST : Direction.WEST;
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(m, 1).relative(n, 1).above(1));
                 }
                 this.placeLeavesRow(levelSimulatedReader, foliageSetter, random, config, blockPos, 1, l, treeNode.doubleTrunk());
-            }
-            else if(l == offset - 7) {
+            } else if (l == offset - 7) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.WEST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.WEST, 1));
                 }
                 this.placeLeavesRow(levelSimulatedReader, foliageSetter, random, config, blockPos, 1, l, treeNode.doubleTrunk());
-            }
-            else if(l == offset - 8) {
+            } else if (l == offset - 8) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.WEST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.WEST, 1));
                 }
                 tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 2));
@@ -136,28 +129,26 @@ public class TaigaFoliagePlacer extends FoliagePlacer {
                 tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 2));
                 tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.WEST, 2));
                 this.placeLeavesRow(levelSimulatedReader, foliageSetter, random, config, blockPos, 1, l, treeNode.doubleTrunk());
-            }
-            else if(l == offset - 9) {
+            } else if (l == offset - 9) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     Direction m = random.nextBoolean() ? Direction.NORTH : Direction.SOUTH;
                     Direction n = random.nextBoolean() ? Direction.EAST : Direction.WEST;
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(m, 1).relative(n, 1).above(1));
                 }
                 this.placeLeavesRow(levelSimulatedReader, foliageSetter, random, config, blockPos, 1, l, treeNode.doubleTrunk());
-            }
-            else if(l == offset - 10) {
+            } else if (l == offset - 10) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.WEST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.WEST, 1));
                 }
                 tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 2).relative(Direction.EAST, 1));
@@ -169,19 +160,18 @@ public class TaigaFoliagePlacer extends FoliagePlacer {
                 tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.WEST, 2).relative(Direction.NORTH, 1));
                 tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.WEST, 2).relative(Direction.SOUTH, 1));
                 this.placeLeavesRow(levelSimulatedReader, foliageSetter, random, config, blockPos, 1, l, treeNode.doubleTrunk());
-            }
-            else if(l == offset - 11) {
+            } else if (l == offset - 11) {
                 mutable.setWithOffset(blockPos, 0, l, 0);
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.NORTH, 1).relative(Direction.WEST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.EAST, 1));
                 }
-                if(random.nextBoolean()) {
+                if (random.nextBoolean()) {
                     tryPlaceLeaf(levelSimulatedReader, foliageSetter, random, config, mutable.relative(Direction.SOUTH, 1).relative(Direction.WEST, 1));
                 }
             }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_bottlebrushes" }
+    "": {
+      "model": "bloomingnature:block/potted_bottlebrushes"
+    }
   }
 }

@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "bloomingnature:block/baobab_leaves"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "bloomingnature:block/baobab_leaves"
+    }
+  }
 }

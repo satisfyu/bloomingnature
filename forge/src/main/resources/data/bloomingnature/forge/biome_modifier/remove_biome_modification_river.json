@@ -4,7 +4,6 @@
   "features": [
     "minecraft:trees_water",
     "minecraft:flower_default"
-
   ],
   "step": "vegetal_decoration"
 }

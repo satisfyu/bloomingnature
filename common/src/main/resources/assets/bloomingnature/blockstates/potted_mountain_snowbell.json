@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_mountain_snowbell" }
+    "": {
+      "model": "bloomingnature:block/potted_mountain_snowbell"
+    }
   }
 }

@@ -17,12 +17,12 @@ import org.jetbrains.annotations.Nullable;
 import satisfy.bloomingnature.registry.ObjectRegistry;
 
 public class SnowyFirLeavesBlock extends SnowyDirtBlock {
+    public static final BooleanProperty SNOWY = SnowyDirtBlock.SNOWY;
+
     public SnowyFirLeavesBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(SNOWY, true));
     }
-
-    public static final BooleanProperty SNOWY = SnowyDirtBlock.SNOWY;
 
     private static boolean canBeGrass(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
         BlockPos blockPos2 = blockPos.above();

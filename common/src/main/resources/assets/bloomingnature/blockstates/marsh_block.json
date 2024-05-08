@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "bloomingnature:block/marsh_block"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "bloomingnature:block/marsh_block"
+    }
+  }
 }

@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "bloomingnature:block/swamp_oak_leaves"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "bloomingnature:block/swamp_oak_leaves"
+    }
+  }
 }

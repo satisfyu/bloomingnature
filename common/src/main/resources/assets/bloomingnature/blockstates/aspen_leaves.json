@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "bloomingnature:block/aspen_leaves"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "bloomingnature:block/aspen_leaves"
+    }
+  }
 }

@@ -14,17 +14,20 @@ import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.registry.PlacerTypesRegistry;
 
 public class FanPalmFoliagePlacer extends FoliagePlacer {
-    private final int leafLength;
-    public int foliageHeight(RandomSource p_225719_, int p_225720_, TreeConfiguration p_225721_) {return 5;}
     public static final Codec<FanPalmFoliagePlacer> CODEC = RecordCodecBuilder.create(instance ->
             foliagePlacerParts(instance).and(
                     Codec.intRange(0, 16).fieldOf("leaf_length").forGetter(placer -> placer.leafLength)
             ).apply(instance, FanPalmFoliagePlacer::new)
     );
+    private final int leafLength;
 
     public FanPalmFoliagePlacer(IntProvider range, IntProvider rangeOffset, int leafLength) {
         super(range, rangeOffset);
         this.leafLength = leafLength;
+    }
+
+    public int foliageHeight(RandomSource p_225719_, int p_225720_, TreeConfiguration p_225721_) {
+        return 5;
     }
 
     protected @NotNull FoliagePlacerType<?> type() {

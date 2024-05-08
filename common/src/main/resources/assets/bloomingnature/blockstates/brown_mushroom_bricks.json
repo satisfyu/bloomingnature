@@ -1,6 +1,10 @@
 {
   "variants": {
     "": [
-      { "model": "bloomingnature:block/brown_mushroom_bricks", "weight":1 }
-    ]   }
+      {
+        "model": "bloomingnature:block/brown_mushroom_bricks",
+        "weight": 1
+      }
+    ]
+  }
 }

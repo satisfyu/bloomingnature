@@ -19,7 +19,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import satisfy.bloomingnature.BloomingNature;
 import satisfy.bloomingnature.registry.CompostableRegistry;
 import satisfy.bloomingnature.registry.EntityRegistry;
-import satisfy.bloomingnature.registry.TagsRegistry;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 import satisfy.bloomingnature.world.PlacedFeatures;
 
@@ -27,6 +26,10 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class BloomingNatureFabric implements ModInitializer {
+    private static Predicate<BiomeSelectionContext> getBloomingNatureSelector(String path) {
+        return BiomeSelectors.tag(TagKey.create(Registries.BIOME, new BloomingNatureIdentifier(path)));
+    }
+
     @Override
     public void onInitialize() {
         BloomingNature.init();
@@ -37,56 +40,22 @@ public class BloomingNatureFabric implements ModInitializer {
     }
 
     void addSpawns() {
-        addMobSpawn(TagsRegistry.SPAWNS_DEER, MobCategory.CREATURE, EntityRegistry.DEER.get(), 12, 2, 4);
-        addMobSpawn(BiomeTags.IS_BEACH, MobCategory.CREATURE, EntityRegistry.PELICAN.get(), 5, 3, 4);
-        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, MobCategory.CREATURE, EntityType.EVOKER, 4, 1, 2);
-        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, MobCategory.CREATURE, EntityType.VINDICATOR, 4, 1, 2);
-        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, MobCategory.CREATURE, EntityType.PILLAGER, 4, 1, 3);
-        addMobSpawn(TagsRegistry.SPAWNS_MUDDY_PIG, MobCategory.CREATURE, EntityRegistry.MUDDY_PIG.get(), 8, 4, 5);
-        addMobSpawn(TagsRegistry.SPAWNS_MOSSY_SHEEP, MobCategory.CREATURE, EntityRegistry.MOSSY_SHEEP.get(), 8, 3, 5);
-        addMobSpawn(TagsRegistry.SPAWNS_RACCOON, MobCategory.CREATURE, EntityRegistry.RACCOON.get(), 8, 2, 3);
-        addMobSpawn(TagsRegistry.SPAWNS_SQUIRREL, MobCategory.CREATURE, EntityRegistry.SQUIRREL.get(), 8, 2, 2);
-        addMobSpawn(TagsRegistry.SPAWNS_RED_WOLF, MobCategory.CREATURE, EntityRegistry.RED_WOLF.get(), 10, 3, 4);
-        addMobSpawn(TagsRegistry.SPAWNS_OWL, MobCategory.CREATURE, EntityRegistry.OWL.get(), 12, 3, 3);
-        addMobSpawn(TagsRegistry.SPAWNS_BOAR, MobCategory.CREATURE, EntityRegistry.BOAR.get(), 14, 5, 5);
-        addMobSpawn(TagsRegistry.SPAWNS_BISON, MobCategory.CREATURE, EntityRegistry.BISON.get(), 10, 3, 5);
-        addMobSpawn(TagsRegistry.SPAWNS_TURKEY, MobCategory.CREATURE, EntityRegistry.TURKEY.get(), 12, 3, 5);
-        addMobSpawn(TagsRegistry.SPAWNS_TURKEY, MobCategory.CREATURE, EntityRegistry.TURKEY.get(), 12, 3, 5);
+        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, EntityType.EVOKER, 4, 1, 2);
+        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, EntityType.VINDICATOR, 4, 1, 2);
+        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, EntityType.PILLAGER, 4, 1, 3);
         removeSpawn(BiomeTags.IS_SAVANNA, List.of(EntityType.SHEEP, EntityType.PIG, EntityType.CHICKEN, EntityType.COW));
         removeSpawn(ConventionalBiomeTags.SWAMP, List.of(EntityType.SHEEP, EntityType.PIG, EntityType.CHICKEN, EntityType.COW));
         removeSpawn(BiomeTags.IS_FOREST, List.of(EntityType.PIG, EntityType.CHICKEN));
         removeSpawn(BiomeTags.IS_JUNGLE, List.of(EntityType.PIG, EntityType.CHICKEN, EntityType.COW));
-        addMobSpawn(BiomeTags.IS_JUNGLE, MobCategory.CREATURE, EntityType.FROG, 8, 3, 4);
-        addMobSpawn(BiomeTags.IS_SAVANNA, MobCategory.CREATURE, EntityRegistry.TERMITE.get(), 10, 3, 4);
+        addMobSpawn(BiomeTags.IS_JUNGLE, EntityType.FROG, 8, 3, 4);
+        addMobSpawn(BiomeTags.IS_SAVANNA, EntityRegistry.TERMITE.get(), 10, 3, 4);
 
-        SpawnPlacements.register(EntityRegistry.SQUIRREL.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
         SpawnPlacements.register(EntityRegistry.TERMITE.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.OWL.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.TURKEY.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.RACCOON.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.PELICAN.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.MUDDY_PIG.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.DEER.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.MOSSY_SHEEP.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.RED_WOLF.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.BOAR.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-        SpawnPlacements.register(EntityRegistry.BISON.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
     }
 
-    void addMobSpawn(TagKey<Biome> tag, MobCategory mobCategory, EntityType<?> entityType, int weight, int minGroupSize, int maxGroupSize) {
-        BiomeModifications.addSpawn(biomeSelector -> biomeSelector.hasTag(tag), mobCategory, entityType, weight, minGroupSize, maxGroupSize);
+    void addMobSpawn(TagKey<Biome> tag, EntityType<?> entityType, int weight, int minGroupSize, int maxGroupSize) {
+        BiomeModifications.addSpawn(biomeSelector -> biomeSelector.hasTag(tag), MobCategory.CREATURE, entityType, weight, minGroupSize, maxGroupSize);
     }
 
     void removeSpawn(TagKey<Biome> tag, List<EntityType<?>> entityTypes) {
@@ -337,11 +306,5 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setGrassColor(8970560));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setFoliageColor(6337104));
-
-
-    }
-
-    private static Predicate<BiomeSelectionContext> getBloomingNatureSelector(String path) {
-        return BiomeSelectors.tag(TagKey.create(Registries.BIOME, new BloomingNatureIdentifier(path)));
     }
 }

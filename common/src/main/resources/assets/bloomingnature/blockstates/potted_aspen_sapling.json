@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_aspen_sapling" }
+    "": {
+      "model": "bloomingnature:block/potted_aspen_sapling"
+    }
   }
 }

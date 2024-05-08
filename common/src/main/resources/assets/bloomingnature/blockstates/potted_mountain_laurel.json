@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_mountain_laurel" }
+    "": {
+      "model": "bloomingnature:block/potted_mountain_laurel"
+    }
   }
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_freesia_yellow" }
+    "": {
+      "model": "bloomingnature:block/potted_freesia_yellow"
+    }
   }
 }

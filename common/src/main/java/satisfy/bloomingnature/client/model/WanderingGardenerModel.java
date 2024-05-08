@@ -67,7 +67,7 @@ public class WanderingGardenerModel<T extends WanderingTrader> extends Hierarchi
     public void setupAnim(T entity, float f, float g, float h, float i, float j) {
         boolean bl = false;
         if (entity instanceof AbstractVillager) {
-            bl = ((AbstractVillager)entity).getUnhappyCounter() > 0;
+            bl = ((AbstractVillager) entity).getUnhappyCounter() > 0;
         }
 
         this.head.yRot = i * 0.017453292F;

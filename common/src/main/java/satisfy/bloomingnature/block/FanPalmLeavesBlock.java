@@ -28,6 +28,33 @@ public class FanPalmLeavesBlock extends LeavesBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE_9, 9).setValue(PERSISTENT, false).setValue(DISTANCE, 7).setValue(WATERLOGGED, false));
     }
 
+    private static BlockState updateDistance(BlockState pState, LevelAccessor pLevel, BlockPos pPos) {
+        int i = 9;
+        BlockPos.MutableBlockPos blockpos$autocloseable = new BlockPos.MutableBlockPos();
+
+        for (Direction direction : Direction.values()) {
+            blockpos$autocloseable.setWithOffset(pPos, direction);
+            i = Math.min(i, getDistanceAt(pLevel.getBlockState(blockpos$autocloseable)) + 1);
+            if (i == 1) {
+                break;
+            }
+        }
+
+        return pState.setValue(DISTANCE_9, i);
+    }
+
+    private static int getDistanceAt(BlockState blockState) {
+        return getOptionalDistanceAt(blockState).orElse(9);
+    }
+
+    public static @NotNull OptionalInt getOptionalDistanceAt(BlockState blockState) {
+        if (blockState.is(BlockTags.LOGS)) {
+            return OptionalInt.of(0);
+        } else {
+            return blockState.hasProperty(DISTANCE_9) ? OptionalInt.of(blockState.getValue(DISTANCE_9)) : OptionalInt.empty();
+        }
+    }
+
     @Override
     public boolean isRandomlyTicking(BlockState state) {
         return state.getValue(DISTANCE_9) == 9 && !state.getValue(PERSISTENT);
@@ -40,7 +67,6 @@ public class FanPalmLeavesBlock extends LeavesBlock {
             serverLevel.removeBlock(blockPos, false);
         }
     }
-
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
@@ -77,33 +103,5 @@ public class FanPalmLeavesBlock extends LeavesBlock {
         }
 
         return pState;
-    }
-
-    private static BlockState updateDistance(BlockState pState, LevelAccessor pLevel, BlockPos pPos) {
-        int i = 9;
-        BlockPos.MutableBlockPos blockpos$autocloseable = new BlockPos.MutableBlockPos();
-
-        for(Direction direction : Direction.values()) {
-            blockpos$autocloseable.setWithOffset(pPos, direction);
-            i = Math.min(i, getDistanceAt(pLevel.getBlockState(blockpos$autocloseable)) + 1);
-            if (i == 1) {
-                break;
-            }
-        }
-
-        return pState.setValue(DISTANCE_9, i);
-    }
-
-
-    private static int getDistanceAt(BlockState blockState) {
-        return getOptionalDistanceAt(blockState).orElse(9);
-    }
-
-    public static @NotNull OptionalInt getOptionalDistanceAt(BlockState blockState) {
-        if (blockState.is(BlockTags.LOGS)) {
-            return OptionalInt.of(0);
-        } else {
-            return blockState.hasProperty(DISTANCE_9) ? OptionalInt.of(blockState.getValue(DISTANCE_9)) : OptionalInt.empty();
-        }
     }
 }

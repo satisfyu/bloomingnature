@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_white_orchid" }
+    "": {
+      "model": "bloomingnature:block/potted_white_orchid"
+    }
   }
 }

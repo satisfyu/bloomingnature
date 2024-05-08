@@ -6,16 +6,13 @@ import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
 import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.model.SheepFurModel;
-import net.minecraft.client.model.SheepModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
-import satisfy.bloomingnature.BloomingNature;
-import satisfy.bloomingnature.client.model.*;
-import satisfy.bloomingnature.client.render.entity.*;
+import satisfy.bloomingnature.client.model.TermiteModel;
+import satisfy.bloomingnature.client.model.WanderingGardenerModel;
+import satisfy.bloomingnature.client.render.entity.TermiteRenderer;
+import satisfy.bloomingnature.client.render.entity.WanderingGardenerRenderer;
 import satisfy.bloomingnature.registry.EntityRegistry;
 import satisfy.bloomingnature.registry.ObjectRegistry;
 
@@ -69,10 +66,6 @@ public class BloomingNatureClient {
         }, ObjectRegistry.MOSSY_LATERIT.get());
     }
 
-    public static final ModelLayerLocation MOSSY_SHEEP_FUR = new ModelLayerLocation(new ResourceLocation(BloomingNature.MOD_ID, "mossy_sheep_"), "fur");
-    public static final ModelLayerLocation MOSSY_SHEEP_MODEL_LAYER = new ModelLayerLocation(new ResourceLocation(BloomingNature.MOD_ID, "mossy_sheep"), "main");
-
-
     public static void preInitClient() {
         registerEntityRenderers();
         registerEntityModelLayer();
@@ -80,35 +73,12 @@ public class BloomingNatureClient {
 
     public static void registerEntityRenderers() {
         EntityRendererRegistry.register(EntityRegistry.WANDERING_GARDENER, WanderingGardenerRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.RED_WOLF, RedWolfRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.PELICAN, PelicanRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.RACCOON, RaccoonRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.SQUIRREL, SquirrelRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.MUDDY_PIG, MuddyPigRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.MOSSY_SHEEP, MossySheepRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.DEER, DeerRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.OWL, OwlRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.TERMITE, TermiteRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.BOAR, BoarRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.BISON, BisonRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.TURKEY, TurkeyRenderer::new);
     }
 
     public static void registerEntityModelLayer() {
         EntityModelLayerRegistry.register(WanderingGardenerModel.LAYER_LOCATION, WanderingGardenerModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(RedWolfModel.LAYER_LOCATION, RedWolfModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(PelicanModel.LAYER_LOCATION, PelicanModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(RaccoonModel.LAYER_LOCATION, RaccoonModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(SquirrelModel.LAYER_LOCATION, SquirrelModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(MuddyPigModel.LAYER_LOCATION, MuddyPigModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(DeerModel.LAYER_LOCATION, DeerModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(MOSSY_SHEEP_MODEL_LAYER, SheepModel::createBodyLayer);
-        EntityModelLayerRegistry.register(MOSSY_SHEEP_FUR, SheepFurModel::createFurLayer);
-        EntityModelLayerRegistry.register(OwlModel.LAYER_LOCATION, OwlModel::getTexturedModelData);
         EntityModelLayerRegistry.register(TermiteModel.LAYER_LOCATION, TermiteModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(BoarModel.LAYER_LOCATION, BoarModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(BisonModel.LAYER_LOCATION, BisonModel::getTexturedModelData);
-        EntityModelLayerRegistry.register(TurkeyModel.LAYER_LOCATION, TurkeyModel::getTexturedModelData);
     }
 }
 

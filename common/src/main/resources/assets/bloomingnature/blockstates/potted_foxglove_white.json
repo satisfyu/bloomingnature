@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_foxglove_white" }
+    "": {
+      "model": "bloomingnature:block/potted_foxglove_white"
+    }
   }
 }

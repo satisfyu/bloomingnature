@@ -13,40 +13,43 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerTy
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import satisfy.bloomingnature.registry.PlacerTypesRegistry;
 
-public class RodBirchFoliagePlacer extends FoliagePlacer
-{
+public class RodBirchFoliagePlacer extends FoliagePlacer {
+    public static final Codec<RodBirchFoliagePlacer> CODEC = RecordCodecBuilder.create(
+            (instance) -> foliagePlacerParts(instance)
+                    .and(
+                            Codec.intRange(0, 16).fieldOf("height").forGetter((cdc) -> cdc.height)
+                    ).and(
+                            Codec.FLOAT.fieldOf("offset_chance").forGetter((cdc) -> cdc.offsetChance)
+                    ).apply(instance, RodBirchFoliagePlacer::new));
     protected final int height;
     protected final float offsetChance;
 
-    public RodBirchFoliagePlacer(IntProvider radius, IntProvider offset, int height, float offsetChance)
-    {
+    public RodBirchFoliagePlacer(IntProvider radius, IntProvider offset, int height, float offsetChance) {
         super(radius, offset);
         this.height = height;
         this.offsetChance = offsetChance;
     }
+
     @Override
     protected FoliagePlacerType<?> type() {
         return PlacerTypesRegistry.ROD_BIRCH_FOLIAGE_PLACER.get();
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader level, FoliageSetter foligateSetter, RandomSource random, TreeConfiguration treeConfiguration, int trunkHeight, FoliageAttachment attachment, int foliageHeight, int radius, int offset)
-    {
+    protected void createFoliage(LevelSimulatedReader level, FoliageSetter foligateSetter, RandomSource random, TreeConfiguration treeConfiguration, int trunkHeight, FoliageAttachment attachment, int foliageHeight, int radius, int offset) {
         BoundingBox box = new BoundingBox(attachment.pos());
         int offsetValue = this.offset.sample(random);
         int radiusValue = this.radius.sample(random);
 
-        for(int placeOffset = offsetValue; placeOffset >= offsetValue - foliageHeight; --placeOffset)
-        {
+        for (int placeOffset = offsetValue; placeOffset >= offsetValue - foliageHeight; --placeOffset) {
             int baseHeight;
-            if(attachment.radiusOffset() > 0)
+            if (attachment.radiusOffset() > 0)
                 baseHeight = Math.max(radiusValue + attachment.radiusOffset() - 1 - placeOffset / 2, 0);
             else baseHeight = Math.max(radiusValue + attachment.radiusOffset() - placeOffset / 2, 0);
 
             this.placeLeavesRow(level, foligateSetter, random, treeConfiguration, attachment.pos(), baseHeight, placeOffset, attachment.doubleTrunk(), box);
         }
     }
-
 
     protected void placeLeavesRow(LevelSimulatedReader level, FoliageSetter foliageSetter, RandomSource random, TreeConfiguration treeConfiguration, BlockPos blockPos, int radius, int yy, boolean isBig, BoundingBox box) {
         int offset = isBig ? 1 : 0;
@@ -57,8 +60,7 @@ public class RodBirchFoliagePlacer extends FoliagePlacer
                 placePos.setWithOffset(blockPos, xx, yy, zz);
                 placeLeaf(level, foliageSetter, random, treeConfiguration, placePos, box);
 
-                if(random.nextFloat() < offsetChance)
-                {
+                if (random.nextFloat() < offsetChance) {
                     Direction offsetDir = Direction.getRandom(random);
                     placeLeaf(level, foliageSetter, random, treeConfiguration, placePos.relative(offsetDir), box);
                 }
@@ -66,8 +68,7 @@ public class RodBirchFoliagePlacer extends FoliagePlacer
         }
     }
 
-    protected void placeLeaf(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, BlockPos placePos, BoundingBox box)
-    {
+    protected void placeLeaf(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration configuration, BlockPos placePos, BoundingBox box) {
         FoliagePlacer.tryPlaceLeaf(level, setter, random, configuration, placePos);
         box.encapsulate(new BlockPos(placePos));
     }
@@ -79,20 +80,10 @@ public class RodBirchFoliagePlacer extends FoliagePlacer
 
     @Override
     protected boolean shouldSkipLocation(RandomSource random, int baseHeight, int dx, int dy, int dz, boolean giantTrunk) {
-        if(baseHeight + dy >= 4)
-        {
+        if (baseHeight + dy >= 4) {
             return true;
-        }else
-        {
+        } else {
             return baseHeight * baseHeight + dy * dy > dz * dz;
         }
     }
-
-    public static final Codec<RodBirchFoliagePlacer> CODEC = RecordCodecBuilder.create(
-            (instance)->foliagePlacerParts(instance)
-                    .and(
-                            Codec.intRange(0, 16).fieldOf("height").forGetter((cdc)->cdc.height)
-                    ).and(
-                            Codec.FLOAT.fieldOf("offset_chance").forGetter((cdc)->cdc.offsetChance)
-                    ).apply(instance, RodBirchFoliagePlacer::new));
 }

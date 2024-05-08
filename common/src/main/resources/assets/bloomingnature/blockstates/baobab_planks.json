@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": [ { "model": "bloomingnature:block/baobab_planks", "weight":1 }
-    ]   }
+    "": [
+      {
+        "model": "bloomingnature:block/baobab_planks",
+        "weight": 1
+      }
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "bloomingnature:block/chestnut_leaves"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "bloomingnature:block/chestnut_leaves"
+    }
+  }
 }

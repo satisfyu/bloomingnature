@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_fan_palm_sprout" }
+    "": {
+      "model": "bloomingnature:block/potted_fan_palm_sprout"
+    }
   }
 }

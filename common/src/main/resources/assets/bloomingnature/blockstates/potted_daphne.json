@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bloomingnature:block/potted_daphne" }
+    "": {
+      "model": "bloomingnature:block/potted_daphne"
+    }
   }
 }

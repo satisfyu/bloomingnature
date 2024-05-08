@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "bloomingnature:block/swamp_cypress_leaves"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "bloomingnature:block/swamp_cypress_leaves"
+    }
+  }
 }

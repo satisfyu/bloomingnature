@@ -1,29 +1,5 @@
 {
   "replace": false,
   "values": [
-    "bloomingnature:larch_window",
-    "bloomingnature:baobab_window",
-    "bloomingnature:swamp_oak_window",
-    "bloomingnature:aspen_window",
-    "bloomingnature:fan_palm_window",
-    "bloomingnature:fir_window",
-    "bloomingnature:ebony_window",
-    "bloomingnature:swamp_cypress_window",
-    "bloomingnature:chestnut_window",
-    "bloomingnature:travertin",
-    "bloomingnature:travertin_bricks",
-    "bloomingnature:travertin_brick_slab",
-    "bloomingnature:travertin_brick_stairs",
-    "bloomingnature:travertin_brick_wall",
-    "bloomingnature:laterit",
-    "bloomingnature:laterit_bricks",
-    "bloomingnature:laterit_brick_slab",
-    "bloomingnature:laterit_brick_stairs",
-    "bloomingnature:laterit_brick_wall",
-    "bloomingnature:mossy_laterit",
-    "bloomingnature:red_bricks",
-    "bloomingnature:red_brick_slab",
-    "bloomingnature:red_brick_stairs",
-    "bloomingnature:red_brick_wall"
   ]
 }

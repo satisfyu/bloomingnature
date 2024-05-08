@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "bloomingnature:block/tall_lupine_blue_top"
-  }
-}

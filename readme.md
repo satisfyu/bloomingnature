@@ -1,6 +1,6 @@
 <p align="center"><img src="https://imgur.com/aHbesRp.png" width="1200"></p>
 
-<h1 align="center">Welcome to BloomingNature</h1>
+<h1 align="center">Welcome to WilderNature</h1>
 <br>
 <p>Explore a redesigned overworld: new animals, reshaped biomes, livelier landscapes.</p><p>
 <br>

@@ -3,37 +3,37 @@ loaderVersion = "[47,)"
 license = "Custom"
 
 [[mods]]
-modId = "bloomingnature"
+modId = "wildernature"
 version = "${version}"
-displayName = "[Let's Do] BloomingNature"
-authors = "satisfy"
+displayName = "[Let's Do] Wilder Nature"
+authors = "satisfy, jason13"
 description = '''
-Explore a redesigned overworld: new animals, reshaped biomes, livelier landscapes
+---
 '''
 logoFile = "pack.png"
 
-[[dependencies.bloomingnature]]
+[[dependencies.wildernature]]
 modId = "forge"
 mandatory = true
 versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.bloomingnature]]
+[[dependencies.wildernature]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.20.1,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.bloomingnature]]
+[[dependencies.wildernature]]
 modId = "architectury"
 mandatory = true
 versionRange = "[9.1.12,)"
 ordering = "AFTER"
 side = "BOTH"
 
-[[dependencies.bloomingnature]]
+[[dependencies.wildernature]]
 modId = "doapi"
 mandatory = true
 versionRange = "[1.2.10,)"

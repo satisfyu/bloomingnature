@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "bloomingnature:block/aspen_planks",
-    "top": "bloomingnature:block/aspen_planks",
-    "side": "bloomingnature:block/aspen_planks"
-  }
-}

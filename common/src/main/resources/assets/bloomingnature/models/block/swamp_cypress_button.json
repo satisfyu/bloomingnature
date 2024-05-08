@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button",
-  "textures": {
-    "texture": "bloomingnature:block/swamp_cypress_planks"
-  }
-}

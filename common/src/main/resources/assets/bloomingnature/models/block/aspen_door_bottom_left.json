@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left",
-  "textures": {
-    "top": "bloomingnature:block/aspen_door_top",
-    "bottom": "bloomingnature:block/aspen_door_bottom"
-  }
-}

@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:rabbit",
+    "minecraft:chicken",
+    "minecraft:silverfish",
+    "minecraft:endermite",
+    "minecraft:bat",
+    "minecraft:frog",
+    "wildernature:squirrel",
+    "wildernature:termite",
+    "wildernature:turkey",
+    {
+      "id": "spawn:hamster",
+      "required": false
+    },
+    {
+      "id": "spawn:ant",
+      "required": false
+    },
+    {
+      "id": "naturalist:lizard",
+      "required": false
+    }
+  ]
+}

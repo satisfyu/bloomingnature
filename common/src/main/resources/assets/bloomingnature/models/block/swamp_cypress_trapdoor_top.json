@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_trapdoor_top",
-  "textures": {
-    "texture": "bloomingnature:block/swamp_cypress_trapdoor"
-  }
-}

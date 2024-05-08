@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/flower_pot_cross",
-  "textures": {
-    "plant": "bloomingnature:item/fan_palm_sprout"
-  }
-}

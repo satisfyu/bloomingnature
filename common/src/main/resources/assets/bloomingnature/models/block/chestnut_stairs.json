@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "bloomingnature:block/chestnut_planks",
-    "top": "bloomingnature:block/chestnut_planks",
-    "side": "bloomingnature:block/chestnut_planks"
-  }
-}

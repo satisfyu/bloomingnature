@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:entity",
+  "wildernature": "minecraft:entities/owl",
+  "components": {
+    "minecraft:loot": {
+      "pools": [
+        {
+          "rolls": 1,
+          "entries": [
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:feather",
+              "weight": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

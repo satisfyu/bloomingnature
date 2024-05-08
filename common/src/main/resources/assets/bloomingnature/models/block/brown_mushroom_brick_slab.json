@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "bloomingnature:block/brown_mushroom_bricks",
-    "top": "bloomingnature:block/brown_mushroom_bricks",
-    "side": "bloomingnature:block/brown_mushroom_bricks"
-  }
-}

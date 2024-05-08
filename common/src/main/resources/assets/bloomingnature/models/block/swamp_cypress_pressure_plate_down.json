@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/pressure_plate_down",
-  "textures": {
-    "texture": "bloomingnature:block/swamp_cypress_pressure_plate"
-  }
-}

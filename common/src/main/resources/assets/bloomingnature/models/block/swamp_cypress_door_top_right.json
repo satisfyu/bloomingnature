@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_right",
-  "textures": {
-    "top": "bloomingnature:block/swamp_cypress_door_top",
-    "bottom": "bloomingnature:block/swamp_cypress_door_bottom"
-  }
-}

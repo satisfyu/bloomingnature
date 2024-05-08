@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/fence_inventory",
-  "textures": {
-    "texture": "bloomingnature:block/fan_palm_planks",
-    "1": "bloomingnature:block/fan_palm_planks"
-  }
-}
-

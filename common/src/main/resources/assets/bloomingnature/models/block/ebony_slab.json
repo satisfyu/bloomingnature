@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "bloomingnature:block/ebony_planks",
-    "top": "bloomingnature:block/ebony_planks",
-    "side": "bloomingnature:block/ebony_planks"
-  }
-}

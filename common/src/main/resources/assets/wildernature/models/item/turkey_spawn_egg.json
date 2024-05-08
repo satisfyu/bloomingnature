@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "wildernature:item/turkey_spawn_egg"
+  }
+}

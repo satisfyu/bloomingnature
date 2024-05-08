@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "bloomingnature:block/mushroom_bricks",
-    "top": "bloomingnature:block/mushroom_bricks",
-    "side": "bloomingnature:block/mushroom_bricks"
-  }
-}

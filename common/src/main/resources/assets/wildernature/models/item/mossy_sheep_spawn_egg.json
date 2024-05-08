@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "wildernature:item/mossy_sheep_spawn_egg"
+  }
+}

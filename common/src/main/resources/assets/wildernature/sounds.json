@@ -1,0 +1,217 @@
+{
+  "deer_hurt": {
+    "subtitle": "subtitles.wildernature.deer_hurt",
+    "sounds": [
+      "wildernature:deer_hurt"
+    ]
+  },
+  "deer_death": {
+    "subtitle": "subtitles.wildernature.deer_death",
+    "sounds": [
+      "wildernature:deer_death"
+    ]
+  },
+  "deer_ambient": {
+    "subtitle": "subtitles.wildernature.deer_ambient",
+    "sounds": [
+      "wildernature:deer_ambient1",
+      "wildernature:deer_ambient2",
+      "wildernature:deer_ambient3"
+    ]
+  },
+  "raccoon_hurt": {
+    "subtitle": "subtitles.wildernature.raccoon_hurt",
+    "sounds": [
+      "wildernature:raccoon_hurt1",
+      "wildernature:raccoon_hurt2"
+    ]
+  },
+  "raccoon_death": {
+    "subtitle": "subtitles.wildernature.raccoon_death",
+    "sounds": [
+      "wildernature:raccoon_death"
+    ]
+  },
+  "raccoon_ambient": {
+    "subtitle": "subtitles.wildernature.raccoon_ambient",
+    "sounds": [
+      "wildernature:raccoon_ambient1",
+      "wildernature:raccoon_ambient2",
+      "wildernature:raccoon_ambient3",
+      "wildernature:raccoon_ambient4",
+      "wildernature:raccoon_ambient5"
+    ]
+  },
+  "squirrel_hurt": {
+    "subtitle": "subtitles.wildernature.squirrel_hurt",
+    "sounds": [
+      "wildernature:squirrel_hurt"
+    ]
+  },
+  "squirrel_death": {
+    "subtitle": "subtitles.wildernature.squirrel_death",
+    "sounds": [
+      "wildernature:squirrel_death"
+    ]
+  },
+  "squirrel_ambient": {
+    "subtitle": "subtitles.wildernature.squirrel_ambient",
+    "sounds": [
+      "wildernature:squirrel_ambient1",
+      "wildernature:squirrel_ambient2",
+      "wildernature:squirrel_ambient3",
+      "wildernature:squirrel_ambient4",
+      "wildernature:squirrel_ambient5"
+    ]
+  },
+  "owl_hurt": {
+    "subtitle": "subtitles.wildernature.owl_hurt",
+    "sounds": [
+      "wildernature:owl_hurt"
+    ]
+  },
+  "owl_death": {
+    "subtitle": "subtitles.wildernature.owl_death",
+    "sounds": [
+      "wildernature:owl_death"
+    ]
+  },
+  "owl_ambient": {
+    "subtitle": "subtitles.wildernature.owl_ambient",
+    "sounds": [
+      "wildernature:owl_ambient1",
+      "wildernature:owl_ambient2"
+    ]
+  },
+  "bison_hurt": {
+    "subtitle": "subtitles.wildernature.bison_hurt",
+    "sounds": [
+      "wildernature:bison_hurt"
+    ]
+  },
+  "bison_death": {
+    "subtitle": "subtitles.wildernature.bison_death",
+    "sounds": [
+      "wildernature:bison_death"
+    ]
+  },
+  "bison_ambient": {
+    "subtitle": "subtitles.wildernature.bison_ambient",
+    "sounds": [
+      "wildernature:bison_ambient1",
+      "wildernature:bison_ambient2",
+      "wildernature:bison_ambient3",
+      "wildernature:bison_ambient4",
+      "wildernature:bison_ambient5",
+      "wildernature:bison_ambient6",
+      "wildernature:bison_ambient7"
+    ]
+  },
+  "bison_angry": {
+    "subtitle": "subtitles.wildernature.bison_angry",
+    "sounds": [
+      "wildernature:bison_angry1",
+      "wildernature:bison_angry2",
+      "wildernature:bison_angry3"
+    ]
+  },
+  "pelican_hurt": {
+    "subtitle": "subtitles.wildernature.pelican_hurt",
+    "sounds": [
+      "wildernature:pelican_hurt1",
+      "wildernature:pelican_hurt2",
+      "wildernature:pelican_hurt3"
+    ]
+  },
+  "pelican_death": {
+    "subtitle": "subtitles.wildernature.pelican_death",
+    "sounds": [
+      "wildernature:pelican_death1",
+      "wildernature:pelican_death2",
+      "wildernature:pelican_death3"
+    ]
+  },
+  "pelican_ambient": {
+    "subtitle": "subtitles.wildernature.pelican_ambient",
+    "sounds": [
+      "wildernature:pelican_ambient1",
+      "wildernature:pelican_ambient2",
+      "wildernature:pelican_ambient3",
+      "wildernature:pelican_ambient4",
+      "wildernature:pelican_ambient5",
+      "wildernature:pelican_ambient6",
+      "wildernature:pelican_ambient7"
+    ]
+  },
+  "turkey_hurt": {
+    "subtitle": "subtitles.wildernature.turkey_hurt",
+    "sounds": [
+      "wildernature:turkey_hurt"
+    ]
+  },
+  "turkey_death": {
+    "subtitle": "subtitles.wildernature.turkey_death",
+    "sounds": [
+      "wildernature:turkey_death"
+    ]
+  },
+  "turkey_ambient": {
+    "subtitle": "subtitles.wildernature.turkey_ambient",
+    "sounds": [
+      "wildernature:turkey_ambient1",
+      "wildernature:turkey_ambient2"
+    ]
+  },
+  "boar_hurt": {
+    "subtitle": "subtitles.wildernature.boar_hurt",
+    "sounds": [
+      "wildernature:boar_hurt1",
+      "wildernature:boar_hurt2",
+      "wildernature:boar_hurt3",
+      "wildernature:boar_hurt4"
+    ]
+  },
+  "boar_death": {
+    "subtitle": "subtitles.wildernature.boar_death",
+    "sounds": [
+      "wildernature:boar_death"
+    ]
+  },
+  "boar_ambient": {
+    "subtitle": "subtitles.wildernature.boar_ambient",
+    "sounds": [
+      "wildernature:boar_ambient1",
+      "wildernature:boar_ambient2",
+      "wildernature:boar_ambient3",
+      "wildernature:boar_ambient4",
+      "wildernature:boar_ambient5"
+    ]
+  },
+  "red_wolf_hurt": {
+    "subtitle": "subtitles.wildernature.red_wolf_hurt",
+    "sounds": [
+      "wildernature:red_wolf_hurt1",
+      "wildernature:red_wolf_hurt2",
+      "wildernature:red_wolf_hurt3"
+    ]
+  },
+  "red_wolf_death": {
+    "subtitle": "subtitles.wildernature.red_wolf_death",
+    "sounds": [
+      "wildernature:red_wolf_death"
+    ]
+  },
+  "red_wolf_ambient": {
+    "subtitle": "subtitles.wildernature.red_wolf_ambient",
+    "sounds": [
+      "wildernature:red_wolf_ambient1",
+      "wildernature:red_wolf_ambient2"
+    ]
+  },
+  "red_wolf_aggro": {
+    "subtitle": "subtitles.wildernature.red_wolf_aggro",
+    "sounds": [
+      "wildernature:red_wolf_aggro"
+    ]
+  }
+}

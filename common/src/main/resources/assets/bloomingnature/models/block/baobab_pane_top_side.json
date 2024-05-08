@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_side",
-  "textures": {
-    "pane": "bloomingnature:block/baobab_window_top",
-    "edge": "bloomingnature:block/baobab_window_pane_top"
-  }
-}

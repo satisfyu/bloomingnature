@@ -1,28 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "bloomingnature",
+  "id": "wildernature",
   "version": "${version}",
-  "name": "[Let's Do] BloomingNature",
-  "description": "Explore a redesigned overworld: new animals, reshaped biomes, livelier landscapes.",
+  "name": "[Let's Do] WilderNature",
+  "description": "---",
   "authors": [
-    "satisfy"
+    "satisfy, jason13"
   ],
   "contact": {
-    "homepage": "https://legacy.curseforge.com/minecraft/mc-mods/lets-do-bloomingnature",
-    "sources": "https://github.com/satisfyu/bloomingnature"
+    "homepage": "https://legacy.curseforge.com/minecraft/mc-mods/lets-do-wildernature",
+    "sources": "https://github.com/satisfyu/wildernature"
   },
   "license": "Custom",
   "icon": "pack.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "satisfy.bloomingnature.fabric.BloomingNatureFabric"
+      "satisfy.wildernature.fabric.WilderNatureFabric"
     ],
     "client": [
-      "satisfy.bloomingnature.fabric.client.BloomingNatureClientFabric"
+      "satisfy.wildernature.fabric.client.WilderNatureClientFabric"
     ],
     "doapi": [
-      "satisfy.bloomingnature.util.BloomingNatureDoAPI"
+      "satisfy.wildernature.util.WilderNatureDoAPI"
     ]
   },
   "depends": {

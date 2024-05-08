@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "bloomingnature:block/tall_lupine_purple_bottom"
+    },
+    "half=upper": {
+      "model": "bloomingnature:block/tall_lupine_purple_top"
+    }
+  }
+}

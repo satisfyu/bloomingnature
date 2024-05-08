@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bloomingnature:aspen_planks"
+    ]
+  },
+  "criteria": {
+    "has_aspen_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:aspen_log"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bloomingnature:aspen_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_aspen_log",
+      "has_the_recipe"
+    ]
+  ]
+}

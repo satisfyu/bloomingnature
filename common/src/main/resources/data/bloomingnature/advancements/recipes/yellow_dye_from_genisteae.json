@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "genisteae"
+    ]
+  },
+  "criteria": {
+    "has_genisteae": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:genisteae"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "genisteae"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_genisteae",
+      "has_the_recipe"
+    ]
+  ]
+}

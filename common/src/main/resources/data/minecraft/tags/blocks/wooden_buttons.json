@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "bloomingnature:larch_button",
+    "bloomingnature:aspen_button",
+    "bloomingnature:swamp_oak_button",
+    "bloomingnature:swamp_cypress_button",
+    "bloomingnature:fir_button",
+    "bloomingnature:baobab_button",
+    "bloomingnature:chestnut_button",
+    "bloomingnature:ebony_button",
+    "bloomingnature:fan_palm_button"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "bloomingnature:block/wild_sunflower_bottom"
+    },
+    "half=upper": {
+      "model": "bloomingnature:block/wild_sunflower_top"
+    }
+  }
+}

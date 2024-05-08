@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "pane": "bloomingnature:block/fir_window_top",
+    "edge": "bloomingnature:block/fir_window_pane_top"
+  }
+}

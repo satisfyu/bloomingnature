@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "bloomingnature:block/swamp_cypress_planks",
+    "top": "bloomingnature:block/swamp_cypress_planks",
+    "side": "bloomingnature:block/swamp_cypress_planks"
+  }
+}

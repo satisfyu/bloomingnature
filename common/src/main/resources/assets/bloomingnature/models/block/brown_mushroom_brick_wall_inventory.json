@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "bloomingnature:block/brown_mushroom_bricks"
+  }
+}

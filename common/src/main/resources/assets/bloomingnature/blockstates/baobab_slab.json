@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bloomingnature:block/baobab_slab"
+    },
+    "type=double": {
+      "model": "bloomingnature:block/baobab_slab_double"
+    },
+    "type=top": {
+      "model": "bloomingnature:block/baobab_slab_top"
+    }
+  }
+}

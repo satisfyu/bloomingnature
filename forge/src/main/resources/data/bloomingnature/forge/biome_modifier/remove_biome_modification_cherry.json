@@ -1,0 +1,10 @@
+{
+  "type": "forge:remove_features",
+  "biomes": "minecraft:cherry_grove",
+  "features": [
+    "minecraft:trees_cherry",
+    "minecraft:flower_cherry"
+
+  ],
+  "step": "vegetal_decoration"
+}

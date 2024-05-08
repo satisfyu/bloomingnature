@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "bloomingnature:block/tall_mountain_laurel_bottom"
+    },
+    "half=upper": {
+      "model": "bloomingnature:block/tall_mountain_laurel_top"
+    }
+  }
+}

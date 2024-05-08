@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bloomingnature:larch_button"
+    ]
+  },
+  "criteria": {
+    "has_larch_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:larch_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bloomingnature:larch_button"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_larch_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

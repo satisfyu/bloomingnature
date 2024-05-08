@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bloomingnature:fir_fence"
+    ]
+  },
+  "criteria": {
+    "has_fir_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:fir_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bloomingnature:fir_fence"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fir_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

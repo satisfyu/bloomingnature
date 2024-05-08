@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "bloomingnature:little_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 66293,
+    "spacing": 25,
+    "separation": 22,
+    "type": "minecraft:random_spread"
+  }
+}

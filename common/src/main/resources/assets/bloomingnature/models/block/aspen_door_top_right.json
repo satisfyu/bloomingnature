@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "top": "bloomingnature:block/aspen_door_top",
+    "bottom": "bloomingnature:block/aspen_door_bottom"
+  }
+}

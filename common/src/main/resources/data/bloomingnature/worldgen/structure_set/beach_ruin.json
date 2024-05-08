@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "bloomingnature:beach_ruin",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 66293,
+    "spacing": 15,
+    "separation": 9,
+    "type": "minecraft:random_spread"
+  }
+}

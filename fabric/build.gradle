@@ -7,7 +7,7 @@ architectury {
     fabric()
 }
 
-def jarFileName = 'letsdo-wildernature-fabric'
+def jarFileName = 'letsdo-bloomingnature-fabric'
 
 archivesBaseName = jarFileName
 
@@ -18,7 +18,7 @@ loom {
 
 configurations {
     common
-    shadowCommon
+    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentFabric.extendsFrom common
@@ -34,16 +34,16 @@ repositories {
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    include("maven.modrinth:do-api:${project.doapi_version}-fabric") {
+    include("maven.modrinth:do-api:${project.doapi_version}-fabric"){
         transitive = true;
     }
-    modApi("maven.modrinth:do-api:${project.doapi_version}-fabric") {
+    modApi("maven.modrinth:do-api:${project.doapi_version}-fabric"){
         transitive = true;
     }
-    include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}") {
+    include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"){
         transitive = true;
     }
-    modApi("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}") {
+    modApi("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"){
         transitive = true;
     }
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"

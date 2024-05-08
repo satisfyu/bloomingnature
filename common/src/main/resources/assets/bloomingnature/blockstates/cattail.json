@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "bloomingnature:block/cattail_bottom"
+    },
+    "half=upper": {
+      "model": "bloomingnature:block/cattail_top"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "bloomingnature:swamp_ruin_1",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1000003,
+    "spacing": 7,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

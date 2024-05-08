@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/travertin_bricks",
+        "weight": 1
+      }
+    ]
+  }
+}

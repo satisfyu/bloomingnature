@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side",
+  "textures": {
+    "pane": "bloomingnature:block/swamp_oak_window_mid",
+    "edge": "bloomingnature:block/swamp_oak_window_pane_top"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bloomingnature:baobab_hanging_sign"
+    ]
+  },
+  "criteria": {
+    "has_baobab_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:baobab_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bloomingnature:baobab_hanging_sign"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_baobab_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

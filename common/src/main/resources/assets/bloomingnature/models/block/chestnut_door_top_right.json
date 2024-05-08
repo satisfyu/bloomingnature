@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "top": "bloomingnature:block/chestnut_door_top",
+    "bottom": "bloomingnature:block/chestnut_door_bottom"
+  }
+}

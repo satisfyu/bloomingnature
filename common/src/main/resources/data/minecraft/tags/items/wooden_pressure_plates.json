@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "bloomingnature:larch_pressure_plate",
+    "bloomingnature:aspen_pressure_plate",
+    "bloomingnature:swamp_oak_pressure_plate",
+    "bloomingnature:swamp_cypress_pressure_plate",
+    "bloomingnature:fir_pressure_plate",
+    "bloomingnature:baobab_pressure_plate",
+    "bloomingnature:chestnut_pressure_plate",
+    "bloomingnature:ebony_pressure_plate",
+    "bloomingnature:fan_palm_pressure_plate"
+  ]
+}

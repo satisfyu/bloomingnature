@@ -1,0 +1,15 @@
+{
+  "name": "bloomingnature:swamp_ruin/start_pool_3",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "bloomingnature:swamp_ruin_3",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

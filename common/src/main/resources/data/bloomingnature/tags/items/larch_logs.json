@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "bloomingnature:larch_log",
+    "bloomingnature:stripped_larch_log",
+    "bloomingnature:larch_wood",
+    "bloomingnature:stripped_larch_wood"
+  ]
+}

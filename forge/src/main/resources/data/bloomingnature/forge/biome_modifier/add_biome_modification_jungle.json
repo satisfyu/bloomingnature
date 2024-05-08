@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:jungle",
+  "features": [
+    "bloomingnature:terrain/laterit_boulder",
+    "bloomingnature:terrain/ore_laterit",
+    "bloomingnature:terrain/swamp_floating_leaves",
+    "bloomingnature:jungle_flowers",
+    "bloomingnature:jungle_bush_checked",
+    "bloomingnature:jungle_trees"
+  ],
+  "step": "vegetal_decoration"
+}

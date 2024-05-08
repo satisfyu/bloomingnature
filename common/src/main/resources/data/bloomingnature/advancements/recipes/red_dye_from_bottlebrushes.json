@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bottlebrushes"
+    ]
+  },
+  "criteria": {
+    "has_bottlebrushes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:bottlebrushes"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bottlebrushes"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bottlebrushes",
+      "has_the_recipe"
+    ]
+  ]
+}

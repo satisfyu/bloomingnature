@@ -17,7 +17,7 @@ loom {
 }
 
 
-def jarFileName = 'letsdo-wildernature-forge'
+def jarFileName = 'letsdo-bloomingnature-forge'
 
 archivesBaseName = jarFileName
 

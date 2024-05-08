@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bloomingnature:stripped_swamp_cypress_wood"
+    ]
+  },
+  "criteria": {
+    "has_stripped_swamp_cypress_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:stripped_swamp_cypress_log"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bloomingnature:stripped_swamp_cypress_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_stripped_swamp_cypress_log",
+      "has_the_recipe"
+    ]
+  ]
+}

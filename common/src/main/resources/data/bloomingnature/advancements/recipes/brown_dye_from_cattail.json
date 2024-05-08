@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "cattail"
+    ]
+  },
+  "criteria": {
+    "has_cattail": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bloomingnature:cattail"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "cattail"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cattail",
+      "has_the_recipe"
+    ]
+  ]
+}

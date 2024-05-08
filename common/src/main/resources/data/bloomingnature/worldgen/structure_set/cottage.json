@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "bloomingnature:cottage",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 51511,
+    "spacing": 128,
+    "separation": 64,
+    "type": "minecraft:random_spread"
+  }
+}

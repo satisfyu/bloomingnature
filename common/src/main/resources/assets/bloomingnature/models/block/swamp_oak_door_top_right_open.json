@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "top": "bloomingnature:block/swamp_oak_door_top",
+    "bottom": "bloomingnature:block/swamp_oak_door_bottom"
+  }
+}

@@ -15,6 +15,7 @@ public class BloomingNature {
         DataFixerRegistry.init();
         ObjectRegistry.init();
         BoatsAndSignsRegistry.init();
+        FurnaceFuelRegistry.init();
         EntityRegistry.init();
         TabRegistry.init();
         PlacerTypesRegistry.init();

@@ -326,28 +326,6 @@ public class ObjectRegistry {
     public static ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(BloomingNature.MOD_ID, name));
     }
-    
-    public static void commonInit() {
-        FuelRegistry.register(300, FAN_PALM_FENCE.get(), FAN_PALM_FENCE_GATE.get(), FAN_PALM_PLANKS.get(), FAN_PALM_LOG.get(), FAN_PALM_WOOD.get(),
-                STRIPPED_FAN_PALM_LOG.get(), STRIPPED_FAN_PALM_WOOD.get(), BAOBAB_PLANKS.get(), BAOBAB_SLAB.get(), BAOBAB_STAIRS.get(), BAOBAB_FENCE.get(),
-                SWAMP_OAK_PLANKS.get(), SWAMP_OAK_SLAB.get(), SWAMP_OAK_STAIRS.get(), SWAMP_OAK_FENCE.get(), SWAMP_OAK_FENCE_GATE.get(),
-                SWAMP_CYPRESS_PLANKS.get(), SWAMP_CYPRESS_SLAB.get(), SWAMP_CYPRESS_STAIRS.get(), SWAMP_CYPRESS_FENCE.get(), SWAMP_CYPRESS_FENCE_GATE.get(),
-                LARCH_PLANKS.get(), LARCH_SLAB.get(), LARCH_STAIRS.get(), LARCH_FENCE.get(), LARCH_FENCE_GATE.get(), BAOBAB_FENCE_GATE.get(),
-                FIR_PLANKS.get(), FIR_SLAB.get(), FIR_STAIRS.get(), FIR_FENCE.get(), FIR_FENCE_GATE.get(),
-                CHESTNUT_PLANKS.get(), CHESTNUT_SLAB.get(), CHESTNUT_STAIRS.get(), CHESTNUT_FENCE.get(), CHESTNUT_FENCE_GATE.get(),
-                FAN_PALM_PLANKS.get(), FAN_PALM_SLAB.get(), FAN_PALM_STAIRS.get(), FAN_PALM_FENCE.get(), FAN_PALM_FENCE_GATE.get(),
-                ASPEN_PLANKS.get(), ASPEN_SLAB.get(), ASPEN_STAIRS.get(), ASPEN_FENCE.get(), ASPEN_FENCE_GATE.get(),
-                EBONY_PLANKS.get(), EBONY_SLAB.get(), EBONY_STAIRS.get(), EBONY_FENCE.get(), EBONY_FENCE_GATE.get(),
-                SWAMP_OAK_LOG.get(), SWAMP_OAK_WOOD.get(), STRIPPED_SWAMP_OAK_LOG.get(), STRIPPED_SWAMP_OAK_WOOD.get(),
-                SWAMP_CYPRESS_LOG.get(), SWAMP_CYPRESS_WOOD.get(), STRIPPED_SWAMP_CYPRESS_LOG.get(), STRIPPED_SWAMP_CYPRESS_WOOD.get(),
-                LARCH_LOG.get(), LARCH_WOOD.get(), STRIPPED_LARCH_LOG.get(), STRIPPED_LARCH_WOOD.get(),
-                FIR_LOG.get(), FIR_WOOD.get(), STRIPPED_FIR_LOG.get(), STRIPPED_FIR_WOOD.get(),
-                CHESTNUT_LOG.get(), CHESTNUT_WOOD.get(), STRIPPED_CHESTNUT_LOG.get(), STRIPPED_CHESTNUT_WOOD.get(),
-                FAN_PALM_LOG.get(), FAN_PALM_WOOD.get(), STRIPPED_FAN_PALM_LOG.get(), STRIPPED_FAN_PALM_WOOD.get(),
-                ASPEN_LOG.get(), ASPEN_WOOD.get(), STRIPPED_ASPEN_LOG.get(), STRIPPED_ASPEN_WOOD.get(),
-                EBONY_LOG.get(), EBONY_WOOD.get(), STRIPPED_EBONY_LOG.get(), STRIPPED_EBONY_WOOD.get(),
-                BAOBAB_LOG.get(), BAOBAB_WOOD.get(), STRIPPED_BAOBAB_LOG.get(), STRIPPED_BAOBAB_WOOD.get());
-    }
 
     private static ButtonBlock woodenButton(FeatureFlag... featureFlags) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of().noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY);

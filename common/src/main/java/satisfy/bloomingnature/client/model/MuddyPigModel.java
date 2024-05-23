@@ -1,6 +1,5 @@
 package satisfy.bloomingnature.client.model;
 
-
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.fabricmc.api.EnvType;
@@ -12,11 +11,13 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.animal.Pig;
+import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 
 @Environment(EnvType.CLIENT)
 public class MuddyPigModel<T extends Pig> extends HierarchicalModel<T> {
-        public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new BloomingNatureIdentifier("muddy_pig"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new BloomingNatureIdentifier("muddy_pig"), "main");
+    private final ModelPart root;
     private final ModelPart body;
     private final ModelPart head;
     private final ModelPart leg0;
@@ -25,6 +26,7 @@ public class MuddyPigModel<T extends Pig> extends HierarchicalModel<T> {
     private final ModelPart leg3;
 
     public MuddyPigModel(ModelPart root) {
+        this.root = root;
         this.body = root.getChild("body");
         this.head = root.getChild("head");
         this.leg0 = root.getChild("leg0");
@@ -33,6 +35,7 @@ public class MuddyPigModel<T extends Pig> extends HierarchicalModel<T> {
         this.leg3 = root.getChild("leg3");
     }
 
+    @SuppressWarnings("unused")
     public static LayerDefinition getTexturedModelData() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
@@ -77,9 +80,8 @@ public class MuddyPigModel<T extends Pig> extends HierarchicalModel<T> {
         leg3.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
-
     @Override
-    public ModelPart root() {
-        return null;
+    public @NotNull ModelPart root() {
+        return this.root;
     }
 }

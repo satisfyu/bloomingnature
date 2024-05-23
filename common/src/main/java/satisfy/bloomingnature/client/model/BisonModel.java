@@ -9,6 +9,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
+import org.jetbrains.annotations.NotNull;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 
 public class BisonModel<T extends Entity> extends HierarchicalModel<T> {
@@ -89,7 +90,7 @@ public class BisonModel<T extends Entity> extends HierarchicalModel<T> {
     }
 
     @Override
-    public ModelPart root() {
-        return null;
+    public @NotNull ModelPart root() {
+        return body;
     }
 }

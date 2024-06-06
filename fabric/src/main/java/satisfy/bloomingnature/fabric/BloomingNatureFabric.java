@@ -1,28 +1,18 @@
 package satisfy.bloomingnature.fabric;
 
-import com.google.common.base.Preconditions;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.*;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.ambient.AmbientCreature;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.Heightmap;
 import satisfy.bloomingnature.BloomingNature;
+import satisfy.bloomingnature.fabric.config.ConfigFabric;
 import satisfy.bloomingnature.registry.CompostableRegistry;
-import satisfy.bloomingnature.registry.EntityRegistry;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 import satisfy.bloomingnature.world.PlacedFeatures;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 public class BloomingNatureFabric implements ModInitializer {
@@ -32,51 +22,24 @@ public class BloomingNatureFabric implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        AutoConfig.register(ConfigFabric.class, GsonConfigSerializer::new);
         BloomingNature.init();
         BloomingNature.commonInit();
         CompostableRegistry.init();
-        addSpawns();
         addBiomeModification();
     }
 
-    void addSpawns() {
-        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, EntityType.EVOKER, 4, 1, 2);
-        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, EntityType.VINDICATOR, 4, 1, 2);
-        addMobSpawn(BiomeTags.HAS_WOODLAND_MANSION, EntityType.PILLAGER, 4, 1, 3);
-        removeSpawn(BiomeTags.IS_SAVANNA, List.of(EntityType.SHEEP, EntityType.PIG, EntityType.CHICKEN, EntityType.COW));
-        removeSpawn(ConventionalBiomeTags.SWAMP, List.of(EntityType.SHEEP, EntityType.PIG, EntityType.CHICKEN, EntityType.COW));
-        removeSpawn(BiomeTags.IS_FOREST, List.of(EntityType.PIG, EntityType.CHICKEN));
-        removeSpawn(BiomeTags.IS_JUNGLE, List.of(EntityType.PIG, EntityType.CHICKEN, EntityType.COW));
-        addMobSpawn(BiomeTags.IS_JUNGLE, EntityType.FROG, 8, 3, 4);
-        addMobSpawn(BiomeTags.IS_SAVANNA, EntityRegistry.TERMITE.get(), 10, 3, 4);
-
-        SpawnPlacements.register(EntityRegistry.TERMITE.get(), SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AmbientCreature::checkMobSpawnRules);
-    }
-
-    void addMobSpawn(TagKey<Biome> tag, EntityType<?> entityType, int weight, int minGroupSize, int maxGroupSize) {
-        BiomeModifications.addSpawn(biomeSelector -> biomeSelector.hasTag(tag), MobCategory.CREATURE, entityType, weight, minGroupSize, maxGroupSize);
-    }
-
-    void removeSpawn(TagKey<Biome> tag, List<EntityType<?>> entityTypes) {
-        entityTypes.forEach(entityType -> {
-            ResourceLocation id = BuiltInRegistries.ENTITY_TYPE.getKey(entityType);
-            Preconditions.checkState(BuiltInRegistries.ENTITY_TYPE.containsKey(id), "Unregistered entity type: %s", entityType);
-            BiomeModifications.create(id).add(ModificationPhase.REMOVALS, biomeSelector -> biomeSelector.hasTag(tag), context -> context.getSpawnSettings().removeSpawnsOfEntityType(entityType));
-        });
-    }
-
     void addBiomeModification() {
+        ConfigFabric config = AutoConfig.getConfigHolder(ConfigFabric.class).getConfig();
         BiomeModification world = BiomeModifications.create(new BloomingNatureIdentifier("world_features"));
         Predicate<BiomeSelectionContext> overworld = getBloomingNatureSelector("overworld");
         Predicate<BiomeSelectionContext> plains = getBloomingNatureSelector("plains");
+        Predicate<BiomeSelectionContext> river = getBloomingNatureSelector("river");
         Predicate<BiomeSelectionContext> aspen = getBloomingNatureSelector("aspen");
         Predicate<BiomeSelectionContext> birch = getBloomingNatureSelector("birch");
         Predicate<BiomeSelectionContext> forest = getBloomingNatureSelector("forest");
         Predicate<BiomeSelectionContext> flower_forest = getBloomingNatureSelector("flower_forest");
-        Predicate<BiomeSelectionContext> river = getBloomingNatureSelector("river");
         Predicate<BiomeSelectionContext> cherry_grove = getBloomingNatureSelector("cherry_grove");
-        Predicate<BiomeSelectionContext> grove = getBloomingNatureSelector("grove");
         Predicate<BiomeSelectionContext> snowy_plains = getBloomingNatureSelector("snowy_plains");
         Predicate<BiomeSelectionContext> snowy_slopes = getBloomingNatureSelector("snowy_slopes");
         Predicate<BiomeSelectionContext> snowy_taiga = getBloomingNatureSelector("snowy_taiga");
@@ -95,31 +58,171 @@ public class BloomingNatureFabric implements ModInitializer {
         Predicate<BiomeSelectionContext> savanna = getBloomingNatureSelector("savanna");
         Predicate<BiomeSelectionContext> savanna_plateau = getBloomingNatureSelector("savanna_plateau");
 
-        world.add(ModificationPhase.REMOVALS, overworld, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.LAVA_LAKE_SURFACE));
-        world.add(ModificationPhase.REMOVALS, overworld, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.LAVA_LAKE_UNDERGROUND));
-        world.add(ModificationPhase.ADDITIONS, beach, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FAN_PALM_TREE_KEY));
-        world.add(ModificationPhase.ADDITIONS, beach, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.BEACH_FLOWERS_KEY));
-        world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.QUICKSAND_KEY));
-        world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_FLOWERS));
-        world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_TREES));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_TREES));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_FLOWERS));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_GRASS));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_BOULDER_KEY));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_MOUND_KEY));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.GRAVEL_BEACH_KEY));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN_KEY));
-        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_MOUND));
-        world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_FLOWERS));
-        world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOWER_DEFAULT));
-        world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_TREES));
-        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_TREES));
-        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_FALLEN));
-        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_FLOWERS));
-        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_GRASS));
-        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
-        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getEffects().setGrassColor(14406505));
+
+        //MISC
+        if (config.removeLavaLakes) {
+            world.add(ModificationPhase.REMOVALS, overworld, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.LAVA_LAKE_SURFACE));
+        } else {
+            world.add(ModificationPhase.ADDITIONS, overworld, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.LAVA_LAKE_SURFACE));
+        }
+        if (config.removeLavaLakesUnderground) {
+            world.add(ModificationPhase.REMOVALS, overworld, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.LAVA_LAKE_UNDERGROUND));
+        } else {
+            world.add(ModificationPhase.ADDITIONS, overworld, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.LAVA_LAKE_UNDERGROUND));
+        }
+
+
+        //PLAINS
+        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getEffects().setGrassColor(config.setPlainsGrassColor));
+        world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getEffects().setFoliageColor(config.setPlainsFoliageColor));
+        if (config.removeVanillaPlainsFlowers) {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_FLOWERS));
+        }
+        if (config.removeVanillaPlainsTrees) {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_TREES));
+        }
+        if (config.addBloomingNaturePlainsTrees) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_TREES));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_TREES));
+        }
+        if (config.addBloomingNaturePlainsFlowers) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_FLOWERS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_FLOWERS));
+        }
+        if (config.addBloomingNaturePlainsGrass) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_GRASS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_GRASS));
+        }
+        if (config.addBloomingNaturePlainsStoneBoulders) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_BOULDER_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_BOULDER_KEY));
+        }
+        if (config.addBloomingNaturePlainsStoneMounds) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_MOUND_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_MOUND_KEY));
+        }
+        if (config.addBloomingNaturePlainsSmallStoneMounds) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_MOUND));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_MOUND));
+        }
+        if (config.addBloomingNaturePlainsGravelBeaches) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.GRAVEL_BEACH_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.GRAVEL_BEACH_KEY));
+        }
+        if (config.addBloomingNaturePlainsStoneSlabs) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
+        }
+        if (config.addBloomingNaturePlainsBurriedTravertin) {
+            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN_KEY));
+        }
+
+        //RIVER
+        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getEffects().setGrassColor(config.setRiverGrassColor));
+        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getEffects().setFoliageColor(config.setRiverFoliageColor));
+        if (config.removeVanillaRiverFlowers) {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.RIVER_FLOWERS));
+        }
+        if (config.removeVanillaRiverTrees) {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.RIVER_TREES));
+        }
+
+
+        if (config.addBloomingNatureRiverTrees) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.RIVER_BN_TREES));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.RIVER_BN_TREES));
+        }
+        if (config.addBloomingNatureRiverGrass) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_GRASS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_GRASS));
+        }
+        if (config.addBloomingNatureRiverStoneBoulders) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_BOULDER_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_BOULDER_KEY));
+        }
+        if (config.addBloomingNatureRiverStoneMounds) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_MOUND_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_MOUND_KEY));
+        }
+        if (config.addBloomingNatureRiverGravelBeaches) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.GRAVEL_BEACH_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.GRAVEL_BEACH_KEY));
+        }
+        if (config.addBloomingNatureRiverStoneSlabs) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
+        }
+        if (config.addBloomingNatureRiverBurriedTravertin) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN_KEY));
+        }
+        if (config.addBloomingNatureRiverSmallStoneMounds) {
+            world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_MOUND));
+        } else {
+            world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_MOUND));
+        }
+
+
+        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getEffects().setGrassColor(config.setOldGrowthBirchForestGrassColor));
+        world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getEffects().setFoliageColor(config.setOldGrowthBirchForestFoliageColor));
+        if (config.removeVanillaOldGrowthBirchForestFlowers) {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOWER_DEFAULT));
+        }
+        if (config.removeVanillaOldGrowthBirchForestFlowers) {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_FLOWERS));
+        }
+        if (config.removeVanillaOldGrowthBirchForestTrees) {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_TREES));
+        }
+
+
+        if (config.addBloomingNatureOldGrowthBirchForestTrees) {
+            world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_TREES));
+        } else {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_TREES));
+        }
+        if (config.addBloomingNatureOldGrowthBirchForestFallenTrees) {
+            world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_FALLEN));
+        } else {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_FALLEN));
+        }
+        if (config.addBloomingNatureOldGrowthBirchForestFlowers) {
+            world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_FLOWERS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_FLOWERS));
+        }
+        if (config.addBloomingNatureOldGrowthBirchForestGrass) {
+            world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_GRASS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_BN_GRASS));
+        }
+        if (config.addBloomingNatureOldGrowthBirchStoneSlabs) {
+            world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
+        } else {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
+        }
+
+
+
+
+
         world.add(ModificationPhase.REMOVALS, birch, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.BIRCH_FLOWERS));
         world.add(ModificationPhase.REMOVALS, birch, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOWER_DEFAULT));
         world.add(ModificationPhase.REMOVALS, birch, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.BIRCH_TREES));
@@ -145,18 +248,6 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, flower_forest, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOWER_FOREST_BN_FLOWERS));
         world.add(ModificationPhase.ADDITIONS, flower_forest, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOWER_FOREST_BN_GRASS));
         world.add(ModificationPhase.ADDITIONS, flower_forest, ctx -> ctx.getEffects().setGrassColor(10799444));
-        world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.RIVER_TREES));
-        world.add(ModificationPhase.REMOVALS, river, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.RIVER_FLOWERS));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.RIVER_BN_TREES));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_GRASS));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_BOULDER_KEY));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_MOUND_KEY));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.GRAVEL_BEACH_KEY));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS_KEY));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN_KEY));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_MOUND));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getEffects().setGrassColor(11063154));
-        world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getEffects().setFoliageColor(10399058));
         world.add(ModificationPhase.REMOVALS, cherry_grove, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.CHERRY_TREES));
         world.add(ModificationPhase.REMOVALS, cherry_grove, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.CHERRY_FLOWERS));
         world.add(ModificationPhase.ADDITIONS, cherry_grove, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.CHERRY_BN_TREES));
@@ -306,5 +397,9 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setGrassColor(8970560));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setFoliageColor(6337104));
+        world.add(ModificationPhase.ADDITIONS, beach, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FAN_PALM_TREE_KEY));
+        world.add(ModificationPhase.ADDITIONS, beach, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.BEACH_FLOWERS_KEY));
+        world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.QUICKSAND_KEY));
+
     }
 }

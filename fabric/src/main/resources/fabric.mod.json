@@ -23,6 +23,9 @@
     ],
     "doapi": [
       "satisfy.bloomingnature.util.BloomingNatureDoAPI"
+    ],
+    "modmenu": [
+      "satisfy.bloomingnature.fabric.config.ModMenu"
     ]
   },
   "depends": {

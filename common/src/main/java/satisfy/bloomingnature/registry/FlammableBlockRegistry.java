@@ -1,12 +1,13 @@
 package satisfy.bloomingnature.registry;
 
-import de.cristelknight.doapi.DoApiCommonEP;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 
 public class FlammableBlockRegistry {
 
     public static void init() {
-        add(5, 20,
+        addFlammable(5, 20,
                 ObjectRegistry.BAOBAB_PLANKS.get(), ObjectRegistry.BAOBAB_SLAB.get(), ObjectRegistry.BAOBAB_STAIRS.get(), ObjectRegistry.BAOBAB_FENCE.get(),
                 ObjectRegistry.BAOBAB_FENCE_GATE.get(),
                 ObjectRegistry.SWAMP_OAK_PLANKS.get(), ObjectRegistry.SWAMP_OAK_SLAB.get(), ObjectRegistry.SWAMP_OAK_STAIRS.get(),
@@ -27,7 +28,7 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.EBONY_FENCE.get(), ObjectRegistry.EBONY_FENCE_GATE.get()
         );
 
-        add(5, 5,
+        addFlammable(5, 5,
                 ObjectRegistry.SWAMP_OAK_LOG.get(), ObjectRegistry.SWAMP_OAK_WOOD.get(), ObjectRegistry.STRIPPED_SWAMP_OAK_LOG.get(), ObjectRegistry.STRIPPED_SWAMP_OAK_WOOD.get(),
                 ObjectRegistry.SWAMP_CYPRESS_LOG.get(), ObjectRegistry.SWAMP_CYPRESS_WOOD.get(), ObjectRegistry.STRIPPED_SWAMP_CYPRESS_LOG.get(), ObjectRegistry.STRIPPED_SWAMP_CYPRESS_WOOD.get(),
                 ObjectRegistry.LARCH_LOG.get(), ObjectRegistry.LARCH_WOOD.get(), ObjectRegistry.STRIPPED_LARCH_LOG.get(), ObjectRegistry.STRIPPED_LARCH_WOOD.get(),
@@ -37,10 +38,9 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.ASPEN_LOG.get(), ObjectRegistry.ASPEN_WOOD.get(), ObjectRegistry.STRIPPED_ASPEN_LOG.get(), ObjectRegistry.STRIPPED_ASPEN_WOOD.get(),
                 ObjectRegistry.EBONY_LOG.get(), ObjectRegistry.EBONY_WOOD.get(), ObjectRegistry.STRIPPED_EBONY_LOG.get(), ObjectRegistry.STRIPPED_EBONY_WOOD.get(),
                 ObjectRegistry.BAOBAB_LOG.get(), ObjectRegistry.BAOBAB_WOOD.get(), ObjectRegistry.STRIPPED_BAOBAB_LOG.get(), ObjectRegistry.STRIPPED_BAOBAB_WOOD.get()
-
         );
 
-        add(30, 60,
+        addFlammable(30, 60,
                 ObjectRegistry.BAOBAB_LEAVES.get(),
                 ObjectRegistry.SWAMP_OAK_LEAVES.get(),
                 ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(),
@@ -51,12 +51,13 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.ASPEN_LEAVES.get(),
                 ObjectRegistry.EBONY_LEAVES.get(),
                 ObjectRegistry.ORANGE_LEAVES.get()
-
         );
     }
 
-    private static void add(int burnOdd, int igniteOdd, Block... blocks) {
-        DoApiCommonEP.addFlammable(burnOdd, igniteOdd, blocks);
+    public static void addFlammable(int burnOdd, int igniteOdd, Block... blocks) {
+        FireBlock fireBlock = (FireBlock) Blocks.FIRE;
+        for (Block block : blocks) {
+            fireBlock.setFlammable(block, burnOdd, igniteOdd);
+        }
     }
-
 }

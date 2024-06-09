@@ -19,6 +19,7 @@ public class BloomingNature {
         TabRegistry.init();
         PlacerTypesRegistry.init();
         DoApiEP.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("bushy_leaves"), false);
+        DoApiEP.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("modified_vanilla_trees"), false);
     }
 
     public static void commonInit() {

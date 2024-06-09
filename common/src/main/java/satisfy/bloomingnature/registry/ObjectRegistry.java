@@ -321,6 +321,10 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithoutItem("floating_leaves", () -> new FloatingLeavesBlock(BlockBehaviour.Properties.copy(Blocks.LILY_PAD)));
     public static final RegistrySupplier<Block> COCONUT_HANGING = registerWithoutItem("coconut_hanging", () -> new HangingCoconutBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO)));
 
+
+    public static final RegistrySupplier<Block> SUNGRASS = registerWithItem("sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+    public static final RegistrySupplier<Block> TALL_SUNGRASS = registerWithItem("tall_sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+
     public static void init() {
         BloomingNature.LOGGER.debug("Registering Mod Block and Items for " + BloomingNature.MOD_ID);
         ITEMS.register();

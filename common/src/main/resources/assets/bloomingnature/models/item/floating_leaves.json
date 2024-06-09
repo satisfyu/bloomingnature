@@ -1,3 +1,6 @@
 {
-  "parent": "bloomingnature:block/floating_leaves"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bloomingnature:item/floating_leaves"
+  }
 }

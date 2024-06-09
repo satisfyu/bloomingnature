@@ -231,6 +231,7 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.TALL_LUPINE_BLUE.get());
                 out.accept(ObjectRegistry.LUPINE_PURPLE.get());
                 out.accept(ObjectRegistry.TALL_LUPINE_PURPLE.get());
+                out.accept(ObjectRegistry.FLOATING_LEAVES.get());
                 out.accept(ObjectRegistry.BEACH_BUSH.get());
                 out.accept(ObjectRegistry.BEACH_BUSH_TALL.get());
                 out.accept(ObjectRegistry.BEACH_GRASS.get());

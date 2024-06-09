@@ -113,7 +113,6 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> SWAMP_REED = registerKey("swamp_reed");
     public static final ResourceKey<PlacedFeature> SWAMP_BN_GRASS = registerKey("swamp_grass_patch");
     public static final ResourceKey<PlacedFeature> SWAMP_BN_FLOWERS = registerKey("swamp_flowers");
-
     public static final ResourceKey<PlacedFeature> MANGROVE_SWAMP_WATER_BASIN = registerKey("mangrove_swamp_water_basin");
     public static final ResourceKey<PlacedFeature> MANGROVE_SWAMP_MARSH_BASIN = registerKey("mangrove_swamp_marsh_basin");
     public static final ResourceKey<PlacedFeature> MANGROVE_SWAMP_FLOATING_LEAVES = registerKey("mangrove_swamp_floating_leaves");

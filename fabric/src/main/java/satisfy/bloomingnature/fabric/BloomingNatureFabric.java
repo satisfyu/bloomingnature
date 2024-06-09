@@ -131,14 +131,14 @@ public class BloomingNatureFabric implements ModInitializer {
             world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_TRAVERTIN));
         }
         if (config.addBloomingNatureSunflowerPlainsTrees) {
-            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_TREES));
+            world.add(ModificationPhase.ADDITIONS, sunflower_plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_TREES));
         } else {
-            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_TREES));
+            world.add(ModificationPhase.REMOVALS, sunflower_plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_TREES));
         }
         if (config.addBloomingNatureSunflowerPlainsFlowers) {
-            world.add(ModificationPhase.ADDITIONS, plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_FLOWERS));
+            world.add(ModificationPhase.ADDITIONS, sunflower_plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_FLOWERS));
         } else {
-            world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_FLOWERS));
+            world.add(ModificationPhase.REMOVALS, sunflower_plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_FLOWERS));
         }
         world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getEffects().setGrassColor(config.setRiverGrassColor));
         world.add(ModificationPhase.ADDITIONS, river, ctx -> ctx.getEffects().setFoliageColor(config.setRiverFoliageColor));
@@ -343,7 +343,6 @@ public class BloomingNatureFabric implements ModInitializer {
         } else {
             world.add(ModificationPhase.REMOVALS, cherry_grove, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.CHERRY_BN_FLOWERS));
         }
-
         if (config.removeVanillaSnowyPlainsFlowers) {
             world.add(ModificationPhase.REMOVALS, snowy_plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SNOWY_PLAINS_FLOWERS));
         }
@@ -519,6 +518,9 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, stony_shore, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_CLIFFS));
         world.add(ModificationPhase.ADDITIONS, stony_shore, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.COBBLESTONE_BEACH));
         world.add(ModificationPhase.ADDITIONS, stony_shore, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.COBBLESTONE_BEACH_MOSSY));
+
+
+
         world.add(ModificationPhase.REMOVALS, taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TAIGA_LARGE_FERN));
         world.add(ModificationPhase.REMOVALS, taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TAIGA_TREES));
         world.add(ModificationPhase.REMOVALS, taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TAIGA_FLOWERS));
@@ -534,6 +536,10 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, taiga, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN));
         world.add(ModificationPhase.ADDITIONS, taiga, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TAIGA_FOREST_MOSS));
         world.add(ModificationPhase.ADDITIONS, taiga, ctx -> ctx.getEffects().setGrassColor(11977352));
+
+
+
+
         world.add(ModificationPhase.REMOVALS, old_growth_spruce_taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.OLD_GROWTH_SPRUCE_TAIGA_LARGE_FERN));
         world.add(ModificationPhase.REMOVALS, old_growth_spruce_taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.OLD_GROWTH_SPRUCE_TAIGA_TREES));
         world.add(ModificationPhase.REMOVALS, old_growth_spruce_taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.OLD_GROWTH_SPRUCE_TAIGA_FLOWERS));
@@ -548,6 +554,10 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, old_growth_spruce_taiga, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SLABS));
         world.add(ModificationPhase.ADDITIONS, old_growth_spruce_taiga, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TRAVERTIN));
         world.add(ModificationPhase.ADDITIONS, old_growth_spruce_taiga, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TAIGA_FOREST_MOSS));
+
+
+
+
         world.add(ModificationPhase.REMOVALS, old_growth_pine_taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.OLD_GROWTH_PINE_TAIGA_LARGE_FERN));
         world.add(ModificationPhase.REMOVALS, old_growth_pine_taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.OLD_GROWTH_PINE_TAIGA_TREES));
         world.add(ModificationPhase.REMOVALS, old_growth_pine_taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.OLD_GROWTH_PINE_TAIGA_FLOWERS));
@@ -560,6 +570,9 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, old_growth_pine_taiga, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TAIGA_FOREST_MOSS));
         world.add(ModificationPhase.ADDITIONS, old_growth_pine_taiga, ctx -> ctx.getEffects().setGrassColor(9286496));
         world.add(ModificationPhase.ADDITIONS, old_growth_pine_taiga, ctx -> ctx.getEffects().setFoliageColor(10399058));
+
+
+
         world.add(ModificationPhase.REMOVALS, savanna, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TREES_SAVANNA));
         world.add(ModificationPhase.REMOVALS, savanna, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PATCH_GRASS_SAVANNA));
         world.add(ModificationPhase.REMOVALS, savanna, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.BROWN_MUSHROOM_NORMAL));
@@ -573,6 +586,9 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, savanna, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PACKED_MUD));
         world.add(ModificationPhase.ADDITIONS, savanna, ctx -> ctx.getEffects().setGrassColor(15259000));
         world.add(ModificationPhase.ADDITIONS, savanna, ctx -> ctx.getEffects().setFoliageColor(10399058));
+
+
+
         world.add(ModificationPhase.REMOVALS, savanna_plateau, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.TREES_SAVANNA));
         world.add(ModificationPhase.REMOVALS, savanna_plateau, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PATCH_GRASS_SAVANNA));
         world.add(ModificationPhase.REMOVALS, savanna_plateau, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.BROWN_MUSHROOM_NORMAL));
@@ -585,6 +601,9 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, savanna_plateau, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.GRANITE_SLABS));
         world.add(ModificationPhase.ADDITIONS, savanna_plateau, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PACKED_MUD));
         world.add(ModificationPhase.ADDITIONS, savanna_plateau, ctx -> ctx.getEffects().setGrassColor(15259000));
+
+
+
         world.add(ModificationPhase.REMOVALS, dark_forest, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DARK_FOREST_VEGETATION));
         world.add(ModificationPhase.ADDITIONS, dark_forest, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DARK_FOREST_TREES));
         world.add(ModificationPhase.ADDITIONS, dark_forest, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DARK_FOREST_GRASS_PATCH));
@@ -604,6 +623,9 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
         world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getEffects().setGrassColor(8970560));
         world.add(ModificationPhase.ADDITIONS, jungle, ctx -> ctx.getEffects().setFoliageColor(6337104));
+
+
+
         world.add(ModificationPhase.REMOVALS, sparse_jungle, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_FLOWERS));
         world.add(ModificationPhase.REMOVALS, sparse_jungle, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_TREES));
         //world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOATING_LEAVES));
@@ -617,6 +639,9 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setGrassColor(8970560));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setFoliageColor(6337104));
+
+
+
         world.add(ModificationPhase.ADDITIONS, beach, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FAN_PALM_TREE));
         world.add(ModificationPhase.ADDITIONS, beach, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.BEACH_FLOWERS));
 

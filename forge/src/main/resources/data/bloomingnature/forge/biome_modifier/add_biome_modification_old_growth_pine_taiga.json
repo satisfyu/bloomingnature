@@ -2,7 +2,7 @@
   "type": "forge:add_features",
   "biomes": "minecraft:old_growth_pine_taiga",
   "features": [
-    "bloomingnature:terrain/forest_moss",
+    "bloomingnature:larch_forest_moss",
     "bloomingnature:larch_trees",
     "bloomingnature:larch_fallen",
     "bloomingnature:larch_grass_patch",

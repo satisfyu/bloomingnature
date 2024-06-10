@@ -5,7 +5,7 @@
       "features": [
       ],
       "default": {
-        "feature": "bloomingnature:terrain/stone_pillars",
+        "feature": "bloomingnature:stony_shore_stone_pillars",
         "placement": [
         ]
       }

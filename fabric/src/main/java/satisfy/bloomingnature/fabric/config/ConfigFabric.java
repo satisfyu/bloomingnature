@@ -71,6 +71,8 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("stonyshore")
     public boolean addBloomingNatureStonyShoresStoneCliffs = true;
     @ConfigEntry.Category("stonyshore")
+    public boolean addBloomingNatureStonyShoresStoneSlabs = true;
+    @ConfigEntry.Category("stonyshore")
     public boolean addBloomingNatureStonyShoresCobblestoneBeach = true;
     @ConfigEntry.Category("stonyshore")
     public boolean addBloomingNatureStonyShoresMossyCobblestoneBeach = true;

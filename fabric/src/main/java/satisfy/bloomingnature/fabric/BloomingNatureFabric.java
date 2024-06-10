@@ -501,6 +501,11 @@ public class BloomingNatureFabric implements ModInitializer {
         } else {
             world.add(ModificationPhase.REMOVALS, stony_shore, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SHORE_STONE_PILLARS));
         }
+        if (config.addBloomingNatureStonyShoresStoneSlabs) {
+            world.add(ModificationPhase.ADDITIONS, stony_shore, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SHORE_STONE_SLABS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, stony_shore, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SHORE_STONE_SLABS));
+        }
         if (config.addBloomingNatureStonyShoresStoneCliffs) {
             world.add(ModificationPhase.ADDITIONS, stony_shore, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.STONE_SHORE_STONE_CLIFFS));
         } else {

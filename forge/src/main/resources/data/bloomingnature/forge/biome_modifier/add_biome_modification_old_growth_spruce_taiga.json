@@ -2,12 +2,11 @@
   "type": "forge:add_features",
   "biomes": "minecraft:old_growth_spruce_taiga",
   "features": [
-    "bloomingnature:terrain/forest_moss",
+    "bloomingnature:old_growth_forest_moss",
     "bloomingnature:old_growth_spruce_trees",
-    "bloomingnature:taiga_spruce_trees",
-    "bloomingnature:taiga_spruce_fallen",
-    "bloomingnature:taiga_grass_patch",
-    "bloomingnature:taiga_flowers"
+    "bloomingnature:old_growth_spruce_fallen",
+    "bloomingnature:old_growth_grass_patch",
+    "bloomingnature:old_growth_flowers"
   ],
   "step": "vegetal_decoration"
 }

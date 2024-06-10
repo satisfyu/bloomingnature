@@ -58,8 +58,8 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_TREES = registerMCKey("trees_flower_forest");
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_FLOWER_FLOWER = registerMCKey("flower_flower_forest");
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_FLOWER = registerMCKey("flower_forest_flowers");
-    public static final ResourceKey<PlacedFeature> FLOWER_FOREST_BN_TREES = registerKey("forest_trees");
-    public static final ResourceKey<PlacedFeature> FLOWER_FOREST_BN_FALLEN = registerKey("forest_log_fallen");
+    public static final ResourceKey<PlacedFeature> FLOWER_FOREST_BN_TREES = registerKey("flower_forest_trees");
+    public static final ResourceKey<PlacedFeature> FLOWER_FOREST_BN_FALLEN = registerKey("flower_forest_log_fallen");
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_BN_FLOWERS = registerKey("flower_forest_flowers");
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_BN_GRASS = registerKey("flower_forest_grass_patch");
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_BN_STONE_SLABS = registerKey("flower_forest_stone_slabs");
@@ -83,6 +83,7 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> SNOWY_TAIGA_BN_STONE_SLABS = registerKey("snowy_taiga_stone_slabs");
     public static final ResourceKey<PlacedFeature> STONE_SHORE_STONE_PILLARS = registerKey("stony_shore_stone_pillars");
     public static final ResourceKey<PlacedFeature> STONE_SHORE_STONE_CLIFFS = registerKey("stony_shore_stone_cliffs");
+    public static final ResourceKey<PlacedFeature> STONE_SHORE_STONE_SLABS = registerKey("stony_shore_stone_slabs");
     public static final ResourceKey<PlacedFeature> STONE_SHORE_COBBLESTONE_BEACH = registerKey("stony_shore_cobblestone_beach");
     public static final ResourceKey<PlacedFeature> STONE_SHORE_COBBLESTONE_BEACH_MOSSY = registerKey("stony_shore_mossy_cobblestone_beach");
     public static final ResourceKey<PlacedFeature> SWAMP_TREES = registerMCKey("trees_swamp");
@@ -93,7 +94,6 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> SWAMP_FLOATING_LEAVES = registerKey("swamp_floating_leaves");
     public static final ResourceKey<PlacedFeature> SWAMP_MUD = registerKey("swamp_mud");
     public static final ResourceKey<PlacedFeature> SWAMP_SWAMP_MUD = registerKey("swamp_additional_mud");
-    public static final ResourceKey<PlacedFeature> SWAMP_MARSH = registerKey("swamp_marsh");
     public static final ResourceKey<PlacedFeature> SWAMP_BN_TREES = registerKey("swamp_trees");
     public static final ResourceKey<PlacedFeature> SWAMP_VEGETATION = registerKey("swamp_vegetation");
     public static final ResourceKey<PlacedFeature> SWAMP_CATTAILS = registerKey("swamp_cattails");
@@ -178,11 +178,11 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> JUNGLE_FLOATING_LEAVES = registerKey("jungle_floating_leaves");
     public static final ResourceKey<PlacedFeature> JUNGLE_VEGETATION = registerKey("jungle_vegetation");
     public static final ResourceKey<PlacedFeature> JUNGLE_BN_PUDDLE = registerKey("jungle_puddle");
-    public static final ResourceKey<PlacedFeature> JUNGLE_BN_MUD = registerKey("jungle_mud");
+    public static final ResourceKey<PlacedFeature> JUNGLE_BN_MUD = registerKey("jungle_mud_beach");
     public static final ResourceKey<PlacedFeature> JUNGLE_LATERIT_BOULDER = registerKey("jungle_laterit_boulder");
     public static final ResourceKey<PlacedFeature> JUNGLE_ORE_LATERIT = registerKey("jungle_ore_laterit");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_TREES = registerMCKey("trees_sparse_jungle");
-    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_GRASS = registerMCKey("patch_grass_jungle ");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_GRASS = registerMCKey("patch_grass_jungle");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_FLOWERS = registerMCKey("flower_warm");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_TREES = registerKey("sparse_jungle_trees");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_GRASS = registerKey("sparse_jungle_grass_patch");

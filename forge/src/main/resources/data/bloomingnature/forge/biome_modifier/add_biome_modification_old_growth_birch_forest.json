@@ -3,9 +3,9 @@
   "biomes": "minecraft:old_growth_birch_forest",
   "features": [
     "bloomingnature:aspen_trees",
-    "bloomingnature:birch_fallen",
+    "bloomingnature:aspen_tree_fallen",
     "bloomingnature:aspen_flowers",
-    "bloomingnature:birch_grass_patch"
+    "bloomingnature:aspen_grass_patch"
   ],
   "step": "vegetal_decoration"
 }

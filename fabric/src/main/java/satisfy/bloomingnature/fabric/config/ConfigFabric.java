@@ -3,7 +3,7 @@ package satisfy.bloomingnature.fabric.config;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import satisfy.bloomingnature.BloomingNature;
+import net.satisfy.bloomingnature.BloomingNature;
 
 @Config(name = BloomingNature.MOD_ID)
 public class ConfigFabric implements ConfigData {

@@ -7,11 +7,11 @@ import net.fabricmc.fabric.api.biome.v1.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import satisfy.bloomingnature.BloomingNature;
+import net.satisfy.bloomingnature.BloomingNature;
+import net.satisfy.bloomingnature.registry.CompostableRegistry;
+import net.satisfy.bloomingnature.util.BloomingNatureIdentifier;
+import net.satisfy.bloomingnature.world.PlacedFeatures;
 import satisfy.bloomingnature.fabric.config.ConfigFabric;
-import satisfy.bloomingnature.registry.CompostableRegistry;
-import satisfy.bloomingnature.util.BloomingNatureIdentifier;
-import satisfy.bloomingnature.world.PlacedFeatures;
 
 import java.util.function.Predicate;
 

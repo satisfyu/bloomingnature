@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/mossgrass_1",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/mossgrass_2",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/mossgrass_3",
+        "weight": 1
+      }
+    ]
+  }
+}

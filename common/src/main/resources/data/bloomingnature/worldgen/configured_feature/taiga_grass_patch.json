@@ -14,22 +14,13 @@
               {
                 "weight": 40,
                 "data": {
-                  "Name": "minecraft:grass"
+                  "Name": "bloomingnature:mossgrass"
                 }
               },
               {
                 "weight": 25,
                 "data": {
                   "Name": "minecraft:fern"
-                }
-              },
-              {
-                "weight": 10,
-                "data": {
-                  "Name": "minecraft:tall_grass",
-                  "Properties": {
-                    "half": "lower"
-                  }
                 }
               },
               {

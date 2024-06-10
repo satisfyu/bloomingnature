@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/gladiolus",
+        "weight": 1
+      }
+    ]
+  }
+}

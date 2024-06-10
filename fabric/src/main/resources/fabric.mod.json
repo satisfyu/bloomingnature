@@ -3,7 +3,7 @@
   "id": "bloomingnature",
   "version": "${version}",
   "name": "[Let's Do] BloomingNature",
-  "description": "Explore a redesigned overworld: new animals, reshaped biomes, livelier landscapes.",
+  "description": "Explore a redesigned overworld: new flowers and wood, reshaped biomes, livelier landscapes.",
   "authors": [
     "satisfy"
   ],
@@ -22,7 +22,7 @@
       "satisfy.bloomingnature.fabric.client.BloomingNatureClientFabric"
     ],
     "doapi": [
-      "satisfy.bloomingnature.util.BloomingNatureDoAPI"
+      "net.satisfy.bloomingnature.util.BloomingNatureDoAPI"
     ],
     "modmenu": [
       "satisfy.bloomingnature.fabric.config.ModMenu"

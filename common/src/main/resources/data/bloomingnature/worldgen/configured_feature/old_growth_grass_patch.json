@@ -12,19 +12,19 @@
             "type": "minecraft:weighted_state_provider",
             "entries": [
               {
-                "weight": 50,
+                "weight": 35,
                 "data": {
-                  "Name": "minecraft:grass"
+                  "Name": "bloomingnature:mossgrass"
                 }
               },
               {
-                "weight": 20,
+                "weight": 15,
                 "data": {
                   "Name": "minecraft:fern"
                 }
               },
               {
-                "weight": 15,
+                "weight": 10,
                 "data": {
                   "Name": "minecraft:large_fern",
                   "Properties": {

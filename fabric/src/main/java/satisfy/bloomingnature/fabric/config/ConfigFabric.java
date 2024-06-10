@@ -40,7 +40,7 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("plains")
     public boolean addBloomingNaturePlainsStoneSlabs = true;
     @ConfigEntry.Category("plains")
-    public boolean addBloomingNaturePlainsBurriedTravertin = true;
+    public boolean addBloomingNaturePlainsBuriedTravertin = true;
     //Sunflower Plains
     @ConfigEntry.Category("sunflowerplains")
     public boolean addBloomingNatureSunflowerPlainsTrees = true;
@@ -68,7 +68,21 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("river")
     public boolean addBloomingNatureRiverStoneSlabs = true;
     @ConfigEntry.Category("river")
-    public boolean addBloomingNatureRiverBurriedTravertin = true;
+    public boolean addBloomingNatureRiverburiedTravertin = true;
+    //STONY SHORE
+    @ConfigEntry.Category("stonyshore")
+    public boolean addBloomingNatureStonyShoresStonePillars = true;
+    @ConfigEntry.Category("stonyshore")
+    public boolean addBloomingNatureStonyShoresStoneCliffs = true;
+    @ConfigEntry.Category("stonyshore")
+    public boolean addBloomingNatureStonyShoresCobblestoneBeach = true;
+    @ConfigEntry.Category("stonyshore")
+    public boolean addBloomingNatureStonyShoresMossyCobblestoneBeach = true;
+    //BEACH
+    @ConfigEntry.Category("beach")
+    public boolean addBloomingNatureBeachPalms = true;
+    @ConfigEntry.Category("beach")
+    public boolean addBloomingNatureBeachFlowers = true;
     //ASPEN
     @ConfigEntry.Category("aspen")
     public int setOldGrowthBirchForestGrassColor = 14406505;
@@ -107,7 +121,6 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNatureBirchForestGrass = true;
     @ConfigEntry.Category("birch")
     public boolean addBloomingNatureBirchStoneSlabs = true;
-
     //FOREST
     @ConfigEntry.Category("forest")
     public int setForestGrassColor = 10799444;
@@ -148,6 +161,19 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNatureFlowerforestGrass = true;
     @ConfigEntry.Category("flowerforest")
     public boolean addBloomingNatureFlowerforestStoneSlabs = true;
+    //DARKFOREST
+    @ConfigEntry.Category("darkforest")
+    public int setDarkForestGrassColor = 6975545;
+    @ConfigEntry.Category("darkforest")
+    public int setDarkForestFoliageColor = 10399058;
+    @ConfigEntry.Category("darkforest")
+    public boolean removeVanillaDarkForestVegetation = true;
+    @ConfigEntry.Category("darkforest")
+    public boolean addBloomingNatureDarkForestTrees = true;
+    @ConfigEntry.Category("darkforest")
+    public boolean addBloomingNatureDarkForestfallenTrees = true;
+    @ConfigEntry.Category("darkforest")
+    public boolean addBloomingNatureDarkForestGrass = true;
     //CHERRYGROVE
     @ConfigEntry.Category("cherrygrove")
     public boolean removeVanillaCherryGroveFlowers = true;
@@ -233,5 +259,97 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNatureMangroveSwampCattails = true;
     @ConfigEntry.Category("mangroveswamp")
     public boolean addBloomingNatureMangroveSwampReed = true;
+    //TAIGA
+    @ConfigEntry.Category("taiga")
+    public int setTaigaGrassColor = 11977352;
+    @ConfigEntry.Category("taiga")
+    public int setTaigaFoliageColor = 10399058;
+    @ConfigEntry.Category("taiga")
+    public boolean removeVanillaTaigaTrees = true;
+    @ConfigEntry.Category("taiga")
+    public boolean removeVanillaTaigaFerns = true;
+    @ConfigEntry.Category("taiga")
+    public boolean removeVanillaTaigaGrass = true;
+    @ConfigEntry.Category("taiga")
+    public boolean removeVanillaTaigaFlowers = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaSpruceTrees = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaFallenSpruceTrees = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaGrass = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaFlowers = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaForestMoss = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaStoneBoulders = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaStoneMounds = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaGravelBeaches = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaStoneSlabs = true;
+    @ConfigEntry.Category("taiga")
+    public boolean addBloomingNatureTaigaBuriedTravertin = true;
+
+    //OLDGROWTHSPRUCETAIGA
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean removeVanillaOldgrowthsprucetaigaTrees = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean removeVanillaOldgrowthsprucetaigaFerns = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean removeVanillaOldgrowthsprucetaigaGrass = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean removeVanillaOldgrowthsprucetaigaFlowers = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaSpruceTrees = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaFallenSpruceTrees = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaGrass = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaFlowers = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaForestMoss = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaStoneBoulders = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaStoneMounds = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaGravelBeaches = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaStoneSlabs = true;
+    @ConfigEntry.Category("oldgrowthsprucetaiga")
+    public boolean addBloomingNatureOldgrowthsprucetaigaBuriedTravertin = true;
+
+
+    //OLDGROWTHPINETAIGA
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public int setPineTaigaGrassColor = 9286496;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public int setPineTaigaFoliageColor = 10399058;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean removeVanillaPineTaigaTrees = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean removeVanillaPineTaigaFerns = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean removeVanillaPineTaigaGrass = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean removeVanillaPineTaigaFlowers = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean addBloomingNaturePineTaigaTrees = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean addBloomingNaturePineTaigaFallenTrees = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean addBloomingNaturePineTaigaFlowers = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean addBloomingNaturePineTaigaGrass = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean addBloomingNaturePineTaigaForestMoss = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean addBloomingNaturePineTaigaStoneBoulder = true;
+    @ConfigEntry.Category("oldgrowthpinetaiga")
+    public boolean addBloomingNaturePineTaigaStoneSlabs = true;
 
 }

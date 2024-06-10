@@ -10,24 +10,14 @@ public class PlacedFeatures {
 
 
     public static final ResourceKey<PlacedFeature> STONE_SLABS = registerKey("terrain/stone_slabs");
-    public static final ResourceKey<PlacedFeature> STONE_MOUND = registerKey("terrain/stone_mound");
-    public static final ResourceKey<PlacedFeature> STONE_PILLARS = registerKey("terrain/stone_pillars");
-    public static final ResourceKey<PlacedFeature> STONE_CLIFFS = registerKey("terrain/stone_cliffs");
-    public static final ResourceKey<PlacedFeature> STONE_BOULDER = registerKey("terrain/stone_boulder");
-    public static final ResourceKey<PlacedFeature> GRAVEL_BEACH = registerKey("terrain/gravel_beach");
-    public static final ResourceKey<PlacedFeature> COBBLESTONE_BEACH = registerKey("terrain/cobblestone_beach");
-    public static final ResourceKey<PlacedFeature> COBBLESTONE_BEACH_MOSSY = registerKey("terrain/cobblestone_beach_mossy");
-    public static final ResourceKey<PlacedFeature> JUNGLE_FLOWERS = registerKey("jungle_flowers");
+
     public static final ResourceKey<PlacedFeature> QUICKSAND = registerKey("terrain/quicksand");
-    public static final ResourceKey<PlacedFeature> TRAVERTIN = registerKey("terrain/ore_travertin");
     public static final ResourceKey<PlacedFeature> FLOWER_DEFAULT = registerMCKey("flower_default");
 
     public static final ResourceKey<PlacedFeature> LAVA_LAKE_UNDERGROUND = registerMCKey("lake_lava_underground");
     public static final ResourceKey<PlacedFeature> LAVA_LAKE_SURFACE = registerMCKey("lake_lava_surface");
-
     public static final ResourceKey<PlacedFeature> FAN_PALM_TREE = registerKey("beach_fan_palm");
     public static final ResourceKey<PlacedFeature> BEACH_FLOWERS = registerKey("beach_flowers");
-
     public static final ResourceKey<PlacedFeature> PLAINS_TREES = registerMCKey("trees_plains");
     public static final ResourceKey<PlacedFeature> PLAINS_FLOWERS = registerMCKey("flower_plains");
     public static final ResourceKey<PlacedFeature> PLAINS_BN_TREES = registerKey("plains_trees");
@@ -97,7 +87,10 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> SNOWY_TAIGA_BN_STONE_MOUND = registerKey("snowy_taiga_stone_mound");
     public static final ResourceKey<PlacedFeature> SNOWY_TAIGA_BN_GRAVEL_BEACH = registerKey("snowy_taiga_gravel_beach");
     public static final ResourceKey<PlacedFeature> SNOWY_TAIGA_BN_STONE_SLABS = registerKey("snowy_taiga_stone_slabs");
-
+    public static final ResourceKey<PlacedFeature> STONE_SHORE_STONE_PILLARS = registerKey("stony_shore_stone_pillars");
+    public static final ResourceKey<PlacedFeature> STONE_SHORE_STONE_CLIFFS = registerKey("stony_shore_stone_cliffs");
+    public static final ResourceKey<PlacedFeature> STONE_SHORE_COBBLESTONE_BEACH = registerKey("stony_shore_cobblestone_beach");
+    public static final ResourceKey<PlacedFeature> STONE_SHORE_COBBLESTONE_BEACH_MOSSY = registerKey("stony_shore_mossy_cobblestone_beach");
     public static final ResourceKey<PlacedFeature> SWAMP_TREES = registerMCKey("trees_swamp");
     public static final ResourceKey<PlacedFeature> SWAMP_FLOWERS = registerMCKey("flower_swamp");
     public static final ResourceKey<PlacedFeature> SWAMP_GRASS = registerMCKey("patch_grass_normal");
@@ -121,24 +114,36 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> MANGROVE_SWAMP_VEGETATION = registerKey("mangrove_swamp_vegetation");
     public static final ResourceKey<PlacedFeature> MANGROVE_SWAMP_CATTAILS = registerKey("mangrove_swamp_cattails");
     public static final ResourceKey<PlacedFeature> MANGROVE_SWAMP_REED = registerKey("mangrove_swamp_reed");
-
-
-
     public static final ResourceKey<PlacedFeature> TAIGA_LARGE_FERN = registerMCKey("patch_large_fern");
     public static final ResourceKey<PlacedFeature> TAIGA_TREES = registerMCKey("trees_taiga");
     public static final ResourceKey<PlacedFeature> TAIGA_FLOWERS = registerMCKey("flower_default");
     public static final ResourceKey<PlacedFeature> TAIGA_GRASS = registerMCKey("patch_grass_taiga_2");
-    public static final ResourceKey<PlacedFeature> TAIGA_FOREST_MOSS = registerKey("terrain/forest_moss");
+    public static final ResourceKey<PlacedFeature> TAIGA_FOREST_MOSS = registerKey("taiga_forest_moss");
     public static final ResourceKey<PlacedFeature> TAIGA_SPRUCE_TREES = registerKey("taiga_spruce_trees");
     public static final ResourceKey<PlacedFeature> TAIGA_SPRUCE_FALLEN = registerKey("taiga_spruce_fallen");
     public static final ResourceKey<PlacedFeature> TAIGA_GRASS_PATCH = registerKey("taiga_grass_patch");
     public static final ResourceKey<PlacedFeature> TAIGA_BN_FLOWERS = registerKey("taiga_flowers");
-
+    public static final ResourceKey<PlacedFeature> TAIGA_STONE_BOULDER = registerKey("taiga_stone_boulder");
+    public static final ResourceKey<PlacedFeature> TAIGA_STONE_MOUND = registerKey("taiga_stone_mound");
+    public static final ResourceKey<PlacedFeature> TAIGA_GRAVEL_BEACH = registerKey("taiga_gravel_beach");
+    public static final ResourceKey<PlacedFeature> TAIGA_STONE_SLABS = registerKey("taiga_stone_slabs");
+    public static final ResourceKey<PlacedFeature> TAIGA_BN_TRAVERTIN = registerKey("taiga_ore_travertin");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_SPRUCE_TAIGA_LARGE_FERN = registerMCKey("patch_large_fern");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_SPRUCE_TAIGA_TREES = registerMCKey("trees_old_growth_pine_taiga");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_SPRUCE_TAIGA_FLOWERS = registerMCKey("flower_default");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_SPRUCE_TAIGA_GRASS = registerMCKey("patch_grass_taiga");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_SPRUCE_TAIGA_BN_TREES = registerKey("old_growth_spruce_trees");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_FOREST_MOSS = registerKey("old_growth_forest_moss");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_SPRUCE_FALLEN = registerKey("old_growth_spruce_fallen");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_GRASS_PATCH = registerKey("old_growth_grass_patch");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_BN_FLOWERS = registerKey("old_growth_flowers");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_STONE_BOULDER = registerKey("old_growth_stone_boulder");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_STONE_MOUND = registerKey("old_growth_stone_mound");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_GRAVEL_BEACH = registerKey("old_growth_gravel_beach");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_STONE_SLABS = registerKey("old_growth_stone_slabs");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_BN_TRAVERTIN = registerKey("old_growth_ore_travertin");
+
+
 
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_PINE_TAIGA_LARGE_FERN = registerMCKey("patch_large_fern");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_PINE_TAIGA_TREES = registerMCKey("trees_old_growth_pine_taiga");
@@ -148,6 +153,12 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> LARCH_FALLEN = registerKey("larch_fallen");
     public static final ResourceKey<PlacedFeature> LARCH_GRASS_PATCH = registerKey("larch_grass_patch");
     public static final ResourceKey<PlacedFeature> LARCH_FLOWERS = registerKey("larch_flowers");
+    public static final ResourceKey<PlacedFeature> LARCH_FOREST_MOSS = registerKey("larch_forest_moss");
+    public static final ResourceKey<PlacedFeature> LARCH_STONE_BOULDER = registerKey("larch_stone_boulder");
+    public static final ResourceKey<PlacedFeature> LARCH_STONE_SLABS = registerKey("larch_stone_slabs");
+
+
+
 
     public static final ResourceKey<PlacedFeature> DARK_FOREST_VEGETATION = registerMCKey("dark_forest_vegetation");
     public static final ResourceKey<PlacedFeature> DARK_FOREST_TREES = registerKey("dark_forest_trees");
@@ -170,6 +181,7 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> JUNGLE_FLOWERS_MC = registerMCKey("flower_warm");
     public static final ResourceKey<PlacedFeature> JUNGLE_BAMBOO = registerMCKey("bamboo_light");
     public static final ResourceKey<PlacedFeature> JUNGLE_BN_TREES = registerKey("jungle_trees");
+    public static final ResourceKey<PlacedFeature> JUNGLE_FLOWERS = registerKey("jungle_flowers");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_TREES = registerMCKey("trees_sparse_jungle");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_FLOWERS = registerMCKey("flower_warm");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_TREES = registerKey("sparse_jungle_trees");

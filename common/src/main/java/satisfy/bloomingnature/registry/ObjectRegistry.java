@@ -293,6 +293,8 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> POTTED_GOATSBEARD = registerWithoutItem("potted_goatsbeard", () -> new FlowerPotBlock(GOATSBEARD.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> GENISTEAE = registerWithItem("genisteae", () -> new FlowerBlock(Objects.requireNonNull(MobEffect.byId(6)), 1, BlockBehaviour.Properties.copy(Blocks.RED_TULIP)));
     public static final RegistrySupplier<Block> POTTED_GENISTEAE = registerWithoutItem("potted_genisteae", () -> new FlowerPotBlock(GENISTEAE.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistrySupplier<Block> FORSYTHIA = registerWithItem("forsythia", () -> new FlowerBlock(Objects.requireNonNull(MobEffect.byId(6)), 1, BlockBehaviour.Properties.copy(Blocks.RED_TULIP)));
+    public static final RegistrySupplier<Block> POTTED_FORSYTHIA = registerWithoutItem("potted_forsythia", () -> new FlowerPotBlock(FORSYTHIA.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FOXGLOVE_WHITE = registerWithItem("foxglove_white", () -> new FlowerBlock(Objects.requireNonNull(MobEffect.byId(6)), 1, BlockBehaviour.Properties.copy(Blocks.RED_TULIP)));
     public static final RegistrySupplier<Block> POTTED_FOXGLOVE_WHITE = registerWithoutItem("potted_foxglove_white", () -> new FlowerPotBlock(FOXGLOVE_WHITE.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FOXGLOVE_PINK = registerWithItem("foxglove_pink", () -> new FlowerBlock(Objects.requireNonNull(MobEffect.byId(6)), 1, BlockBehaviour.Properties.copy(Blocks.RED_TULIP)));
@@ -323,7 +325,7 @@ public class ObjectRegistry {
 
 
     public static final RegistrySupplier<Block> SUNGRASS = registerWithItem("sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
-    public static final RegistrySupplier<Block> TALL_SUNGRASS = registerWithItem("tall_sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistrySupplier<Block> TALL_SUNGRASS = registerWithItem("tall_sungrass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
 
     public static void init() {
         BloomingNature.LOGGER.debug("Registering Mod Block and Items for " + BloomingNature.MOD_ID);

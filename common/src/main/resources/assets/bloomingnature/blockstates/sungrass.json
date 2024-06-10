@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/sungrass_1",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/sungrass_2",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/sungrass_3",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/sungrass_4",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/sungrass_5",
+        "weight": 1
+      }
+    ]
+  }
+}

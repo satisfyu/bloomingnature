@@ -46,6 +46,8 @@ public class CompostableRegistry {
         ComposterBlock.COMPOSTABLES.put(ObjectRegistry.CHESTNUT_LEAVES.get().asItem(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ObjectRegistry.ORANGE_LEAVES.get().asItem(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FLOATING_LEAVES.get().asItem(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SUNGRASS.get().asItem(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.TALL_SUNGRASS.get().asItem(), 0.3F);
 
     }
 }

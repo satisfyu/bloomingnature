@@ -20,6 +20,9 @@
                 "Name": "bloomingnature:golden_rod"
               },
               {
+                "Name": "bloomingnature:forsythia"
+              },
+              {
                 "Name": "bloomingnature:freesia_yellow"
               },
               {
@@ -30,6 +33,12 @@
               },
               {
                 "Name": "bloomingnature:wild_sunflower",
+                "Properties": {
+                  "half": "lower"
+                }
+              },
+              {
+                "Name": "minecraft:sunflower",
                 "Properties": {
                   "half": "lower"
                 }

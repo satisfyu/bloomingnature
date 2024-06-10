@@ -12,30 +12,15 @@
             "type": "minecraft:weighted_state_provider",
             "entries": [
               {
-                "weight": 35,
+                "weight": 25,
                 "data": {
                   "Name": "bloomingnature:sungrass"
                 }
               },
               {
-                "weight": 6,
-                "data": {
-                  "Name": "minecraft:fern"
-                }
-              },
-              {
-                "weight": 12,
+                "weight": 3,
                 "data": {
                   "Name": "bloomingnature:tall_sungrass",
-                  "Properties": {
-                    "half": "lower"
-                  }
-                }
-              },
-              {
-                "weight": 4,
-                "data": {
-                  "Name": "minecraft:large_fern",
                   "Properties": {
                     "half": "lower"
                   }

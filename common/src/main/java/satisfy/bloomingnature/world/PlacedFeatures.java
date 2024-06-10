@@ -22,7 +22,10 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> PLAINS_BN_GRAVEL_BEACH = registerKey("plains_gravel_beach");
     public static final ResourceKey<PlacedFeature> PLAINS_BN_TRAVERTIN = registerKey("plains_ore_travertin");
     public static final ResourceKey<PlacedFeature> PLAINS_BN_STONE_SLABS = registerKey("plains_stone_slabs");
+    public static final ResourceKey<PlacedFeature> SUNFLOWER_PLAINS_TALL_GRASS = registerMCKey("patch_tall_grass_2");
+    public static final ResourceKey<PlacedFeature> SUNFLOWER_PLAINS_GRASS = registerMCKey("patch_grass_plain");
     public static final ResourceKey<PlacedFeature> SUNFLOWER_PLAINS_BN_TREES = registerKey("sunflower_plains_trees");
+    public static final ResourceKey<PlacedFeature> SUNFLOWER_PLAINS_BN_GRASS = registerKey("sunflower_plains_grass_patch");
     public static final ResourceKey<PlacedFeature> SUNFLOWER_PLAINS_BN_FLOWERS = registerKey("sunflower_plains_flowers");
     public static final ResourceKey<PlacedFeature> RIVER_TREES = registerMCKey("trees_water");
     public static final ResourceKey<PlacedFeature> RIVER_FLOWERS = registerMCKey("flower_default");
@@ -34,6 +37,7 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> RIVER_BN_TRAVERTIN = registerKey("river_ore_travertin");
     public static final ResourceKey<PlacedFeature> RIVER_BN_STONE_SLABS = registerKey("river_stone_slabs");
     public static final ResourceKey<PlacedFeature> ASPEN_TREES = registerMCKey("birch_tall");
+    public static final ResourceKey<PlacedFeature> ASPEN_GRASS = registerMCKey("patch_grass_forest");
     public static final ResourceKey<PlacedFeature> ASPEN_FLOWERS = registerMCKey("forest_flowers");
     public static final ResourceKey<PlacedFeature> ASPEN_BN_TREES = registerKey("aspen_trees");
     public static final ResourceKey<PlacedFeature> ASPEN_BN_FALLEN = registerKey("aspen_tree_fallen");

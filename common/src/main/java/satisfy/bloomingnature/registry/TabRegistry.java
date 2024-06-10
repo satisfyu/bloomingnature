@@ -223,6 +223,7 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.BLUEBELL.get());
                 out.accept(ObjectRegistry.GOATSBEARD.get());
                 out.accept(ObjectRegistry.GENISTEAE.get());
+                out.accept(ObjectRegistry.FORSYTHIA.get());
                 out.accept(ObjectRegistry.FOXGLOVE_WHITE.get());
                 out.accept(ObjectRegistry.FOXGLOVE_PINK.get());
                 out.accept(ObjectRegistry.FREESIA_YELLOW.get());
@@ -231,10 +232,12 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.TALL_LUPINE_BLUE.get());
                 out.accept(ObjectRegistry.LUPINE_PURPLE.get());
                 out.accept(ObjectRegistry.TALL_LUPINE_PURPLE.get());
-                out.accept(ObjectRegistry.FLOATING_LEAVES.get());
+                out.accept(ObjectRegistry.SUNGRASS.get());
+                out.accept(ObjectRegistry.TALL_SUNGRASS.get());
                 out.accept(ObjectRegistry.BEACH_BUSH.get());
                 out.accept(ObjectRegistry.BEACH_BUSH_TALL.get());
                 out.accept(ObjectRegistry.BEACH_GRASS.get());
+                out.accept(ObjectRegistry.FLOATING_LEAVES.get());
                 out.accept(ObjectRegistry.FLOWER_POT_BIG.get());
                 out.accept(ObjectRegistry.FLOWER_BOX.get());
                 out.accept(ObjectRegistry.BLOOMINGNATURE_STANDARD.get());

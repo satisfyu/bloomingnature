@@ -115,10 +115,23 @@ public class BloomingNatureFabric implements ModInitializer {
         } else {
             world.add(ModificationPhase.REMOVALS, plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.PLAINS_BN_TRAVERTIN));
         }
+        world.add(ModificationPhase.ADDITIONS, sunflower_plains, ctx -> ctx.getEffects().setGrassColor(config.setSunflowerPlainsGrassColor));
+        world.add(ModificationPhase.ADDITIONS, sunflower_plains, ctx -> ctx.getEffects().setFoliageColor(config.setSunflowerPlainsFoliageColor));
+
+        if (config.removeVanillaSunflowerPlainsGrass) {
+            world.add(ModificationPhase.REMOVALS, sunflower_plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_TALL_GRASS));
+            world.add(ModificationPhase.REMOVALS, sunflower_plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_GRASS));
+
+        }
         if (config.addBloomingNatureSunflowerPlainsTrees) {
             world.add(ModificationPhase.ADDITIONS, sunflower_plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_TREES));
         } else {
             world.add(ModificationPhase.REMOVALS, sunflower_plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_TREES));
+        }
+        if (config.addBloomingNatureSunflowerPlainsGrass) {
+            world.add(ModificationPhase.ADDITIONS, sunflower_plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_GRASS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, sunflower_plains, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_GRASS));
         }
         if (config.addBloomingNatureSunflowerPlainsFlowers) {
             world.add(ModificationPhase.ADDITIONS, sunflower_plains, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SUNFLOWER_PLAINS_BN_FLOWERS));
@@ -172,9 +185,10 @@ public class BloomingNatureFabric implements ModInitializer {
         world.add(ModificationPhase.ADDITIONS, aspen, ctx -> ctx.getEffects().setFoliageColor(config.setOldGrowthBirchForestFoliageColor));
         if (config.removeVanillaOldGrowthBirchForestFlowers) {
             world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.FLOWER_DEFAULT));
-        }
-        if (config.removeVanillaOldGrowthBirchForestFlowers) {
             world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_FLOWERS));
+        }
+        if (config.removeVanillaOldGrowthBirchForestGrass) {
+            world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_GRASS));
         }
         if (config.removeVanillaOldGrowthBirchForestTrees) {
             world.add(ModificationPhase.REMOVALS, aspen, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.ASPEN_TREES));

@@ -39,7 +39,15 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNaturePlainsBuriedTravertin = true;
     //Sunflower Plains
     @ConfigEntry.Category("sunflowerplains")
+    public int setSunflowerPlainsGrassColor = 10799444;
+    @ConfigEntry.Category("sunflowerplains")
+    public int setSunflowerPlainsFoliageColor = 10399058;
+    @ConfigEntry.Category("sunflowerplains")
+    public boolean removeVanillaSunflowerPlainsGrass = true;
+    @ConfigEntry.Category("sunflowerplains")
     public boolean addBloomingNatureSunflowerPlainsTrees = true;
+    @ConfigEntry.Category("sunflowerplains")
+    public boolean addBloomingNatureSunflowerPlainsGrass = true;
     @ConfigEntry.Category("sunflowerplains")
     public boolean addBloomingNatureSunflowerPlainsFlowers = true;
     //River
@@ -87,9 +95,11 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("aspen")
     public int setOldGrowthBirchForestFoliageColor = 10399058;
     @ConfigEntry.Category("aspen")
-    public boolean removeVanillaOldGrowthBirchForestFlowers = true;
-    @ConfigEntry.Category("aspen")
     public boolean removeVanillaOldGrowthBirchForestTrees = true;
+    @ConfigEntry.Category("aspen")
+    public boolean removeVanillaOldGrowthBirchForestGrass = true;
+    @ConfigEntry.Category("aspen")
+    public boolean removeVanillaOldGrowthBirchForestFlowers = true;
     @ConfigEntry.Category("aspen")
     public boolean addBloomingNatureOldGrowthBirchForestTrees = true;
     @ConfigEntry.Category("aspen")

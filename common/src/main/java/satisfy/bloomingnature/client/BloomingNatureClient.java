@@ -14,56 +14,59 @@ import satisfy.bloomingnature.client.model.WanderingGardenerModel;
 import satisfy.bloomingnature.client.render.entity.TermiteRenderer;
 import satisfy.bloomingnature.client.render.entity.WanderingGardenerRenderer;
 import satisfy.bloomingnature.registry.EntityRegistry;
-import satisfy.bloomingnature.registry.ObjectRegistry;
+
+import static satisfy.bloomingnature.registry.ObjectRegistry.*;
 
 @Environment(EnvType.CLIENT)
 public class BloomingNatureClient {
 
     public static void initClient() {
         RenderTypeRegistry.register(RenderType.cutout(),
-                ObjectRegistry.CARDINAL.get(), ObjectRegistry.MOUNTAIN_LAUREL.get(), ObjectRegistry.JOE_PYE.get(), ObjectRegistry.HYSSOP.get(),
-                ObjectRegistry.MOUNTAIN_SNOWBELL.get(), ObjectRegistry.CARDINAL.get(), ObjectRegistry.BIRD_OF_PARADISE.get(), ObjectRegistry.WHITE_ORCHID.get(),
-                ObjectRegistry.POTTED_MOUNTAIN_LAUREL.get(), ObjectRegistry.POTTED_JOE_PYE.get(), ObjectRegistry.POTTED_HYSSOP.get(),
-                ObjectRegistry.POTTED_MOUNTAIN_SNOWBELL.get(), ObjectRegistry.POTTED_WHITE_ORCHID.get(), ObjectRegistry.POTTED_BIRD_OF_PARADISE.get(),
-                ObjectRegistry.BEGONIE.get(), ObjectRegistry.GENISTEAE.get(), ObjectRegistry.GOATSBEARD.get(), ObjectRegistry.BLUEBELL.get(), ObjectRegistry.DAPHNE.get(),
-                ObjectRegistry.BOTTLEBRUSHES.get(), ObjectRegistry.FOXGLOVE_WHITE.get(), ObjectRegistry.FOXGLOVE_PINK.get(), ObjectRegistry.FREESIA_YELLOW.get(),
-                ObjectRegistry.FREESIA_PINK.get(), ObjectRegistry.LUPINE_BLUE.get(), ObjectRegistry.LUPINE_PURPLE.get(),
-                ObjectRegistry.LARCH_DOOR.get(), ObjectRegistry.POTTED_BEGONIE.get(), ObjectRegistry.POTTED_GENISTEAE.get(),
-                ObjectRegistry.POTTED_GOATSBEARD.get(), ObjectRegistry.POTTED_BLUEBELL.get(), ObjectRegistry.POTTED_DAPHNE.get(), ObjectRegistry.POTTED_BOTTLEBRUSHES.get(),
-                ObjectRegistry.POTTED_FOXGLOVE_WHITE.get(), ObjectRegistry.POTTED_FOXGLOVE_PINK.get(), ObjectRegistry.POTTED_FREESIA_YELLOW.get(),
-                ObjectRegistry.POTTED_FREESIA_PINK.get(), ObjectRegistry.POTTED_LUPINE_BLUE.get(), ObjectRegistry.POTTED_LUPINE_PURPLE.get(),
-                ObjectRegistry.POTTED_LARCH_SAPLING.get(), ObjectRegistry.LARCH_SAPLING.get(), ObjectRegistry.SWAMP_OAK_TRAPDOOR.get(),
-                ObjectRegistry.SWAMP_OAK_WINDOW.get(), ObjectRegistry.SWAMP_OAK_DOOR.get(), ObjectRegistry.SWAMP_OAK_SAPLING.get(), ObjectRegistry.LARCH_WINDOW.get(),
-                ObjectRegistry.TALL_MOUNTAIN_LAUREL.get(), ObjectRegistry.TALL_LUPINE_BLUE.get(), ObjectRegistry.TALL_LUPINE_PURPLE.get(), ObjectRegistry.BEACH_BUSH.get(),
-                ObjectRegistry.BEACH_BUSH_TALL.get(), ObjectRegistry.BEACH_GRASS.get(), ObjectRegistry.GOLDEN_ROD.get(), ObjectRegistry.WILD_SUNFLOWER.get(),
-                ObjectRegistry.FAN_PALM_SPROUT.get(), ObjectRegistry.FAN_PALM_DOOR.get(), ObjectRegistry.FAN_PALM_TRAPDOOR.get(), ObjectRegistry.FAN_PALM_WINDOW.get(),
-                ObjectRegistry.CATTAIL.get(), ObjectRegistry.REED.get(), ObjectRegistry.POTTED_LARCH_SAPLING.get(), ObjectRegistry.POTTED_FIR_SAPLING.get(),
-                ObjectRegistry.POTTED_SWAMP_CYPRESS_SAPLING.get(), ObjectRegistry.POTTED_SWAMP_OAK_SAPLING.get(), ObjectRegistry.POTTED_FAN_PALM_SPROUT.get(),
-                ObjectRegistry.POTTED_ASPEN_SAPLING.get(), ObjectRegistry.POTTED_BAOBAB_SAPLING.get(), ObjectRegistry.POTTED_GOLDEN_ROD.get(),
-                ObjectRegistry.POTTED_BEACH_BUSH.get(), ObjectRegistry.BAOBAB_WINDOW.get(), ObjectRegistry.ASPEN_WINDOW.get(), ObjectRegistry.SWAMP_CYPRESS_WINDOW.get(),
-                ObjectRegistry.FIR_WINDOW.get(), ObjectRegistry.BAOBAB_DOOR.get(), ObjectRegistry.ASPEN_DOOR.get(), ObjectRegistry.SWAMP_CYPRESS_DOOR.get(),
-                ObjectRegistry.ASPEN_TRAPDOOR.get(), ObjectRegistry.SWAMP_CYPRESS_TRAPDOOR.get(), ObjectRegistry.BAOBAB_SAPLING.get(), ObjectRegistry.ASPEN_SAPLING.get(),
-                ObjectRegistry.SWAMP_CYPRESS_SAPLING.get(), ObjectRegistry.FIR_SAPLING.get(), ObjectRegistry.CHESTNUT_DOOR.get(), ObjectRegistry.CHESTNUT_SAPLING.get(),
-                ObjectRegistry.CHESTNUT_WINDOW.get(), ObjectRegistry.CHESTNUT_TRAPDOOR.get(), ObjectRegistry.EBONY_WINDOW.get(), ObjectRegistry.EBONY_DOOR.get(),
-                ObjectRegistry.EBONY_SAPLING.get(), ObjectRegistry.POTTED_EBONY_SAPLING.get(), ObjectRegistry.EBONY_TRAPDOOR.get(), ObjectRegistry.MOSSY_LATERIT.get(),
-                ObjectRegistry.FIR_LEAVES.get(), ObjectRegistry.FLOATING_LEAVES.get(), ObjectRegistry.POTTED_CHESTNUT_SAPLING.get()
+                CARDINAL.get(), MOUNTAIN_LAUREL.get(), JOE_PYE.get(), HYSSOP.get(),
+                MOUNTAIN_SNOWBELL.get(), CARDINAL.get(), BIRD_OF_PARADISE.get(), WHITE_ORCHID.get(),
+                POTTED_MOUNTAIN_LAUREL.get(), POTTED_JOE_PYE.get(), POTTED_HYSSOP.get(),
+                POTTED_MOUNTAIN_SNOWBELL.get(), POTTED_WHITE_ORCHID.get(), POTTED_BIRD_OF_PARADISE.get(),
+                BEGONIE.get(), GENISTEAE.get(), GOATSBEARD.get(), BLUEBELL.get(), DAPHNE.get(),
+                BOTTLEBRUSHES.get(), FOXGLOVE_WHITE.get(), FOXGLOVE_PINK.get(), FREESIA_YELLOW.get(),
+                FREESIA_PINK.get(), LUPINE_BLUE.get(), LUPINE_PURPLE.get(),
+                LARCH_DOOR.get(), POTTED_BEGONIE.get(), POTTED_GENISTEAE.get(),
+                POTTED_GOATSBEARD.get(), POTTED_BLUEBELL.get(), POTTED_DAPHNE.get(), POTTED_BOTTLEBRUSHES.get(),
+                POTTED_FOXGLOVE_WHITE.get(), POTTED_FOXGLOVE_PINK.get(), POTTED_FREESIA_YELLOW.get(),
+                POTTED_FREESIA_PINK.get(), POTTED_LUPINE_BLUE.get(), POTTED_LUPINE_PURPLE.get(),
+                POTTED_LARCH_SAPLING.get(), LARCH_SAPLING.get(), SWAMP_OAK_TRAPDOOR.get(),
+                SWAMP_OAK_WINDOW.get(), SWAMP_OAK_DOOR.get(), SWAMP_OAK_SAPLING.get(), LARCH_WINDOW.get(),
+                TALL_MOUNTAIN_LAUREL.get(), TALL_LUPINE_BLUE.get(), TALL_LUPINE_PURPLE.get(), BEACH_BUSH.get(),
+                BEACH_BUSH_TALL.get(), BEACH_GRASS.get(), GOLDEN_ROD.get(), WILD_SUNFLOWER.get(),
+                FAN_PALM_SPROUT.get(), FAN_PALM_DOOR.get(), FAN_PALM_TRAPDOOR.get(), FAN_PALM_WINDOW.get(),
+                CATTAIL.get(), REED.get(), POTTED_LARCH_SAPLING.get(), POTTED_FIR_SAPLING.get(),
+                POTTED_SWAMP_CYPRESS_SAPLING.get(), POTTED_SWAMP_OAK_SAPLING.get(), POTTED_FAN_PALM_SPROUT.get(),
+                POTTED_ASPEN_SAPLING.get(), POTTED_BAOBAB_SAPLING.get(), POTTED_GOLDEN_ROD.get(),
+                POTTED_BEACH_BUSH.get(), BAOBAB_WINDOW.get(), ASPEN_WINDOW.get(), SWAMP_CYPRESS_WINDOW.get(),
+                FIR_WINDOW.get(), BAOBAB_DOOR.get(), ASPEN_DOOR.get(), SWAMP_CYPRESS_DOOR.get(),
+                ASPEN_TRAPDOOR.get(), SWAMP_CYPRESS_TRAPDOOR.get(), BAOBAB_SAPLING.get(), ASPEN_SAPLING.get(),
+                SWAMP_CYPRESS_SAPLING.get(), FIR_SAPLING.get(), CHESTNUT_DOOR.get(), CHESTNUT_SAPLING.get(),
+                CHESTNUT_WINDOW.get(), CHESTNUT_TRAPDOOR.get(), EBONY_WINDOW.get(), EBONY_DOOR.get(),
+                EBONY_SAPLING.get(), POTTED_EBONY_SAPLING.get(), EBONY_TRAPDOOR.get(), MOSSY_LATERIT.get(),
+                FIR_LEAVES.get(), FLOATING_LEAVES.get(), POTTED_CHESTNUT_SAPLING.get(), SUNGRASS.get(), 
+                TALL_SUNGRASS.get(), FORSYTHIA.get(), POTTED_FORSYTHIA.get()
 
         );
 
 
-        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.MOSSY_LATERIT.get(), ObjectRegistry.EBONY_LEAVES.get());
+        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), CHESTNUT_LEAVES.get(), SWAMP_CYPRESS_LEAVES.get(), MOSSY_LATERIT.get(), EBONY_LEAVES.get(),
+        SUNGRASS.get(), TALL_SUNGRASS.get());
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
             if (world == null || pos == null) {
                 return -1;
             }
             return BiomeColors.getAverageFoliageColor(world, pos);
-        }, ObjectRegistry.SWAMP_CYPRESS_LEAVES.get(), ObjectRegistry.CHESTNUT_LEAVES.get(), ObjectRegistry.EBONY_LEAVES.get());
+        }, SWAMP_CYPRESS_LEAVES.get(), CHESTNUT_LEAVES.get(), EBONY_LEAVES.get());
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
             if (world == null || pos == null) {
                 return -1;
             }
             return BiomeColors.getAverageGrassColor(world, pos);
-        }, ObjectRegistry.MOSSY_LATERIT.get());
+        }, MOSSY_LATERIT.get(), SUNGRASS.get(), TALL_SUNGRASS.get());
     }
 
     public static void preInitClient() {

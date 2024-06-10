@@ -12,10 +12,6 @@ public class ConfigFabric implements ConfigData {
     public boolean removeLavaLakes = true;
     @ConfigEntry.Category("misc")
     public boolean removeLavaLakesUnderground = true;
-    @ConfigEntry.Category("misc")
-    public boolean removeMarshBlocks = false;
-    @ConfigEntry.Category("misc")
-    public boolean removeQuicksandBlocks = false;
     //Plains
     @ConfigEntry.Category("plains")
     public int setPlainsGrassColor = 11063154;
@@ -292,7 +288,6 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNatureTaigaStoneSlabs = true;
     @ConfigEntry.Category("taiga")
     public boolean addBloomingNatureTaigaBuriedTravertin = true;
-
     //OLDGROWTHSPRUCETAIGA
     @ConfigEntry.Category("oldgrowthsprucetaiga")
     public boolean removeVanillaOldgrowthsprucetaigaTrees = true;
@@ -322,8 +317,6 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNatureOldgrowthsprucetaigaStoneSlabs = true;
     @ConfigEntry.Category("oldgrowthsprucetaiga")
     public boolean addBloomingNatureOldgrowthsprucetaigaBuriedTravertin = true;
-
-
     //OLDGROWTHPINETAIGA
     @ConfigEntry.Category("oldgrowthpinetaiga")
     public int setPineTaigaGrassColor = 9286496;
@@ -351,5 +344,111 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNaturePineTaigaStoneBoulder = true;
     @ConfigEntry.Category("oldgrowthpinetaiga")
     public boolean addBloomingNaturePineTaigaStoneSlabs = true;
+    //SAVANNA
+    @ConfigEntry.Category("savanna")
+    public int setSavannaGrassColor = 15259000;
+    @ConfigEntry.Category("savanna")
+    public int setSavannaFoliageColor = 10399058;
+    @ConfigEntry.Category("savanna")
+    public boolean removeVanillaSavannaTrees = true;
+    @ConfigEntry.Category("savanna")
+    public boolean removeVanillaSavannaGrass = true;
+    @ConfigEntry.Category("savanna")
+    public boolean removeVanillaSavannaMushrooms = true;
+    @ConfigEntry.Category("savanna")
+    public boolean removeVanillaSavannaFlowers = true;
+    @ConfigEntry.Category("savanna")
+    public boolean addBloomingNatureSavannaTrees = true;
+    @ConfigEntry.Category("savanna")
+    public boolean addBloomingNatureSavannaVegetation = true;
+    @ConfigEntry.Category("savanna")
+    public boolean addBloomingNatureSavannaGrassPatch = true;
+    @ConfigEntry.Category("savanna")
+    public boolean addBloomingNatureSavannaGraniteBoulders = true;
+    @ConfigEntry.Category("savanna")
+    public boolean addBloomingNatureSavannaGraniteSlabs = true;
+    @ConfigEntry.Category("savanna")
+    public boolean addBloomingNatureSavannaPackedMud = true;
+    //SAVANNA_PLATEAU
+    @ConfigEntry.Category("savanna_plateau")
+    public int setSavannaPlateauGrassColor = 15259000;
+    @ConfigEntry.Category("savanna_plateau")
+    public int setSavannaPlateauFoliageColor = 10399058;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean removeVanillaSavannaPlateauTrees = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean removeVanillaSavannaPlateauGrass = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean removeVanillaSavannaPlateauMushrooms = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean removeVanillaSavannaPlateauFlowers = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean addBloomingNatureSavannaPlateauTrees = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean addBloomingNatureSavannaPlateauVegetation = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean addBloomingNatureSavannaPlateauGrassPatch = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean addBloomingNatureSavannaPlateauGraniteBoulders = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean addBloomingNatureSavannaPlateauGraniteSlabs = true;
+    @ConfigEntry.Category("savanna_plateau")
+    public boolean addBloomingNatureSavannaPlateauPackedMud = true;
+    //JUNGLE
+    @ConfigEntry.Category("jungle")
+    public int setJungleGrassColor = 8970560;
+    @ConfigEntry.Category("jungle")
+    public int setJungleFoliageColor = 6337104;
+    @ConfigEntry.Category("jungle")
+    public boolean removeVanillaJungleTrees = true;
+    @ConfigEntry.Category("jungle")
+    public boolean removeVanillaJungleFlowers = true;
+    @ConfigEntry.Category("jungle")
+    public boolean removeVanillaJungleGrass = true;
+    @ConfigEntry.Category("jungle")
+    public boolean removeVanillaBamboo = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureJungleTrees = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureJungleGrass = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureJungleFlowers = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureJungleFloatingLeaves = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureJungleVegetation = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureJunglePuddle = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureJungleMud = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureLateritBoulder = true;
+    @ConfigEntry.Category("jungle")
+    public boolean addBloomingNatureBuriedLaterit = true;
+    //SPARSE JUNGLE
+    @ConfigEntry.Category("sparsejungle")
+    public int setSparseJungleGrassColor = 8970560;
+    @ConfigEntry.Category("sparsejungle")
+    public int setSparseJungleFoliageColor = 6337104;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean removeVanillaSparseJungleTrees = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean removeVanillaSparseJungleGrass = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean removeVanillaSparseJungleFlowers = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean addBloomingNatureSparseJungleTrees = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean addBloomingNatureSparseJungleGrass = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean addBloomingNatureSparseJungleFlowers = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean addBloomingNatureSparseJunglePuddle = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean addBloomingNatureSparseJungleMud = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean addBloomingNatureSparseJungleLateritBoulder = true;
+    @ConfigEntry.Category("sparsejungle")
+    public boolean addBloomingNatureSparseJungleBuriedLaterit = true;
 
 }

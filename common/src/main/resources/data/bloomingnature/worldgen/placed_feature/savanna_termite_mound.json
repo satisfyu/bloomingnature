@@ -1,5 +1,5 @@
 {
-  "feature": "bloomingnature:terrain/termite_mound",
+  "feature": "bloomingnature:savanna_termite_mound",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",

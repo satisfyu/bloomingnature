@@ -1,9 +1,9 @@
 {
-  "feature": "bloomingnature:terrain/ore_travertin",
+  "feature": "bloomingnature:jungle_ore_laterit",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 46
+      "count": 22
     },
     {
       "type": "minecraft:in_square"

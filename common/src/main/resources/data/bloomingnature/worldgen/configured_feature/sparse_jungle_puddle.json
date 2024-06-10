@@ -4,7 +4,10 @@
     "to_place": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:stone"
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
       }
     }
   }

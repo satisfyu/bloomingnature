@@ -1,5 +1,5 @@
 {
-  "feature": "bloomingnature:terrain/stone_slabs",
+  "feature": "bloomingnature:savanna_granite_slabs",
   "placement": [
     {
       "type": "minecraft:count",
@@ -40,7 +40,7 @@
               0
             ],
             "blocks": [
-              "minecraft:stone"
+              "minecraft:granite"
             ]
           },
           {
@@ -57,7 +57,7 @@
                       0
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   },
                   {
@@ -79,7 +79,7 @@
                       0
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   }
                 ]
@@ -95,7 +95,7 @@
                       0
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   },
                   {
@@ -117,7 +117,7 @@
                       0
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   }
                 ]
@@ -133,7 +133,7 @@
                       -1
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   },
                   {
@@ -155,7 +155,7 @@
                       1
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   }
                 ]
@@ -171,7 +171,7 @@
                       1
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   },
                   {
@@ -193,7 +193,7 @@
                       -1
                     ],
                     "blocks": [
-                      "minecraft:stone"
+                      "minecraft:granite"
                     ]
                   }
                 ]

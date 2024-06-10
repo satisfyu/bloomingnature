@@ -7,13 +7,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import satisfy.bloomingnature.util.BloomingNatureIdentifier;
 
 public class PlacedFeatures {
-
-
-    public static final ResourceKey<PlacedFeature> STONE_SLABS = registerKey("terrain/stone_slabs");
-
-    public static final ResourceKey<PlacedFeature> QUICKSAND = registerKey("terrain/quicksand");
     public static final ResourceKey<PlacedFeature> FLOWER_DEFAULT = registerMCKey("flower_default");
-
     public static final ResourceKey<PlacedFeature> LAVA_LAKE_UNDERGROUND = registerMCKey("lake_lava_underground");
     public static final ResourceKey<PlacedFeature> LAVA_LAKE_SURFACE = registerMCKey("lake_lava_surface");
     public static final ResourceKey<PlacedFeature> FAN_PALM_TREE = registerKey("beach_fan_palm");
@@ -142,9 +136,6 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_GRAVEL_BEACH = registerKey("old_growth_gravel_beach");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_STONE_SLABS = registerKey("old_growth_stone_slabs");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_TAIGA_BN_TRAVERTIN = registerKey("old_growth_ore_travertin");
-
-
-
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_PINE_TAIGA_LARGE_FERN = registerMCKey("patch_large_fern");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_PINE_TAIGA_TREES = registerMCKey("trees_old_growth_pine_taiga");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_PINE_TAIGA_FLOWERS = registerMCKey("flower_default");
@@ -156,41 +147,50 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> LARCH_FOREST_MOSS = registerKey("larch_forest_moss");
     public static final ResourceKey<PlacedFeature> LARCH_STONE_BOULDER = registerKey("larch_stone_boulder");
     public static final ResourceKey<PlacedFeature> LARCH_STONE_SLABS = registerKey("larch_stone_slabs");
-
-
-
-
     public static final ResourceKey<PlacedFeature> DARK_FOREST_VEGETATION = registerMCKey("dark_forest_vegetation");
     public static final ResourceKey<PlacedFeature> DARK_FOREST_TREES = registerKey("dark_forest_trees");
     public static final ResourceKey<PlacedFeature> DARK_FOREST_GRASS_PATCH = registerKey("dark_forest_grass_patch");
     public static final ResourceKey<PlacedFeature> DARK_FOREST_TREE_FALLEN = registerKey("dark_forest_tree_fallen");
-
     public static final ResourceKey<PlacedFeature> TREES_SAVANNA = registerMCKey("trees_savanna");
     public static final ResourceKey<PlacedFeature> PATCH_GRASS_SAVANNA = registerMCKey("patch_grass_savanna");
     public static final ResourceKey<PlacedFeature> BROWN_MUSHROOM_NORMAL = registerMCKey("brown_mushroom_normal");
     public static final ResourceKey<PlacedFeature> RED_MUSHROOM_NORMAL = registerMCKey("red_mushroom_normal");
     public static final ResourceKey<PlacedFeature> FLOWER_WARM = registerMCKey("flower_warm");
     public static final ResourceKey<PlacedFeature> SAVANNA_TREES = registerKey("savanna_trees");
-    public static final ResourceKey<PlacedFeature> SAVANNA_PLATEAU_TREES = registerKey("savanna_plateau_trees");
     public static final ResourceKey<PlacedFeature> SAVANNA_VEGETATION = registerKey("savanna_vegetation");
     public static final ResourceKey<PlacedFeature> SAVANNA_GRASS_PATCH = registerKey("savanna_grass_patch");
-    public static final ResourceKey<PlacedFeature> GRANITE_BOULDERS = registerKey("terrain/granite_boulders");
-    public static final ResourceKey<PlacedFeature> GRANITE_SLABS = registerKey("terrain/granite_slabs");
-    public static final ResourceKey<PlacedFeature> PACKED_MUD = registerKey("terrain/packed_mud");
+    public static final ResourceKey<PlacedFeature> SAVANNA_GRANITE_BOULDERS = registerKey("savanna_granite_boulders");
+    public static final ResourceKey<PlacedFeature> SAVANNA_GRANITE_SLABS = registerKey("savanna_granite_slabs");
+    public static final ResourceKey<PlacedFeature> SAVANNA_PACKED_MUD = registerKey("savanna_packed_mud");
+    public static final ResourceKey<PlacedFeature> SAVANNA_PLATEAU_TREES = registerKey("savanna_plateau_trees");
+    public static final ResourceKey<PlacedFeature> SAVANNA_PLATEAU_VEGETATION = registerKey("savanna_plateau_vegetation");
+    public static final ResourceKey<PlacedFeature> SAVANNA_PLATEAU_GRASS_PATCH = registerKey("savanna_plateau_grass_patch");
+    public static final ResourceKey<PlacedFeature> SAVANNA_PLATEAU_GRANITE_BOULDERS = registerKey("savanna_plateau_granite_boulders");
+    public static final ResourceKey<PlacedFeature> SAVANNA_PLATEAU_GRANITE_SLABS = registerKey("savanna_plateau_granite_slabs");
+    public static final ResourceKey<PlacedFeature> SAVANNA_PLATEAU_PACKED_MUD = registerKey("savanna_plateau_packed_mud");
     public static final ResourceKey<PlacedFeature> JUNGLE_TREES = registerMCKey("trees_jungle");
-    public static final ResourceKey<PlacedFeature> JUNGLE_FLOWERS_MC = registerMCKey("flower_warm");
+    public static final ResourceKey<PlacedFeature> JUNGLE_FLOWERS = registerMCKey("flower_warm");
     public static final ResourceKey<PlacedFeature> JUNGLE_BAMBOO = registerMCKey("bamboo_light");
+    public static final ResourceKey<PlacedFeature> JUNGLE_GRASS = registerMCKey("patch_grass_jungle");
     public static final ResourceKey<PlacedFeature> JUNGLE_BN_TREES = registerKey("jungle_trees");
-    public static final ResourceKey<PlacedFeature> JUNGLE_FLOWERS = registerKey("jungle_flowers");
+    public static final ResourceKey<PlacedFeature> JUNGLE_BN_FLOWERS = registerKey("jungle_flowers");
+    public static final ResourceKey<PlacedFeature> JUNGLE_BN_GRASS = registerKey("jungle_grass_patch");
+    public static final ResourceKey<PlacedFeature> JUNGLE_FLOATING_LEAVES = registerKey("jungle_floating_leaves");
+    public static final ResourceKey<PlacedFeature> JUNGLE_VEGETATION = registerKey("jungle_vegetation");
+    public static final ResourceKey<PlacedFeature> JUNGLE_BN_PUDDLE = registerKey("jungle_puddle");
+    public static final ResourceKey<PlacedFeature> JUNGLE_BN_MUD = registerKey("jungle_mud");
+    public static final ResourceKey<PlacedFeature> JUNGLE_LATERIT_BOULDER = registerKey("jungle_laterit_boulder");
+    public static final ResourceKey<PlacedFeature> JUNGLE_ORE_LATERIT = registerKey("jungle_ore_laterit");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_TREES = registerMCKey("trees_sparse_jungle");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_GRASS = registerMCKey("patch_grass_jungle ");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_FLOWERS = registerMCKey("flower_warm");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_TREES = registerKey("sparse_jungle_trees");
-    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_PUDDLE = registerKey("terrain/puddle");
-    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_MUD = registerKey("terrain/mud_beach");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_GRASS = registerKey("sparse_jungle_grass_patch");
-    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_LATERIT_BOULDER = registerKey("terrain/laterit_boulder");
-    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_ORE_LATERIT = registerKey("terrain/ore_laterit");
-
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_FLOWERS = registerKey("sparse_jungle_flowers");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_PUDDLE = registerKey("sparse_jungle_puddle");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_MUD = registerKey("sparse_jungle_mud_beach");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_LATERIT_BOULDER = registerKey("sparse_jungle_laterit_boulder");
+    public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_ORE_LATERIT = registerKey("sparse_jungle_ore_laterit");
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new BloomingNatureIdentifier(name));
@@ -199,5 +199,4 @@ public class PlacedFeatures {
     public static ResourceKey<PlacedFeature> registerMCKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation("minecraft", name));
     }
-
 }

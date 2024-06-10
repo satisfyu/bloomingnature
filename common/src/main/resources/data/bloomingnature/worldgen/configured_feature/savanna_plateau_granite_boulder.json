@@ -11,7 +11,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "bloomingnature:mossy_laterit"
+              "Name": "minecraft:granite"
             }
           }
         }
@@ -72,7 +72,7 @@
                         ],
                         "blocks": [
                           "minecraft:air",
-                          "bloomingnature:mossy_laterit"
+                          "minecraft:granite"
                         ]
                       }
                     ]

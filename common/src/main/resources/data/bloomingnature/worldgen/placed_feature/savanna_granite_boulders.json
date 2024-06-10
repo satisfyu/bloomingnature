@@ -1,9 +1,9 @@
 {
-  "feature": "bloomingnature:terrain/laterit_boulder",
+  "feature": "bloomingnature:savanna_granite_boulder",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 33
+      "count": 128
     },
     {
       "type": "minecraft:in_square"

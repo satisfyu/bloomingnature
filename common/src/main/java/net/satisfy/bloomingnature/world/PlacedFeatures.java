@@ -163,6 +163,7 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> SAVANNA_TREES = registerKey("savanna_trees");
     public static final ResourceKey<PlacedFeature> SAVANNA_VEGETATION = registerKey("savanna_vegetation");
     public static final ResourceKey<PlacedFeature> SAVANNA_GRASS_PATCH = registerKey("savanna_grass_patch");
+    public static final ResourceKey<PlacedFeature> SAVANNA_RED_OAT_GRASS_PATCH = registerKey("savanna_red_oat_grass_patch");
     public static final ResourceKey<PlacedFeature> SAVANNA_GRANITE_BOULDERS = registerKey("savanna_granite_boulders");
     public static final ResourceKey<PlacedFeature> SAVANNA_GRANITE_SLABS = registerKey("savanna_granite_slabs");
     public static final ResourceKey<PlacedFeature> SAVANNA_PACKED_MUD = registerKey("savanna_packed_mud");

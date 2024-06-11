@@ -4,7 +4,7 @@
       "model": "bloomingnature:block/swamp_cypress_slab"
     },
     "type=double": {
-      "model": "bloomingnature:block/swamp_cypress_slab_double"
+      "model": "bloomingnature:block/swamp_cypress_planks"
     },
     "type=top": {
       "model": "bloomingnature:block/swamp_cypress_slab_top"

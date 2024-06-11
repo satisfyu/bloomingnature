@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/red_oat_grass_1",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/red_oat_grass_2",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/red_oat_grass_3",
+        "weight": 1
+      }
+    ]
+  }
+}

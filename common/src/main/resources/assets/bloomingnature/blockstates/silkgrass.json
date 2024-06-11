@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/silkgrass_1",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/silkgrass_2",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/silkgrass_3",
+        "weight": 1
+      }
+    ]
+  }
+}

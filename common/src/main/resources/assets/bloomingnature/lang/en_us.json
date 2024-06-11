@@ -153,6 +153,9 @@
   "block.bloomingnature.potted_gladiolus": "Potted Gladiolus",
   "block.bloomingnature.amaryllis": "Amaryllis",
   "block.bloomingnature.potted_amaryllis": "Potted Amaryllis",
+  "block.bloomingnature.red_oat_grass": "Red Oat Grass",
+  "block.bloomingnature.tall_red_oat_grass": "Tall Red Oat Grass",
+
   "block.bloomingnature.anemone": "Anemone",
   "block.bloomingnature.potted_anemone": "Potted Anemone",
   "block.bloomingnature.lupine_purple": "Lupine Purple",
@@ -252,6 +255,8 @@
   "block.bloomingnature.swamp_oak_wood": "Swamp Oak Wood",
   "block.bloomingnature.sungrass": "Sungrass",
   "block.bloomingnature.tall_sungrass": "Tall Sungrass",
+  "block.bloomingnature.silkgrass": "Silkgrass",
+  "block.bloomingnature.tall_silkgrass": "Tall Silkgrass",
   "block.bloomingnature.tall_lupine_blue": "Tall Lupine Blue",
   "block.bloomingnature.tall_lupine_purple": "Tall Lupine Purple",
   "block.bloomingnature.tall_mountain_laurel": "Tall Mountain Laurel",

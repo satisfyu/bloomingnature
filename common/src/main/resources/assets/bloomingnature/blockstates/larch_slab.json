@@ -4,7 +4,7 @@
       "model": "bloomingnature:block/larch_slab"
     },
     "type=double": {
-      "model": "bloomingnature:block/larch_slab_double"
+      "model": "bloomingnature:block/larch_planks"
     },
     "type=top": {
       "model": "bloomingnature:block/larch_slab_top"

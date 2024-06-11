@@ -237,7 +237,11 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.TALL_LUPINE_PURPLE.get());
                 out.accept(ObjectRegistry.SUNGRASS.get());
                 out.accept(ObjectRegistry.TALL_SUNGRASS.get());
+                out.accept(ObjectRegistry.SILKGRASS.get());
+                out.accept(ObjectRegistry.TALL_SILKRASS.get());
                 out.accept(ObjectRegistry.MOSSGRASS.get());
+                out.accept(ObjectRegistry.RED_OAT_GRASS.get());
+                out.accept(ObjectRegistry.TALL_RED_OAT_GRASS.get());
                 out.accept(ObjectRegistry.BEACH_BUSH.get());
                 out.accept(ObjectRegistry.BEACH_BUSH_TALL.get());
                 out.accept(ObjectRegistry.BEACH_GRASS.get());

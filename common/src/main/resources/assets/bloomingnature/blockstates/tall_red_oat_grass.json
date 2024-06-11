@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "half=lower": [
+      {
+        "model": "bloomingnature:block/tall_red_oat_grass_1_bottom",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/tall_red_oat_grass_1_bottom",
+        "weight": 1
+      }
+    ],
+    "half=upper": [
+      {
+        "model": "bloomingnature:block/tall_red_oat_grass_1_top",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/tall_red_oat_grass_2_top",
+        "weight": 1
+      }
+    ]
+  }
+}

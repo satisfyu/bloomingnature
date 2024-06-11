@@ -327,11 +327,15 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> FLOWER_POT_BIG = registerWithItem("flower_pot_big", () -> new BNFlowerPotBigBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FLOWER_BOX = registerWithItem("flower_box", () -> new FlowerBoxBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithItem("floating_leaves", () -> new FloatingLeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().pushReaction(PushReaction.DESTROY)));
-    public static final RegistrySupplier<Block> COCONUT_HANGING = registerWithoutItem("coconut_hanging", () -> new HangingCoconutBlock(BlockBehaviour.Properties.copy(Blocks.BAMBOO)));
 
 
     public static final RegistrySupplier<Block> SUNGRASS = registerWithItem("sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistrySupplier<Block> TALL_SUNGRASS = registerWithItem("tall_sungrass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistrySupplier<Block> RED_OAT_GRASS = registerWithItem("red_oat_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+    public static final RegistrySupplier<Block> TALL_RED_OAT_GRASS = registerWithItem("tall_red_oat_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+    public static final RegistrySupplier<Block> SILKGRASS = registerWithItem("silkgrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+    public static final RegistrySupplier<Block> TALL_SILKRASS = registerWithItem("tall_silkgrass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+
     public static final RegistrySupplier<Block> MOSSGRASS = registerWithItem("mossgrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 
     public static void init() {

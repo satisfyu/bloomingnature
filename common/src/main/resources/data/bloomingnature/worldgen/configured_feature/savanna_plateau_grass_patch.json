@@ -12,15 +12,15 @@
             "type": "minecraft:weighted_state_provider",
             "entries": [
               {
-                "weight": 45,
+                "weight": 30,
                 "data": {
-                  "Name": "minecraft:grass"
+                  "Name": "bloomingnature:red_oat_grass"
                 }
               },
               {
-                "weight": 20,
+                "weight": 10,
                 "data": {
-                  "Name": "minecraft:tall_grass",
+                  "Name": "bloomingnature:tall_red_oat_grass",
                   "Properties": {
                     "half": "lower"
                   }

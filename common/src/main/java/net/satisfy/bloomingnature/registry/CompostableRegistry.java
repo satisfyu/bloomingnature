@@ -53,5 +53,10 @@ public class CompostableRegistry {
         ComposterBlock.COMPOSTABLES.put(ObjectRegistry.GLADIOLUS.get().asItem(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ObjectRegistry.MOSSGRASS.get().asItem(), 0.3F);
         ComposterBlock.COMPOSTABLES.put(ObjectRegistry.FORSYTHIA.get().asItem(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.RED_OAT_GRASS.get().asItem(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.TALL_RED_OAT_GRASS.get().asItem(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.SILKGRASS.get().asItem(), 0.3F);
+        ComposterBlock.COMPOSTABLES.put(ObjectRegistry.TALL_SILKRASS.get().asItem(), 0.3F);
+
     }
 }

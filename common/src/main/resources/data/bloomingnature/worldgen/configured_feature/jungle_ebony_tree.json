@@ -13,6 +13,35 @@
       {
         "type": "minecraft:leave_vine",
         "probability": 0.25
+      },
+      {
+        "type": "minecraft:alter_ground",
+        "provider": {
+          "type": "minecraft:weighted_state_provider",
+          "entries": [
+            {
+              "weight": 2,
+              "data": {
+                "Name": "minecraft:grass_block",
+                "Properties": {
+                  "snowy": "false"
+                }
+              }
+            },
+            {
+              "weight": 1,
+              "data": {
+                "Name": "minecraft:coarse_dirt"
+              }
+            },
+            {
+              "weight": 1.5,
+              "data": {
+                "Name": "minecraft:mud"
+              }
+            }
+          ]
+        }
       }
     ],
     "dirt_provider": {

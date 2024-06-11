@@ -49,19 +49,20 @@ public class BloomingNatureClient {
                 EBONY_SAPLING.get(), POTTED_EBONY_SAPLING.get(), EBONY_TRAPDOOR.get(), MOSSY_LATERIT.get(),
                 FIR_LEAVES.get(), FLOATING_LEAVES.get(), POTTED_CHESTNUT_SAPLING.get(), SUNGRASS.get(),
                 TALL_SUNGRASS.get(), FORSYTHIA.get(), POTTED_FORSYTHIA.get(), MOSSGRASS.get(), GLADIOLUS.get(),
-                POTTED_GLADIOLUS.get(), AMARYLLIS.get(), POTTED_AMARYLLIS.get(), ANEMONE.get(), POTTED_ANEMONE.get()
+                POTTED_GLADIOLUS.get(), AMARYLLIS.get(), POTTED_AMARYLLIS.get(), ANEMONE.get(), POTTED_ANEMONE.get(),
+                RED_OAT_GRASS.get(), TALL_RED_OAT_GRASS.get(), SILKGRASS.get(), TALL_SILKRASS.get()
 
         );
 
 
-        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), CHESTNUT_LEAVES.get(), SWAMP_CYPRESS_LEAVES.get(), MOSSY_LATERIT.get(), EBONY_LEAVES.get(),
-        SUNGRASS.get(), TALL_SUNGRASS.get());
+        ColorHandlerRegistry.registerItemColors((stack, tintIndex) -> FoliageColor.get(0.5, 1.0), CHESTNUT_LEAVES.get(),
+                MOSSY_LATERIT.get(), EBONY_LEAVES.get(), SUNGRASS.get(), TALL_SUNGRASS.get());
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
             if (world == null || pos == null) {
                 return -1;
             }
             return BiomeColors.getAverageFoliageColor(world, pos);
-        }, SWAMP_CYPRESS_LEAVES.get(), CHESTNUT_LEAVES.get(), EBONY_LEAVES.get());
+        }, CHESTNUT_LEAVES.get(), EBONY_LEAVES.get());
         ColorHandlerRegistry.registerBlockColors((state, world, pos, tintIndex) -> {
             if (world == null || pos == null) {
                 return -1;

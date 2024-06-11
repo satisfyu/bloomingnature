@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_patch",
   "config": {
-    "tries": 22,
+    "tries": 33,
     "xz_spread": 7,
     "y_spread": 3,
     "feature": {
@@ -12,13 +12,13 @@
             "type": "minecraft:weighted_state_provider",
             "entries": [
               {
-                "weight": 45,
+                "weight": 30,
                 "data": {
                   "Name": "minecraft:grass"
                 }
               },
               {
-                "weight": 20,
+                "weight": 10,
                 "data": {
                   "Name": "minecraft:tall_grass",
                   "Properties": {

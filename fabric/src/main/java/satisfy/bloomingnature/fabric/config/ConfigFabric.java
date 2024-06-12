@@ -462,5 +462,13 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNatureSparseJungleLateritBoulder = true;
     @ConfigEntry.Category("sparsejungle")
     public boolean addBloomingNatureSparseJungleBuriedLaterit = true;
+    //desert
+    @ConfigEntry.Category("desert")
+    public boolean addBloomingNatureDesertSmallCactus= true;
+    @ConfigEntry.Category("desert")
+    public boolean addBloomingNatureDesertVegetation = true;
+    @ConfigEntry.Category("desert")
+    public boolean addBloomingNatureDesertSlate = true;
+
 
 }

@@ -705,8 +705,6 @@ public class BloomingNatureFabric implements ModInitializer {
         }
 
 
-
-
         world.add(ModificationPhase.ADDITIONS, old_growth_pine_taiga, ctx -> ctx.getEffects().setGrassColor(config.setPineTaigaGrassColor));
         world.add(ModificationPhase.ADDITIONS, old_growth_pine_taiga, ctx -> ctx.getEffects().setFoliageColor(config.setPineTaigaFoliageColor));
         if (config.removeVanillaPineTaigaTrees) {
@@ -756,11 +754,6 @@ public class BloomingNatureFabric implements ModInitializer {
         } else {
             world.add(ModificationPhase.REMOVALS, old_growth_pine_taiga, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.LARCH_FOREST_MOSS));
         }
-
-
-
-
-
         world.add(ModificationPhase.ADDITIONS, savanna, ctx -> ctx.getEffects().setGrassColor(config.setSavannaGrassColor));
         world.add(ModificationPhase.ADDITIONS, savanna, ctx -> ctx.getEffects().setFoliageColor(config.setSavannaFoliageColor));
         if (config.removeVanillaSavannaTrees) {
@@ -914,7 +907,6 @@ public class BloomingNatureFabric implements ModInitializer {
         }
 
 
-
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setGrassColor(config.setSparseJungleGrassColor));
         world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getEffects().setFoliageColor(config.setSparseJungleFoliageColor));
         if (config.removeVanillaSparseJungleTrees) {
@@ -960,6 +952,29 @@ public class BloomingNatureFabric implements ModInitializer {
             world.add(ModificationPhase.ADDITIONS, sparse_jungle, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
         } else {
             world.add(ModificationPhase.REMOVALS, sparse_jungle, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.SPARSE_JUNGLE_ORE_LATERIT));
+        }
+        if (config.addBloomingNatureDesertSmallCactus) {
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SMALL_CACTUS));
+        } else {
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SMALL_CACTUS));
+        }
+        if (config.addBloomingNatureDesertVegetation) {
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_CACTUS_VEGETATION));
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_DEAD_BUSHES));
+
+        } else {
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_CACTUS_VEGETATION));
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_DEAD_BUSHES));
+        }
+        if (config.addBloomingNatureDesertSlate) {
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SLATE_BOULDER));
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SLATE_SLABS));
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_ORE_SLATE));
+        } else {
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SLATE_BOULDER));
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SLATE_SLABS));
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_ORE_SLATE));
+
         }
     }
 }

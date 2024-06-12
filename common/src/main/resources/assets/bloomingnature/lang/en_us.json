@@ -314,7 +314,8 @@
   "text.autoconfig.bloomingnature.category.beach": "Beach",
   "text.autoconfig.bloomingnature.category.birch": "Birch Forest",
   "text.autoconfig.bloomingnature.category.cherrygrove": "Cherry Grove",
-  "text.autoconfig.bloomingnature.category.dark_forest": "Dark Forest",
+  "text.autoconfig.bloomingnature.category.darkforest": "Dark Forest",
+  "text.autoconfig.bloomingnature.category.desert": "Desert",
   "text.autoconfig.bloomingnature.category.flowerforest": "Flower Forest",
   "text.autoconfig.bloomingnature.category.forest": "Forest",
   "text.autoconfig.bloomingnature.category.jungle": "Jungle",
@@ -638,5 +639,17 @@
   "block.bloomingnature.slate_brick_slab": "Slate Brick Slab",
   "block.bloomingnature.slate_brick_stairs": "Slate Brick Stairs",
   "block.bloomingnature.slate_brick_wall": "Slate Brick Wall",
-  "block.bloomingnature.slate_bricks": "Slate Bricks"
+  "block.bloomingnature.slate_bricks": "Slate Bricks",
+  "text.autoconfig.bloomingnature.option.setSunflowerPlainsFoliageColor": "Set Foliage Color",
+  "text.autoconfig.bloomingnature.option.setSunflowerPlainsGrassColor": "Set Grass Color",
+  "text.autoconfig.bloomingnature.option.addBloomingNatureRiverburiedTravertin": "Add Buried Travertin",
+  "text.autoconfig.bloomingnature.option.removeVanillaOldGrowthBirchForestGrass": "Remove Vanilla Grass",
+  "text.autoconfig.bloomingnature.option.addBloomingNatureForestStoneBoulder": "Add Stone Boulders",
+
+  "text.autoconfig.bloomingnature.option.addBloomingNatureDesertSmallCactus": "Add small Cactus",
+  "text.autoconfig.bloomingnature.option.addBloomingNatureDesertVegetation": "Add additional Vegetation",
+  "text.autoconfig.bloomingnature.option.addBloomingNatureDesertSlate": "Add Slate"
+
+
+
 }

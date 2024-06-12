@@ -196,6 +196,13 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_BN_MUD = registerKey("sparse_jungle_mud_beach");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_LATERIT_BOULDER = registerKey("sparse_jungle_laterit_boulder");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_ORE_LATERIT = registerKey("sparse_jungle_ore_laterit");
+    public static final ResourceKey<PlacedFeature> DESERT_CACTUS_VEGETATION = registerKey("desert_cactus_vegetation");
+    public static final ResourceKey<PlacedFeature> DESERT_DEAD_BUSHES = registerKey("desert_dead_bushes");
+    public static final ResourceKey<PlacedFeature> DESERT_SMALL_CACTUS = registerKey("desert_small_cactus");
+    public static final ResourceKey<PlacedFeature> DESERT_SLATE_BOULDER = registerKey("desert_slate_boulder");
+    public static final ResourceKey<PlacedFeature> DESERT_SLATE_SLABS = registerKey("desert_slate_slabs");
+    public static final ResourceKey<PlacedFeature> DESERT_ORE_SLATE = registerKey("desert_ore_slate");
+
 
     public static ResourceKey<PlacedFeature> registerKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new BloomingNatureIdentifier(name));

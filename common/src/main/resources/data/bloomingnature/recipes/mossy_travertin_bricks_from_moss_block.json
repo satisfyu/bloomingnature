@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "group": "mossy_stone_bricks",
+  "ingredients": [
+    {
+      "item": "bloomingnature:travertin_bricks"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "item": "bloomingnature:mossy_travertin_bricks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "bloomingnature:block/laterit",
+    "top": "bloomingnature:block/laterit",
+    "side": "bloomingnature:block/laterit"
+  }
+}

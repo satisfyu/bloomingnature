@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "bloomingnature:slate_bricks"
+  },
+  "result": "bloomingnature:cracked_slate_bricks"
+}

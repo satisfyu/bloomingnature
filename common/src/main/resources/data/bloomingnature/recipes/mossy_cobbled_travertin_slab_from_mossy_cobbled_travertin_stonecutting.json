@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "bloomingnature:mossy_cobbled_travertin"
+  },
+  "result": "bloomingnature:mossy_cobbled_travertin_slab"
+}

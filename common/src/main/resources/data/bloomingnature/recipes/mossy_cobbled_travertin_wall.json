@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "bloomingnature:mossy_cobbled_travertin"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "bloomingnature:mossy_cobbled_travertin_wall"
+  },
+  "show_notification": true
+}

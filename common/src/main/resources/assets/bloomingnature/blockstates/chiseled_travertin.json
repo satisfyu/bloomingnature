@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/chiseled_travertin",
+        "weight": 1
+      }
+    ]
+  }
+}

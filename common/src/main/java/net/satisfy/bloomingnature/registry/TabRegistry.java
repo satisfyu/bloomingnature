@@ -196,28 +196,97 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.SMALL_CACTUS.get());
                 out.accept(ObjectRegistry.FOREST_MOSS.get());
                 out.accept(ObjectRegistry.FOREST_MOSS_CARPET.get());
-                out.accept(ObjectRegistry.RED_BRICKS.get());
-                out.accept(ObjectRegistry.RED_BRICK_SLAB.get());
-                out.accept(ObjectRegistry.RED_BRICK_STAIRS.get());
-                out.accept(ObjectRegistry.RED_BRICK_WALL.get());
+
                 out.accept(ObjectRegistry.TRAVERTIN.get());
+                out.accept(ObjectRegistry.TRAVERTIN_SLAB.get());
+                out.accept(ObjectRegistry.TRAVERTIN_STAIRS.get());
+                out.accept(ObjectRegistry.TRAVERTIN_WALL.get());
+                out.accept(ObjectRegistry.COBBLED_TRAVERTIN.get());
+                out.accept(ObjectRegistry.COBBLED_TRAVERTIN_SLAB.get());
+                out.accept(ObjectRegistry.COBBLED_TRAVERTIN_STAIRS.get());
+                out.accept(ObjectRegistry.COBBLED_TRAVERTIN_WALL.get());
+                out.accept(ObjectRegistry.CHISELED_TRAVERTIN.get());
                 out.accept(ObjectRegistry.TRAVERTIN_BRICKS.get());
                 out.accept(ObjectRegistry.TRAVERTIN_BRICK_SLAB.get());
                 out.accept(ObjectRegistry.TRAVERTIN_BRICK_STAIRS.get());
                 out.accept(ObjectRegistry.TRAVERTIN_BRICK_WALL.get());
-                out.accept(ObjectRegistry.LATERIT_BRICKS.get());
-                out.accept(ObjectRegistry.LATERIT_BRICK_SLAB.get());
-                out.accept(ObjectRegistry.LATERIT_BRICK_STAIRS.get());
-                out.accept(ObjectRegistry.LATERIT_BRICK_WALL.get());
-                out.accept(ObjectRegistry.LATERIT.get());
-                out.accept(ObjectRegistry.MUSHROOM_BRICKS.get());
-                out.accept(ObjectRegistry.MUSHROOM_BRICK_SLAB.get());
-                out.accept(ObjectRegistry.MUSHROOM_BRICK_STAIRS.get());
-                out.accept(ObjectRegistry.MUSHROOM_BRICK_WALL.get());
+                out.accept(ObjectRegistry.CRACKED_TRAVERTIN_BRICKS.get());
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN_BRICKS.get());
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN_BRICK_WALL.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_TRAVERTIN.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_TRAVERTIN_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_TRAVERTIN_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_TRAVERTIN_WALL.get());
+                out.accept(ObjectRegistry.MOSSY_CHISELED_TRAVERTIN.get());
                 out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICKS.get());
                 out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_SLAB.get());
                 out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_STAIRS.get());
                 out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_WALL.get());
+
+                out.accept(ObjectRegistry.SLATE.get());
+                out.accept(ObjectRegistry.SLATE_SLAB.get());
+                out.accept(ObjectRegistry.SLATE_STAIRS.get());
+                out.accept(ObjectRegistry.SLATE_WALL.get());
+                out.accept(ObjectRegistry.COBBLED_SLATE.get());
+                out.accept(ObjectRegistry.COBBLED_SLATE_SLAB.get());
+                out.accept(ObjectRegistry.COBBLED_SLATE_STAIRS.get());
+                out.accept(ObjectRegistry.COBBLED_SLATE_WALL.get());
+                out.accept(ObjectRegistry.CHISELED_SLATE.get());
+                out.accept(ObjectRegistry.SLATE_BRICKS.get());
+                out.accept(ObjectRegistry.SLATE_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.SLATE_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.SLATE_BRICK_WALL.get());
+                out.accept(ObjectRegistry.CRACKED_SLATE_BRICKS.get());
+                out.accept(ObjectRegistry.MOSSY_SLATE_BRICKS.get());
+                out.accept(ObjectRegistry.MOSSY_SLATE_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_SLATE_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_SLATE_BRICK_WALL.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_SLATE.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_SLATE_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_SLATE_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_SLATE_WALL.get());
+                out.accept(ObjectRegistry.MOSSY_CHISELED_SLATE.get());
+
+                out.accept(ObjectRegistry.MUSHROOM_BRICKS.get());
+                out.accept(ObjectRegistry.MUSHROOM_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.MUSHROOM_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.MUSHROOM_BRICK_WALL.get());
+
+                out.accept(ObjectRegistry.LATERIT.get());
+                out.accept(ObjectRegistry.LATERIT_SLAB.get());
+                out.accept(ObjectRegistry.LATERIT_STAIRS.get());
+                out.accept(ObjectRegistry.LATERIT_WALL.get());
+                out.accept(ObjectRegistry.COBBLED_LATERIT.get());
+                out.accept(ObjectRegistry.COBBLED_LATERIT_SLAB.get());
+                out.accept(ObjectRegistry.COBBLED_LATERIT_STAIRS.get());
+                out.accept(ObjectRegistry.COBBLED_LATERIT_WALL.get());
+                out.accept(ObjectRegistry.CHISELED_LATERIT.get());
+                out.accept(ObjectRegistry.LATERIT_BRICKS.get());
+                out.accept(ObjectRegistry.LATERIT_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.LATERIT_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.LATERIT_BRICK_WALL.get());
+                out.accept(ObjectRegistry.CRACKED_LATERIT_BRICKS.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_BRICKS.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_BRICK_WALL.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_LATERIT.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_LATERIT_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_LATERIT_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_COBBLED_LATERIT_WALL.get());
+                out.accept(ObjectRegistry.MOSSY_CHISELED_LATERIT.get());
+                out.accept(ObjectRegistry.RED_BRICKS.get());
+                out.accept(ObjectRegistry.RED_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.RED_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.RED_BRICK_WALL.get());
+
+
+
+
+
+
 
                 out.accept(ObjectRegistry.REED.get());
                 out.accept(ObjectRegistry.CATTAIL.get());

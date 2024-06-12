@@ -172,6 +172,20 @@
     "bloomingnature:aspen_wall_hanging_sign",
     "bloomingnature:fan_palm_wall_hanging_sign",
     "bloomingnature:chestnut_wall_hanging_sign",
-    "bloomingnature:ebony_wall_hanging_sign"
+    "bloomingnature:ebony_wall_hanging_sign",
+    "bloomingnature:cactus_planks",
+    "bloomingnature:cactus_stairs",
+    "bloomingnature:cactus_pressure_plate",
+    "bloomingnature:cactus_door",
+    "bloomingnature:cactus_fence_gate",
+    "bloomingnature:cactus_slab",
+    "bloomingnature:cactus_button",
+    "bloomingnature:cactus_trapdoor",
+    "bloomingnature:cactus_fence",
+    "bloomingnature:cactus_window",
+    "bloomingnature:cactus_wall_sign",
+    "bloomingnature:cactus_wall_hanging_sign",
+    "bloomingnature:cactus_hanging_sign",
+    "bloomingnature:cactus_sign"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "bloomingnature:cobbled_travertin"
+  },
+  "result": "bloomingnature:cobbled_travertin_stairs"
+}

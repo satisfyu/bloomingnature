@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "bloomingnature:travertin_bricks"
+  },
+  "result": "bloomingnature:chiseled_travertin"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "bloomingnature:block/travertin",
+    "top": "bloomingnature:block/travertin",
+    "side": "bloomingnature:block/travertin"
+  }
+}

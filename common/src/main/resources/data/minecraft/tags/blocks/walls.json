@@ -4,6 +4,20 @@
     "bloomingnature:brown_mushroom_brick_wall",
     "bloomingnature:mushroom_brick_wall",
     "bloomingnature:laterit_brick_wall",
-    "bloomingnature:travertin_brick_wall"
+    "bloomingnature:travertin_brick_wall",
+    "bloomingnature:travertin_wall",
+    "bloomingnature:cobbled_travertin_wall",
+    "bloomingnature:mossy_travertin_brick_wall",
+    "bloomingnature:mossy_cobbled_travertin_wall",
+    "bloomingnature:laterit_wall",
+    "bloomingnature:cobbled_laterit_wall",
+    "bloomingnature:laterit_brick_wall",
+    "bloomingnature:mossy_laterit_brick_wall",
+    "bloomingnature:mossy_cobbled_laterit_wall",
+    "bloomingnature:slate_wall",
+    "bloomingnature:cobbled_slate_wall",
+    "bloomingnature:slate_brick_wall",
+    "bloomingnature:mossy_slate_brick_wall",
+    "bloomingnature:mossy_cobbled_slate_wall"
   ]
 }

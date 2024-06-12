@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/slate_bricks",
+        "weight": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bloomingnature:block/travertin_slab"
+    },
+    "type=double": {
+      "model": "bloomingnature:block/travertin"
+    },
+    "type=top": {
+      "model": "bloomingnature:block/travertin_slab_top"
+    }
+  }
+}

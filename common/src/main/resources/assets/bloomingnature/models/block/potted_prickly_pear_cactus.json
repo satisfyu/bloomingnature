@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/flower_pot_cross",
+  "textures": {
+    "plant": "bloomingnature:block/prickly_pear_cactus"
+  }
+}

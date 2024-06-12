@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/prickly_pear_cactus",
+        "weight": 1
+      }
+    ]
+  }
+}

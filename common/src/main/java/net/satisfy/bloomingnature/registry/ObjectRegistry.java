@@ -262,7 +262,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> BROWN_MUSHROOM_BRICK_SLAB = registerWithItem("brown_mushroom_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MUSHROOM_BRICKS.get())));
     public static final RegistrySupplier<Block> BROWN_MUSHROOM_BRICK_WALL = registerWithItem("brown_mushroom_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MUSHROOM_BRICKS.get())));
     public static final RegistrySupplier<Block> BROWN_MUSHROOM_BRICKS = registerWithItem("brown_mushroom_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
-    public static final RegistrySupplier<Block> FOREST_MOSS = registerWithItem("forest_moss", () -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).speedFactor(0.75F)));
+    public static final RegistrySupplier<Block> FOREST_MOSS = registerWithItem("forest_moss", () -> new ForestMossBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).speedFactor(0.75F)));
     public static final RegistrySupplier<Block> FOREST_MOSS_CARPET = registerWithItem("forest_moss_carpet", () -> new CarpetBlock(BlockBehaviour.Properties.copy(Blocks.MOSS_CARPET).speedFactor(0.75F)));
     public static final RegistrySupplier<Block> MARSH_BLOCK = registerWithItem("marsh_block", () -> new SinkInBlock(BlockBehaviour.Properties.copy(Blocks.MUD)));
     public static final RegistrySupplier<Block> TERMITE_MOUND = registerWithItem("termite_mound", () -> new TermiteBlock(Blocks.ROOTED_DIRT, BlockBehaviour.Properties.of().mapColor(MapColor.CLAY)));
@@ -327,16 +327,32 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> FLOWER_POT_BIG = registerWithItem("flower_pot_big", () -> new BNFlowerPotBigBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FLOWER_BOX = registerWithItem("flower_box", () -> new FlowerBoxBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithItem("floating_leaves", () -> new FloatingLeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().pushReaction(PushReaction.DESTROY)));
-
-
     public static final RegistrySupplier<Block> SUNGRASS = registerWithItem("sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistrySupplier<Block> TALL_SUNGRASS = registerWithItem("tall_sungrass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistrySupplier<Block> RED_OAT_GRASS = registerWithItem("red_oat_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistrySupplier<Block> TALL_RED_OAT_GRASS = registerWithItem("tall_red_oat_grass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistrySupplier<Block> SILKGRASS = registerWithItem("silkgrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistrySupplier<Block> TALL_SILKRASS = registerWithItem("tall_silkgrass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
-
     public static final RegistrySupplier<Block> MOSSGRASS = registerWithItem("mossgrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+    public static final RegistrySupplier<Block> SMALL_CACTUS = registerWithItem("small_cactus", () -> new SmallCactusBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS)));
+    public static final RegistrySupplier<Block> BARREL_CACTUS = registerWithItem("barrel_cactus", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+    public static final RegistrySupplier<Block> PRICKLY_PEAR_CACTUS = registerWithItem("prickly_pear_cactus", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+    public static final RegistrySupplier<Block> POTTED_BARREL_CACTUS = registerWithoutItem("potted_barrel_cactus", () -> new FlowerPotBlock(BARREL_CACTUS.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistrySupplier<Block> POTTED_PRICKLY_PEAR_CACTUS = registerWithoutItem("potted_prickly_pear_cactus", () -> new FlowerPotBlock(PRICKLY_PEAR_CACTUS.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
+
+
+
+    public static final RegistrySupplier<Block> CACTUS_PLANKS = registerWithItem("cactus_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).strength(2.0f, 3.0f).mapColor(MapColor.TERRACOTTA_ORANGE)));
+    public static final RegistrySupplier<Block> CACTUS_STAIRS = registerWithItem("cactus_stairs", () -> new StairBlock(CACTUS_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final RegistrySupplier<Block> CACTUS_PRESSURE_PLATE = registerWithItem("cactus_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().noCollission().strength(0.5f).sound(SoundType.WOOD).mapColor(CACTUS_PLANKS.get().defaultMapColor()), BlockSetType.OAK));
+    public static final RegistrySupplier<Block> CACTUS_DOOR = registerWithItem("cactus_door", () -> new DoorBlock(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.WOOD).noOcclusion().mapColor(CACTUS_PLANKS.get().defaultMapColor()), BlockSetType.OAK));
+    public static final RegistrySupplier<Block> CACTUS_FENCE_GATE = registerWithItem("cactus_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD).mapColor(CACTUS_PLANKS.get().defaultMapColor()), WoodType.OAK));
+    public static final RegistrySupplier<Block> CACTUS_SLAB = registerWithItem("cactus_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+    public static final RegistrySupplier<Block> CACTUS_BUTTON = registerWithItem("cactus_button", () -> woodenButton(FeatureFlags.VANILLA));
+    public static final RegistrySupplier<Block> CACTUS_TRAPDOOR = registerWithItem("cactus_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+    public static final RegistrySupplier<Block> CACTUS_FENCE = registerWithItem("cactus_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
+    public static final RegistrySupplier<Block> CACTUS_WINDOW = registerWithItem("cactus_window", () -> new WindowBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GLASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS).pushReaction(PushReaction.IGNORE)));
+
 
     public static void init() {
         BloomingNature.LOGGER.debug("Registering Mod Block and Items for " + BloomingNature.MOD_ID);

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bloomingnature:cactus_planks"
+    ]
+  },
+  "criteria": {
+    "has_cactus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:cactus"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bloomingnature:cactus_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cactus",
+      "has_the_recipe"
+    ]
+  ]
+}

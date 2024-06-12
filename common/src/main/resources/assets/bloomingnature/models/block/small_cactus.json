@@ -1,0 +1,38 @@
+{
+	"credit": "Made by Satisfy",
+	"parent": "block/block",
+	"textures": {
+		"bottom": "bloomingnature:block/small_cactus_bottom",
+		"top": "bloomingnature:block/small_cactus_top",
+		"particle": "bloomingnature:block/small_cactus_side",
+		"side": "bloomingnature:block/small_cactus_side"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#bottom", "cullface": "down"}
+			}
+		},
+		{
+			"from": [2, 0, 3],
+			"to": [14, 16, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 2]},
+			"faces": {
+				"north": {"uv": [2, 0, 14, 16], "texture": "#side"},
+				"south": {"uv": [2, 0, 14, 16], "texture": "#side"}
+			}
+		},
+		{
+			"from": [3, 0, 2],
+			"to": [13, 16, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 2]},
+			"faces": {
+				"east": {"uv": [2, 0, 14, 16], "texture": "#side"},
+				"west": {"uv": [2, 0, 14, 16], "texture": "#side"}
+			}
+		}
+	]
+}

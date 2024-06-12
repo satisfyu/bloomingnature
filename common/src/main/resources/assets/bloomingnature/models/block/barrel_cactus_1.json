@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "bloomingnature:block/barrel_cactus_1"
+  }
+}

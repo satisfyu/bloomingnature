@@ -50,8 +50,9 @@ public class BloomingNatureClient {
                 FIR_LEAVES.get(), FLOATING_LEAVES.get(), POTTED_CHESTNUT_SAPLING.get(), SUNGRASS.get(),
                 TALL_SUNGRASS.get(), FORSYTHIA.get(), POTTED_FORSYTHIA.get(), MOSSGRASS.get(), GLADIOLUS.get(),
                 POTTED_GLADIOLUS.get(), AMARYLLIS.get(), POTTED_AMARYLLIS.get(), ANEMONE.get(), POTTED_ANEMONE.get(),
-                RED_OAT_GRASS.get(), TALL_RED_OAT_GRASS.get(), SILKGRASS.get(), TALL_SILKRASS.get()
-
+                RED_OAT_GRASS.get(), TALL_RED_OAT_GRASS.get(), SILKGRASS.get(), TALL_SILKRASS.get(), SMALL_CACTUS.get(),
+                PRICKLY_PEAR_CACTUS.get(), BARREL_CACTUS.get(), POTTED_BARREL_CACTUS.get(), POTTED_PRICKLY_PEAR_CACTUS.get(),
+                CACTUS_DOOR.get(), CACTUS_WINDOW.get(), CACTUS_TRAPDOOR.get()
         );
 
 

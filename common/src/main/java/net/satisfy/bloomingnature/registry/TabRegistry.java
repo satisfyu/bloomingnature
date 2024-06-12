@@ -178,6 +178,24 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.FIR_SAPLING.get());
                 out.accept(BoatsAndSignsRegistry.FIR_SIGN_ITEM.get());
                 out.accept(BoatsAndSignsRegistry.FIR_HANGING_SIGN_ITEM.get());
+                out.accept(ObjectRegistry.CACTUS_PLANKS.get());
+                out.accept(ObjectRegistry.CACTUS_STAIRS.get());
+                out.accept(ObjectRegistry.CACTUS_SLAB.get());
+                out.accept(ObjectRegistry.CACTUS_PRESSURE_PLATE.get());
+                out.accept(ObjectRegistry.CACTUS_BUTTON.get());
+                out.accept(ObjectRegistry.CACTUS_TRAPDOOR.get());
+                out.accept(ObjectRegistry.CACTUS_DOOR.get());
+                out.accept(ObjectRegistry.CACTUS_WINDOW.get());
+                out.accept(ObjectRegistry.CACTUS_FENCE.get());
+                out.accept(ObjectRegistry.CACTUS_FENCE_GATE.get());
+                out.accept(BoatsAndSignsRegistry.CACTUS_SIGN_ITEM.get());
+                out.accept(BoatsAndSignsRegistry.CACTUS_HANGING_SIGN_ITEM.get());
+                out.accept(ObjectRegistry.MARSH_BLOCK.get());
+                out.accept(ObjectRegistry.TERMITE_MOUND.get());
+                out.accept(ObjectRegistry.QUICKSAND.get());
+                out.accept(ObjectRegistry.SMALL_CACTUS.get());
+                out.accept(ObjectRegistry.FOREST_MOSS.get());
+                out.accept(ObjectRegistry.FOREST_MOSS_CARPET.get());
                 out.accept(ObjectRegistry.RED_BRICKS.get());
                 out.accept(ObjectRegistry.RED_BRICK_SLAB.get());
                 out.accept(ObjectRegistry.RED_BRICK_STAIRS.get());
@@ -200,11 +218,7 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_SLAB.get());
                 out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_STAIRS.get());
                 out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_WALL.get());
-                out.accept(ObjectRegistry.MARSH_BLOCK.get());
-                out.accept(ObjectRegistry.TERMITE_MOUND.get());
-                out.accept(ObjectRegistry.QUICKSAND.get());
-                out.accept(ObjectRegistry.FOREST_MOSS.get());
-                out.accept(ObjectRegistry.FOREST_MOSS_CARPET.get());
+
                 out.accept(ObjectRegistry.REED.get());
                 out.accept(ObjectRegistry.CATTAIL.get());
                 out.accept(ObjectRegistry.BEGONIE.get());
@@ -245,6 +259,8 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.BEACH_BUSH.get());
                 out.accept(ObjectRegistry.BEACH_BUSH_TALL.get());
                 out.accept(ObjectRegistry.BEACH_GRASS.get());
+                out.accept(ObjectRegistry.BARREL_CACTUS.get());
+                out.accept(ObjectRegistry.PRICKLY_PEAR_CACTUS.get());
                 out.accept(ObjectRegistry.FLOATING_LEAVES.get());
                 out.accept(ObjectRegistry.FLOWER_POT_BIG.get());
                 out.accept(ObjectRegistry.FLOWER_BOX.get());
@@ -267,6 +283,8 @@ public class TabRegistry {
                 out.accept(BoatsAndSignsRegistry.EBONY_CHEST_BOAT.get());
                 out.accept(BoatsAndSignsRegistry.CHESTNUT_BOAT.get());
                 out.accept(BoatsAndSignsRegistry.CHESTNUT_CHEST_BOAT.get());
+                out.accept(BoatsAndSignsRegistry.CACTUS_BOAT.get());
+                out.accept(BoatsAndSignsRegistry.CACTUS_CHEST_BOAT.get());
                 out.accept(ObjectRegistry.WANDERING_GARDENER_SPAWN_EGG.get());
                 out.accept(ObjectRegistry.TERMITE_SPAWN_EGG.get());
             })

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "bloomingnature:block/cactus_pressure_plate"
+    },
+    "powered=true": {
+      "model": "bloomingnature:block/cactus_pressure_plate_down"
+    }
+  }
+}

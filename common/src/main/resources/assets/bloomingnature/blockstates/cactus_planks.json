@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/cactus_planks",
+        "weight": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "bloomingnature:block/barrel_cactus_1",
+        "weight": 1
+      },
+      {
+        "model": "bloomingnature:block/barrel_cactus_2",
+        "weight": 1
+      }
+    ]
+  }
+}

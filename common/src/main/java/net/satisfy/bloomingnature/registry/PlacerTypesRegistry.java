@@ -13,6 +13,7 @@ public class PlacerTypesRegistry {
     public static final DeferredRegister<FoliagePlacerType<?>> FOLIAGE_PLACER_TYPES = DeferredRegister.create(BloomingNature.MOD_ID, Registries.FOLIAGE_PLACER_TYPE);
     public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACER_TYPES = DeferredRegister.create(BloomingNature.MOD_ID, Registries.TRUNK_PLACER_TYPE);
 
+    public static final RegistrySupplier<FoliagePlacerType<AspenFoliagePlacer>> ASPEN_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("aspen_foliage_placer", () -> new FoliagePlacerType<>(AspenFoliagePlacer.CODEC));
     public static final RegistrySupplier<FoliagePlacerType<CornFoliagePlacer>> CORN_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("corn_foliage_placer", () -> new FoliagePlacerType<>(CornFoliagePlacer.CODEC));
     public static final RegistrySupplier<FoliagePlacerType<LarchFoliagePlacer>> LARCH_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("larch_foliage_placer", () -> new FoliagePlacerType<>(LarchFoliagePlacer.CODEC));
     public static final RegistrySupplier<FoliagePlacerType<RodBirchFoliagePlacer>> ROD_BIRCH_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPES.register("birch_foliage_placer", () -> new FoliagePlacerType<>(RodBirchFoliagePlacer.CODEC));

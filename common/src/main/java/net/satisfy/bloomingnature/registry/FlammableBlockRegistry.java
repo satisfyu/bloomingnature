@@ -25,7 +25,9 @@ public class FlammableBlockRegistry {
                 ObjectRegistry.ASPEN_PLANKS.get(), ObjectRegistry.ASPEN_SLAB.get(), ObjectRegistry.ASPEN_STAIRS.get(),
                 ObjectRegistry.ASPEN_FENCE.get(), ObjectRegistry.ASPEN_FENCE_GATE.get(),
                 ObjectRegistry.EBONY_PLANKS.get(), ObjectRegistry.EBONY_SLAB.get(), ObjectRegistry.EBONY_STAIRS.get(),
-                ObjectRegistry.EBONY_FENCE.get(), ObjectRegistry.EBONY_FENCE_GATE.get()
+                ObjectRegistry.EBONY_FENCE.get(), ObjectRegistry.EBONY_FENCE_GATE.get(),
+                ObjectRegistry.CACTUS_PLANKS.get(), ObjectRegistry.CACTUS_SLAB.get(), ObjectRegistry.CACTUS_STAIRS.get(),
+                ObjectRegistry.CACTUS_FENCE.get(), ObjectRegistry.CACTUS_FENCE_GATE.get()
         );
 
         addFlammable(5, 5,

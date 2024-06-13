@@ -12,7 +12,6 @@ public class BloomingNature {
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static void init() {
-        DataFixerRegistry.init();
         ObjectRegistry.init();
         BoatsAndSignsRegistry.init();
         EntityRegistry.init();

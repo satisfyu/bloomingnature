@@ -26,7 +26,7 @@ public class SinkInSandBlock extends SinkInBlock {
                 RandomSource randomSource = level.getRandom();
                 boolean bl = entity.xOld != entity.getX() || entity.zOld != entity.getZ();
                 if (bl && randomSource.nextBoolean()) {
-                    level.addParticle(ParticleTypes.CRIT, entity.getX(), (double) (blockPos.getY() + 1), entity.getZ(), (double) (Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F), 0.05000000074505806, (double) (Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F));
+                    level.addParticle(ParticleTypes.CRIT, entity.getX(), blockPos.getY() + 1, entity.getZ(), Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F, 0.05000000074505806, Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F);
                 }
             }
         }

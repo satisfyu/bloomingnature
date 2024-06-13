@@ -1,8 +1,6 @@
 package net.satisfy.bloomingnature.registry;
 
-import de.cristelknight.doapi.Util;
 import de.cristelknight.doapi.common.block.FlowerBoxBlock;
-import de.cristelknight.doapi.common.block.WindowBlock;
 import dev.architectury.core.item.ArchitecturySpawnEggItem;
 import dev.architectury.registry.fuel.FuelRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
@@ -30,6 +28,7 @@ import net.satisfy.bloomingnature.block.*;
 import net.satisfy.bloomingnature.block.storage.BNFlowerPotBigBlock;
 import net.satisfy.bloomingnature.item.BloomingNatureStandardItem;
 import net.satisfy.bloomingnature.util.BloomingNatureIdentifier;
+import net.satisfy.bloomingnature.util.BloomingNatureUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -385,7 +384,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> WILD_SUNFLOWER = registerWithItem("wild_sunflower", () -> new TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH)));
     public static final RegistrySupplier<Block> FLOWER_POT_BIG = registerWithItem("flower_pot_big", () -> new BNFlowerPotBigBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FLOWER_BOX = registerWithItem("flower_box", () -> new FlowerBoxBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
-    public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithItem("floating_leaves", () -> new FloatingLeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithItem("floating_leaves", () -> new WaterlilyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistrySupplier<Block> SUNGRASS = registerWithItem("sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistrySupplier<Block> TALL_SUNGRASS = registerWithItem("tall_sungrass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistrySupplier<Block> RED_OAT_GRASS = registerWithItem("red_oat_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
@@ -479,14 +478,14 @@ public class ObjectRegistry {
     }
 
     public static <T extends Block> RegistrySupplier<T> registerWithItem(String name, Supplier<T> block) {
-        return Util.registerWithItem(BLOCKS, BLOCK_REGISTRAR, ITEMS, ITEM_REGISTRAR, new BloomingNatureIdentifier(name), block);
+        return BloomingNatureUtil.registerWithItem(BLOCKS, BLOCK_REGISTRAR, ITEMS, ITEM_REGISTRAR, new BloomingNatureIdentifier(name), block);
     }
 
     public static <T extends Block> RegistrySupplier<T> registerWithoutItem(String path, Supplier<T> block) {
-        return Util.registerWithoutItem(BLOCKS, BLOCK_REGISTRAR, new BloomingNatureIdentifier(path), block);
+        return BloomingNatureUtil.registerWithoutItem(BLOCKS, BLOCK_REGISTRAR, new BloomingNatureIdentifier(path), block);
     }
 
     public static <T extends Item> RegistrySupplier<T> registerItem(String path, Supplier<T> itemSupplier) {
-        return Util.registerItem(ITEMS, ITEM_REGISTRAR, new BloomingNatureIdentifier(path), itemSupplier);
+        return BloomingNatureUtil.registerItem(ITEMS, ITEM_REGISTRAR, new BloomingNatureIdentifier(path), itemSupplier);
     }
 }

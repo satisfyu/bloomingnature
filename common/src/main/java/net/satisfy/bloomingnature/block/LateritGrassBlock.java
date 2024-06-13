@@ -10,7 +10,6 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.SnowLayerBlock;
@@ -33,7 +32,7 @@ public class LateritGrassBlock extends SnowyDirtBlock implements BonemealableBlo
     private static boolean canBeGrass(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
         BlockPos blockPos2 = blockPos.above();
         BlockState blockState2 = levelReader.getBlockState(blockPos2);
-        if (blockState2.is(Blocks.SNOW) && (Integer) blockState2.getValue(SnowLayerBlock.LAYERS) == 1) {
+        if (blockState2.is(Blocks.SNOW) && blockState2.getValue(SnowLayerBlock.LAYERS) == 1) {
             return true;
         } else if (blockState2.getFluidState().getAmount() == 8) {
             return false;
@@ -78,27 +77,28 @@ public class LateritGrassBlock extends SnowyDirtBlock implements BonemealableBlo
             }
 
             if (blockState3.isAir()) {
-                Holder holder;
+                Holder<PlacedFeature> holder;
                 if (randomSource.nextInt(8) == 0) {
-                    List<ConfiguredFeature<?, ?>> list = ((Biome) serverLevel.getBiome(blockPos3).value()).getGenerationSettings().getFlowerFeatures();
+                    List<ConfiguredFeature<?, ?>> list = serverLevel.getBiome(blockPos3).value().getGenerationSettings().getFlowerFeatures();
                     if (list.isEmpty()) {
                         continue;
                     }
 
-                    holder = ((RandomPatchConfiguration) ((ConfiguredFeature) list.get(0)).config()).feature();
+                    holder = ((RandomPatchConfiguration) list.get(0).config()).feature();
                 } else {
-                    if (!optional.isPresent()) {
+                    if (optional.isEmpty()) {
                         continue;
                     }
 
-                    holder = (Holder) optional.get();
+                    holder = optional.get();
                 }
 
-                ((PlacedFeature) holder.value()).place(serverLevel, serverLevel.getChunkSource().getGenerator(), randomSource, blockPos3);
+                holder.value().place(serverLevel, serverLevel.getChunkSource().getGenerator(), randomSource, blockPos3);
             }
         }
     }
 
+    @SuppressWarnings("deprecation")
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         if (!canBeGrass(blockState, serverLevel, blockPos)) {
             serverLevel.setBlockAndUpdate(blockPos, ObjectRegistry.LATERIT.get().defaultBlockState());
@@ -109,7 +109,7 @@ public class LateritGrassBlock extends SnowyDirtBlock implements BonemealableBlo
                 for (int i = 0; i < 4; ++i) {
                     BlockPos blockPos2 = blockPos.offset(randomSource.nextInt(3) - 1, randomSource.nextInt(5) - 3, randomSource.nextInt(3) - 1);
                     if (serverLevel.getBlockState(blockPos2).is(ObjectRegistry.LATERIT.get()) && canPropagate(blockState2, serverLevel, blockPos2)) {
-                        serverLevel.setBlockAndUpdate(blockPos2, (BlockState) blockState2.setValue(SNOWY, serverLevel.getBlockState(blockPos2.above()).is(Blocks.SNOW)));
+                        serverLevel.setBlockAndUpdate(blockPos2, blockState2.setValue(SNOWY, serverLevel.getBlockState(blockPos2.above()).is(Blocks.SNOW)));
                     }
                 }
             }

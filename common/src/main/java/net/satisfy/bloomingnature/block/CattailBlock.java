@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class CattailBlock extends TallFlowerBlock implements LiquidBlockContainer {
@@ -51,7 +52,7 @@ public class CattailBlock extends TallFlowerBlock implements LiquidBlockContaine
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor level, BlockPos pos, BlockPos posFrom) {
+    public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState newState, LevelAccessor level, BlockPos pos, BlockPos posFrom) {
         BlockState blockState = super.updateShape(state, direction, newState, level, pos, posFrom);
         if (!blockState.isAir()) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
@@ -66,7 +67,8 @@ public class CattailBlock extends TallFlowerBlock implements LiquidBlockContaine
     }
 
     @Override
-    public FluidState getFluidState(BlockState blockState) {
+    @SuppressWarnings("deprecation")
+    public @NotNull FluidState getFluidState(BlockState blockState) {
         if (blockState.getValue(HALF) == DoubleBlockHalf.LOWER) return Fluids.WATER.getSource(false);
 
         return super.getFluidState(blockState);

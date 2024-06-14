@@ -12,15 +12,30 @@
             "type": "minecraft:weighted_state_provider",
             "entries": [
               {
-                "weight": 50,
+                "weight": 10,
                 "data": {
                   "Name": "bloomingnature:silkgrass"
                 }
               },
               {
-                "weight": 15,
+                "weight": 5,
                 "data": {
                   "Name": "bloomingnature:tall_silkgrass",
+                  "Properties": {
+                    "half": "lower"
+                  }
+                }
+              },
+              {
+                "weight": 35,
+                "data": {
+                  "Name": "minecraft:grass"
+                }
+              },
+              {
+                "weight": 15,
+                "data": {
+                  "Name": "minecraft:tall_grass",
                   "Properties": {
                     "half": "lower"
                   }

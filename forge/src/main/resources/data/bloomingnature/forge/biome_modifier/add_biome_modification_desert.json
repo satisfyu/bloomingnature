@@ -7,7 +7,11 @@
     "bloomingnature:desert_small_cactus",
     "bloomingnature:desert_slate_boulder",
     "bloomingnature:desert_slate_slabs",
-    "bloomingnature:desert_ore_slate"
+    "bloomingnature:desert_ore_slate",
+    "bloomingnature:desert_sand_layer",
+    "bloomingnature:desert_sand_layer2",
+    "bloomingnature:desert_sand_layer3"
+
   ],
   "step": "vegetal_decoration"
 }

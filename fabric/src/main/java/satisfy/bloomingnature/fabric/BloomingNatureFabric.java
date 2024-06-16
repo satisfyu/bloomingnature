@@ -961,10 +961,15 @@ public class BloomingNatureFabric implements ModInitializer {
         if (config.addBloomingNatureDesertVegetation) {
             world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_CACTUS_VEGETATION));
             world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_DEAD_BUSHES));
-
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SAND_LAYER));
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SAND_LAYER2));
+            world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SAND_LAYER3));
         } else {
             world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_CACTUS_VEGETATION));
             world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_DEAD_BUSHES));
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SAND_LAYER));
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SAND_LAYER2));
+            world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SAND_LAYER3));
         }
         if (config.addBloomingNatureDesertSlate) {
             world.add(ModificationPhase.ADDITIONS, desert, ctx -> ctx.getGenerationSettings().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SLATE_BOULDER));
@@ -974,7 +979,6 @@ public class BloomingNatureFabric implements ModInitializer {
             world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SLATE_BOULDER));
             world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_SLATE_SLABS));
             world.add(ModificationPhase.REMOVALS, desert, ctx -> ctx.getGenerationSettings().removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatures.DESERT_ORE_SLATE));
-
         }
     }
 }

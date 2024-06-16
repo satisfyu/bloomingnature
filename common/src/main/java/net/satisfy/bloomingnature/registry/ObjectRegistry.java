@@ -242,6 +242,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> RED_BRICK_STAIRS = registerWithItem("red_brick_stairs", () -> new StairBlock(RED_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(RED_BRICKS.get())));
     public static final RegistrySupplier<Block> RED_BRICK_SLAB = registerWithItem("red_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(RED_BRICKS.get())));
     public static final RegistrySupplier<Block> RED_BRICK_WALL = registerWithItem("red_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(RED_BRICKS.get())));
+    public static final RegistrySupplier<Block> CHISELED_RED_BRICKS= registerWithItem("chiseled_red_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS)));
     public static final RegistrySupplier<Block> TRAVERTIN = registerWithItem("travertin", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
     public static final RegistrySupplier<Block> TRAVERTIN_STAIRS = registerWithItem("travertin_stairs", () -> new StairBlock(TRAVERTIN.get().defaultBlockState(), BlockBehaviour.Properties.copy(RED_BRICKS.get())));
     public static final RegistrySupplier<Block> TRAVERTIN_SLAB = registerWithItem("travertin_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(TRAVERTIN.get())));
@@ -409,9 +410,6 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> PRICKLY_PEAR_CACTUS = registerWithItem("prickly_pear_cactus", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistrySupplier<Block> POTTED_BARREL_CACTUS = registerWithoutItem("potted_barrel_cactus", () -> new FlowerPotBlock(BARREL_CACTUS.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> POTTED_PRICKLY_PEAR_CACTUS = registerWithoutItem("potted_prickly_pear_cactus", () -> new FlowerPotBlock(PRICKLY_PEAR_CACTUS.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
-
-
-
     public static final RegistrySupplier<Block> CACTUS_PLANKS = registerWithItem("cactus_planks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).strength(2.0f, 3.0f).mapColor(MapColor.TERRACOTTA_ORANGE)));
     public static final RegistrySupplier<Block> CACTUS_STAIRS = registerWithItem("cactus_stairs", () -> new StairBlock(CACTUS_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
     public static final RegistrySupplier<Block> CACTUS_PRESSURE_PLATE = registerWithItem("cactus_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of().noCollission().strength(0.5f).sound(SoundType.WOOD).mapColor(CACTUS_PLANKS.get().defaultMapColor()), BlockSetType.OAK));
@@ -422,7 +420,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> CACTUS_TRAPDOOR = registerWithItem("cactus_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final RegistrySupplier<Block> CACTUS_FENCE = registerWithItem("cactus_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> CACTUS_WINDOW = registerWithItem("cactus_window", () -> new WindowBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GLASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS).pushReaction(PushReaction.IGNORE)));
-
+    public static final RegistrySupplier<Block> SAND = registerWithItem("sand", () -> new SandLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().forceSolidOff().randomTicks().strength(0.1F).requiresCorrectToolForDrops().sound(SoundType.SAND).isViewBlocking((blockStatex, blockGetter, blockPos) -> blockStatex.getValue(SnowLayerBlock.LAYERS) >= 8).pushReaction(PushReaction.DESTROY)));
 
     public static void init() {
         BloomingNature.LOGGER.debug("Registering Mod Block and Items for " + BloomingNature.MOD_ID);

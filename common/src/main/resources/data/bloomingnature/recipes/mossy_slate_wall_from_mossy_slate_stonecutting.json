@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "bloomingnature:mossy_slate"
+  },
+  "result": "bloomingnature:mossy_slate_wall"
+}

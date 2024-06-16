@@ -1,24 +1,7 @@
 {
   "variants": {
-    "snowy=false": [
-      {
-        "model": "bloomingnature:block/mossy_travertin"
-      },
-      {
-        "model": "bloomingnature:block/mossy_travertin",
-        "y": 90
-      },
-      {
-        "model": "bloomingnature:block/mossy_travertin",
-        "y": 180
-      },
-      {
-        "model": "bloomingnature:block/mossy_travertin",
-        "y": 270
-      }
-    ],
-    "snowy=true": {
-      "model": "bloomingnature:block/mossy_travertin_snow"
+    "": {
+      "model": "bloomingnature:block/mossy_travertin"
     }
   }
 }

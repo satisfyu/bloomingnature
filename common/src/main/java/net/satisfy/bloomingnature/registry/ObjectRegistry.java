@@ -312,6 +312,18 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> MOSSY_COBBLED_SLATE_SLAB = registerWithItem("mossy_cobbled_slate_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MOSSY_SLATE_BRICKS.get())));
     public static final RegistrySupplier<Block> MOSSY_COBBLED_SLATE_WALL = registerWithItem("mossy_cobbled_slate_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MOSSY_SLATE_BRICKS.get())));
     public static final RegistrySupplier<Block> MOSSY_CHISELED_SLATE = registerWithItem("mossy_chiseled_slate", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> MOSSY_SLATE = registerWithItem("mossy_slate", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> MOSSY_SLATE_STAIRS = registerWithItem("mossy_slate_stairs", () -> new StairBlock(MOSSY_SLATE.get().defaultBlockState(), BlockBehaviour.Properties.copy(MOSSY_SLATE.get())));
+    public static final RegistrySupplier<Block> MOSSY_SLATE_SLAB = registerWithItem("mossy_slate_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MOSSY_SLATE.get())));
+    public static final RegistrySupplier<Block> MOSSY_SLATE_WALL = registerWithItem("mossy_slate_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MOSSY_SLATE.get())));
+    public static final RegistrySupplier<Block> MOSSY_TRAVERTIN = registerWithItem("mossy_travertin", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> MOSSY_TRAVERTIN_STAIRS = registerWithItem("mossy_travertin_stairs", () -> new StairBlock(MOSSY_TRAVERTIN.get().defaultBlockState(), BlockBehaviour.Properties.copy(MOSSY_TRAVERTIN.get())));
+    public static final RegistrySupplier<Block> MOSSY_TRAVERTIN_SLAB = registerWithItem("mossy_travertin_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MOSSY_TRAVERTIN.get())));
+    public static final RegistrySupplier<Block> MOSSY_TRAVERTIN_WALL = registerWithItem("mossy_travertin_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MOSSY_TRAVERTIN.get())));
+    public static final RegistrySupplier<Block> MOSSY_LATERIT_STONE = registerWithItem("mossy_laterit_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistrySupplier<Block> MOSSY_LATERIT_STAIRS = registerWithItem("mossy_laterit_stairs", () -> new StairBlock(MOSSY_LATERIT.get().defaultBlockState(), BlockBehaviour.Properties.copy(MOSSY_LATERIT.get())));
+    public static final RegistrySupplier<Block> MOSSY_LATERIT_SLAB = registerWithItem("mossy_laterit_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MOSSY_LATERIT.get())));
+    public static final RegistrySupplier<Block> MOSSY_LATERIT_WALL = registerWithItem("mossy_laterit_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(MOSSY_LATERIT.get())));
     public static final RegistrySupplier<Block> MUSHROOM_BRICKS = registerWithItem("mushroom_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
     public static final RegistrySupplier<Block> MUSHROOM_BRICK_STAIRS = registerWithItem("mushroom_brick_stairs", () -> new StairBlock(MUSHROOM_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(MUSHROOM_BRICKS.get())));
     public static final RegistrySupplier<Block> MUSHROOM_BRICK_SLAB = registerWithItem("mushroom_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(MUSHROOM_BRICKS.get())));
@@ -384,7 +396,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> WILD_SUNFLOWER = registerWithItem("wild_sunflower", () -> new TallFlowerBlock(BlockBehaviour.Properties.copy(Blocks.ROSE_BUSH)));
     public static final RegistrySupplier<Block> FLOWER_POT_BIG = registerWithItem("flower_pot_big", () -> new BNFlowerPotBigBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FLOWER_BOX = registerWithItem("flower_box", () -> new FlowerBoxBlock(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
-    public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithItem("floating_leaves", () -> new WaterlilyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<Block> FLOATING_LEAVES = registerWithItem("floating_leaves", () -> new FloatingLeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistrySupplier<Block> SUNGRASS = registerWithItem("sungrass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
     public static final RegistrySupplier<Block> TALL_SUNGRASS = registerWithItem("tall_sungrass", () -> new DoublePlantBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
     public static final RegistrySupplier<Block> RED_OAT_GRASS = registerWithItem("red_oat_grass", () -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));

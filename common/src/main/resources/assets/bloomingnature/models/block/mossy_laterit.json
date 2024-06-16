@@ -5,7 +5,7 @@
     "particle": "bloomingnature:block/laterit",
     "bottom": "bloomingnature:block/laterit",
     "top": "block/grass_block_top",
-    "side": "bloomingnature:block/mossy_laterit",
+    "side": "bloomingnature:block/mossy_grassy_laterit",
     "overlay": "block/grass_block_side_overlay"
   },
   "elements": [

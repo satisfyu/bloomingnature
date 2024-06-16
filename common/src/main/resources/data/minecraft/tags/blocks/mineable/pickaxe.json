@@ -89,6 +89,18 @@
     "bloomingnature:mossy_cobbled_slate_stairs",
     "bloomingnature:mossy_cobbled_slate_slab",
     "bloomingnature:mossy_cobbled_slate_wall",
-    "bloomingnature:mossy_chiseled_slate"
+    "bloomingnature:mossy_chiseled_slate",
+    "bloomingnature:mossy_travertin",
+    "bloomingnature:mossy_travertin_stairs",
+    "bloomingnature:mossy_travertin_slab",
+    "bloomingnature:mossy_travertin_wall",
+    "bloomingnature:mossy_slate",
+    "bloomingnature:mossy_slate_stairs",
+    "bloomingnature:mossy_slate_slab",
+    "bloomingnature:mossy_slate_wall",
+    "bloomingnature:mossy_laterit_stone",
+    "bloomingnature:mossy_laterit_stairs",
+    "bloomingnature:mossy_laterit_slab",
+    "bloomingnature:mossy_laterit_wall"
   ]
 }

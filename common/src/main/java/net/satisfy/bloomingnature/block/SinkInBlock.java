@@ -8,7 +8,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.GameRules;
@@ -22,26 +21,21 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
-
+@SuppressWarnings("deprecation")
 public class SinkInBlock extends Block {
-    private static final float HORIZONTAL_PARTICLE_MOMENTUM_FACTOR = 0.083333336F;
-    private static final float IN_BLOCK_HORIZONTAL_SPEED_MULTIPLIER = 0.9F;
-    private static final float IN_BLOCK_VERTICAL_SPEED_MULTIPLIER = 1.5F;
-    private static final float NUM_BLOCKS_TO_FALL_INTO_BLOCK = 2.5F;
     private static final VoxelShape FALLING_COLLISION_SHAPE = Shapes.box(0.0, 0.0, 0.0, 1.0, 0.8999999761581421, 1.0);
-    private static final double MINIMUM_FALL_DISTANCE_FOR_SOUND = 4.0;
-    private static final double MINIMUM_FALL_DISTANCE_FOR_BIG_SOUND = 7.0;
 
     public SinkInBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
 
     public boolean skipRendering(BlockState blockState, BlockState blockState2, Direction direction) {
-        return blockState2.is(this) ? true : super.skipRendering(blockState, blockState2, direction);
+        return blockState2.is(this) || super.skipRendering(blockState, blockState2, direction);
     }
 
-    public VoxelShape getOcclusionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+    public @NotNull VoxelShape getOcclusionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
         return Shapes.empty();
     }
 
@@ -52,7 +46,7 @@ public class SinkInBlock extends Block {
                 RandomSource randomSource = level.getRandom();
                 boolean bl = entity.xOld != entity.getX() || entity.zOld != entity.getZ();
                 if (bl && randomSource.nextBoolean()) {
-                    level.addParticle(ParticleTypes.SQUID_INK, entity.getX(), (double) (blockPos.getY() + 1), entity.getZ(), (double) (Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F), 0.05000000074505806, (double) (Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F));
+                    level.addParticle(ParticleTypes.SQUID_INK, entity.getX(), blockPos.getY() + 1, entity.getZ(), Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F, 0.05000000074505806, Mth.randomBetween(randomSource, -1.0F, 1.0F) * 0.083333336F);
                 }
             }
         }
@@ -77,7 +71,7 @@ public class SinkInBlock extends Block {
         }
     }
 
-    public VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public @NotNull VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         if (collisionContext instanceof EntityCollisionContext entityCollisionContext) {
             Entity entity = entityCollisionContext.getEntity();
             if (entity != null) {
@@ -85,14 +79,13 @@ public class SinkInBlock extends Block {
                     return FALLING_COLLISION_SHAPE;
                 }
 
-                boolean bl = entity instanceof FallingBlockEntity;
             }
         }
 
         return Shapes.empty();
     }
 
-    public VoxelShape getVisualShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+    public @NotNull VoxelShape getVisualShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return Shapes.empty();
     }
 

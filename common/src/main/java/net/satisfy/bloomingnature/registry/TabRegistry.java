@@ -196,7 +196,6 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.SMALL_CACTUS.get());
                 out.accept(ObjectRegistry.FOREST_MOSS.get());
                 out.accept(ObjectRegistry.FOREST_MOSS_CARPET.get());
-
                 out.accept(ObjectRegistry.TRAVERTIN.get());
                 out.accept(ObjectRegistry.TRAVERTIN_SLAB.get());
                 out.accept(ObjectRegistry.TRAVERTIN_STAIRS.get());
@@ -220,11 +219,10 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.MOSSY_COBBLED_TRAVERTIN_STAIRS.get());
                 out.accept(ObjectRegistry.MOSSY_COBBLED_TRAVERTIN_WALL.get());
                 out.accept(ObjectRegistry.MOSSY_CHISELED_TRAVERTIN.get());
-                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICKS.get());
-                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_SLAB.get());
-                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_STAIRS.get());
-                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_WALL.get());
-
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN.get());
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_TRAVERTIN_WALL.get());
                 out.accept(ObjectRegistry.SLATE.get());
                 out.accept(ObjectRegistry.SLATE_SLAB.get());
                 out.accept(ObjectRegistry.SLATE_STAIRS.get());
@@ -248,12 +246,10 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.MOSSY_COBBLED_SLATE_STAIRS.get());
                 out.accept(ObjectRegistry.MOSSY_COBBLED_SLATE_WALL.get());
                 out.accept(ObjectRegistry.MOSSY_CHISELED_SLATE.get());
-
-                out.accept(ObjectRegistry.MUSHROOM_BRICKS.get());
-                out.accept(ObjectRegistry.MUSHROOM_BRICK_SLAB.get());
-                out.accept(ObjectRegistry.MUSHROOM_BRICK_STAIRS.get());
-                out.accept(ObjectRegistry.MUSHROOM_BRICK_WALL.get());
-
+                out.accept(ObjectRegistry.MOSSY_SLATE.get());
+                out.accept(ObjectRegistry.MOSSY_SLATE_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_SLATE_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_SLATE_WALL.get());
                 out.accept(ObjectRegistry.LATERIT.get());
                 out.accept(ObjectRegistry.LATERIT_SLAB.get());
                 out.accept(ObjectRegistry.LATERIT_STAIRS.get());
@@ -277,17 +273,22 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.MOSSY_COBBLED_LATERIT_STAIRS.get());
                 out.accept(ObjectRegistry.MOSSY_COBBLED_LATERIT_WALL.get());
                 out.accept(ObjectRegistry.MOSSY_CHISELED_LATERIT.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_STONE.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_SLAB.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_STAIRS.get());
+                out.accept(ObjectRegistry.MOSSY_LATERIT_WALL.get());
+                out.accept(ObjectRegistry.MUSHROOM_BRICKS.get());
+                out.accept(ObjectRegistry.MUSHROOM_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.MUSHROOM_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.MUSHROOM_BRICK_WALL.get());
                 out.accept(ObjectRegistry.RED_BRICKS.get());
                 out.accept(ObjectRegistry.RED_BRICK_SLAB.get());
                 out.accept(ObjectRegistry.RED_BRICK_STAIRS.get());
                 out.accept(ObjectRegistry.RED_BRICK_WALL.get());
-
-
-
-
-
-
-
+                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICKS.get());
+                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_SLAB.get());
+                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_STAIRS.get());
+                out.accept(ObjectRegistry.BROWN_MUSHROOM_BRICK_WALL.get());
                 out.accept(ObjectRegistry.REED.get());
                 out.accept(ObjectRegistry.CATTAIL.get());
                 out.accept(ObjectRegistry.BEGONIE.get());

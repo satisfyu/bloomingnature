@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "bloomingnature:mossy_laterit_stone"
+  },
+  "result": "bloomingnature:mossy_laterit_stairs"
+}

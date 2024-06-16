@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bloomingnature:block/mossy_slate_slab"
+    },
+    "type=double": {
+      "model": "bloomingnature:block/mossy_slate"
+    },
+    "type=top": {
+      "model": "bloomingnature:block/mossy_slate_slab_top"
+    }
+  }
+}

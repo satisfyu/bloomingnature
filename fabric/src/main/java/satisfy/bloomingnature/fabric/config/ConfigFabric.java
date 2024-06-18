@@ -89,6 +89,8 @@ public class ConfigFabric implements ConfigData {
     public boolean addBloomingNatureBeachPalms = true;
     @ConfigEntry.Category("beach")
     public boolean addBloomingNatureBeachFlowers = true;
+    @ConfigEntry.Category("beach")
+    public boolean addBloomingNatureBeachSandLayers = true;
     //ASPEN
     @ConfigEntry.Category("aspen")
     public int setOldGrowthBirchForestGrassColor = 14406505;

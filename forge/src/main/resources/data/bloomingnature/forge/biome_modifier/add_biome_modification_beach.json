@@ -3,7 +3,10 @@
   "biomes": "minecraft:beach",
   "features": [
     "bloomingnature:beach_fan_palm",
-    "bloomingnature:beach_flowers"
+    "bloomingnature:beach_flowers",
+    "bloomingnature:beach_sand_layer",
+    "bloomingnature:beach_sand_layer2",
+    "bloomingnature:beach_sand_layer3"
   ],
   "step": "vegetal_decoration"
 }

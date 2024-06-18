@@ -561,6 +561,8 @@
   "text.autoconfig.bloomingnature.option.addBloomingNatureTaigaStoneBoulders": "Add Stone Boulders",
   "text.autoconfig.bloomingnature.option.addBloomingNatureTaigaStoneMounds": "Add Stone Mounds",
   "text.autoconfig.bloomingnature.option.addBloomingNatureTaigaStoneSlabs": "Add Stone Slabs",
+  "text.autoconfig.bloomingnature.option.addBloomingNatureBeachSandLayers": "Add Sand Layers",
+
   "text.autoconfig.bloomingnature.option.addBloomingSnowyTaigaTrees": "Add BloomingNature Trees",
   "text.autoconfig.bloomingnature.option.removeLavaLakes": "Disable Lava Lakes",
   "text.autoconfig.bloomingnature.option.removeLavaLakesUnderground": "Disable Underground Lava Lakes",

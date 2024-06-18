@@ -205,6 +205,10 @@ public class PlacedFeatures {
     public static final ResourceKey<PlacedFeature> DESERT_SAND_LAYER = registerKey("desert_sand_layer");
     public static final ResourceKey<PlacedFeature> DESERT_SAND_LAYER2    = registerKey("desert_sand_layer2");
     public static final ResourceKey<PlacedFeature> DESERT_SAND_LAYER3    = registerKey("desert_sand_layer3");
+    public static final ResourceKey<PlacedFeature> BEACH_SAND_LAYER = registerKey("beach_sand_layer");
+    public static final ResourceKey<PlacedFeature> BEACH_SAND_LAYER2    = registerKey("beach_sand_layer2");
+    public static final ResourceKey<PlacedFeature> BEACH_SAND_LAYER3    = registerKey("beach_sand_layer3");
+
 
 
 

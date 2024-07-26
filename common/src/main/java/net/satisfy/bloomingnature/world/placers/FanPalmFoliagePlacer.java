@@ -10,6 +10,7 @@ import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
+import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.satisfy.bloomingnature.registry.PlacerTypesRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,49 +27,57 @@ public class FanPalmFoliagePlacer extends FoliagePlacer {
         this.leafLength = leafLength;
     }
 
-    public int foliageHeight(RandomSource p_225719_, int p_225720_, TreeConfiguration p_225721_) {
-        return 5;
-    }
-
-    protected @NotNull FoliagePlacerType<?> type() {
+    @Override
+    protected FoliagePlacerType<?> type() {
         return PlacerTypesRegistry.FAN_PALM_FOLIAGE_PLACER.get();
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader p_225723_, FoliageSetter p_225724_, RandomSource p_225725_, TreeConfiguration p_225726_, int p_225727_, FoliagePlacer.FoliageAttachment p_225728_, int p_225729_, int p_225730_, int p_225731_) {
-        BlockPos blockpos = p_225728_.pos();
-        int attempts = p_225725_.nextInt(this.leafLength) + 3;
-        tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos);
-        BlockPos.MutableBlockPos blockpos$mutableblockpos = blockpos.mutable();
+    protected void createFoliage(LevelSimulatedReader levelSimulatedReader, FoliageSetter foliageSetter, RandomSource randomSource, TreeConfiguration treeConfiguration, int trunkHeight, FoliageAttachment foliageAttachment, int foliageHeight, int radius, int offset) {
+        BlockPos blockPos = foliageAttachment.pos();
+        int attempts = randomSource.nextInt(this.leafLength) + 3;
+        placeLeaf(levelSimulatedReader, foliageSetter, randomSource, treeConfiguration, blockPos);
+        BlockPos.MutableBlockPos mutableBlockPos = blockPos.mutable();
         for (int i = 0; i > -1; --i) {
             int j = 1 + i;
-            this.placeLeavesRow(p_225723_, p_225724_, p_225725_, p_225726_, blockpos, j, i, false);
+            this.placeLeavesRow(levelSimulatedReader, foliageSetter, randomSource, treeConfiguration, blockPos, j, i, false);
         }
         for (int i = 0; i < 10; ++i) {
-            blockpos$mutableblockpos.setWithOffset(blockpos, p_225725_.nextInt(p_225730_) - p_225725_.nextInt(p_225730_), p_225725_.nextInt(p_225730_) - p_225730_ + 2, p_225725_.nextInt(p_225730_) - p_225725_.nextInt(p_225730_));
-            tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos$mutableblockpos);
+            mutableBlockPos.setWithOffset(blockPos, randomSource.nextInt(radius) - randomSource.nextInt(radius), randomSource.nextInt(radius) - radius + 2, randomSource.nextInt(radius) - randomSource.nextInt(radius));
+            placeLeaf(levelSimulatedReader, foliageSetter, randomSource, treeConfiguration, mutableBlockPos);
         }
 
         for (Direction direction : Direction.Plane.HORIZONTAL) {
-            BlockPos.MutableBlockPos blockpos$mutableblockpos2 = new BlockPos.MutableBlockPos(blockpos.getX(), blockpos.getY(), blockpos.getZ());
+            BlockPos.MutableBlockPos horizontalPos = new BlockPos.MutableBlockPos(blockPos.getX(), blockPos.getY(), blockPos.getZ());
             int leavesGravity = 0;
             int maxLimit = attempts / 3;
             for (int i = 0; i < attempts; ++i) {
-                blockpos$mutableblockpos2.move(direction);
+                horizontalPos.move(direction);
                 if (leavesGravity >= maxLimit) {
                     leavesGravity = 0;
-                    tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos$mutableblockpos2);
-                    blockpos$mutableblockpos2.move(Direction.DOWN);
+                    placeLeaf(levelSimulatedReader, foliageSetter, randomSource, treeConfiguration, horizontalPos);
+                    horizontalPos.move(Direction.DOWN);
                 } else {
                     ++leavesGravity;
                 }
-                tryPlaceLeaf(p_225723_, p_225724_, p_225725_, p_225726_, blockpos$mutableblockpos2);
+                placeLeaf(levelSimulatedReader, foliageSetter, randomSource, treeConfiguration, horizontalPos);
             }
         }
-
     }
 
-    protected boolean shouldSkipLocation(RandomSource p_225712_, int p_225713_, int p_225714_, int p_225715_, int p_225716_, boolean p_225717_) {
+    @Override
+    public int foliageHeight(RandomSource randomSource, int i, TreeConfiguration treeConfiguration) {
+        return 0;
+    }
+
+    protected void placeLeaf(LevelSimulatedReader levelSimulatedReader, FoliageSetter foliageSetter, RandomSource randomSource, TreeConfiguration treeConfiguration, BlockPos pos) {
+        if (levelSimulatedReader.isStateAtPosition(pos, state -> state.isAir() || state.is(treeConfiguration.foliageProvider.getState(randomSource, pos).getBlock()))) {
+            foliageSetter.set(pos, treeConfiguration.foliageProvider.getState(randomSource, pos));
+        }
+    }
+
+    @Override
+    protected boolean shouldSkipLocation(RandomSource randomSource, int dx, int dy, int dz, int radius, boolean large) {
         return false;
     }
 }

@@ -35,7 +35,7 @@
       "trunk_height": {
         "type": "minecraft:uniform",
         "value": {
-          "max_inclusive": 14,
+          "max_inclusive": 10,
           "min_inclusive": 3
         }
       }

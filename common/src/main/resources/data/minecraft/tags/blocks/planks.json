@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "bloomingnature:fir_planks",
     "bloomingnature:baobab_planks",
@@ -12,6 +13,3 @@
     "bloomingnature:cactus_planks"
   ]
 }
-
-
-

@@ -107,7 +107,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> SWAMP_OAK_SAPLING = registerWithItem("swamp_oak_sapling", () -> new SaplingBlock(new AbstractTreeGrower() {
         @Override
         protected @NotNull ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(@NotNull RandomSource random, boolean bees) {
-            return configuredFeatureKey("forest_oak_branched");
+            return configuredFeatureKey("forest_oak_straight");
         }
     }, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistrySupplier<Block> POTTED_SWAMP_OAK_SAPLING = registerWithoutItem("potted_swamp_oak_sapling", () -> new FlowerPotBlock(SWAMP_OAK_SAPLING.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));

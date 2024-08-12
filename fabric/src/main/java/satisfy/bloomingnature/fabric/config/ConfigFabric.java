@@ -41,7 +41,7 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("sunflowerplains")
     public int setSunflowerPlainsGrassColor = 10799444;
     @ConfigEntry.Category("sunflowerplains")
-    public int setSunflowerPlainsFoliageColor = 10399058;
+    public int setSunflowerPlainsFoliageColor = 7386187;
     @ConfigEntry.Category("sunflowerplains")
     public boolean removeVanillaSunflowerPlainsGrass = true;
     @ConfigEntry.Category("sunflowerplains")
@@ -54,7 +54,7 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("river")
     public int setRiverGrassColor = 11063154;
     @ConfigEntry.Category("river")
-    public int setRiverFoliageColor = 10399058;
+    public int setRiverFoliageColor = 7386187;
     @ConfigEntry.Category("river")
     public boolean removeVanillaRiverFlowers = true;
     @ConfigEntry.Category("river")
@@ -95,7 +95,7 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("aspen")
     public int setOldGrowthBirchForestGrassColor = 14406505;
     @ConfigEntry.Category("aspen")
-    public int setOldGrowthBirchForestFoliageColor = 10399058;
+    public int setOldGrowthBirchForestFoliageColor = 7386187;
     @ConfigEntry.Category("aspen")
     public boolean removeVanillaOldGrowthBirchForestTrees = true;
     @ConfigEntry.Category("aspen")
@@ -135,7 +135,7 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("forest")
     public int setForestGrassColor = 10799444;
     @ConfigEntry.Category("forest")
-    public int setForestFoliageColor = 10399058;
+    public int setForestFoliageColor = 7386187;
     @ConfigEntry.Category("forest")
     public boolean removeVanillaForestFlowers = true;
     @ConfigEntry.Category("forest")
@@ -156,7 +156,7 @@ public class ConfigFabric implements ConfigData {
     @ConfigEntry.Category("flowerforest")
     public int setFlowerforestGrassColor = 10799444;
     @ConfigEntry.Category("flowerforest")
-    public int setFlowerforestFoliageColor = 10399058;
+    public int setFlowerforestFoliageColor = 7386187;
     @ConfigEntry.Category("flowerforest")
     public boolean removeVanillaFlowerforestFlowers = true;
     @ConfigEntry.Category("flowerforest")

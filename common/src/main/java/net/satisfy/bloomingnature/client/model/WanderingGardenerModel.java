@@ -13,7 +13,7 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.WanderingTrader;
-import net.satisfy.bloomingnature.util.BloomingNatureIdentifier;
+import net.satisfy.bloomingnature.core.util.BloomingNatureIdentifier;
 
 @Environment(EnvType.CLIENT)
 public class WanderingGardenerModel<T extends WanderingTrader> extends HierarchicalModel<T> {

@@ -2,20 +2,24 @@ package net.satisfy.bloomingnature.client;
 
 import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
+import dev.architectury.registry.client.rendering.BlockEntityRendererRegistry;
 import dev.architectury.registry.client.rendering.ColorHandlerRegistry;
 import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.FoliageColor;
 import net.satisfy.bloomingnature.client.model.TermiteModel;
 import net.satisfy.bloomingnature.client.model.WanderingGardenerModel;
+import net.satisfy.bloomingnature.client.render.block.*;
 import net.satisfy.bloomingnature.client.render.entity.TermiteRenderer;
 import net.satisfy.bloomingnature.client.render.entity.WanderingGardenerRenderer;
-import net.satisfy.bloomingnature.registry.EntityRegistry;
+import net.satisfy.bloomingnature.core.registry.EntityTypeRegistry;
+import net.satisfy.bloomingnature.core.registry.StorageTypeRegistry;
 
-import static net.satisfy.bloomingnature.registry.ObjectRegistry.*;
+import static net.satisfy.bloomingnature.core.registry.ObjectRegistry.*;
 
 @Environment(EnvType.CLIENT)
 public class BloomingNatureClient {
@@ -70,6 +74,9 @@ public class BloomingNatureClient {
             }
             return BiomeColors.getAverageGrassColor(world, pos);
         }, MOSSY_LATERIT.get(), SUNGRASS.get(), TALL_SUNGRASS.get());
+
+        registerStorageType();
+        registerBlockEntityRenderer();
     }
 
     public static void preInitClient() {
@@ -78,13 +85,31 @@ public class BloomingNatureClient {
     }
 
     public static void registerEntityRenderers() {
-        EntityRendererRegistry.register(EntityRegistry.WANDERING_GARDENER, WanderingGardenerRenderer::new);
-        EntityRendererRegistry.register(EntityRegistry.TERMITE, TermiteRenderer::new);
+        EntityRendererRegistry.register(EntityTypeRegistry.WANDERING_GARDENER, WanderingGardenerRenderer::new);
+        EntityRendererRegistry.register(EntityTypeRegistry.TERMITE, TermiteRenderer::new);
     }
 
     public static void registerEntityModelLayer() {
         EntityModelLayerRegistry.register(WanderingGardenerModel.LAYER_LOCATION, WanderingGardenerModel::getTexturedModelData);
         EntityModelLayerRegistry.register(TermiteModel.LAYER_LOCATION, TermiteModel::getTexturedModelData);
+        EntityModelLayerRegistry.register(CompletionistBannerRenderer.LAYER_LOCATION, CompletionistBannerRenderer::createBodyLayer);
     }
+
+    public static void registerStorageTypes(ResourceLocation location, StorageTypeRenderer renderer){
+        StorageBlockEntityRenderer.registerStorageType(location, renderer);
+    }
+
+    public static void registerStorageType(){
+        registerStorageTypes(StorageTypeRegistry.FLOWER_POT_BIG, new FlowerPotBigRenderer());
+        registerStorageTypes(StorageTypeRegistry.FLOWER_BOX, new FlowerBoxRenderer());
+    }
+
+    public static void registerBlockEntityRenderer() {
+        BlockEntityRendererRegistry.register(EntityTypeRegistry.STORAGE_ENTITY.get(), context -> new StorageBlockEntityRenderer());
+        BlockEntityRendererRegistry.register(EntityTypeRegistry.MOD_SIGN.get(), ModSignRenderer::new);
+        BlockEntityRendererRegistry.register(EntityTypeRegistry.MOD_HANGING_SIGN.get(), ModHangingSignRenderer::new);
+        BlockEntityRendererRegistry.register(EntityTypeRegistry.BLOOMINGNATURE_BANNER.get(), CompletionistBannerRenderer::new);
+    }
+
 }
 

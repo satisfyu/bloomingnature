@@ -1,9 +1,7 @@
 package net.satisfy.bloomingnature;
 
-import de.cristelknight.doapi.DoApiEP;
 import dev.architectury.hooks.item.tool.AxeItemHooks;
-import net.satisfy.bloomingnature.registry.*;
-import net.satisfy.bloomingnature.util.BloomingNatureIdentifier;
+import net.satisfy.bloomingnature.core.registry.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,12 +11,9 @@ public class BloomingNature {
 
     public static void init() {
         ObjectRegistry.init();
-        BoatsAndSignsRegistry.init();
-        EntityRegistry.init();
+        EntityTypeRegistry.init();
         TabRegistry.init();
         PlacerTypesRegistry.init();
-        DoApiEP.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("bushy_leaves"), false);
-        DoApiEP.registerBuiltInPack(BloomingNature.MOD_ID, new BloomingNatureIdentifier("modified_vanilla_trees"), false);
     }
 
     public static void commonInit() {

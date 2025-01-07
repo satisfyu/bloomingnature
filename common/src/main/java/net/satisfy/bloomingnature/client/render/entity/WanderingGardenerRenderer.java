@@ -6,8 +6,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.satisfy.bloomingnature.client.model.WanderingGardenerModel;
-import net.satisfy.bloomingnature.entity.WanderingGardenerEntity;
-import net.satisfy.bloomingnature.util.BloomingNatureIdentifier;
+import net.satisfy.bloomingnature.core.entity.WanderingGardenerEntity;
+import net.satisfy.bloomingnature.core.util.BloomingNatureIdentifier;
 
 
 @Environment(value = EnvType.CLIENT)

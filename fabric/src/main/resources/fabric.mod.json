@@ -21,9 +21,6 @@
     "client": [
       "satisfy.bloomingnature.fabric.client.BloomingNatureClientFabric"
     ],
-    "doapi": [
-      "net.satisfy.bloomingnature.util.BloomingNatureDoAPI"
-    ],
     "modmenu": [
       "satisfy.bloomingnature.fabric.config.ModMenu"
     ]
@@ -31,7 +28,6 @@
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.20",
-    "architectury": ">=9.0.8",
-    "doapi": ">=1.2.10"
+    "architectury": ">=9.0.8"
   }
 }

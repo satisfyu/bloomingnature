@@ -4,15 +4,21 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.*;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.satisfy.bloomingnature.BloomingNature;
-import net.satisfy.bloomingnature.registry.CompostableRegistry;
-import net.satisfy.bloomingnature.util.BloomingNatureIdentifier;
-import net.satisfy.bloomingnature.world.PlacedFeatures;
+import net.satisfy.bloomingnature.core.registry.CompostableRegistry;
+import net.satisfy.bloomingnature.core.util.BloomingNatureIdentifier;
+import net.satisfy.bloomingnature.core.world.PlacedFeatures;
 import satisfy.bloomingnature.fabric.config.ConfigFabric;
 
+import java.util.Optional;
 import java.util.function.Predicate;
 
 public class BloomingNatureFabric implements ModInitializer {
@@ -27,6 +33,13 @@ public class BloomingNatureFabric implements ModInitializer {
         BloomingNature.commonInit();
         CompostableRegistry.init();
         addBiomeModification();
+
+        Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer(BloomingNature.MOD_ID);
+        modContainer.ifPresent(container -> ResourceManagerHelper.registerBuiltinResourcePack(
+                new ResourceLocation(BloomingNature.MOD_ID, "bushy_leaves"),
+                container,
+                ResourcePackActivationType.NORMAL
+        ));
     }
 
     void addBiomeModification() {

@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.satisfy.bloomingnature.BloomingNature;
-import net.satisfy.bloomingnature.registry.CompostableRegistry;
+import net.satisfy.bloomingnature.core.registry.CompostableRegistry;
 import satisfy.bloomingnature.forge.registry.BloomingNatureBiomeModifiers;
 
 @Mod(BloomingNature.MOD_ID)

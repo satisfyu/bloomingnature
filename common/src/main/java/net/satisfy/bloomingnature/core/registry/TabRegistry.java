@@ -336,8 +336,7 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.FLOATING_LEAVES.get());
                 out.accept(ObjectRegistry.FLOWER_POT_BIG.get());
                 out.accept(ObjectRegistry.FLOWER_BOX.get());
-                out.accept(ObjectRegistry.BLOOMINGNATURE_STANDARD.get());
-                /*
+                out.accept(ObjectRegistry.BLOOMINGNATURE_BANNER.get());
                 out.accept(ObjectRegistry.LARCH_CHEST_BOAT.get());
                 out.accept(ObjectRegistry.LARCH_BOAT.get());
                 out.accept(ObjectRegistry.BAOBAB_CHEST_BOAT.get());
@@ -358,7 +357,6 @@ public class TabRegistry {
                 out.accept(ObjectRegistry.CHESTNUT_CHEST_BOAT.get());
                 out.accept(ObjectRegistry.CACTUS_BOAT.get());
                 out.accept(ObjectRegistry.CACTUS_CHEST_BOAT.get());
-                 */
                 out.accept(ObjectRegistry.WANDERING_GARDENER_SPAWN_EGG.get());
                 out.accept(ObjectRegistry.TERMITE_SPAWN_EGG.get());
             })

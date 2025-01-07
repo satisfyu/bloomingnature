@@ -35,7 +35,7 @@
           "data": {
             "Name": "bloomingnature:ebony_leaves",
             "Properties": {
-              "distance": "7",
+              "distance_11": "1",
               "persistent": "false",
               "waterlogged": "false"
             }
@@ -46,8 +46,9 @@
           "data": {
             "Name": "bloomingnature:ebony_leaves",
             "Properties": {
-              "distance": "7",
-              "persistent": "false"
+              "distance_11": "1",
+              "persistent": "false",
+              "waterlogged": "false"
             }
           }
         }

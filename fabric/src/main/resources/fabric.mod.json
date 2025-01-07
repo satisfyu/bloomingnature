@@ -16,13 +16,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "satisfy.bloomingnature.fabric.BloomingNatureFabric"
+      "net.satisfy.bloomingnature.fabric.BloomingNatureFabric"
     ],
     "client": [
-      "satisfy.bloomingnature.fabric.client.BloomingNatureClientFabric"
+      "net.satisfy.bloomingnature.fabric.client.BloomingNatureClientFabric"
     ],
     "modmenu": [
-      "satisfy.bloomingnature.fabric.config.ModMenu"
+      "net.satisfy.bloomingnature.fabric.config.ModMenu"
     ]
   },
   "depends": {

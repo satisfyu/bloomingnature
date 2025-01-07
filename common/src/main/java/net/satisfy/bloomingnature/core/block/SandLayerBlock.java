@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -72,7 +73,12 @@ public class SandLayerBlock extends Block {
             dropResources(blockState, serverLevel, blockPos);
             serverLevel.removeBlock(blockPos, false);
         }
-
+        if (!canFall(serverLevel, blockPos)) {
+            return;
+        }
+        if (!serverLevel.isClientSide()) {
+            FallingBlockEntity.fall(serverLevel, blockPos, blockState);
+        }
     }
 
     public boolean canBeReplaced(BlockState blockState, BlockPlaceContext blockPlaceContext) {
@@ -103,8 +109,24 @@ public class SandLayerBlock extends Block {
         builder.add(LAYERS);
     }
 
+    private boolean canFall(LevelAccessor level, BlockPos pos) {
+        BlockPos below = pos.below();
+        BlockState stateBelow = level.getBlockState(below);
+        return !stateBelow.isFaceSturdy(level, below, Direction.UP);
+    }
+
     static {
         LAYERS = BlockStateProperties.LAYERS;
-        SHAPE_BY_LAYER = new VoxelShape[]{Shapes.empty(), Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Block.box(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Block.box(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Block.box(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Block.box(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Block.box(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Block.box(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)};
+        SHAPE_BY_LAYER = new VoxelShape[]{
+                Shapes.empty(),
+                Block.box(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
+                Block.box(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),
+                Block.box(0.0, 0.0, 0.0, 16.0, 6.0, 16.0),
+                Block.box(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),
+                Block.box(0.0, 0.0, 0.0, 16.0, 10.0, 16.0),
+                Block.box(0.0, 0.0, 0.0, 16.0, 12.0, 16.0),
+                Block.box(0.0, 0.0, 0.0, 16.0, 14.0, 16.0),
+                Block.box(0.0, 0.0, 0.0, 16.0, 16.0, 16.0)
+        };
     }
 }

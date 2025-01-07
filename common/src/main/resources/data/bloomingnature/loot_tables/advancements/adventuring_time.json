@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "weight": 1,
-          "name": "bloomingnature:bloomingnature_standard",
+          "name": "bloomingnature:bloomingnature_banner",
           "functions": [
             {
               "function": "minecraft:set_count",

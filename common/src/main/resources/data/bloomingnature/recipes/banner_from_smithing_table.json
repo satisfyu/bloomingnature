@@ -4,10 +4,10 @@
     "item": "minecraft:netherite_ingot"
   },
   "base": {
-    "item": "bloomingnature:bloomingnature_standard"
+    "item": "bloomingnature:bloomingnature_banner"
   },
   "result": {
-    "item": "bloomingnature:bloomingnature_standard",
+    "item": "bloomingnature:bloomingnature_banner",
     "count": 2
   },
   "template": {

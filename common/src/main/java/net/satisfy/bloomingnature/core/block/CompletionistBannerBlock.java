@@ -53,7 +53,12 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
 
     @Override
     public boolean canSurvive(@NotNull BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        return levelReader.getBlockState(blockPos.below()).isSolid() || levelReader.getBlockState(blockPos.relative(blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).getOpposite())).isSolid();
+        if (blockState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
+            return levelReader.getBlockState(blockPos.below()).isSolid() ||
+                    levelReader.getBlockState(blockPos.relative(blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).getOpposite())).isSolid();
+        } else {
+            return levelReader.getBlockState(blockPos.below()).isSolid();
+        }
     }
 
     @Override
@@ -72,8 +77,8 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
         if (clickedFace == Direction.UP || clickedFace == Direction.DOWN) {
             return this.defaultBlockState().setValue(ROTATION, Mth.floor((double) ((180.0f + context.getRotation()) * 16.0f / 360.0f) + 0.5) & 0xF);
         } else {
-            if (this == ObjectRegistry.BLOOMINGNATURE_STANDARD.get()) {
-                return ObjectRegistry.BLOOMINGNATURE_WALL_STANDARD.get().defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, clickedFace.getOpposite());
+            if (this == ObjectRegistry.BLOOMINGNATURE_BANNER.get()) {
+                return ObjectRegistry.BLOOMINGNATURE_WALL_BANNER.get().defaultBlockState().setValue(HorizontalDirectionalBlock.FACING, clickedFace.getOpposite());
             }
         }
         return this.defaultBlockState();
@@ -115,12 +120,12 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> tooltip, net.minecraft.world.item.TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_1").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
+        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_1").withStyle(style -> style.withColor(TextColor.fromRgb(0xa5b485))));
         tooltip.add(Component.empty());
-        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_2").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
-        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_4").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
+        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_2").withStyle(style -> style.withColor(TextColor.fromRgb(0xa5b485))));
+        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_4").withStyle(style -> style.withColor(TextColor.fromRgb(0xa5b485))));
         tooltip.add(Component.empty());
-        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_3").withStyle(style -> style.withColor(TextColor.fromRgb(0x513A8B))));
+        tooltip.add(Component.translatable("tooltip.bloomingnature.banner.thankyou_3").withStyle(style -> style.withColor(TextColor.fromRgb(0xa5b485))));
     }
 
 }

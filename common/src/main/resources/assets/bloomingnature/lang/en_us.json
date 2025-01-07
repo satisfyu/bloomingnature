@@ -376,7 +376,7 @@
   "item.bloomingnature.aspen_chest_boat": "Aspen Chest Boat",
   "item.bloomingnature.baobab_boat": "Baobab Boat",
   "item.bloomingnature.baobab_chest_boat": "Baobab Chest Boat",
-  "item.bloomingnature.bloomingnature_standard": "Completionist Banner: §aBloomingNature",
+  "block.bloomingnature.bloomingnature_banner": "Completionist Banner: §aBloomingNature",
   "item.bloomingnature.cactus_boat": "Cactus Boat",
   "item.bloomingnature.cactus_chest_boat": "Cactus Chest Boat",
   "item.bloomingnature.chestnut_boat": "Chestnut Boat",
@@ -563,7 +563,6 @@
   "text.autoconfig.bloomingnature.option.addBloomingNatureTaigaStoneMounds": "Add Stone Mounds",
   "text.autoconfig.bloomingnature.option.addBloomingNatureTaigaStoneSlabs": "Add Stone Slabs",
   "text.autoconfig.bloomingnature.option.addBloomingNatureBeachSandLayers": "Add Sand Layers",
-
   "text.autoconfig.bloomingnature.option.addBloomingSnowyTaigaTrees": "Add BloomingNature Trees",
   "text.autoconfig.bloomingnature.option.removeLavaLakes": "Disable Lava Lakes",
   "text.autoconfig.bloomingnature.option.removeLavaLakesUnderground": "Disable Underground Lava Lakes",
@@ -649,8 +648,8 @@
   "text.autoconfig.bloomingnature.option.setTaigaGrassColor": "Set Grass Color",
   "text.autoconfig.bloomingnature.title": "BloomingNature",
   "tooltip.bloomingnature.canbeplaced": "Can be Placed",
-  "tooltip.bloomingnature.thankyou_1": "A reward for completing the Adventuring Time Advancement",
-  "tooltip.bloomingnature.thankyou_2": "When placed:",
-  "tooltip.bloomingnature.thankyou_3": "Thank you for playing BloomingNature!",
-  "tooltip.bloomingnature.thankyou_4": "Grants Strength II in a radius of 8 blocks"
+  "tooltip.bloomingnature.banner.thankyou_1": "A reward for completing the Adventuring Time Advancement",
+  "tooltip.bloomingnature.banner.thankyou_2": "When placed:",
+  "tooltip.bloomingnature.banner.thankyou_3": "Thank you for playing BloomingNature!",
+  "tooltip.bloomingnature.banner.thankyou_4": "Grants Strength II in a radius of 8 blocks"
 }

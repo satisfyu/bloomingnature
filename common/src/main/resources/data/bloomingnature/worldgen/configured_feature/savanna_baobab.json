@@ -34,8 +34,9 @@
           "data": {
             "Name": "bloomingnature:baobab_leaves",
             "Properties": {
-              "distance": "7",
-              "persistent": "false"
+              "distance_11": "1",
+              "persistent": "false",
+              "waterlogged": "false"
             }
           }
         }

@@ -35,8 +35,8 @@
       "state": {
         "Name": "bloomingnature:fan_palm_leaves",
         "Properties": {
-          "distance": "1",
-          "persistent": "true",
+          "distance_11": "1",
+          "persistent": "false",
           "waterlogged": "false"
         }
       }

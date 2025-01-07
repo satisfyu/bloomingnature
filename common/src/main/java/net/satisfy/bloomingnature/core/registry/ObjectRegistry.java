@@ -26,6 +26,8 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.satisfy.bloomingnature.BloomingNature;
 import net.satisfy.bloomingnature.core.block.*;
+import net.satisfy.bloomingnature.core.entity.ModBoatEntity;
+import net.satisfy.bloomingnature.core.item.ModBoatItem;
 import net.satisfy.bloomingnature.core.util.BloomingNatureIdentifier;
 import net.satisfy.bloomingnature.core.util.BloomingNatureUtil;
 import net.satisfy.bloomingnature.core.util.BloomingNatureWoodType;
@@ -41,7 +43,6 @@ public class ObjectRegistry {
     public static final Registrar<Item> ITEM_REGISTRAR = ITEMS.getRegistrar();
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BloomingNature.MOD_ID, Registries.BLOCK);
     public static final Registrar<Block> BLOCK_REGISTRAR = BLOCKS.getRegistrar();
-
 
     public static final RegistrySupplier<Item> WANDERING_GARDENER_SPAWN_EGG = registerItem("wandering_gardener_spawn_egg", () -> new ArchitecturySpawnEggItem(EntityTypeRegistry.WANDERING_GARDENER, -1, -1, getSettings()));
     public static final RegistrySupplier<Item> TERMITE_SPAWN_EGG = registerItem("termite_spawn_egg", () -> new ArchitecturySpawnEggItem(EntityTypeRegistry.TERMITE, -1, -1, getSettings()));
@@ -80,7 +81,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> BAOBAB_BUTTON = registerWithItem("baobab_button", () -> woodenButton(FeatureFlags.VANILLA));
     public static final RegistrySupplier<Block> BAOBAB_TRAPDOOR = registerWithItem("baobab_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final RegistrySupplier<Block> BAOBAB_FENCE = registerWithItem("baobab_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
-    public static final RegistrySupplier<Block> BAOBAB_LEAVES = registerWithItem("baobab_leaves", () -> new PersistentLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS)));
+    public static final RegistrySupplier<Block> BAOBAB_LEAVES = registerWithItem("baobab_leaves", () -> new ExtendedLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS)));
     public static final RegistrySupplier<Block> BAOBAB_WINDOW = registerWithItem("baobab_window", () -> new WindowBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GLASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS).pushReaction(PushReaction.IGNORE)));
     public static final RegistrySupplier<Block> BAOBAB_SAPLING = registerWithItem("baobab_sapling", () -> new SaplingBlock(new AbstractTreeGrower() {
         @Override
@@ -148,7 +149,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> FAN_PALM_TRAPDOOR = registerWithItem("fan_palm_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final RegistrySupplier<Block> FAN_PALM_FENCE = registerWithItem("fan_palm_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> FAN_PALM_WINDOW = registerWithItem("fan_palm_window", () -> new WindowBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GLASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS).pushReaction(PushReaction.IGNORE)));
-    public static final RegistrySupplier<Block> FAN_PALM_LEAVES = registerWithItem("fan_palm_leaves", () -> new PersistentLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS)));
+    public static final RegistrySupplier<Block> FAN_PALM_LEAVES = registerWithItem("fan_palm_leaves", () -> new ExtendedLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS)));
     public static final Supplier<SaplingBlock> FAN_PALM_SPROUT = registerWithItem("fan_palm_sprout", FanPalmSproutBlock::new);
     public static final RegistrySupplier<Block> POTTED_FAN_PALM_SPROUT = registerWithoutItem("potted_fan_palm_sprout", () -> new FlowerPotBlock(FAN_PALM_SPROUT.get(), BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistrySupplier<Block> FIR_LOG = registerWithItem("fir_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).sound(SoundType.WOOD).strength(2.0f)));
@@ -209,7 +210,7 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> EBONY_TRAPDOOR = registerWithItem("ebony_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final RegistrySupplier<Block> EBONY_FENCE = registerWithItem("ebony_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> EBONY_WINDOW = registerWithItem("ebony_window", () -> new WindowBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GLASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS).pushReaction(PushReaction.IGNORE)));
-    public static final RegistrySupplier<Block> EBONY_LEAVES = registerWithItem("ebony_leaves", () -> new PersistentLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS)));
+    public static final RegistrySupplier<Block> EBONY_LEAVES = registerWithItem("ebony_leaves", () -> new ExtendedLeavesBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS)));
     public static final RegistrySupplier<Block> EBONY_SAPLING = registerWithItem("ebony_sapling", () -> new SaplingBlock(new AbstractTreeGrower() {
         @Override
         protected @NotNull ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(@NotNull RandomSource random, boolean bees) {
@@ -422,56 +423,93 @@ public class ObjectRegistry {
     public static final RegistrySupplier<Block> CACTUS_FENCE = registerWithItem("cactus_fence", () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2.0f, 3.0f).sound(SoundType.WOOD)));
     public static final RegistrySupplier<Block> CACTUS_WINDOW = registerWithItem("cactus_window", () -> new WindowBlock(BlockBehaviour.Properties.of().strength(0.2f).randomTicks().sound(SoundType.GLASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false).mapColor(MapColor.GRASS).pushReaction(PushReaction.IGNORE)));
     public static final RegistrySupplier<Block> SAND = registerWithItem("sand", () -> new SandLayerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().forceSolidOff().randomTicks().strength(0.1F).requiresCorrectToolForDrops().sound(SoundType.SAND).isViewBlocking((blockStatex, blockGetter, blockPos) -> blockStatex.getValue(SnowLayerBlock.LAYERS) >= 8).pushReaction(PushReaction.DESTROY)));
-    public static final RegistrySupplier<Block> BLOOMINGNATURE_STANDARD = registerWithItem("bloomingnature_standard", () -> new CompletionistBannerBlock(BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
-    public static final RegistrySupplier<Block> BLOOMINGNATURE_WALL_STANDARD = registerWithoutItem("bloomingnature_wall_standard", () -> new CompletionistWallBannerBlock(BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
-    public static RegistrySupplier<Item> ASPEN_SIGN_ITEM;
-    public static RegistrySupplier<Item> ASPEN_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> BAOBAB_SIGN_ITEM;
-    public static RegistrySupplier<Item> BAOBAB_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> LARCH_SIGN_ITEM;
-    public static RegistrySupplier<Item> LARCH_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> EBONY_SIGN_ITEM;
-    public static RegistrySupplier<Item> EBONY_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> CHESTNUT_SIGN_ITEM;
-    public static RegistrySupplier<Item> CHESTNUT_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> SWAMP_OAK_SIGN_ITEM;
-    public static RegistrySupplier<Item> SWAMP_OAK_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> SWAMP_CYPRESS_SIGN_ITEM;
-    public static RegistrySupplier<Item> SWAMP_CYPRESS_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> FAN_PALM_SIGN_ITEM;
-    public static RegistrySupplier<Item> FAN_PALM_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> FIR_SIGN_ITEM;
-    public static RegistrySupplier<Item> FIR_HANGING_SIGN_ITEM;
-    public static RegistrySupplier<Item> CACTUS_SIGN_ITEM;
-    public static RegistrySupplier<Item> CACTUS_HANGING_SIGN_ITEM;
-
-    private static void registerSigns(String woodTypeName, WoodType woodType) {
-        RegistrySupplier<Block> sign = registerWithoutItem(woodTypeName + "_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), woodType));
-        RegistrySupplier<Block> wallSign = registerWithoutItem(woodTypeName + "_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), woodType));
-        RegistrySupplier<Block> hangingSign = registerWithoutItem(woodTypeName + "_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), woodType));
-        RegistrySupplier<Block> wallHangingSign = registerWithoutItem(woodTypeName + "_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), woodType));
-
-        ObjectRegistry.ITEMS.register(woodTypeName + "_sign",
-                () -> new SignItem(new Item.Properties().stacksTo(16), sign.get(), wallSign.get()));
-        ObjectRegistry.ITEMS.register(woodTypeName + "_hanging_sign",
-                () -> new HangingSignItem(hangingSign.get(), wallHangingSign.get(), new Item.Properties().stacksTo(16)));
-    }
+    public static final RegistrySupplier<Block> BLOOMINGNATURE_BANNER = registerWithItem("bloomingnature_banner", () -> new CompletionistBannerBlock(BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
+    public static final RegistrySupplier<Block> BLOOMINGNATURE_WALL_BANNER = registerWithoutItem("bloomingnature_wall_banner", () -> new CompletionistWallBannerBlock(BlockBehaviour.Properties.of().strength(1F).instrument(NoteBlockInstrument.BASS).noCollission().sound(SoundType.WOOD)));
+    public static final RegistrySupplier<Block> ASPEN_SIGN = registerWithoutItem("aspen_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.ASPEN));
+    public static final RegistrySupplier<Block> ASPEN_WALL_SIGN = registerWithoutItem("aspen_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.ASPEN));
+    public static final RegistrySupplier<Block> ASPEN_HANGING_SIGN = registerWithoutItem("aspen_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.ASPEN));
+    public static final RegistrySupplier<Block> ASPEN_WALL_HANGING_SIGN = registerWithoutItem("aspen_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.ASPEN));
+    public static final RegistrySupplier<Item> ASPEN_SIGN_ITEM = ITEMS.register("aspen_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.ASPEN_SIGN.get(), ObjectRegistry.ASPEN_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> ASPEN_HANGING_SIGN_ITEM = ITEMS.register("aspen_hanging_sign", () -> new HangingSignItem(ObjectRegistry.ASPEN_HANGING_SIGN.get(), ObjectRegistry.ASPEN_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> BAOBAB_SIGN = registerWithoutItem("baobab_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.BAOBAB));
+    public static final RegistrySupplier<Block> BAOBAB_WALL_SIGN = registerWithoutItem("baobab_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.BAOBAB));
+    public static final RegistrySupplier<Block> BAOBAB_HANGING_SIGN = registerWithoutItem("baobab_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.BAOBAB));
+    public static final RegistrySupplier<Block> BAOBAB_WALL_HANGING_SIGN = registerWithoutItem("baobab_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.BAOBAB));
+    public static final RegistrySupplier<Item> BAOBAB_SIGN_ITEM = ITEMS.register("baobab_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.BAOBAB_SIGN.get(), ObjectRegistry.BAOBAB_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> BAOBAB_HANGING_SIGN_ITEM = ITEMS.register("baobab_hanging_sign", () -> new HangingSignItem(ObjectRegistry.BAOBAB_HANGING_SIGN.get(), ObjectRegistry.BAOBAB_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> LARCH_SIGN = registerWithoutItem("larch_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.LARCH));
+    public static final RegistrySupplier<Block> LARCH_WALL_SIGN = registerWithoutItem("larch_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.LARCH));
+    public static final RegistrySupplier<Block> LARCH_HANGING_SIGN = registerWithoutItem("larch_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.LARCH));
+    public static final RegistrySupplier<Block> LARCH_WALL_HANGING_SIGN = registerWithoutItem("larch_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.LARCH));
+    public static final RegistrySupplier<Item> LARCH_SIGN_ITEM = ITEMS.register("larch_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.LARCH_SIGN.get(), ObjectRegistry.LARCH_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> LARCH_HANGING_SIGN_ITEM = ITEMS.register("larch_hanging_sign", () -> new HangingSignItem(ObjectRegistry.LARCH_HANGING_SIGN.get(), ObjectRegistry.LARCH_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> EBONY_SIGN = registerWithoutItem("ebony_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.EBONY));
+    public static final RegistrySupplier<Block> EBONY_WALL_SIGN = registerWithoutItem("ebony_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.EBONY));
+    public static final RegistrySupplier<Block> EBONY_HANGING_SIGN = registerWithoutItem("ebony_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.EBONY));
+    public static final RegistrySupplier<Block> EBONY_WALL_HANGING_SIGN = registerWithoutItem("ebony_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.EBONY));
+    public static final RegistrySupplier<Item> EBONY_SIGN_ITEM = ITEMS.register("ebony_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.EBONY_SIGN.get(), ObjectRegistry.EBONY_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> EBONY_HANGING_SIGN_ITEM = ITEMS.register("ebony_hanging_sign", () -> new HangingSignItem(ObjectRegistry.EBONY_HANGING_SIGN.get(), ObjectRegistry.EBONY_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> CHESTNUT_SIGN = registerWithoutItem("chestnut_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.CHESTNUT));
+    public static final RegistrySupplier<Block> CHESTNUT_WALL_SIGN = registerWithoutItem("chestnut_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.CHESTNUT));
+    public static final RegistrySupplier<Block> CHESTNUT_HANGING_SIGN = registerWithoutItem("chestnut_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.CHESTNUT));
+    public static final RegistrySupplier<Block> CHESTNUT_WALL_HANGING_SIGN = registerWithoutItem("chestnut_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.CHESTNUT));
+    public static final RegistrySupplier<Item> CHESTNUT_SIGN_ITEM = ITEMS.register("chestnut_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.CHESTNUT_SIGN.get(), ObjectRegistry.CHESTNUT_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> CHESTNUT_HANGING_SIGN_ITEM = ITEMS.register("chestnut_hanging_sign", () -> new HangingSignItem(ObjectRegistry.CHESTNUT_HANGING_SIGN.get(), ObjectRegistry.CHESTNUT_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> SWAMP_OAK_SIGN = registerWithoutItem("swamp_oak_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.SWAMP_OAK));
+    public static final RegistrySupplier<Block> SWAMP_OAK_WALL_SIGN = registerWithoutItem("swamp_oak_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.SWAMP_OAK));
+    public static final RegistrySupplier<Block> SWAMP_OAK_HANGING_SIGN = registerWithoutItem("swamp_oak_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.SWAMP_OAK));
+    public static final RegistrySupplier<Block> SWAMP_OAK_WALL_HANGING_SIGN = registerWithoutItem("swamp_oak_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.SWAMP_OAK));
+    public static final RegistrySupplier<Item> SWAMP_OAK_SIGN_ITEM = ITEMS.register("swamp_oak_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.SWAMP_OAK_SIGN.get(), ObjectRegistry.SWAMP_OAK_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> SWAMP_OAK_HANGING_SIGN_ITEM = ITEMS.register("swamp_oak_hanging_sign", () -> new HangingSignItem(ObjectRegistry.SWAMP_OAK_HANGING_SIGN.get(), ObjectRegistry.SWAMP_OAK_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_SIGN = registerWithoutItem("swamp_cypress_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.SWAMP_CYPRESS));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_WALL_SIGN = registerWithoutItem("swamp_cypress_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.SWAMP_CYPRESS));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_HANGING_SIGN = registerWithoutItem("swamp_cypress_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.SWAMP_CYPRESS));
+    public static final RegistrySupplier<Block> SWAMP_CYPRESS_WALL_HANGING_SIGN = registerWithoutItem("swamp_cypress_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.SWAMP_CYPRESS));
+    public static final RegistrySupplier<Item> SWAMP_CYPRESS_SIGN_ITEM = ITEMS.register("swamp_cypress_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.SWAMP_CYPRESS_SIGN.get(), ObjectRegistry.SWAMP_CYPRESS_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> SWAMP_CYPRESS_HANGING_SIGN_ITEM = ITEMS.register("swamp_cypress_hanging_sign", () -> new HangingSignItem(ObjectRegistry.SWAMP_CYPRESS_HANGING_SIGN.get(), ObjectRegistry.SWAMP_CYPRESS_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> FAN_PALM_SIGN = registerWithoutItem("fan_palm_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.FAN_PALM));
+    public static final RegistrySupplier<Block> FAN_PALM_WALL_SIGN = registerWithoutItem("fan_palm_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.FAN_PALM));
+    public static final RegistrySupplier<Block> FAN_PALM_HANGING_SIGN = registerWithoutItem("fan_palm_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.FAN_PALM));
+    public static final RegistrySupplier<Block> FAN_PALM_WALL_HANGING_SIGN = registerWithoutItem("fan_palm_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.FAN_PALM));
+    public static final RegistrySupplier<Item> FAN_PALM_SIGN_ITEM = ITEMS.register("fan_palm_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.FAN_PALM_SIGN.get(), ObjectRegistry.FAN_PALM_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> FAN_PALM_HANGING_SIGN_ITEM = ITEMS.register("fan_palm_hanging_sign", () -> new HangingSignItem(ObjectRegistry.FAN_PALM_HANGING_SIGN.get(), ObjectRegistry.FAN_PALM_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> FIR_SIGN = registerWithoutItem("fir_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.FIR));
+    public static final RegistrySupplier<Block> FIR_WALL_SIGN = registerWithoutItem("fir_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.FIR));
+    public static final RegistrySupplier<Block> FIR_HANGING_SIGN = registerWithoutItem("fir_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.FIR));
+    public static final RegistrySupplier<Block> FIR_WALL_HANGING_SIGN = registerWithoutItem("fir_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.FIR));
+    public static final RegistrySupplier<Item> FIR_SIGN_ITEM = ITEMS.register("fir_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.FIR_SIGN.get(), ObjectRegistry.FIR_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> FIR_HANGING_SIGN_ITEM = ITEMS.register("fir_hanging_sign", () -> new HangingSignItem(ObjectRegistry.FIR_HANGING_SIGN.get(), ObjectRegistry.FIR_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Block> CACTUS_SIGN = registerWithoutItem("cactus_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), BloomingNatureWoodType.CACTUS));
+    public static final RegistrySupplier<Block> CACTUS_WALL_SIGN = registerWithoutItem("cactus_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), BloomingNatureWoodType.CACTUS));
+    public static final RegistrySupplier<Block> CACTUS_HANGING_SIGN = registerWithoutItem("cactus_hanging_sign", () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), BloomingNatureWoodType.CACTUS));
+    public static final RegistrySupplier<Block> CACTUS_WALL_HANGING_SIGN = registerWithoutItem("cactus_wall_hanging_sign", () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), BloomingNatureWoodType.CACTUS));
+    public static final RegistrySupplier<Item> CACTUS_SIGN_ITEM = ITEMS.register("cactus_sign", () -> new SignItem(new Item.Properties().stacksTo(16), ObjectRegistry.CACTUS_SIGN.get(), ObjectRegistry.CACTUS_WALL_SIGN.get()));
+    public static final RegistrySupplier<Item> CACTUS_HANGING_SIGN_ITEM = ITEMS.register("cactus_hanging_sign", () -> new HangingSignItem(ObjectRegistry.CACTUS_HANGING_SIGN.get(), ObjectRegistry.CACTUS_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    public static final RegistrySupplier<Item> ASPEN_BOAT = ITEMS.register("aspen_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.ASPEN, new Item.Properties()));
+    public static final RegistrySupplier<Item> ASPEN_CHEST_BOAT = ITEMS.register("aspen_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.ASPEN, new Item.Properties()));
+    public static final RegistrySupplier<Item> BAOBAB_BOAT = ITEMS.register("baobab_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.BAOBAB, new Item.Properties()));
+    public static final RegistrySupplier<Item> BAOBAB_CHEST_BOAT = ITEMS.register("baobab_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.BAOBAB, new Item.Properties()));
+    public static final RegistrySupplier<Item> LARCH_BOAT = ITEMS.register("larch_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.LARCH, new Item.Properties()));
+    public static final RegistrySupplier<Item> LARCH_CHEST_BOAT = ITEMS.register("larch_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.LARCH, new Item.Properties()));
+    public static final RegistrySupplier<Item> EBONY_BOAT = ITEMS.register("ebony_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.EBONY, new Item.Properties()));
+    public static final RegistrySupplier<Item> EBONY_CHEST_BOAT = ITEMS.register("ebony_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.EBONY, new Item.Properties()));
+    public static final RegistrySupplier<Item> CHESTNUT_BOAT = ITEMS.register("chestnut_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.CHESTNUT, new Item.Properties()));
+    public static final RegistrySupplier<Item> CHESTNUT_CHEST_BOAT = ITEMS.register("chestnut_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.CHESTNUT, new Item.Properties()));
+    public static final RegistrySupplier<Item> SWAMP_OAK_BOAT = ITEMS.register("swamp_oak_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.SWAMP_OAK, new Item.Properties()));
+    public static final RegistrySupplier<Item> SWAMP_OAK_CHEST_BOAT = ITEMS.register("swamp_oak_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.SWAMP_OAK, new Item.Properties()));
+    public static final RegistrySupplier<Item> SWAMP_CYPRESS_BOAT = ITEMS.register("swamp_cypress_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.SWAMP_CYPRESS, new Item.Properties()));
+    public static final RegistrySupplier<Item> SWAMP_CYPRESS_CHEST_BOAT = ITEMS.register("swamp_cypress_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.SWAMP_CYPRESS, new Item.Properties()));
+    public static final RegistrySupplier<Item> FAN_PALM_BOAT = ITEMS.register("fan_palm_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.FAN_PALM, new Item.Properties()));
+    public static final RegistrySupplier<Item> FAN_PALM_CHEST_BOAT = ITEMS.register("fan_palm_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.FAN_PALM, new Item.Properties()));
+    public static final RegistrySupplier<Item> FIR_BOAT = ITEMS.register("fir_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.FIR, new Item.Properties()));
+    public static final RegistrySupplier<Item> FIR_CHEST_BOAT = ITEMS.register("fir_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.FIR, new Item.Properties()));
+    public static final RegistrySupplier<Item> CACTUS_BOAT = ITEMS.register("cactus_boat", () -> new ModBoatItem(false, ModBoatEntity.Type.CACTUS, new Item.Properties()));
+    public static final RegistrySupplier<Item> CACTUS_CHEST_BOAT = ITEMS.register("cactus_chest_boat", () -> new ModBoatItem(true, ModBoatEntity.Type.CACTUS, new Item.Properties()));
 
     public static void init() {
-        registerSigns("aspen", BloomingNatureWoodType.ASPEN);
-        registerSigns("baobab", BloomingNatureWoodType.BAOBAB);
-        registerSigns("larch", BloomingNatureWoodType.LARCH);
-        registerSigns("ebony", BloomingNatureWoodType.EBONY);
-        registerSigns("chestnut", BloomingNatureWoodType.CHESTNUT);
-        registerSigns("swamp_oak", BloomingNatureWoodType.SWAMP_OAK);
-        registerSigns("swamp_cypress", BloomingNatureWoodType.SWAMP_CYPRESS);
-        registerSigns("fan_palm", BloomingNatureWoodType.FAN_PALM);
-        registerSigns("fir", BloomingNatureWoodType.FIR);
-        registerSigns("cactus", BloomingNatureWoodType.CACTUS);
         ITEMS.register();
         BLOCKS.register();
     }
-
 
     private static RegistrySupplier<Block> registerLog(String path) {
         return registerWithItem(path, () -> new RotatedPillarBlock(getLogBlockSettings()));

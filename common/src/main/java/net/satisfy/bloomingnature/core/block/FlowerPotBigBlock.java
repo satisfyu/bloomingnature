@@ -12,7 +12,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -22,15 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public class FlowerPotBigBlock extends StorageBlock {
-    private static final Supplier<VoxelShape> voxelShapeSupplier = () -> {
-        VoxelShape shape = Shapes.empty();
-        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.78125, 0.4375, 0.21875, 0.90625, 0.625, 0.78125), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.09375, 0.4375, 0.21875, 0.21875, 0.625, 0.78125), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.21875, 0.0, 0.21875, 0.78125, 0.4375, 0.78125), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.09375, 0.4375, 0.09375, 0.90625, 0.625, 0.21875), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.09375, 0.4375, 0.78125, 0.90625, 0.625, 0.90625), BooleanOp.OR);
-        return shape;
-    };
+    private static final Supplier<VoxelShape> voxelShapeSupplier = () -> Shapes.box(0.25, 0.0, 0.25, 0.75, 0.5625, 0.75);
     private static final VoxelShape SHAPE;
 
     public FlowerPotBigBlock(BlockBehaviour.Properties settings) {

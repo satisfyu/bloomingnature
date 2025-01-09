@@ -113,6 +113,5 @@ public class BloomingNatureClient {
         BlockEntityRendererRegistry.register(EntityTypeRegistry.MOD_HANGING_SIGN.get(), ModHangingSignRenderer::new);
         BlockEntityRendererRegistry.register(EntityTypeRegistry.BLOOMINGNATURE_BANNER.get(), CompletionistBannerRenderer::new);
     }
-
 }
 
